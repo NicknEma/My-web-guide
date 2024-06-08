@@ -42,6 +42,8 @@
   <main>
   <article>
 
+  <section>
+
   <a href="#h1_html"><h1 id="h1_html">HTML</h1></a>
 
   <a href="#h2_tags"><h2 id="h2_tags">Tags</h2></a>
@@ -198,10 +200,10 @@
   <p>The most important HTML elements are:</p>
 
   <ul>
-    <li><code class="lang_html">&lt!DOCTYPE html /&gt</code> is a historical artifact that needs to be included in every html page.
-    <li><code class="lang_html">&lthtml&gt</code> is the <em>root</em> element, the one that contains all other elements.
-    <li><code class="lang_html">&lthead&gt</code> is a container for everything you want to include on the HTML page that <em>isn't</em> the content the page will show to viewers. This includes keywords and a page description that would appear in search results, CSS to style content, character set declarations, and more.
-    <li><code class="lang_html">&ltbody&gt</code> contains all the content that displays on the page, including text, images, videos, games, playable audio tracks, or whatever else.
+    <li><code class="lang_html">&lt!DOCTYPE html /&gt</code>: a historical artifact that needs to be included in every html page.</li>
+    <li><code class="lang_html">&lthtml&gt</code>: the <em>root</em> element, the one that contains all other elements.</li>
+    <li><code class="lang_html">&lthead&gt</code>: a container for everything you want to include on the HTML page that <em>isn't</em> the content the page will show to viewers. This includes keywords and a page description that would appear in search results, CSS to style content, character set declarations, and more.</li>
+    <li><code class="lang_html">&ltbody&gt</code>: a container for all the content that displays on the page, including text, images, videos, games, playable audio tracks, or whatever else.</li>
   </ul>
 
   <!--
@@ -212,11 +214,15 @@
 
   <a href="#h3_elements_head"><h3 id="h3_elements_head">Head</h3></a>
 
-  <p>Common elements nested in the <code class="lang_html">head</code> are:</p>
+  <p>Common elements nested in the <code class="lang_html">&lthead&gt</code> are:</p>
 
   <ul>
-    <li><code class="lang_html">&lttitle&gt</code> is the title that appears in the browser tab the page is loaded in. The page title is also used to describe the page when it is bookmarked.
-    <li><code class="lang_html">&ltmeta /&gt</code> describes metadata (data about the page) using its attributes.
+    <li><code class="lang_html">&lttitle&gt</code>: the title that appears in the page's browser tab and that is used to describe the page when it is bookmarked.</li>
+    <li><code class="lang_html">&ltstyle&gt</code>: an internal stylesheet for the page.</li>
+    <li><code class="lang_html">&ltlink /&gt</code>: a link to an external stylesheet for the page.</li>
+    <li><code class="lang_html">&ltscript&gt</code>: a script (or a link to one) that will run in tandem with the page.</li>
+    <li><code class="lang_html">&ltbase /&gt</code>: the base URL to use for all relative URLs in a document. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base">See more</a>.</li>
+    <li><code class="lang_html">&ltmeta /&gt</code>: description of metadata (data about the page) not captured by the previous elements. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">See more</a>.</li>
   </ul>
 
   <!--
@@ -227,22 +233,22 @@
 
   <a href="#h3_elements_website_structure"><h3 id="h3_elements_website_structure">Website Structure</h3></a>
 
-  <p>HTML provides dedicated tags that you can use to represent sections, for example:</p>
+  <p>HTML provides dedicated tags that you can use to represent different page <em>sections</em>, for example:</p>
 
   <ul>
-    <li><code class="lang_html">&ltheader&gt</code>: The header represents a group of introductory content. If it is a child of &ltbody&gt it defines the global header of a webpage, but if it's a child of an &ltarticle&gt or &ltsection&gt it defines a specific header for that section (try not to confuse this with titles and headings).
+    <li><code class="lang_html">&ltheader&gt</code>: a group of introductory content. If it is a child of <code class="lang_html">&ltbody&gt</code> it defines the global header of a webpage, but if it's a child of an <code class="lang_html">&ltarticle&gt</code> or <code class="lang_html">&ltsection&gt</code> it defines a specific header for that section (try not to confuse this with titles and headings).
 
-    <li><code class="lang_html">&ltnav&gt</code>: The navigation bar contains the main navigation functionality for the page (home, posts, projects, contacts, search).
+    <li><code class="lang_html">&ltnav&gt</code>: the main navigation functionality for the page (home, posts, projects, contacts, search).
 
-    <li><code class="lang_html">&ltmain&gt</code>: The main content, with various content subsections represented by &ltarticle&gt, &ltsection&gt, and &ltdiv&gt elements. Is for content unique to this page. Use &ltmain&gt only once per page, and put it directly inside &ltbody&gt. Do not nest within other elements.
+    <li><code class="lang_html">&ltmain&gt</code>: the main content unique to this page. Use <code class="lang_html">&ltmain&gt</code> only once per page, and put it directly inside <code class="lang_html">&ltbody&gt</code>. Do not nest within other elements.
 
-    <li><code class="lang_html">&ltarticle&gt</code>: Encloses a block of related content that makes sense on its own without the rest of the page (e.g., a single blog post).
+    <li><code class="lang_html">&ltarticle&gt</code>: a block of related content that makes sense on its own without the rest of the page (e.g., a single blog post).
 
-    <li><code class="lang_html">&ltsection&gt</code>: Is similar to &ltarticle&gt, but it is more for grouping together a single part of the page that constitutes one single piece of functionality (e.g., a mini map, or a set of article headlines and summaries), or a theme. It's considered best practice to begin each section with a heading; also note that you can break &ltarticle&gts up into different &ltsection&gts, or &ltsection&gts up into different &ltarticle&gts, depending on the context.
+    <li><code class="lang_html">&ltsection&gt</code>: similar to <code class="lang_html">&ltarticle&gt</code>, but it is more for grouping together a single part of the page that constitutes one single piece of functionality (e.g., a mini map, or a set of article headlines and summaries), or a theme. It's considered best practice to begin each section with a heading; also note that you can break <code class="lang_html">&ltarticle&gt</code>s up into different <code class="lang_html">&ltsection&gt</code>s, or <code class="lang_html">&ltsection&gt</code>s up into different <code class="lang_html">&ltarticle&gt</code>s, depending on the context.
 
-    <li><code class="lang_html">&ltaside&gt</code>: The sidebar contains content that is not directly related to the main content but can provide additional information indirectly related to it (glossary entries, author biography, related links, etc.). Often placed inside &ltmain&gt.
+    <li><code class="lang_html">&ltaside&gt</code>: content that is not directly related to the main content but can provide additional information indirectly related to it (e.g., glossary entries, author biography, related links). Often placed inside <code class="lang_html">&ltmain&gt</code>.
 
-    <li><code class="lang_html">&ltfooter&gt</code>: The footer represents a group of end content for a page.
+    <li><code class="lang_html">&ltfooter&gt</code>: a group of end content for a page.
   </ul>
 
   <!--
@@ -256,36 +262,39 @@
   <p>Text-related elements are:</p>
 
   <ul>
-    <li><code class="lang_html">&ltp&gt</code> = paragraph.
-    <li><code class="lang_html">&lth1&gt, &lth2&gt ... &lth6&gt</code> = headings 1 through 6.
-    <li><code class="lang_html">&ltbr /&gt</code> = line break.
-    <li><code class="lang_html">&ltul&gt</code> = unordered list.
-    <li><code class="lang_html">&ltol&gt</code> = ordered list.
-    <li><code class="lang_html">&ltli /&gt</code> = list item.
-    <li><code class="lang_html">&lt/em&gt</code> = emphasized.
-    <li><code class="lang_html">&ltstrong&gt</code> = strong (important).
-    <li><code class="lang_html">&ltdl&gt</code> = definition list.
-    <li><code class="lang_html">&ltdt&gt</code> = definition term.
-    <li><code class="lang_html">&ltdd&gt</code> = definition description.
-    <li><code class="lang_html">&ltblockquote&gt</code> = block quote.
-    <li><code class="lang_html">&ltq&gt</code> = inline quote.
-    <li><code class="lang_html">&ltabbr&gt</code> = abbreviation.
-    <li><code class="lang_html">&ltaddress&gt</code> = address (contact info).
-    <li><code class="lang_html">&lttime&gt</code> = time.
+    <li><code class="lang_html">&ltp&gt</code> (<strong>p</strong>aragraph): a paragraph of text.</li>
+    <li><code class="lang_html">&lth1&gt, &lth2&gt ... &lth6&gt</code> (<strong>h</strong>eading): headings 1 through 6.</li>
+    <li><code class="lang_html">&ltbr /&gt</code> (<strong>br</strong>eak): a newline, or line break.</li>
+    <li><code class="lang_html">&ltul&gt</code> (<strong>u</strong>nordered <strong>l</strong>ist): an unordered list of items &ndash; typically rendered as a bulleted list.</li>
+    <li><code class="lang_html">&ltol&gt</code> (<strong>o</strong>rdered <strong>l</strong>ist): an ordered list of items &ndash; typically rendered as a numbered list.</li>
+    <li><code class="lang_html">&ltli&gt</code> (<strong>l</strong>ist <strong>i</strong>tem): a list item.</li>
+    <li><code class="lang_html">&ltem&gt</code> (<strong>em</strong>phasized): content that has stress emphasis &ndash; typically rendered as <em>italic</em> text.</li>
+    <li><code class="lang_html">&ltstrong&gt</code> (<strong>strong</strong>): content that has strong importance, seriousness, or urgency &ndash; typically rendered as <strong>bold</strong> text.</li>
+    <li><code class="lang_html">&ltdl&gt</code> (<strong>d</strong>escription <strong>l</strong>ist): a list of groups of terms and related descriptions.</li>
+    <li><code class="lang_html">&ltdt&gt</code> (<strong>d</strong>escription <strong>t</strong>erm): a term in a description list.</li>
+    <li><code class="lang_html">&ltdd&gt</code> (<strong>d</strong>escription <strong>d</strong>etails): the value for the preceding term in a description list.</li>
+    <li><code class="lang_html">&ltblockquote&gt</code> (<strong>blockquote</strong>): an extended quotation &ndash; typically rendered with indentation.</li>
+    <li><code class="lang_html">&ltq&gt</code> (<strong>q</strong>uote): a short inline quotation &ndash; typically rendered as enclosed in quotation marks.</li>
+    <li><code class="lang_html">&ltcite&gt</code> (<strong>cite</strong>): the title of a cited creative work.</li>
+    <li><code class="lang_html">&ltabbr&gt</code> (<strong>abbr</strong>eviation): an abbreviation or acronym.</li>
+    <li><code class="lang_html">&ltaddress&gt</code> (<strong>address</strong>): contact info.</li>
+    <li><code class="lang_html">&lttime&gt</code> (<strong>time</strong>): either a time on a 24-hour clock, a date in the calendar or a time duration.</li>
   </ul>
 
   <hr />
 
-  <p>You can use <code class="lang_html">blockquote</code> and <code class="lang_html">q</code> for quotes:</p>
+  <p>You can use <code class="lang_html">&ltblockquote&gt</code> and <code class="lang_html">&ltq&gt</code> for quotes:</p>
 
   <div class="example">
   <pre><code class="lang_html">&ltp&gtThe following is a block quote:&lt/p&gt
 &ltblockquote cite="index.html"&gt
-&ltp&gtThe page title is also used to describe the page when it is bookmarked.&lt/p&gt
+  &ltp&gtThe page title is also used to describe the page when it is bookmarked.&lt/p&gt
+  &ampmdash; &ltcite&gtmdn web docs&lt/cite&gt
 &lt/blockquote&gt</code></pre>
   <p>The following is a block quote:</p>
   <blockquote cite="index.html">
     <p>The page title is also used to describe the page when it is bookmarked.</p>
+    &mdash; <cite>mdn web docs</cite>
   </blockquote>
 
   <pre><code class="lang_html">&ltp&gtThe following is an inline quote: &ltq cite="index.html"&gtThe page title is also used to describe the page when it is bookmarked.&lt/q&gt&lt/p&gt</code></pre>
@@ -294,15 +303,15 @@
 
   <hr />
 
-  <p>Abbreviations can be marked as such. Put the mouse on the abbreviated word to see the full expansion.</p>
+  <p>Abbreviations and acronyms can be marked as such using <code class="lang_html">&ltabbr&gt</code>. Put the mouse on the abbreviated word to see the full expansion.</p>
   <div class="example">
-  <pre><code class="lang_html">The langage of the web is &ltabbr title="HyperText Markup Language"&gtHTML&lt/abbr&gt.</code></pre>
-  <p>The langage of the web is <abbr title="HyperText Markup Language">HTML</abbr>.</p>
+  <pre><code class="lang_html">The language of the web is &ltabbr title="HyperText Markup Language"&gtHTML&lt/abbr&gt.</code></pre>
+  <p>The language of the web is <abbr title="HyperText Markup Language">HTML</abbr>.</p>
   </div>
 
   <hr />
 
-  <p>Use <code>address</code> to define contact information:</p>
+  <p>Use <code class="lang_html">&ltaddress&gt</code> to define contact information:</p>
   <div class="example">
   <pre><code class="lang_html">&ltaddress&gtChris Mills, Manchester, The Grim North, UK&lt/address&gt</code></pre>
   <p><address>Chris Mills, Manchester, The Grim North, UK</address></p>
@@ -1121,11 +1130,15 @@ is rational.&lt/p&gt</code></pre>
 
   <p>Use the <code>rowspan</code> and <code>columnspan</code> attributes to make cells span multiple rows and columns. Read about <a href="#h3_elements_tables">HTML tables</a> for reference.</p>
 
+  </section>
+
   <!--
   ###############
   ##### CSS #####
   ###############
   -->
+
+  <section>
 
   <a href="#h1_css"><h1 id="h1_css">Style: CSS</h1></a>
 
@@ -1994,11 +2007,15 @@ span { background-color: rgb(255 255 255 / 50%); }</code></pre>
 
 <p>It is a good idea to provide a suitable generic font name at the end of the stack so that if none of the listed fonts are available, the browser can at least provide something approximately suitable.</p>
 
+  </section>
+
   <!--
   ######################
   ##### JAVASCRIPT #####
   ######################
   -->
+
+  <section>
 
   <a href="#h1_js"><h1 id="h1_js">Behavious: JS</h1></a>
 
@@ -2253,6 +2270,8 @@ function random(min, max) {
   <a href="#h2_bouncing_balls"><h2 id="h2_bouncing_balls">Bouncing balls demo</h2></a>
 
   <span class="bouncing-balls"><canvas></canvas></span>
+
+  </section>
 
   <h1>Web performance</h1>
 
