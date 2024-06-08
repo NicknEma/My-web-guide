@@ -92,6 +92,96 @@
 
   <p>Text enclosed within <code>&lt!--</code> and <code>--&gt</code> is ignored by the browser.
 
+  <a href="#h2_reserved_characters"><h2 id="h2_reserved_characters">Reserved characters</h2></a>
+
+  <p>Some characters are reserved in HTML; to display these characters as text, replace them with their corresponding character <em>entities</em>.</p>
+  <table border="1">
+  <thead>
+    <tr>
+      <th>Character</th>
+      <th>Entity</th>
+      <th>Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&amp;</td>
+      <td><code>&amp;amp;</code></td>
+      <td>Interpreted as the beginning of an entity or character reference.</td>
+    </tr>
+    <tr>
+      <td>&lt;</td>
+      <td><code>&amp;lt;</code></td>
+      <td>Interpreted as the beginning of a <a href="#h2_tags">tag</a></td>
+    </tr>
+    <tr>
+      <td>&gt;</td>
+      <td><code>&amp;gt;</code></td>
+      <td>Interpreted as the ending of a <a href="#h2_tags">tag</a></td>
+    </tr>
+    <tr>
+      <td>"</td>
+      <td><code>&amp;quot;</code></td>
+      <td>Interpreted as the beginning and end of an <a href="#h2_attributes">attribute</a>'s value.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><code>&amp;nbsp;</code></td>
+      <td>Interpreted as the non breaking space.</td>
+    </tr>
+    <tr>
+      <td>–</td>
+      <td><code>&amp;ndash;</code></td>
+      <td>Interpreted as the en dash (half the width of an em unit).</td>
+    </tr>
+    <tr>
+      <td>—</td>
+      <td><code>&amp;mdash;</code></td>
+      <td>Interpreted as the em dash (equal to width of an "m" character).</td>
+    </tr>
+    <tr>
+      <td>©</td>
+      <td><code>&amp;copy;</code></td>
+      <td>Interpreted as the copyright sign.</td>
+    </tr>
+    <tr>
+      <td>®</td>
+      <td><code>&amp;reg;</code></td>
+      <td>Interpreted as the registered sign.</td>
+    </tr>
+    <tr>
+      <td>™</td>
+      <td><code>&amp;trade;</code></td>
+      <td>Interpreted as the trademark sign.</td>
+    </tr>
+    <tr>
+      <td>≈</td>
+      <td><code>&amp;asymp;</code></td>
+      <td>Interpreted as almost equal to sign.</td>
+    </tr>
+    <tr>
+      <td>≠</td>
+      <td><code>&amp;ne;</code></td>
+      <td>Interpreted as not equal to sign.</td>
+    </tr>
+    <tr>
+      <td>£</td>
+      <td><code>&amp;pound;</code></td>
+      <td>Interpreted as the pound symbol.</td>
+    </tr>
+    <tr>
+      <td>€</td>
+      <td><code>&amp;euro;</code></td>
+      <td>Interpreted as the euro symbol.</td>
+    </tr>
+    <tr>
+      <td>°</td>
+      <td><code>&amp;deg;</code></td>
+      <td>Interpreted as the degree symbol.</td>
+    </tr>
+  </tbody>
+  </table>
+
   <a href="#h2_elements"><h2 id="h2_elements">Elements</h2></a>
 
   <!--
