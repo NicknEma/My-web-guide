@@ -4,6 +4,11 @@
 <head>
   <title>MDN Guides</title>
   <meta charset="utf8" />
+  <meta name="author" content="Emanuele Rovini" />
+  <meta name="description" content="Single-page example-based guide for creating a website." />
+  <meta name="keywords" content="Web, HTML, CSS, JS, guide" />
+  <meta name="theme-color" content="white" />
+  <meta name="color-scheme" content="only light" />
   <link
     rel="stylesheet"
     href="style.css" />
@@ -72,9 +77,9 @@
   <pre><code class="lang_html">&ltinput type="text" disabled="disabled"/&gt
 &ltinput type="text" disabled/&gt
 &ltinput type="text"/&gt</code></pre>
-  <p><input type="text" disabled="disabled"/></p>
-  <p><input type="text" disabled/></p>
-  <p><input type="text"/></p>
+  <p><input id="disabled_1" type="text" disabled="disabled"/></p>
+  <p><input id="disabled_2" type="text" disabled/></p>
+  <p><input id="disabled_3" type="text"/></p>
   </div>
 
   <a href="#h2_comments"><h2 id="h2_comments">Comments</h2></a>
@@ -541,7 +546,7 @@
   <ul>
     <li>
       <label for="name">Name:</label>
-      <input type="text" id="name" name="user_name" value="Default value"/>
+      <input type="text" id="name" name="user_name" value="Default value" autocomplete="first-name" />
     </li>
     <li>
       <label for="mail">Email:</label>
@@ -553,7 +558,7 @@
     </li>
     <li>
       <label for="tel">Telephone:</label>
-      <input type="tel" id="tel" name="user_tel" />
+      <input type="tel" id="tel" name="user_tel" autocomplete="tel" />
     </li>
     <li>
       <label for="personal_website">Website:</label>
@@ -585,9 +590,7 @@
       <input type="week" id="week" name="user_favourite_week" />
     </li>
 
-    <li>
-      <label for="day_of_week">Favourite day of the week:</label>
-
+    <li>Favourite day of the week:
       <ul>
         <li>
           <label for="monday">Monday</label>
