@@ -92,14 +92,14 @@
 
   <a href="#h2_comments"><h2 id="h2_comments">Comments</h2></a>
 
-  <p>Text enclosed within <code>&lt!--</code> and <code>--&gt</code> is ignored by the browser.
+  <p>Content enclosed within <code>&lt!--</code> and <code>--&gt</code> is ignored by the browser.
   <div class="example">
   <pre><code class="lang_html">&lt!-- I am a comment! Yayaya --&gt</code></pre>
   </div>
 
   <a href="#h2_reserved_characters"><h2 id="h2_reserved_characters">Reserved characters</h2></a>
 
-  <p>Some characters are reserved in HTML; to display these characters as text, replace them with their corresponding character <em>entities</em>.</p>
+  <p>Some characters are <em>reserved</em> in HTML; to display these characters as text, replace them with their corresponding character <em>entities</em>.</p>
   <table border="1">
   <thead>
     <tr>
@@ -200,7 +200,7 @@
   <p>The most important HTML elements are:</p>
 
   <ul>
-    <li><code class="lang_html">&lt!DOCTYPE html /&gt</code>: a historical artifact that needs to be included in every html page.</li>
+    <li><code class="lang_html">&lt!DOCTYPE html /&gt</code>: a historical artifact that needs to be included in every HTML page.</li>
     <li><code class="lang_html">&lthtml&gt</code>: the <em>root</em> element, the one that contains all other elements.</li>
     <li><code class="lang_html">&lthead&gt</code>: a container for everything you want to include on the HTML page that <em>isn't</em> the content the page will show to viewers. This includes keywords and a page description that would appear in search results, CSS to style content, character set declarations, and more.</li>
     <li><code class="lang_html">&ltbody&gt</code>: a container for all the content that displays on the page, including text, images, videos, games, playable audio tracks, or whatever else.</li>
@@ -328,7 +328,7 @@
   <p>Some tags are dedicated to formatting code.</p>
 
   <ul>
-    <li><code class="lang_html">&ltcode&gt</code>: For marking up generic pieces of computer code.</li>
+    <li><code class="lang_html">&ltcode&gt</code> (<strong>code</strong>): For marking up generic pieces of computer code.</li>
     <li><code class="lang_html">&ltpre&gt</code> (<strong>pre</strong>formatted): For retaining extra whitespace that the browser would generally ignore.</li>
     <li><code class="lang_html">&ltvar&gt</code> (<strong>var</strong>iable): For marking up variable names.</li>
     <li><code class="lang_html">&ltkbd&gt</code> (<strong>k</strong>ey<strong>b</strong>oar<strong>d</strong>): For marking up keyboard and other types of input entered into the computer.</li>
@@ -407,9 +407,9 @@
 
   <hr />
 
-  <p>The <code>width</code> and <code>height</code> attributes represent the image's width and height in pixels. You should specify the actual size of your source images, not the size you want them to appear on the website. If you do need to alter an image's size, either change the actual size of the source image or use CSS.</p>
+  <p>The <code>width</code> and <code>height</code> attributes represent the image's width and height in pixels.</p>
 
-  <p>The HTML for your page and the image are separate resources, fetched by the browser as separate HTTP(S) requests. As soon as the browser has received the HTML, it will start to display it to the user. If the images haven't yet been received (and this will often be the case, as image file sizes are often much larger than HTML files), then the browser will render only the HTML, and will update the page with the image as soon as it is received (causing the rest of the content to move). By specifying the width and height of the image in advance, the browser will reserve an appropriate amount of space for them and won't cause the rest of the content to be pushed away.</p>
+  <p>You should specify the actual size of your source images, not the size you want them to appear on the website. If you do need to alter an image's size, either change the actual size of the source image or use CSS. The HTML for your page and the image are separate resources, fetched by the browser as separate HTTP(S) requests. As soon as the browser has received the HTML, it will start to display it to the user. If the images haven't yet been received (and this will often be the case, as image file sizes are often much larger than HTML files), then the browser will render only the HTML, and will update the page with the image as soon as it is received (causing the rest of the content to move). By specifying the width and height of the image in advance, the browser will reserve an appropriate amount of space for them and won't cause the rest of the content to be pushed away.</p>
 
   <hr />
 
@@ -423,7 +423,7 @@
 
   <a href="#h3_elements_videos_and_audio_clips"><h3 id="h3_elements_videos_and_audio_clips">Videos and audio clips</h3></a>
 
-  <p>To embed a video into a webpage, use the <code class="lang_html">&ltvideo&gt</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the video, and the <code>controls</code> boolean attribute to display start, pause, volume and similar controls.</p>
+  <p>To embed a video into a webpage, use the <code class="lang_html">&ltvideo&gt</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the video, and the <code>controls</code> boolean attribute to display <em>start</em>, <em>pause</em>, <em>volume</em> and similar controls.</p>
 
   <div class="example">
   <pre><code class="lang_html">&ltvideo src="pong.mp4" controls&gt
@@ -441,25 +441,25 @@
   </video>
   </div>
 
-  <p>The following are all the attributes of the <code class="lang_html">&ltvideo&gt</code> element.</p>
+  <p>The following are all the attributes of the <code class="lang_html">&ltvideo&gt</code> element:</p>
 
   <ul>
     <li><code>src</code>: Absolute or relative URL of the video.
-    <li><code>controls</code>: Include the browser's default control interface.
-    <li><code>width</code> and <code>height</code>: Width and height of the video.
-    <li><code>autoplay</code>: Boolean attribute that makes the video start as soon as it is loaded. <strong>Do not use</strong>, it's very annoying.
-    <li><code>loop</code>: Boolean attribute that makes the video start again when it finishes.
-    <li><code>muted</code>: Boolean attribute that turns off the audio by default.
-    <li><code>preload="auto"</code>Used for buffering large files; it can take one of three values:
+    <li><code>controls</code>: Include the browser's default control interface (boolean).
+    <li><code>width</code>, <code>height</code>: Width and height of the source video.
+    <li><code>autoplay</code>: makes the video start as soon as it is loaded (boolean). <strong>Do not use</strong>, it's very annoying.
+    <li><code>loop</code>: makes the video start again when it finishes (boolean).
+    <li><code>muted</code>: turns off the audio by default (boolean).
+    <li><code>preload</code>: Used for buffering large files; it can take one of three values:
     <ul>
-      <li>"none" does not buffer the file
-      <li>"auto" buffers the media file
-      <li>"metadata" buffers only the metadata for the file
+      <li><code>"none"</code>: does not buffer the file
+      <li><code>"auto"</code>: buffers the media file
+      <li><code>"metadata"</code>: buffers only the metadata for the file
     </ul>
-    <li><code>poster="poster.png"</code>The URL of an image which will be displayed before the video is played.
+    <li><code>poster</code>: The URL of an image which will be displayed before the video is played.
   </ul>
 
-  <p>If you don't add the <code>controls</code> attribute, build your interface using the appropriate JavaScript API. At a minimum, the interface must include a way to start and stop the media, and to adjust the volume.</p>
+  <p>If you don't add the <code>controls</code> attribute, build a custom interface using the appropriate JavaScript API. At a minimum, the interface must include a way to start and stop the media, and to adjust the volume.</p>
 
   <hr />
 
