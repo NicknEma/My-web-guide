@@ -18,6 +18,8 @@
 
 code {
 	background: #EEEEEE;
+	border-radius: 0.3em;
+	padding: 0.1em;
 }
 
 pre > code {
@@ -26,15 +28,16 @@ pre > code {
 
 /* --- TABLES --- */
 
-tbody td {
+td, th {
 	padding: 0.3em;
 }
 
 tbody tr:nth-child(even) {
     background-color: #e6e6e6;
 }
+
 tbody tr:nth-child(odd) {
-	background-color: #ffffff;
+	background-color: white;
 }
 
 /* Exclude example tables from the recoloring */
