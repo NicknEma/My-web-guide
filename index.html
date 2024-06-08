@@ -666,24 +666,21 @@
   ################
   -->
 
-  <h3>Math formulas</h3>
+  <a href="#h3_math_formulas"><h3 id="h3_math_formulas">Math formulas</h3></a>
 
   <p>Display a mathematical formula with the <code class="lang_html">&ltmath&gt</code> element.</p>
-
   <div class="example">
   <pre><code class="lang_html">&ltp&gtThe number
   &ltmath&gt
     &ltmfrac&gt
-      &ltmn&gt1&lt/mn&gt
-      &ltmn&gt3&lt/mn&gt
+      &ltmn&gt1&lt/mn&gt &ltmn&gt3&lt/mn&gt
     &lt/mfrac&gt
   &lt/math&gt
 is rational.&lt/p&gt</code></pre>
   <p>The number
     <math>
       <mfrac>
-        <mn>1</mn>
-        <mn>3</mn>
+        <mn>1</mn> <mn>3</mn>
       </mfrac>
     </math>
   is rational.</p>
@@ -691,22 +688,19 @@ is rational.&lt/p&gt</code></pre>
 
   <hr />
 
-  <p>Use the <code>display</code> attribute to make a formula its own line.</p>
-
+  <p>Set the <code>display</code> attribute to <code>block</code> to make a formula its own line.</p>
   <div class="example">
   <pre><code class="lang_html">&ltp&gtThe number
   &ltmath display="block"&gt
     &ltmfrac&gt
-      &ltmn&gt1&lt/mn&gt
-      &ltmn&gt3&lt/mn&gt
+      &ltmn&gt1&lt/mn&gt &ltmn&gt3&lt/mn&gt
     &lt/mfrac&gt
   &lt/math&gt
 is rational.&lt/p&gt</code></pre>
   <p class="mathy">The number
     <math display="block">
       <mfrac>
-        <mn>1</mn>
-        <mn>3</mn>
+        <mn>1</mn> <mn>3</mn>
       </mfrac>
     </math>
   is rational.</p>
@@ -714,8 +708,22 @@ is rational.&lt/p&gt</code></pre>
 
   <hr />
 
+  <!--
+  ################
+  ##### MROW #####
+  ################
+  -->
+
   <p>The <code class="lang_html">&ltmrow&gt</code> elements groups other elements in a row.</p>
   <div class="example">
+  <pre><code class="lang_html">&ltmath display="block"&gt
+  &ltmfrac&gt
+    &ltmrow&gt
+      &ltmn&gt1&lt/mn&gt &ltmo&gt+&lt/mo&gt &ltmn&gt2&lt/mn&gt
+    &lt/mrow&gt
+    &ltmn&gt3&lt/mn&gt
+  &lt/mfrac&gt
+&lt/math&gt</code></pre>
   <p class="mathy">
     <math display="block">
       <mfrac>
@@ -805,25 +813,23 @@ is rational.&lt/p&gt</code></pre>
 
   <h4>Semantic math elements</h4>
 
-  <p>Every text in MathML formulas must be included inside these container elements, called token elements.</p>
+  <p>Every text in MathML formulas must be included inside these container elements, called <em>token</em> elements.</p>
   <ul>
-    <li><code>mn</code>: Number literal (<math><mn>2</mn></math>, <math><mn>3.141</mn></math>, <math><mn>0x0045</mn></math>)</li>
-    <li><code>mo</code>: Operator or other punctuation sign (<math><mo>+</mo></math>, <math><mo>∑</mo></math>, <math><mo>[</mo></math>)</li>
-    <li><code>mi</code>: Identifier (<math><mi>x</mi></math>, <math><mi>cos</mi></math>, <math><mi>π</mi></math>)</li>
-    <li><code>mtext</code>: Other text (<math><mtext>if</mtext></math>, <math><mtext>such as</mtext></math>, <math><mtext>not</mtext></math>)</li>
+    <li><code>mn</code>: Number literal (<math><mn>2</mn></math>, <math><mn>3.141</mn></math>, <math><mn>0x0045</mn></math>, ...)</li>
+    <li><code>mo</code>: Operator or other punctuation sign (<math><mo>+</mo></math>, <math><mo>∑</mo></math>, <math><mo>[</mo></math>, ...)</li>
+    <li><code>mi</code>: Identifier (<math><mi>x</mi></math>, <math><mi>cos</mi></math>, <math><mi>π</mi></math>, ...)</li>
+    <li><code>mtext</code>: Other text (<math><mtext>if</mtext></math>, <math><mtext>such as</mtext></math>, <math><mtext>not</mtext></math>, ...)</li>
   </ul>
 
   <hr />
 
   <p>Single-character <code class="lang_html">&ltmi&gt</code> elements are automatically italicized. To prevent this, use the <code>mathvariant</code> attribute.</p>
   <div class="example">
-<pre><code class="lang_html">&ltmath display="block"&gt
-  &ltmi&gtsin&lt/mi&gt                      &lt!-- Multi-character identifier, not italicized --&gt
-  &ltmtext&gt&amp;nbsp;&lt/mtext&gt
-  &ltmi&gtx&lt/mi&gt                        &lt!-- Single-character identifier, italicized --&gt
-  &ltmtext&gt&amp;nbsp&lt/mtext&gt
-  &ltmi mathvariant="normal"&gtx&lt/mi&gt   &lt!-- Single-character identifier, explicitly not italicized --&gt
-&lt/math&gt</code></pre>
+<pre><code class="lang_html">&ltmi&gtsin&lt/mi&gt                      &lt!-- Multi-character identifier, not italicized --&gt
+&ltmtext&gt&amp;nbsp;&lt/mtext&gt
+&ltmi&gtx&lt/mi&gt                        &lt!-- Single-character identifier, italicized --&gt
+&ltmtext&gt&amp;nbsp&lt/mtext&gt
+&ltmi mathvariant="normal"&gtx&lt/mi&gt   &lt!-- Single-character identifier, explicitly not italicized --&gt</code></pre>
   <p class="mathy">
   <math display="block">
     <mi>sin</mi>
@@ -871,7 +877,7 @@ is rational.&lt/p&gt</code></pre>
 
   <h4>Structural math elements</h4>
 
-  <p>Use <code>&ltmfrac&gt</code> to display a fraction.</p>
+  <p>Use <code class="lang_html">&ltmfrac&gt</code> to display a fraction.</p>
   <div class="example">
   <pre><code class="lang_html">&ltmfrac&gt
   &ltmi&gta&lt/mi&gt
@@ -1000,7 +1006,7 @@ is rational.&lt/p&gt</code></pre>
 
   <hr />
 
-  <p>To create tables in MathML, use the <code>mtable</code>, <code>mtr</code> and <code>mtd</code> elements.</p>
+  <p>To create tables in MathML, use the <code class="lang_html">&ltmtable&gt</code>, <code class="lang_html">&ltmtr&gt</code> and <code class="lang_html">&ltmtd&gt</code> elements.</p>
   <div class="example">
   <p class="mathy">
   <math display="block">
@@ -1019,6 +1025,8 @@ is rational.&lt/p&gt</code></pre>
   </math>
   </p>
   </div>
+
+  <p>Use the <code>rowspan</code> and <code>columnspan</code> attributes to make cells span multiple rows and columns. Read about <a href="#h3_elements_tables">HTML tables</a> for reference.</p>
 
   <!--
   ###############
