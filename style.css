@@ -18,7 +18,6 @@
 
 code {
 	background: #EEEEEE;
-	font-family: monospace;
 }
 
 /* --- TABLES --- */
@@ -104,6 +103,14 @@ button {
 	/* This extra margin represent roughly the same space as the space
 	   between the labels and their text fields */
 	margin-left: 0.5em;
+}
+
+/* --- MATH --- */
+
+p.mathy {
+	width: 20em;
+	font-family: "Latin Modern Math";
+	font-size: 1.1em;
 }
 
 /* --- HOVER --- */

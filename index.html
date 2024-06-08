@@ -7,28 +7,26 @@
   <link
     rel="stylesheet"
     href="style.css" />
-
   <link
     rel="stylesheet"
     href="https://fred-wang.github.io/MathFonts/LatinModern/mathfonts.css" />
-
 </head>
 
 <body>
-  <main>
-  <article>
-
-  <h1>MDN Guides</h1>
+  <header>
+    <h1>My Web guide</h1>
+  </header>
 
   <nav>
-
   <ul>
     <li><a href="#h1_html" title="HTML">Structure: HTML</a></li>
     <li><a href="#h1_css"  title="CSS">Style: CSS</a></li>
     <li><a href="#h1_js"   title="JS">Behaviour: JS</a></li>
   </ul>
-
   </nav>
+
+  <main>
+  <article>
 
   <a href="#h1_html"><h1 id="h1_html">HTML</h1></a>
 
@@ -178,16 +176,12 @@
 &ltblockquote cite="index.html"&gt
 &ltp&gtThe page title is also used to describe the page when it is bookmarked.&lt/p&gt
 &lt/blockquote&gt</code></pre>
-
   <p>The following is a block quote:</p>
   <blockquote cite="index.html">
     <p>The page title is also used to describe the page when it is bookmarked.</p>
   </blockquote>
-  </div>
 
-  <div class="example">
   <pre><code class="lang_html">&ltp&gtThe following is an inline quote: &ltq cite="index.html"&gtThe page title is also used to describe the page when it is bookmarked.&lt/q&gt&lt/p&gt</code></pre>
-
   <p>The following is an inline quote: <q cite="index.html">The page title is also used to describe the page when it is bookmarked.</q></p>
   </div>
 
@@ -215,12 +209,14 @@
 
   <a href="#h3_elements_code"><h3 id="h3_elements_code">Code</h3></a>
 
+  <p>Some tags are dedicated to formatting code.</p>
+
   <ul>
-    <li><code class="lang_html">&ltcode&gt</code>: For marking up generic pieces of computer code.
-    <li><code class="lang_html">&ltpre&gt</code>: For retaining whitespace (generally code blocks) — if you use indentation or excess whitespace inside your text, browsers will ignore it and you will not see it on your rendered page. If you wrap the text in <code>&ltpre&gt&lt/pre&gt</code> tags however, your whitespace will be rendered identically to how you see it in your text editor.
-    <li><code class="lang_html">&ltvar&gt</code>: For specifically marking up variable names.
-    <li><code class="lang_html">&ltkbd&gt</code>: For marking up keyboard (and other types of) input entered into the computer.
-    <li><code class="lang_html">&ltsamp&gt</code>: For marking up the output of a computer program.
+    <li><code class="lang_html">&ltcode&gt</code>: For marking up generic pieces of computer code.</li>
+    <li><code class="lang_html">&ltpre&gt</code> (<strong>pre</strong>formatted): For retaining whitespace (generally in code blocks) that the browser would generally ignore.</li>
+    <li><code class="lang_html">&ltvar&gt</code> (<strong>var</strong>iable): For specifically marking up variable names.</li>
+    <li><code class="lang_html">&ltkbd&gt</code> (<strong>k</strong>ey<strong>b</strong>oar<strong>d</strong>): For marking up keyboard and other types of input entered into the computer.</li>
+    <li><code class="lang_html">&ltsamp&gt</code> (<strong>samp</strong>le): For marking up the output of a computer program.</li>
   </ul>
 
   <!--
@@ -231,7 +227,7 @@
 
   <a href="#h3_elements_links"><h3 id="h3_elements_links">Links</h3></a>
 
-  <p>Text enclosed into <code>&lta&gt&lt/a&gt</code> tags becomes a hyperlink. <br />It can be a link to a different page:</p>
+  <p>Text enclosed into <code class="lang_html">&lta&gt&lt/a&gt</code> tags becomes a hyperlink. <br />It can be a link to a different page:</p>
 
   <div class="example">
   <pre><code class="lang_html">&lta href="https://www.google.com" title="Google"&gtAny questions?&lt/a&gt</code></pre>
@@ -241,9 +237,9 @@
   <p>or a link to a section of a page:</p>
 
   <div class="example">
-  <pre><code class="lang_html">&lta href="#example-section-1"&gtAny questions?&lt/a&gt
+  <pre><code class="lang_html">&lta href="#example-section-1"&gtJump to next section.&lt/a&gt
 &lth4 id="example-section-1"&gtExample section&lt/h4&gt</code></pre>
-  <p><a href="#example-section-1">Any questions?</a></p>
+  <p><a href="#example-section-1">Jump to next section.</a></p>
   <h4 id="example-section-1">Example section</h4>
   </div>
 
@@ -259,7 +255,7 @@
 
   <a href="#h3_elements_images"><h3 id="h3_elements_images">Images</h3></a>
 
-  <p>To embed an image into a webpage, use the void <code>img</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the image.</p>
+  <p>To embed an image into a webpage, use the void <code class="lang_html">&ltimg&gt</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the image.</p>
   <div class="example">
   <pre><code class="lang_html">&ltimg src="face.png" alt="A yellow smile on a gray background." width="500" height="500" title="Smile!" /&gt</code></pre>
   <img src="face.png" alt="A yellow smile on a gray background." width="500" height="500" title="Smile!" />
@@ -315,7 +311,7 @@
 
   <a href="#h3_elements_videos_and_audio_clips"><h3 id="h3_elements_videos_and_audio_clips">Videos and audio clips</h3></a>
 
-  <p>To embed a video into a webpage, use the <code>video</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the video, and the <code>controls</code> boolean attribute to display start, pause, volume and similar controls.</p>
+  <p>To embed a video into a webpage, use the <code class="lang_html">&ltvideo&gt</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the video, and the <code>controls</code> boolean attribute to display start, pause, volume and similar controls.</p>
 
   <div class="example">
   <pre><code class="lang_html">&ltvideo src="pong.mp4" controls&gt
@@ -652,6 +648,12 @@
   </ul>
   </form>
 
+  <!--
+  ################
+  ##### MATH #####
+  ################
+  -->
+
   <h3>Math formulas</h3>
 
   <p>Display a mathematical formula with the <code class="lang_html">&ltmath&gt</code> element.</p>
@@ -688,7 +690,7 @@ is rational.&lt/p&gt</code></pre>
     &lt/mfrac&gt
   &lt/math&gt
 is rational.&lt/p&gt</code></pre>
-  <p style="width: 20em">The number
+  <p class="mathy">The number
     <math display="block">
       <mfrac>
         <mn>1</mn>
@@ -700,9 +702,9 @@ is rational.&lt/p&gt</code></pre>
 
   <hr />
 
-  <p>The <code>&ltmrow&gt</code> elements groups other elements in a row.</p>
+  <p>The <code class="lang_html">&ltmrow&gt</code> elements groups other elements in a row.</p>
   <div class="example">
-  <p style="width: 20em">
+  <p class="mathy">
     <math display="block">
       <mfrac>
         <mrow>
@@ -721,7 +723,7 @@ is rational.&lt/p&gt</code></pre>
   <div class="example">
     <pre><code></code></pre>
 
-    <p style="width: 20em">
+    <p class="mathy">
     <math display="block">
       <mfrac>
         <mn>1</mn><mn>2</mn>
@@ -735,7 +737,7 @@ is rational.&lt/p&gt</code></pre>
 
     <pre><code></code></pre>
 
-    <p style="width: 20em">
+    <p class="mathy">
     <math display="block">
       <mfrac>
         <mrow>
@@ -750,7 +752,7 @@ is rational.&lt/p&gt</code></pre>
 
     <pre><code></code></pre>
 
-    <p style="width: 20em">
+    <p class="mathy">
     <math display="block">
       <mfrac>
         <mrow>
@@ -768,7 +770,7 @@ is rational.&lt/p&gt</code></pre>
 
   <hr />
 
-  <p>Most of the math characters are not part of Basic Latin Unicode block; it is recommended to specify your document's character encoding and to serve it with appropriate web fonts. Here is a basic template to use UTF-8 encoding and the Latin Modern Math font:</p>
+  <p>Most of the math characters are not part of Basic Latin Unicode block; it is recommended to specify your document's character encoding and to serve it with appropriate web fonts.</p>
 
   <div class="example">
   <pre><code class="lang_html">&lt!doctype html&gt
@@ -780,9 +782,6 @@ is rational.&lt/p&gt</code></pre>
       rel="stylesheet"
       href="https://fred-wang.github.io/MathFonts/LatinModern/mathfonts.css" /&gt
   &lt/head&gt
-  &ltbody&gt
-    &ltp style="font-family: Latin Modern Math"&gt<p style="display: inline; font-family: Latin Modern Math">∀A∊픰픩(n,픽),TrA=0</p>&lt/p&gt
-  &lt/body&gt
 &lt/html&gt</code></pre>
   </div>
 
@@ -807,7 +806,7 @@ is rational.&lt/p&gt</code></pre>
   &ltmtext&gt&amp;nbsp&lt/mtext&gt
   &ltmi mathvariant="normal"&gtx&lt/mi&gt   &lt!-- Single-character identifier, explicitly not italicized --&gt
 &lt/math&gt</code></pre>
-  <p style="width: 20em">
+  <p class="mathy">
   <math display="block">
     <mi>sin</mi>
     <mtext>&nbsp</mtext>
@@ -817,6 +816,160 @@ is rational.&lt/p&gt</code></pre>
   </math>
   </p>
   </div>
+
+  <hr />
+
+  <p>The browser will look up any operator enclosed in <code class="lang_html">&ltmo&gt</code> in a <em>operator dictionary</em> so that the necessary <em>spacing</em> or <em>stretching</em> between surrounding elements is respected.</p>
+
+  <div class="example">
+  <p class="mathy">
+  <math display="block">
+    <mrow>
+    <mo>|</mo> <mi>x</mi> <mo>|</mo>
+    </mrow>
+
+    <mtext>&nbsp,&nbsp</mtext>
+
+    <mrow>
+    <mo>|</mo>
+      <mfrac>
+        <mi>1</mi>
+        <mi>x</mi>
+      </mfrac>
+    <mo>|</mo>
+    </mrow>
+  </math>
+  </p>
+  </div>
+
+  <h4>Structural math elements</h4>
+
+  <p>Use <code>&ltmfrac&gt</code> to display a fraction.</p>
+  <div class="example">
+  <pre><code class="lang_html">&ltmfrac&gt
+  &ltmi&gta&lt/mi&gt
+  &ltmi&gtb&lt/mi&gt
+&lt/mfrac&gt</code></pre>
+  <p class="mathy">
+  <math display="block">
+    <mfrac>
+      <mi>a</mi>
+      <mi>b</mi>
+    </mfrac>
+  </math>
+  </p>
+  </div>
+
+  <p>Set the <code>linethickness</code> attribute to <code>0</code> to display a fraction without a horizontal bar.</p>
+  <div class="example">
+  <pre><code class="lang_html">&ltmo&gt(&lt/mo&gt
+  &ltmfrac linethickness="0"&gt
+    &ltmi&gta&lt/mi&gt
+    &ltmi&gtb&lt/mi&gt
+  &lt/mfrac&gt
+&ltmo&gt)&lt/mo&gt</code></pre>
+  <p class="mathy">
+  <math display="block">
+    <mo>(</mo>
+    <mfrac linethickness="0">
+      <mi>a</mi>
+      <mi>b</mi>
+    </mfrac>
+    <mo>)</mo>
+  </math>
+  </p>
+  </div>
+
+  <hr />
+
+  <p>Use <code class="lang_html">&ltmsqrt&gt</code> to display a square root.</p>
+  <div class="example">
+  <pre><code class="lang_html">&ltmsqrt&gt
+  &ltmn&gt5&lt/mn&gt
+&lt/msqrt&gt</code></pre>
+  <p class="mathy">
+  <math display="block">
+    <msqrt>
+      <mn>5</mn>
+    </msqrt>
+  </math>
+  </p>
+  </div>
+
+  <hr />
+
+  <p>Use <code class="lang_html">&ltmroot&gt</code> to display an nth root. <strong>The first element is covered by the radical symbol while the second element is used as the degree of the root</strong>.</p>
+  <div class="example">
+  <pre><code class="lang_html">&ltmroot&gt
+  &ltmn&gt2&lt/mn&gt
+  &ltmi&gtn&lt/mi&gt
+&lt/mroot&gt</code></pre>
+  <p class="mathy">
+  <math display="block">
+    <mroot>
+      <mn>2</mn>
+      <mi>n</mi>
+    </mroot>
+  </math>
+  </p>
+  </div>
+
+  <hr />
+
+  <p>Use <code class="lang_html">&ltmsub&gt</code>, <code class="lang_html">&ltmsup&gt</code> and <code class="lang_html">&ltmsubsup&gt</code> to display <em>subscripts</em> and/or <em>superscripts</em>.</p>
+  <div class="example">
+  <p class="mathy">
+  <math display="block">
+    <msub>
+      <mi>x</mi> <mn>0</mn>
+    </msub>
+
+    <mtext>&nbsp,&nbsp</mtext>
+
+    <msup>
+      <mi>e</mi> <mrow> <mi>i</mi><mi>π</mi> </mrow>
+    </msup>
+
+    <mtext>&nbsp,&nbsp</mtext>
+
+    <msubsup>
+      <mi>A</mi>
+        <mi>B</mi>
+        <mrow> <mo>-</mo> <mn>1</mn> </mrow>
+    </msubsup>
+  </math>
+  </p>
+  </div>
+
+  <p>Use <code class="lang_html">&ltmunder&gt</code>, <code class="lang_html">&ltmover&gt</code> and <code class="lang_html">&ltmunderover&gt</code> to display <em>underscripts</em> and/or <em>overscripts</em>.</p>
+  <div class="example">
+  <p class="mathy">
+  <math display="block">
+    <munder>
+      <mtext>lim</mtext>
+      <mrow>
+        <mi>x</mi> <mo>→</mo> <mn>0</mn>
+      </mrow>
+    </munder>
+
+    <mtext>&nbsp,&nbsp</mtext>
+
+    <mover>
+      <mi>v</mi> <mo>→</mo>
+    </mover>
+
+    <mtext>&nbsp,&nbsp</mtext>
+
+    <munderover>
+      <mo>∑</mo>
+        <mrow> <mi>i</mi> <mo>=</mo> <mn>1</mn> </mrow>
+        <mn>n</mn>
+    </munderover>
+  </math>
+  </p>
+  </div>
+
+
 
   <!--
   ###############
