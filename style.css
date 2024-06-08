@@ -20,6 +20,10 @@ code {
 	background: #EEEEEE;
 }
 
+pre > code {
+	display: block;
+}
+
 /* --- TABLES --- */
 
 tbody td {
@@ -109,6 +113,9 @@ button {
 
 p.mathy {
 	width: 20em;
+}
+
+p.mathy > math {
 	/* font-family: "Latin Modern Math"; */
 	font-family: Cambria;
 	font-size: 1.1em;
