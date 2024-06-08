@@ -267,9 +267,13 @@
     <li><code class="lang_html">&ltbr /&gt</code> (<strong>br</strong>eak): a newline, or line break.</li>
     <li><code class="lang_html">&ltul&gt</code> (<strong>u</strong>nordered <strong>l</strong>ist): an unordered list of items &ndash; typically rendered as a bulleted list.</li>
     <li><code class="lang_html">&ltol&gt</code> (<strong>o</strong>rdered <strong>l</strong>ist): an ordered list of items &ndash; typically rendered as a numbered list.</li>
+    <li><code class="lang_html">&ltul&gt</code> (<strong>u</strong>nordered <strong>l</strong>ist): an unordered list of items – typically rendered as a bulleted list.</li>
+    <li><code class="lang_html">&ltol&gt</code> (<strong>o</strong>rdered <strong>l</strong>ist): an ordered list of items – typically rendered as a numbered list.</li>
     <li><code class="lang_html">&ltli&gt</code> (<strong>l</strong>ist <strong>i</strong>tem): a list item.</li>
     <li><code class="lang_html">&ltem&gt</code> (<strong>em</strong>phasized): content that has stress emphasis &ndash; typically rendered as <em>italic</em> text.</li>
     <li><code class="lang_html">&ltstrong&gt</code> (<strong>strong</strong>): content that has strong importance, seriousness, or urgency &ndash; typically rendered as <strong>bold</strong> text.</li>
+    <li><code class="lang_html">&ltem&gt</code> (<strong>em</strong>phasized): content that has stress emphasis – typically rendered as <em>italic</em> text.</li>
+    <li><code class="lang_html">&ltstrong&gt</code> (<strong>strong</strong>): content that has strong importance, seriousness, or urgency – typically rendered as <strong>bold</strong> text.</li>
     <li><code class="lang_html">&ltdl&gt</code> (<strong>d</strong>escription <strong>l</strong>ist): a list of groups of terms and related descriptions.</li>
     <li><code class="lang_html">&ltdt&gt</code> (<strong>d</strong>escription <strong>t</strong>erm): a term in a description list.</li>
     <li><code class="lang_html">&ltdd&gt</code> (<strong>d</strong>escription <strong>d</strong>etails): the value for the preceding term in a description list.</li>
@@ -329,8 +333,8 @@
 
   <ul>
     <li><code class="lang_html">&ltcode&gt</code>: For marking up generic pieces of computer code.</li>
-    <li><code class="lang_html">&ltpre&gt</code> (<strong>pre</strong>formatted): For retaining whitespace (generally in code blocks) that the browser would generally ignore.</li>
-    <li><code class="lang_html">&ltvar&gt</code> (<strong>var</strong>iable): For specifically marking up variable names.</li>
+    <li><code class="lang_html">&ltpre&gt</code> (<strong>pre</strong>formatted): For retaining extra whitespace that the browser would generally ignore.</li>
+    <li><code class="lang_html">&ltvar&gt</code> (<strong>var</strong>iable): For marking up variable names.</li>
     <li><code class="lang_html">&ltkbd&gt</code> (<strong>k</strong>ey<strong>b</strong>oar<strong>d</strong>): For marking up keyboard and other types of input entered into the computer.</li>
     <li><code class="lang_html">&ltsamp&gt</code> (<strong>samp</strong>le): For marking up the output of a computer program.</li>
   </ul>
@@ -343,7 +347,7 @@
 
   <a href="#h3_elements_links"><h3 id="h3_elements_links">Links</h3></a>
 
-  <p>Text enclosed into <code class="lang_html">&lta&gt&lt/a&gt</code> tags becomes a hyperlink. <br />It can be a link to a different page:</p>
+  <p>Content (text, images, etc.) enclosed into <code class="lang_html">&lta&gt</code> tags becomes a hyperlink. <br />It can be a link to a different page:</p>
 
   <div class="example">
   <pre><code class="lang_html">&lta href="https://www.google.com" title="Google"&gtAny questions?&lt/a&gt</code></pre>
@@ -356,12 +360,8 @@
   <pre><code class="lang_html">&lta href="#example-section-1"&gtJump to next section.&lt/a&gt
 &lth4 id="example-section-1"&gtExample section&lt/h4&gt</code></pre>
   <p><a href="#example-section-1">Jump to next section.</a></p>
-  <h4 id="example-section-1">Example section</h4>
+  <h4 id="example-section-1">The next section</h4>
   </div>
-
-  <hr />
-
-  <p>Links can enclose other elements, like images.</p>
 
   <!--
   ##################
@@ -391,33 +391,33 @@
   <p>There are many reasons for adding alt text:</p>
 
   <ul>
-    <li>The user is using a screen reader to read the web out to them.
-    <li>The spelling of the file or path name might be wrong.
-    <li>The browser doesn't support the image type.
-    <li>Search engines can match alt text with search queries.
-    <li>Users have turned off images to reduce data transfer volume and distractions.
+    <li>The user is using a screen reader to read the web out to them.</li>
+    <li>The spelling of the file or path name might be wrong.</li>
+    <li>The browser doesn't support the image type.</li>
+    <li>Search engines can match alt text with search queries.</li>
+    <li>Users have turned off images to reduce data transfer volume and distractions.</li>
   </ul>
 
-  <p>The content of the alt text depends on why the image is there in the first place.</p>
+  <p>The content of the alt text depends the purpose of the image.</p>
 
   <ul>
-    <li><strong>Decoration</strong>: You should use CSS background images for decorative images, but if you must use HTML, add a blank alt="". If the image isn't part of the content, a screen reader shouldn't waste time reading it.
-    <li><strong>Content</strong>: If your image provides significant information, provide the same information in a brief alt text – or even better, in the main text which everybody can see. Don't write redundant alt text. How annoying would it be for a sighted user if all paragraphs were written twice in the main content? If the image is described adequately by the main text body, you can just use alt="".
-    <li><strong>Link</strong>: If you put an image inside <code>&lta&gt</code> tags, to turn an image into a link, you still must provide accessible link text. In such cases you may, either, write it inside the same <code>&lta&gt</code> element, or inside the image's alt attribute – whichever works best in your case.
-    <li><strong>Text</strong>: You should not put your text into images. However, If you really can't avoid doing this, you should supply the text inside the alt attribute.
+    <li><strong>Decoration</strong>: you should use CSS <code>background-image</code>s for decorative images, but if you must use HTML, add a blank <code>alt=""</code> so that screen readers don't waste time reading it.</li>
+    <li><strong>Content</strong>: if your image provides significant information, provide the same information in a brief alt text – or leave it blank if the image is described adequately by the main text body. Don't write redundant alt text.</li>
+    <li><strong>Link</strong>: if you put an image inside <code class="lang_html">&lta&gt</code> tags you still must provide accessible link text. In such cases you may, either, write it inside the same <code class="lang_html">&lta&gt</code> element, or inside the image's alt attribute – whichever works best in your case.</li>
+    <li><strong>Text</strong>: you should not put your text into images. However, If you really can't avoid doing it, supply the text inside the <code>alt</code> attribute too.</li>
   </ul>
 
   <p>For more information, see <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#text_alternatives">Text Alternatives</a> on MDN.</p>
 
   <hr />
 
-  <p>The <code>width</code> and <code>height</code> attributes represent the image's width and height in pixels. It is good practice to specify the actual size of your images (the amount of screen space that the browser should reserve for showing the image), not the size you want them to appear on the website. If you do need to alter an image's size, you should use CSS instead.</p>
+  <p>The <code>width</code> and <code>height</code> attributes represent the image's width and height in pixels. You should specify the actual size of your source images, not the size you want them to appear on the website. If you do need to alter an image's size, either change the actual size of the source image or use CSS.</p>
 
-  <p>The HTML for your page and the image are separate resources, fetched by the browser as separate HTTP(S) requests. As soon as the browser has received the HTML, it will start to display it to the user. If the images haven't yet been received (and this will often be the case, as image file sizes are often much larger than HTML files), then the browser will render only the HTML, and will update the page with the image as soon as it is received (causing the rest of the content to move).</p>
+  <p>The HTML for your page and the image are separate resources, fetched by the browser as separate HTTP(S) requests. As soon as the browser has received the HTML, it will start to display it to the user. If the images haven't yet been received (and this will often be the case, as image file sizes are often much larger than HTML files), then the browser will render only the HTML, and will update the page with the image as soon as it is received (causing the rest of the content to move). By specifying the width and height of the image in advance, the browser will reserve an appropriate amount of space for them and won't cause the rest of the content to be pushed away.</p>
 
   <hr />
 
-  <p>The <code>title</code> attribute gives us a tooltip on mouse hover. This is not recommended — it has a number of accessibility problems, mainly based around the fact that screen reader support is very unpredictable and most browsers won't show it unless you are hovering with a mouse (so e.g. no access to keyboard users). It is better to include such supporting information in the main article text, rather than attached to the image.</p>
+  <p>The <code>title</code> attribute gives us a tooltip on mouse hover. It has a number of accessibility problems, and it is better to include supporting information in the main article text, rather than attached to the image in this way.</p>
 
   <!--
   ##################################
