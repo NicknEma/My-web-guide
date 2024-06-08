@@ -109,7 +109,8 @@ button {
 
 p.mathy {
 	width: 20em;
-	font-family: "Latin Modern Math";
+	/* font-family: "Latin Modern Math"; */
+	font-family: Cambria;
 	font-size: 1.1em;
 }
 

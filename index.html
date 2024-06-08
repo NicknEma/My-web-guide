@@ -10,6 +10,9 @@
   <link
     rel="stylesheet"
     href="https://fred-wang.github.io/MathFonts/LatinModern/mathfonts.css" />
+
+  <!-- Script to warn the user the browser doesn't support MathML -->
+  <script src="https://fred-wang.github.io/mathml-warning.js/mpadded-min.js"></script>
 </head>
 
 <body>
@@ -785,6 +788,12 @@ is rational.&lt/p&gt</code></pre>
 &lt/html&gt</code></pre>
   </div>
 
+  <!--
+  ##################################
+  ##### SEMANTIC MATH ELEMENTS #####
+  ##################################
+  -->
+
   <h4>Semantic math elements</h4>
 
   <p>Every text in MathML formulas must be included inside these container elements, called token elements.</p>
@@ -825,12 +834,6 @@ is rational.&lt/p&gt</code></pre>
   <p class="mathy">
   <math display="block">
     <mrow>
-    <mo>|</mo> <mi>x</mi> <mo>|</mo>
-    </mrow>
-
-    <mtext>&nbsp,&nbsp</mtext>
-
-    <mrow>
     <mo>|</mo>
       <mfrac>
         <mi>1</mi>
@@ -838,9 +841,24 @@ is rational.&lt/p&gt</code></pre>
       </mfrac>
     <mo>|</mo>
     </mrow>
+
+    <mtext>&nbsp,&nbsp</mtext>
+
+    <mover>
+    <mrow>
+      <mi>u</mi> <mo>+</mo> <mi>w</mi>
+    </mrow>
+    <mo>→</mo>
+    </mover>
   </math>
   </p>
   </div>
+
+  <!--
+  ####################################
+  ##### STRUCTURAL MATH ELEMENTS #####
+  ####################################
+  -->
 
   <h4>Structural math elements</h4>
 
@@ -879,6 +897,8 @@ is rational.&lt/p&gt</code></pre>
   </math>
   </p>
   </div>
+
+  <p>You should not set <code>linethickness</code> to anything except <code>0</code>. To make the line thinner or thicker, use CSS.</p>
 
   <hr />
 
@@ -969,7 +989,27 @@ is rational.&lt/p&gt</code></pre>
   </p>
   </div>
 
+  <hr />
 
+  <p>To create tables in MathML, use the <code>mtable</code>, <code>mtr</code> and <code>mtd</code> elements.</p>
+  <div class="example">
+  <p class="mathy">
+  <math display="block">
+    <mo>[</mo>
+    <mtable>
+      <mtr>
+        <mtd> <mn>1</mn> </mtd>
+        <mtd> <mn>0</mn> </mtd>
+      </mtr>
+      <mtr>
+        <mtd> <mi>u</mi> </mtd>
+        <mtd> <mn>1</mn> </mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo>
+  </math>
+  </p>
+  </div>
 
   <!--
   ###############
