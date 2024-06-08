@@ -1,0 +1,227 @@
+/* --- EXAMPLES --- */
+
+.example {
+	border: 1px solid black;
+	border-radius: 0.3em;
+	
+	padding-left: 0.6em;
+	padding-right: 0.6em;
+	padding-top: 0.3em;
+	padding-bottom: 0.3em;
+	
+	background-color: #fcfcfc;
+	margin-top: 0.1em;
+	margin-bottom: 0.1em;
+}
+
+/* --- CODE --- */
+
+code {
+	background: #EEEEEE;
+	font-family: monospace;
+}
+
+/* --- TABLES --- */
+
+tbody td {
+	padding: 0.3em;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #e6e6e6;
+}
+tbody tr:nth-child(odd) {
+	background-color: #ffffff;
+}
+
+/* Exclude example tables from the recoloring */
+.example table tr {
+	background-color: #ffffff00;
+}
+
+/* --- FORMS --- */
+
+form {
+	display: inline-block;
+	
+	/* Form outline */
+	padding: 1em;
+	border: 1px solid #ccc;
+	border-radius: 1em;
+}
+
+form ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+form li + li {
+	margin-top: 1em;
+}
+
+label {
+	/* Uniform size & alignment */
+	display: inline-block;
+	min-width: 120px;
+	text-align: right;
+}
+
+input,
+textarea {
+	/* To make sure that all text fields have the same font settings
+	   By default, textareas have a monospace font */
+	font: 1em sans-serif;
+	
+	/* Uniform text field size */
+	width: 300px;
+	box-sizing: border-box;
+	
+	/* Match form field borders */
+	border: 1px solid #999;
+}
+
+input:focus,
+textarea:focus {
+	/* Additional highlight for focused elements */
+	border-color: #000;
+}
+
+textarea {
+	/* Align multiline text fields with their labels */
+	vertical-align: top;
+	
+	/* Provide space to type some text */
+	height: 5em;
+}
+
+.button {
+	/* Align buttons with the text fields */
+	padding-left: 124px; /* same size as the label elements */
+}
+
+button {
+	/* This extra margin represent roughly the same space as the space
+	   between the labels and their text fields */
+	margin-left: 0.5em;
+}
+
+/* --- HOVER --- */
+
+a:hover.hover_example {
+	color: pink;
+	background-color: black;
+}
+
+a:visited {
+	color: blue;
+}
+
+/* ----- OVERFLOW ----- */
+
+div.css_overflow .box {
+	border: 1px solid black;
+	width: 350px;
+	height: 100px;
+	font-size: 130%;
+	margin: 10px;
+}
+
+div.css_overflow .visible {
+	overflow: visible;
+	margin-bottom: 60px;
+}
+
+div.css_overflow .hidden {
+	overflow: hidden;
+}
+
+div.css_overflow .scroll {
+	overflow: scroll;
+}
+
+div.css_overflow .auto {
+	overflow: auto;
+}
+
+div.css_overflow .scroll-y {
+	overflow-y: scroll;
+}
+
+/* ----- BACKGROUND COLOR ----- */
+
+div.background-color * {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+div.background-color .box {
+	background-color: #567895;
+}
+
+div.background-color h2 {
+	background-color: black;
+	color: white;
+}
+
+div.background-color span {
+	background-color: rgb(255 255 255 / 50%);
+}
+
+/* ----- BACKGROUND IMAGE ----- */
+
+div.background-image div {
+	margin: 10px;
+	width: 300px;
+	height: 200px;
+}
+
+div.background-image .big {
+	background-image: url(big-star.png);
+}
+
+div.background-image .small {
+	background-image: url(small-star.png);
+}
+
+/* ----- IMAGE GALLERY ----- */
+
+/*  body {
+  width: 640px;
+  margin: 0 auto;
+} */
+
+span.image-gallery .full-img {
+	position: relative;
+	display: block;
+	width: 256px;
+	height: 256px;
+	border: 1px solid black;
+}
+
+span.image-gallery .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 256px;
+	height: 256px;
+	background-color: rgba(0,0,0,0);
+}
+
+span.image-gallery button {
+	position: absolute;
+	top: 2px;
+	left: 2px;
+}
+
+span.image-gallery .thumb-bar img {
+	display: block;
+	width: 7%;
+	float: left;
+	cursor: pointer;
+}
+
+/* ----- BOUNCING BALLS DEMO ----- */
+
+span.bouncing-balls {
+}
