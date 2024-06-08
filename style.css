@@ -116,8 +116,7 @@ p.mathy {
 }
 
 p.mathy > math {
-	/* font-family: "Latin Modern Math"; */
-	font-family: Cambria;
+	font-family: "Latin Modern Math";
 	font-size: 1.1em;
 }
 
