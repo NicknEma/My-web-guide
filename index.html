@@ -12,12 +12,12 @@
   <meta name="color-scheme" content="only light" />
 
   <link
-    rel="stylesheet"
-    href="style.css" />
+   rel="stylesheet"
+   href="style.css" />
 
   <link
-    rel="stylesheet"
-    href="https://fred-wang.github.io/MathFonts/LatinModern/mathfonts.css" />
+   rel="stylesheet"
+   href="https://fred-wang.github.io/MathFonts/LatinModern/mathfonts.css" />
   <!-- @Speed: Downloading and using this font is what makes the page flicker on reload. If we
        render math with Cambria, the reload is instantaneous (but Cambria doesn't stretch operators
        correctly) -->
@@ -33,17 +33,17 @@
 
   <nav>
   <ul>
-    <li><a href="#h1_html" title="HTML">Structure: HTML</a>
+    <li><a href="#html" title="HTML">Structure: HTML</a>
       <ul>
-        <li><a href="#h2_html_debugging">HTML debugging</a></li>
+        <li><a href="#html_debugging">HTML debugging</a></li>
       </ul>
     </li>
-    <li><a href="#h1_css"  title="CSS">Style: CSS</a>
+    <li><a href="#css"  title="CSS">Style: CSS</a>
       <ul>
-        <li><a href="#h2_css_debugging">CSS debugging</a></li>
+        <li><a href="#css_debugging">CSS debugging</a></li>
       </ul>
     </li>
-    <li><a href="#h1_js"   title="JS">Behaviour: JS</a></li>
+    <li><a href="#js"   title="JS">Behaviour: JS</a></li>
   </ul>
   </nav>
 
@@ -52,9 +52,9 @@
 
   <section>
 
-  <a href="#h1_html"><h1 id="h1_html">Structure: HTML</h1></a>
+  <h2 id="html"><a href="#html">Structure: HTML</a></h2>
 
-  <a href="#h2_tags"><h2 id="h2_tags">Tags</h2></a>
+  <h3 id="tags"><a href="#tags">Tags</a></h3>
 
   <p>HTML elements are enclosed within <em>tags</em>.</p>
   <div class="example">
@@ -78,7 +78,7 @@
   <p>My cat <br />is very grumpy.</p>
   </div>
 
-  <a href="#h2_attributes"><h2 id="h2_attributes">Attributes</h2></a>
+  <h3 id="attributes"><a href="#attributes">Attributes</a></h3>
 
   <p>Elements can also have <em>attributes</em>.</p>
   <div class="example">
@@ -98,14 +98,14 @@
   <p><input id="disabled_3" type="text"/></p>
   </div>
 
-  <a href="#h2_comments"><h2 id="h2_comments">Comments</h2></a>
+  <h3 id="comments"><a href="#comments">Comments</a></h3>
 
   <p>Content enclosed within <code>&lt;!--</code> and <code>--&gt;</code> is ignored by the browser.
   <div class="example">
   <pre><code class="lang_html">&lt;!-- I am a comment! Yayaya --&gt;</code></pre>
   </div>
 
-  <a href="#h2_reserved_characters"><h2 id="h2_reserved_characters">Reserved characters</h2></a>
+  <h3 id="reserved_characters"><a href="#reserved_characters">Reserved characters</a></h3>
 
   <p>Some characters are <em>reserved</em> in HTML; to display these characters as text, replace them with their corresponding character <em>entities</em>.</p>
   <table border="1">
@@ -195,7 +195,7 @@
   </tbody>
   </table>
 
-  <a href="#h2_elements"><h2 id="h2_elements">Elements</h2></a>
+  <h3 id="elements"><a href="#elements">Elements</a></h3>
 
   <!--
   #################
@@ -203,7 +203,7 @@
   #################
   -->
 
-  <a href="#h3_elements_basic"><h3 id="h3_elements_basic">Basic</h3></a>
+  <h4 id="elements_basic"><a href="#elements_basic">Basic</a></h4>
 
   <p>The most important HTML elements are:</p>
 
@@ -220,10 +220,9 @@
   ################
   -->
 
-  <a href="#h3_elements_head"><h3 id="h3_elements_head">Head</h3></a>
+  <h4 id="elements_head"><a href="#elements_head">Head</a></h4>
 
   <p>Common elements nested in the <code class="lang_html">&lt;head&gt;</code> are:</p>
-
   <ul>
     <li><code class="lang_html">&lt;title&gt;</code>: the title that appears in the page's browser tab and that is used to describe the page when it is bookmarked.</li>
     <li><code class="lang_html">&lt;style&gt;</code>: an internal stylesheet for the page.</li>
@@ -239,7 +238,7 @@
   #############################
   -->
 
-  <a href="#h3_elements_website_structure"><h3 id="h3_elements_website_structure">Website Structure</h3></a>
+  <h4 id="elements_website_structure"><a href="#elements_website_structure">Website Structure</a></h4>
 
   <p>HTML provides dedicated tags that you can use to represent different page <em>sections</em>, for example:</p>
 
@@ -265,10 +264,9 @@
   ###########################
   -->
 
-  <a href="#h3_elements_text_formatting"><h3 id="h3_elements_text_formatting">Text formatting</h3></a>
+  <h4 id="elements_text_formatting"><a href="#elements_text_formatting">Text formatting</a></h4>
 
   <p>Text-related elements are:</p>
-
   <ul>
     <li><code class="lang_html">&lt;p&gt;</code> (<strong>p</strong>aragraph): a paragraph of text.</li>
     <li><code class="lang_html">&lt;h1&gt;, &lt;h2&gt; ... &lt;h6&gt;</code> (<strong>h</strong>eading): headings 1 through 6.</li>
@@ -292,7 +290,6 @@
   <hr />
 
   <p>You can use <code class="lang_html">&lt;blockquote&gt;</code> and <code class="lang_html">&lt;q&gt;</code> for quotes:</p>
-
   <div class="example">
   <pre><code class="lang_html">&lt;p&gt;The following is a block quote:&lt;/p&gt;
 &lt;blockquote cite="index.html"&gt;
@@ -331,10 +328,9 @@
   ################
   -->
 
-  <a href="#h3_elements_code"><h3 id="h3_elements_code">Code</h3></a>
+  <h4 id="elements_code"><a href="#elements_code">Code</a></h4>
 
   <p>Some tags are dedicated to formatting code.</p>
-
   <ul>
     <li><code class="lang_html">&lt;code&gt;</code> (<strong>code</strong>): For marking up generic pieces of computer code.</li>
     <li><code class="lang_html">&lt;pre&gt;</code> (<strong>pre</strong>formatted): For retaining extra whitespace that the browser would generally ignore.</li>
@@ -349,17 +345,15 @@
   #################
   -->
 
-  <a href="#h3_elements_links"><h3 id="h3_elements_links">Links</h3></a>
+  <h4 id="elements_links"><a href="#elements_links">Links</a></h4>
 
   <p>Content (text, images, etc.) enclosed into <code class="lang_html">&lt;a&gt;</code> tags becomes a hyperlink. <br />It can be a link to a different page:</p>
-
   <div class="example">
   <pre><code class="lang_html">&lt;a href="https://www.google.com" title="Google"&gt;Any questions?&lt;/a&gt;</code></pre>
   <p><a href="https://www.google.com" title="Google">Any questions?</a></p>
   </div>
 
   <p>or a link to a section of a page:</p>
-
   <div class="example">
   <pre><code class="lang_html">&lt;a href="#example-section-1"&gt;Jump to next section.&lt;/a&gt;
 &lt;h4 id="example-section-1"&gt;Example section&lt;/h4&gt;</code></pre>
@@ -373,7 +367,7 @@
   ##################
   -->
 
-  <a href="#h3_elements_images"><h3 id="h3_elements_images">Images</h3></a>
+  <h4 id="elements_images"><a href="#elements_images">Images</a></h4>
 
   <p>To embed an image into a webpage, use the void <code class="lang_html">&lt;img&gt;</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the image.</p>
   <div class="example">
@@ -393,7 +387,6 @@
   </div>
 
   <p>There are many reasons for adding alt text:</p>
-
   <ul>
     <li>The user is using a screen reader to read the web out to them.</li>
     <li>The spelling of the file or path name might be wrong.</li>
@@ -429,7 +422,7 @@
   ##################################
   -->
 
-  <a href="#h3_elements_videos_and_audio_clips"><h3 id="h3_elements_videos_and_audio_clips">Videos and audio clips</h3></a>
+  <h4 id="elements_videos_and_audio_clips"><a href="#elements_videos_and_audio_clips">Videos and audio clips</a></h4>
 
   <p>To embed a video into a webpage, use the <code class="lang_html">&lt;video&gt;</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the video, and the <code>controls</code> boolean attribute to display <em>start</em>, <em>pause</em>, <em>volume</em> and similar controls.</p>
 
@@ -479,7 +472,7 @@
   ########################
   -->
 
-  <h3 id="h3_elements_other_embeds"><a href="#h3_elements_other_embeds">Other embeds</a></h3>
+  <h4 id="elements_other_embeds"><a href="#elements_other_embeds">Other embeds</a></h4>
 
   <p>Use the <code class="lang_html">&lt;iframe&gt;</code> element to embed other web pages into the current one.</p>
 
@@ -510,7 +503,7 @@
   ####################
   -->
 
-  <a href="#h3_elements_captions"><h3 id="h3_elements_captions">Captions</h3></a>
+  <h4 id="elements_captions"><a href="#elements_captions">Captions</a></h4>
 
   <p>Add captions to any independent unit of content (an image, a gallery of images, a code snippet, audio, video, equations, a table, etc.) by using the <code class="lang_html">&lt;figure&gt;</code> and <code class="lang_html">&lt;figcaption&gt;</code> elements.</p>
   <div class="example">
@@ -528,7 +521,7 @@
   ##################
   -->
 
-  <a href="#h3_elements_tables"><h3 id="h3_elements_tables">Tables</h3></a>
+  <h4 id="elements_tables"><a href="#elements_tables">Tables</a></h4>
 
   <p>Use a <code class="lang_html">&lt;table&gt;</code> element to describe a table. <strong>Do not use HTML tables as a layout tool</strong>, but only to display tabular data.</p>
 
@@ -654,7 +647,7 @@
   #################
   -->
 
-  <a href="#h3_elements_forms"><h3 id="h3_elements_forms">Forms</h3></a>
+  <h4 id="elements_forms"><a href="#elements_forms">Forms</a></h4>
 
   <p>The <code>&lt;form&gt;</code> element is a container element that defines a form and its configuration.</p>
 
@@ -782,7 +775,7 @@
   ################
   -->
 
-  <a href="#h3_math_formulas"><h3 id="h3_math_formulas">Math formulas</h3></a>
+  <h4 id="math_formulas"><a href="#math_formulas">Math formulas</a></h4>
 
   <p>Display a mathematical formula with the <code class="lang_html">&lt;math&gt;</code> element.</p>
   <div class="example">
@@ -921,7 +914,7 @@ is rational.&lt;/p&gt;</code></pre>
   ##################################
   -->
 
-  <h4>Semantic math elements</h4>
+  <h5>Semantic math elements</h5>
 
   <p>Every text in MathML formulas must be included inside these container elements, called <em>token</em> elements.</p>
   <ul>
@@ -985,7 +978,7 @@ is rational.&lt;/p&gt;</code></pre>
   ####################################
   -->
 
-  <h4>Structural math elements</h4>
+  <h5>Structural math elements</h5>
 
   <p>Use <code class="lang_html">&lt;mfrac&gt;</code> to display a fraction.</p>
   <div class="example">
@@ -1152,7 +1145,7 @@ is rational.&lt;/p&gt;</code></pre>
 
   <section>
 
-  <a href="#h1_css"><h1 id="h1_css">Style: CSS</h1></a>
+  <a href="#h2_css"><h2 id="h2_css">Style: CSS</h2></a>
 
   <h2>Styles, properties and values</h2>
 
@@ -2016,7 +2009,7 @@ span { background-color: rgb(255 255 255 / 50%); }</code></pre>
 
 <p>It is a good idea to provide a suitable generic font name at the end of the stack so that if none of the listed fonts are available, the browser can at least provide something approximately suitable.</p>
 
-  <a href="#h2_css_debugging"><h2 id="h2_css_debugging">CSS debugging</h2></a>
+  <a href="#h3_css_debugging"><h3 id="h3_css_debugging">CSS debugging</h3></a>
 
   </section>
 
@@ -2028,7 +2021,7 @@ span { background-color: rgb(255 255 255 / 50%); }</code></pre>
 
   <section>
 
-  <a href="#h1_js"><h1 id="h1_js">Behaviour: JS</h1></a>
+  <a href="#h2_js"><h2 id="h2_js">Behaviour: JS</h2></a>
 
   <p>To add custom behaviour to a web page, you can use a JavaScript script.</p>
 
@@ -2284,7 +2277,7 @@ function random(min, max) {
 
   </section>
 
-  <h1>Web performance</h1>
+  <h2>Web performance</h2>
 
   <ul>
     <li><strong>Reduce load time</strong>: Make your files as small as possible, reduce the number of HTTP requests made as much as possible, and employ clever loading techniques (such as preload)</li>
