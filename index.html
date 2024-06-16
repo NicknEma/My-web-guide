@@ -1205,12 +1205,51 @@ is rational.&lt;/p&gt;</code></pre>
   <p>Each shorthand property accepts its values in a specific order. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">See details for each shorthand</a>.</p>
 
   <!--
+  ##################################
+  ##### STYLES AND STYLESHEETS #####
+  ##################################
+  -->
+
+  <h3 id="styles_and_stylesheets"><a href="#styles_and_stylesheets">Styles and stylesheets</a></h3>
+
+  <p>To apply a style to <em>a single HTML element</em>, assign it to its <code>style</code> attribute.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;p style="color: blue;"&gt;This paragraph uses inline styles.&lt;/p&gt;</code></pre>
+  <p style="color: blue;">This paragraph uses inline styles.</p>
+  </div>
+
+  <p>To apply a style to <em>multiple HTML elements at once</em>, use a <em>stylesheet</em>. You can write a stylesheet inside a <code class="lang_html">&lt;style&gt;</code> element contained inside the <code class="lang_html">&lt;head&gt;</code>.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;head&gt;
+  &lt;style&gt;
+    body { color: purple; }
+    h2 { text-decoration: underline; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h2&gt;Internal stylesheets!&lt;/h2&gt;
+  &lt;p&gt;This page is styled with CSS written directly at the top of the document.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+  <div style="color: purple">
+  <h2 style="text-decoration: underline;">Internal stylesheets!</h2>
+  <p>This page is styled with CSS written directly at the top of the document.</p>
+  </div>
+  </div>
+
+  <p>You can also write a stylesheet in a separate file with the <code>.css</code> extension; to reference it, put a <code class="lang_html">&lt;link&gt;</code> attribute in the <code class="lang_html">&lt;head&gt;</code> of the HTML document.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;link rel="stylesheet" href="styles.css" /&gt;</code></pre>
+  </div>
+
+  <p><strong>Note</strong>: As I understand it, you should put the CSS in the <code class="lang_html">&lt;head&gt;</code> of the document so that the browser can parse it alongside the HTML and immediately generate the correct layout, rather than generating the wrong layout first and then changing it when styles are applied.</p>
+
+  <!--
   #################
   ##### BOXES #####
   #################
   -->
 
-  <h3>The box model</h3>
+  <h3 id="the_box_model"><a href="#the_box_model">The box model</a></h3>
 
   <p>Every HTML element is contained in a <em>box</em>.</p>
   <div class="example">
@@ -1317,9 +1356,11 @@ is rational.&lt;/p&gt;</code></pre>
 }</code></pre>
   <pre><code class="lang_html">&lt;div class="box"&gt;I use the standard box model.&lt;/div&gt;
 &lt;div class="box alternate"&gt;I use the alternate box model.&lt;/div&gt;</code></pre>
+  <pre><code class="lang_html">&lt;div style="width: 300px; height: 150px; padding: 40px; margin: 20px; border: 2px solid purple;"&gt;I use the standard box model.&lt;/div&gt;
+&lt;div style="width: 300px; height: 150px; padding: 40px; margin: 20px; border: 2px solid purple; box-sizing: border-box;"&gt;I use the alternate box model.&lt;/div&gt;</code></pre>
   <div class="box_model_box">I use the standard box model.</div>
   <div class="box_model_box alternate">I use the alternate box model.</div>
-  <p>These two boxes have the same <code>width</code> and <code>height</code> values, but the second one uses the alternate box model.</p>
+  <p>These two boxes have the same <code>width</code> and <code>height</code> values, but the second one is set to use the alternate box model with the <code>box-sizing</code> property.</p>
   </div>
 
   <p>To use the alternative box model for all of your elements (which is a common choice among developers), see <a href="https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/">this article on box sizing</a>.</p>
@@ -1329,59 +1370,6 @@ is rational.&lt;/p&gt;</code></pre>
   ##### TEXT DIRECTIONS #####
   ###########################
   -->
-
-  <!--
-  ##################################
-  ##### STYLES AND STYLESHEETS #####
-  ##################################
-  -->
-
-  <h3 id="styles_and_stylesheets"><a href="#styles_and_stylesheets">Styles and stylesheets</a></h3>
-
-  <p>To apply a style to <em>a single HTML element</em>, assign it to its <code>style</code> attribute.</p>
-  <div class="example">
-  <pre><code class="lang_html">&lt;p style="color: blue;"&gt;This paragraph uses inline styles.&lt;/p&gt;</code></pre>
-  <p style="color: blue;">This paragraph uses inline styles.</p>
-  </div>
-
-  <p>To apply a style to <em>multiple HTML elements at once</em>, use a <em>stylesheet</em>. You can write a stylesheet inside a <code class="lang_html">&lt;style&gt;</code> element contained inside the <code class="lang_html">&lt;head&gt;</code>.</p>
-  <div class="example">
-  <pre><code class="lang_html">&lt;head&gt;
-  &lt;style&gt;
-    body { color: purple; }
-    h2 { text-decoration: underline; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h2&gt;Internal stylesheets!&lt;/h2&gt;
-  &lt;p&gt;This page is styled with CSS written directly at the top of the document.&lt;/p&gt;
-&lt;/body&gt;</code></pre>
-  <div style="color: purple">
-  <h2 style="text-decoration: underline;">Internal stylesheets!</h2>
-  <p>This page is styled with CSS written directly at the top of the document.</p>
-  </div>
-  </div>
-
-  <p>You can also write a stylesheet in a separate file with the <code>.css</code> extension; to reference it, put a <code class="lang_html">&lt;link&gt;</code> attribute in the <code class="lang_html">&lt;head&gt;</code> of the HTML document.</p>
-  <div class="example">
-  <pre><code class="lang_html">&lt;link rel="stylesheet" href="styles.css" /&gt;</code></pre>
-  </div>
-
-  <p><strong>Note</strong>: As I understand it, you should put the CSS in the <code class="lang_html">&lt;head&gt;</code> of the document so that the browser can parse it alongside the HTML and immediately generate the correct layout, rather than generating the wrong layout first and then changing it when styles are applied.</p>
-
-  <hr />
-
-  <h4>Default browser styles</h4>
-
-  <p>Web browsers apply some default styles to web pages.</p>
-  <div class="example">
-  <pre><code class="lang_html">&lt;p&gt;This is a paragraph without any custom styles applied to it.&lt;/p&gt;
-&lt;p style="font-family: Helvetica, Arial, sans-serif; color: #2288ff;"&gt;This is a paragraph with custom styles.&lt;/p&gt;</code></pre>
-  <p>This is a paragraph without any custom styles applied to it.</p>
-  <p style="font-family: Helvetica, Arial, sans-serif; color: #2288ff;">This is a paragraph with custom styles.</p>
-  </div>
-
-  <p>@Incomplete: removing default styling.</p>
 
   <!--
   #####################
