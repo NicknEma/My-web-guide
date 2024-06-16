@@ -26,6 +26,13 @@ pre > code {
 	display: block;
 }
 
+/* --- LISTS --- */
+
+li[role="separator"] {
+	margin-bottom: 10px;
+	list-style-type: none;
+}
+
 /* --- TABLES --- */
 
 td, th {

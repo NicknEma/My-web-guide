@@ -4,7 +4,7 @@
 <head>
   <title>MDN Guides</title>
 
-  <meta charset="utf8" />
+  <meta charset="utf-8" />
   <meta name="author" content="Emanuele Rovini" />
   <meta name="description" content="Single-page example-based guide for creating a website." />
   <meta name="keywords" content="Web, HTML, CSS, JS, guide" />
@@ -33,8 +33,16 @@
 
   <nav>
   <ul>
-    <li><a href="#h1_html" title="HTML">Structure: HTML</a></li>
-    <li><a href="#h1_css"  title="CSS">Style: CSS</a></li>
+    <li><a href="#h1_html" title="HTML">Structure: HTML</a>
+      <ul>
+        <li><a href="#h2_html_debugging">HTML debugging</a></li>
+      </ul>
+    </li>
+    <li><a href="#h1_css"  title="CSS">Style: CSS</a>
+      <ul>
+        <li><a href="#h2_css_debugging">CSS debugging</a></li>
+      </ul>
+    </li>
     <li><a href="#h1_js"   title="JS">Behaviour: JS</a></li>
   </ul>
   </nav>
@@ -50,7 +58,7 @@
 
   <p>HTML elements are enclosed within <em>tags</em>.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltp&gtMy cat is very grumpy.&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p&gt;My cat is very grumpy.&lt;/p&gt;</code></pre>
   <p>My cat is very grumpy.</p>
   </div>
 
@@ -58,7 +66,7 @@
 
   <p>Tags can be <em>nested</em>.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltp&gtMy cat is &ltem&gtvery&lt/em&gt grumpy.&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p&gt;My cat is &lt;em&gt;very&lt;/em&gt; grumpy.&lt;/p&gt;</code></pre>
   <p>My cat is <em>very</em> grumpy.</p>
   </div>
 
@@ -66,7 +74,7 @@
 
   <p>Some tags are <em>void</em> and don't enclose anything. They stand on their own and don't need a corresponding closing tag.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltp&gtMy cat&ltbr /&gtis very grumpy.&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p&gt;My cat&lt;br /&gt;is very grumpy.&lt;/p&gt;</code></pre>
   <p>My cat <br />is very grumpy.</p>
   </div>
 
@@ -74,7 +82,7 @@
 
   <p>Elements can also have <em>attributes</em>.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltp style="color: red"&gtMy cat is very grumpy.&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p style="color: red"&gt;My cat is very grumpy.&lt;/p&gt;</code></pre>
   <p style="color: red">My cat is very grumpy.</p>
   </div>
 
@@ -82,9 +90,9 @@
 
   <p>Attributes with only one value don't require the value to be specified. They are called <em>boolean attributes</em> (either they exist or they don't).</p>
   <div class="example">
-  <pre><code class="lang_html">&ltinput type="text" disabled="disabled"/&gt
-&ltinput type="text" disabled/&gt
-&ltinput type="text"/&gt</code></pre>
+  <pre><code class="lang_html">&lt;input type="text" disabled="disabled"/&gt;
+&lt;input type="text" disabled/&gt;
+&lt;input type="text"/&gt;</code></pre>
   <p><input id="disabled_1" type="text" disabled="disabled"/></p>
   <p><input id="disabled_2" type="text" disabled/></p>
   <p><input id="disabled_3" type="text"/></p>
@@ -92,9 +100,9 @@
 
   <a href="#h2_comments"><h2 id="h2_comments">Comments</h2></a>
 
-  <p>Content enclosed within <code>&lt!--</code> and <code>--&gt</code> is ignored by the browser.
+  <p>Content enclosed within <code>&lt;!--</code> and <code>--&gt;</code> is ignored by the browser.
   <div class="example">
-  <pre><code class="lang_html">&lt!-- I am a comment! Yayaya --&gt</code></pre>
+  <pre><code class="lang_html">&lt;!-- I am a comment! Yayaya --&gt;</code></pre>
   </div>
 
   <a href="#h2_reserved_characters"><h2 id="h2_reserved_characters">Reserved characters</h2></a>
@@ -115,12 +123,12 @@
       <td>Interpreted as the beginning of an entity or character reference.</td>
     </tr>
     <tr>
-      <td>&lt;</td>
+      <td>&lt;;</td>
       <td><code>&amp;lt;</code></td>
       <td>Interpreted as the beginning of a <a href="#h2_tags">tag</a></td>
     </tr>
     <tr>
-      <td>&gt;</td>
+      <td>&gt;;</td>
       <td><code>&amp;gt;</code></td>
       <td>Interpreted as the ending of a <a href="#h2_tags">tag</a></td>
     </tr>
@@ -200,10 +208,10 @@
   <p>The most important HTML elements are:</p>
 
   <ul>
-    <li><code class="lang_html">&lt!DOCTYPE html /&gt</code>: a historical artifact that needs to be included in every HTML page.</li>
-    <li><code class="lang_html">&lthtml&gt</code>: the <em>root</em> element, the one that contains all other elements.</li>
-    <li><code class="lang_html">&lthead&gt</code>: a container for everything you want to include on the HTML page that <em>isn't</em> the content the page will show to viewers. This includes keywords and a page description that would appear in search results, CSS to style content, character set declarations, and more.</li>
-    <li><code class="lang_html">&ltbody&gt</code>: a container for all the content that displays on the page, including text, images, videos, games, playable audio tracks, or whatever else.</li>
+    <li><code class="lang_html">&lt;!DOCTYPE html /&gt;</code>: a historical artifact that needs to be included in every HTML page.</li>
+    <li><code class="lang_html">&lt;html&gt;</code>: the <em>root</em> element, the one that contains all other elements.</li>
+    <li><code class="lang_html">&lt;head&gt;</code>: a container for everything you want to include on the HTML page that <em>isn't</em> the content the page will show to viewers. This includes keywords and a page description that would appear in search results, CSS to style content, character set declarations, and more.</li>
+    <li><code class="lang_html">&lt;body&gt;</code>: a container for all the content that displays on the page, including text, images, videos, games, playable audio tracks, or whatever else.</li>
   </ul>
 
   <!--
@@ -214,15 +222,15 @@
 
   <a href="#h3_elements_head"><h3 id="h3_elements_head">Head</h3></a>
 
-  <p>Common elements nested in the <code class="lang_html">&lthead&gt</code> are:</p>
+  <p>Common elements nested in the <code class="lang_html">&lt;head&gt;</code> are:</p>
 
   <ul>
-    <li><code class="lang_html">&lttitle&gt</code>: the title that appears in the page's browser tab and that is used to describe the page when it is bookmarked.</li>
-    <li><code class="lang_html">&ltstyle&gt</code>: an internal stylesheet for the page.</li>
-    <li><code class="lang_html">&ltlink /&gt</code>: a link to an external stylesheet for the page.</li>
-    <li><code class="lang_html">&ltscript&gt</code>: a script (or a link to one) that will run in tandem with the page.</li>
-    <li><code class="lang_html">&ltbase /&gt</code>: the base URL to use for all relative URLs in a document. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base">See more</a>.</li>
-    <li><code class="lang_html">&ltmeta /&gt</code>: description of metadata (data about the page) not captured by the previous elements. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">See more</a>.</li>
+    <li><code class="lang_html">&lt;title&gt;</code>: the title that appears in the page's browser tab and that is used to describe the page when it is bookmarked.</li>
+    <li><code class="lang_html">&lt;style&gt;</code>: an internal stylesheet for the page.</li>
+    <li><code class="lang_html">&lt;link /&gt;</code>: a link to an external stylesheet for the page.</li>
+    <li><code class="lang_html">&lt;script&gt;</code>: a script (or a link to one) that will run in tandem with the page.</li>
+    <li><code class="lang_html">&lt;base /&gt;</code>: the base URL to use for all relative URLs in a document. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base">See more</a>.</li>
+    <li><code class="lang_html">&lt;meta /&gt;</code>: description of metadata (data about the page) not captured by the previous elements. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">See more</a>.</li>
   </ul>
 
   <!--
@@ -236,19 +244,19 @@
   <p>HTML provides dedicated tags that you can use to represent different page <em>sections</em>, for example:</p>
 
   <ul>
-    <li><code class="lang_html">&ltheader&gt</code>: a group of introductory content. If it is a child of <code class="lang_html">&ltbody&gt</code> it defines the global header of a webpage, but if it's a child of an <code class="lang_html">&ltarticle&gt</code> or <code class="lang_html">&ltsection&gt</code> it defines a specific header for that section (try not to confuse this with titles and headings).
+    <li><code class="lang_html">&lt;header&gt;</code>: a group of introductory content. If it is a child of <code class="lang_html">&lt;body&gt;</code> it defines the global header of a webpage, but if it's a child of an <code class="lang_html">&lt;article&gt;</code> or <code class="lang_html">&lt;section&gt;</code> it defines a specific header for that section (try not to confuse this with titles and headings).
 
-    <li><code class="lang_html">&ltnav&gt</code>: the main navigation functionality for the page (home, posts, projects, contacts, search).
+    <li><code class="lang_html">&lt;nav&gt;</code>: the main navigation functionality for the page (home, posts, projects, contacts, search).
 
-    <li><code class="lang_html">&ltmain&gt</code>: the main content unique to this page. Use <code class="lang_html">&ltmain&gt</code> only once per page, and put it directly inside <code class="lang_html">&ltbody&gt</code>. Do not nest within other elements.
+    <li><code class="lang_html">&lt;main&gt;</code>: the main content unique to this page. Use <code class="lang_html">&lt;main&gt;</code> only once per page, and put it directly inside <code class="lang_html">&lt;body&gt;</code>. Do not nest within other elements.
 
-    <li><code class="lang_html">&ltarticle&gt</code>: a block of related content that makes sense on its own without the rest of the page (e.g., a single blog post).
+    <li><code class="lang_html">&lt;article&gt;</code>: a block of related content that makes sense on its own without the rest of the page (e.g., a single blog post).
 
-    <li><code class="lang_html">&ltsection&gt</code>: similar to <code class="lang_html">&ltarticle&gt</code>, but it is more for grouping together a single part of the page that constitutes one single piece of functionality (e.g., a mini map, or a set of article headlines and summaries), or a theme. It's considered best practice to begin each section with a heading; also note that you can break <code class="lang_html">&ltarticle&gt</code>s up into different <code class="lang_html">&ltsection&gt</code>s, or <code class="lang_html">&ltsection&gt</code>s up into different <code class="lang_html">&ltarticle&gt</code>s, depending on the context.
+    <li><code class="lang_html">&lt;section&gt;</code>: similar to <code class="lang_html">&lt;article&gt;</code>, but it is more for grouping together a single part of the page that constitutes one single piece of functionality (e.g., a mini map, or a set of article headlines and summaries), or a theme. It's considered best practice to begin each section with a heading; also note that you can break <code class="lang_html">&lt;article&gt;</code>s up into different <code class="lang_html">&lt;section&gt;</code>s, or <code class="lang_html">&lt;section&gt;</code>s up into different <code class="lang_html">&lt;article&gt;</code>s, depending on the context.
 
-    <li><code class="lang_html">&ltaside&gt</code>: content that is not directly related to the main content but can provide additional information indirectly related to it (e.g., glossary entries, author biography, related links). Often placed inside <code class="lang_html">&ltmain&gt</code>.
+    <li><code class="lang_html">&lt;aside&gt;</code>: content that is not directly related to the main content but can provide additional information indirectly related to it (e.g., glossary entries, author biography, related links). Often placed inside <code class="lang_html">&lt;main&gt;</code>.
 
-    <li><code class="lang_html">&ltfooter&gt</code>: a group of end content for a page.
+    <li><code class="lang_html">&lt;footer&gt;</code>: a group of end content for a page.
   </ul>
 
   <!--
@@ -262,59 +270,59 @@
   <p>Text-related elements are:</p>
 
   <ul>
-    <li><code class="lang_html">&ltp&gt</code> (<strong>p</strong>aragraph): a paragraph of text.</li>
-    <li><code class="lang_html">&lth1&gt, &lth2&gt ... &lth6&gt</code> (<strong>h</strong>eading): headings 1 through 6.</li>
-    <li><code class="lang_html">&ltbr /&gt</code> (<strong>br</strong>eak): a newline, or line break.</li>
-    <li><code class="lang_html">&ltul&gt</code> (<strong>u</strong>nordered <strong>l</strong>ist): an unordered list of items – typically rendered as a bulleted list.</li>
-    <li><code class="lang_html">&ltol&gt</code> (<strong>o</strong>rdered <strong>l</strong>ist): an ordered list of items – typically rendered as a numbered list.</li>
-    <li><code class="lang_html">&ltli&gt</code> (<strong>l</strong>ist <strong>i</strong>tem): a list item.</li>
-    <li><code class="lang_html">&ltem&gt</code> (<strong>em</strong>phasized): content that has stress emphasis – typically rendered as <em>italic</em> text.</li>
-    <li><code class="lang_html">&ltstrong&gt</code> (<strong>strong</strong>): content that has strong importance, seriousness, or urgency – typically rendered as <strong>bold</strong> text.</li>
-    <li><code class="lang_html">&ltdl&gt</code> (<strong>d</strong>escription <strong>l</strong>ist): a list of groups of terms and related descriptions.</li>
-    <li><code class="lang_html">&ltdt&gt</code> (<strong>d</strong>escription <strong>t</strong>erm): a term in a description list.</li>
-    <li><code class="lang_html">&ltdd&gt</code> (<strong>d</strong>escription <strong>d</strong>etails): the value for the preceding term in a description list.</li>
-    <li><code class="lang_html">&ltblockquote&gt</code> (<strong>blockquote</strong>): an extended quotation – typically rendered with indentation.</li>
-    <li><code class="lang_html">&ltq&gt</code> (<strong>q</strong>uote): a short inline quotation – typically rendered as enclosed in quotation marks.</li>
-    <li><code class="lang_html">&ltcite&gt</code> (<strong>cite</strong>): the title of a cited creative work.</li>
-    <li><code class="lang_html">&ltabbr&gt</code> (<strong>abbr</strong>eviation): an abbreviation or acronym.</li>
-    <li><code class="lang_html">&ltaddress&gt</code> (<strong>address</strong>): contact info.</li>
-    <li><code class="lang_html">&lttime&gt</code> (<strong>time</strong>): either a time on a 24-hour clock, a date in the calendar or a time duration.</li>
+    <li><code class="lang_html">&lt;p&gt;</code> (<strong>p</strong>aragraph): a paragraph of text.</li>
+    <li><code class="lang_html">&lt;h1&gt;, &lt;h2&gt; ... &lt;h6&gt;</code> (<strong>h</strong>eading): headings 1 through 6.</li>
+    <li><code class="lang_html">&lt;br /&gt;</code> (<strong>br</strong>eak): a newline, or line break.</li>
+    <li><code class="lang_html">&lt;ul&gt;</code> (<strong>u</strong>nordered <strong>l</strong>ist): an unordered list of items – typically rendered as a bulleted list.</li>
+    <li><code class="lang_html">&lt;ol&gt;</code> (<strong>o</strong>rdered <strong>l</strong>ist): an ordered list of items – typically rendered as a numbered list.</li>
+    <li><code class="lang_html">&lt;li&gt;</code> (<strong>l</strong>ist <strong>i</strong>tem): a list item.</li>
+    <li><code class="lang_html">&lt;em&gt;</code> (<strong>em</strong>phasized): content that has stress emphasis – typically rendered as <em>italic</em> text.</li>
+    <li><code class="lang_html">&lt;strong&gt;</code> (<strong>strong</strong>): content that has strong importance, seriousness, or urgency – typically rendered as <strong>bold</strong> text.</li>
+    <li><code class="lang_html">&lt;dl&gt;</code> (<strong>d</strong>escription <strong>l</strong>ist): a list of groups of terms and related descriptions.</li>
+    <li><code class="lang_html">&lt;dt&gt;</code> (<strong>d</strong>escription <strong>t</strong>erm): a term in a description list.</li>
+    <li><code class="lang_html">&lt;dd&gt;</code> (<strong>d</strong>escription <strong>d</strong>etails): the value for the preceding term in a description list.</li>
+    <li><code class="lang_html">&lt;blockquote&gt;</code> (<strong>blockquote</strong>): an extended quotation – typically rendered with indentation.</li>
+    <li><code class="lang_html">&lt;q&gt;</code> (<strong>q</strong>uote): a short inline quotation – typically rendered as enclosed in quotation marks.</li>
+    <li><code class="lang_html">&lt;cite&gt;</code> (<strong>cite</strong>): the title of a cited creative work.</li>
+    <li><code class="lang_html">&lt;abbr&gt;</code> (<strong>abbr</strong>eviation): an abbreviation or acronym.</li>
+    <li><code class="lang_html">&lt;address&gt;</code> (<strong>address</strong>): contact info.</li>
+    <li><code class="lang_html">&lt;time&gt;</code> (<strong>time</strong>): either a time on a 24-hour clock, a date in the calendar or a time duration.</li>
   </ul>
 
   <hr />
 
-  <p>You can use <code class="lang_html">&ltblockquote&gt</code> and <code class="lang_html">&ltq&gt</code> for quotes:</p>
+  <p>You can use <code class="lang_html">&lt;blockquote&gt;</code> and <code class="lang_html">&lt;q&gt;</code> for quotes:</p>
 
   <div class="example">
-  <pre><code class="lang_html">&ltp&gtThe following is a block quote:&lt/p&gt
-&ltblockquote cite="index.html"&gt
-  &ltp&gtThe page title is also used to describe the page when it is bookmarked.&lt/p&gt
-  &ampmdash; &ltcite&gtmdn web docs&lt/cite&gt
-&lt/blockquote&gt</code></pre>
+  <pre><code class="lang_html">&lt;p&gt;The following is a block quote:&lt;/p&gt;
+&lt;blockquote cite="index.html"&gt;
+  &lt;p&gt;The page title is also used to describe the page when it is bookmarked.&lt;/p&gt;
+  &amp;mdash; &lt;cite&gt;mdn web docs&lt;/cite&gt;
+&lt;/blockquote&gt;</code></pre>
   <p>The following is a block quote:</p>
   <blockquote cite="index.html">
     <p>The page title is also used to describe the page when it is bookmarked.</p>
     &mdash; <cite>mdn web docs</cite>
   </blockquote>
 
-  <pre><code class="lang_html">&ltp&gtThe following is an inline quote: &ltq cite="index.html"&gtThe page title is also used to describe the page when it is bookmarked.&lt/q&gt&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p&gt;The following is an inline quote: &lt;q cite="index.html"&gt;The page title is also used to describe the page when it is bookmarked.&lt;/q&gt;&lt;/p&gt;</code></pre>
   <p>The following is an inline quote: <q cite="index.html">The page title is also used to describe the page when it is bookmarked.</q></p>
   </div>
 
   <hr />
 
-  <p>Abbreviations and acronyms can be marked as such using <code class="lang_html">&ltabbr&gt</code>. Put the mouse on the abbreviated word to see the full expansion.</p>
+  <p>Abbreviations and acronyms can be marked as such using <code class="lang_html">&lt;abbr&gt;</code>. Put the mouse on the abbreviated word to see the full expansion.</p>
   <div class="example">
-  <pre><code class="lang_html">The language of the web is &ltabbr title="HyperText Markup Language"&gtHTML&lt/abbr&gt.</code></pre>
+  <pre><code class="lang_html">The language of the web is &lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;.</code></pre>
   <p>The language of the web is <abbr title="HyperText Markup Language">HTML</abbr>.</p>
   </div>
 
   <hr />
 
-  <p>Use <code class="lang_html">&ltaddress&gt</code> to define contact information:</p>
+  <p>Use <code class="lang_html">&lt;address&gt;</code> to define contact information:</p>
   <div class="example">
-  <pre><code class="lang_html">&ltaddress&gtChris Mills, Manchester, The Grim North, UK&lt/address&gt</code></pre>
-  <p><address>Chris Mills, Manchester, The Grim North, UK</address></p>
+  <pre><code class="lang_html">&lt;address&gt;Chris Mills, Manchester, The Grim North, UK&lt;/address&gt;</code></pre>
+  <address>Chris Mills, Manchester, The Grim North, UK</address>
   </div>
 
   <!--
@@ -328,11 +336,11 @@
   <p>Some tags are dedicated to formatting code.</p>
 
   <ul>
-    <li><code class="lang_html">&ltcode&gt</code> (<strong>code</strong>): For marking up generic pieces of computer code.</li>
-    <li><code class="lang_html">&ltpre&gt</code> (<strong>pre</strong>formatted): For retaining extra whitespace that the browser would generally ignore.</li>
-    <li><code class="lang_html">&ltvar&gt</code> (<strong>var</strong>iable): For marking up variable names.</li>
-    <li><code class="lang_html">&ltkbd&gt</code> (<strong>k</strong>ey<strong>b</strong>oar<strong>d</strong>): For marking up keyboard and other types of input entered into the computer.</li>
-    <li><code class="lang_html">&ltsamp&gt</code> (<strong>samp</strong>le): For marking up the output of a computer program.</li>
+    <li><code class="lang_html">&lt;code&gt;</code> (<strong>code</strong>): For marking up generic pieces of computer code.</li>
+    <li><code class="lang_html">&lt;pre&gt;</code> (<strong>pre</strong>formatted): For retaining extra whitespace that the browser would generally ignore.</li>
+    <li><code class="lang_html">&lt;var&gt;</code> (<strong>var</strong>iable): For marking up variable names.</li>
+    <li><code class="lang_html">&lt;kbd&gt;</code> (<strong>k</strong>ey<strong>b</strong>oar<strong>d</strong>): For marking up keyboard and other types of input entered into the computer.</li>
+    <li><code class="lang_html">&lt;samp&gt;</code> (<strong>samp</strong>le): For marking up the output of a computer program.</li>
   </ul>
 
   <!--
@@ -343,18 +351,18 @@
 
   <a href="#h3_elements_links"><h3 id="h3_elements_links">Links</h3></a>
 
-  <p>Content (text, images, etc.) enclosed into <code class="lang_html">&lta&gt</code> tags becomes a hyperlink. <br />It can be a link to a different page:</p>
+  <p>Content (text, images, etc.) enclosed into <code class="lang_html">&lt;a&gt;</code> tags becomes a hyperlink. <br />It can be a link to a different page:</p>
 
   <div class="example">
-  <pre><code class="lang_html">&lta href="https://www.google.com" title="Google"&gtAny questions?&lt/a&gt</code></pre>
+  <pre><code class="lang_html">&lt;a href="https://www.google.com" title="Google"&gt;Any questions?&lt;/a&gt;</code></pre>
   <p><a href="https://www.google.com" title="Google">Any questions?</a></p>
   </div>
 
   <p>or a link to a section of a page:</p>
 
   <div class="example">
-  <pre><code class="lang_html">&lta href="#example-section-1"&gtJump to next section.&lt/a&gt
-&lth4 id="example-section-1"&gtExample section&lt/h4&gt</code></pre>
+  <pre><code class="lang_html">&lt;a href="#example-section-1"&gt;Jump to next section.&lt;/a&gt;
+&lt;h4 id="example-section-1"&gt;Example section&lt;/h4&gt;</code></pre>
   <p><a href="#example-section-1">Jump to next section.</a></p>
   <h4 id="example-section-1">The next section</h4>
   </div>
@@ -367,9 +375,9 @@
 
   <a href="#h3_elements_images"><h3 id="h3_elements_images">Images</h3></a>
 
-  <p>To embed an image into a webpage, use the void <code class="lang_html">&ltimg&gt</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the image.</p>
+  <p>To embed an image into a webpage, use the void <code class="lang_html">&lt;img&gt;</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the image.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltimg src="face.png" alt="A yellow smile on a gray background." width="500" height="500" title="Smile!" /&gt</code></pre>
+  <pre><code class="lang_html">&lt;img src="face.png" alt="A yellow smile on a gray background." width="500" height="500" title="Smile!" /&gt;</code></pre>
   <img src="face.png" alt="A yellow smile on a gray background." width="500" height="500" title="Smile!" />
   </div>
 
@@ -380,7 +388,7 @@
   <p>The <code>alt</code> attribute specifies text that will be displayed when the image can't be loaded, and/or will be read out loud by screen readers.</p>
 
   <div class="example">
-  <pre><code class="lang_html">&ltimg src="facee.png" alt="A yellow smile on a gray background." width="500" height="500" title="Smile!" /&gt</code></pre>
+  <pre><code class="lang_html">&lt;img src="facee.png" alt="A yellow smile on a gray background." width="500" height="500" title="Smile!" /&gt;</code></pre>
   <img src="facee.png" alt="A yellow smile on a gray background." width="500" height="500" title="Smile!" />
   </div>
 
@@ -399,7 +407,7 @@
   <ul>
     <li><strong>Decoration</strong>: you should use CSS <code>background-image</code>s for decorative images, but if you must use HTML, add a blank <code>alt=""</code> so that screen readers don't waste time reading it.</li>
     <li><strong>Content</strong>: if your image provides significant information, provide the same information in a brief alt text – or leave it blank if the image is described adequately by the main text body. Don't write redundant alt text.</li>
-    <li><strong>Link</strong>: if you put an image inside <code class="lang_html">&lta&gt</code> tags you still must provide accessible link text. In such cases you may, either, write it inside the same <code class="lang_html">&lta&gt</code> element, or inside the image's alt attribute – whichever works best in your case.</li>
+    <li><strong>Link</strong>: if you put an image inside <code class="lang_html">&lt;a&gt;</code> tags you still must provide accessible link text. In such cases you may, either, write it inside the same <code class="lang_html">&lt;a&gt;</code> element, or inside the image's alt attribute – whichever works best in your case.</li>
     <li><strong>Text</strong>: you should not put your text into images. However, If you really can't avoid doing it, supply the text inside the <code>alt</code> attribute too.</li>
   </ul>
 
@@ -423,15 +431,15 @@
 
   <a href="#h3_elements_videos_and_audio_clips"><h3 id="h3_elements_videos_and_audio_clips">Videos and audio clips</h3></a>
 
-  <p>To embed a video into a webpage, use the <code class="lang_html">&ltvideo&gt</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the video, and the <code>controls</code> boolean attribute to display <em>start</em>, <em>pause</em>, <em>volume</em> and similar controls.</p>
+  <p>To embed a video into a webpage, use the <code class="lang_html">&lt;video&gt;</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the video, and the <code>controls</code> boolean attribute to display <em>start</em>, <em>pause</em>, <em>volume</em> and similar controls.</p>
 
   <div class="example">
-  <pre><code class="lang_html">&ltvideo src="pong.mp4" controls&gt
-  &ltp&gt
+  <pre><code class="lang_html">&lt;video src="pong.mp4" controls&gt;
+  &lt;p&gt;
     Your browser doesn't support HTML video. Here is a
-    &lta href="pong.mp4"&gtlink to the video&lt/a&gt instead.
-  &lt/p&gt
-&lt/video&gt</pre></code>
+    &lt;a href="pong.mp4"&gt;link to the video&lt;/a&gt; instead.
+  &lt;/p&gt;
+&lt;/video&gt;</code></pre>
 
   <video src="pong.mp4" controls width="800" height="600">
     <p>
@@ -441,7 +449,7 @@
   </video>
   </div>
 
-  <p>The following are all the attributes of the <code class="lang_html">&ltvideo&gt</code> element:</p>
+  <p>The following are all the attributes of the <code class="lang_html">&lt;video&gt;</code> element:</p>
 
   <ul>
     <li><code>src</code>: Absolute or relative URL of the video.
@@ -463,7 +471,7 @@
 
   <hr />
 
-  <p>The <code class="lang_html">&ltaudio&gt</code> element is exactly like the <code class="lang_html">&ltvideo&gt</code> element, except that it doesn't have the <code>width</code>, <code>height</code> and <code>poster</code> attributes.
+  <p>The <code class="lang_html">&lt;audio&gt;</code> element is exactly like the <code class="lang_html">&lt;video&gt;</code> element, except that it doesn't have the <code>width</code>, <code>height</code> and <code>poster</code> attributes.
 
   <!--
   ########################
@@ -471,21 +479,21 @@
   ########################
   -->
 
-  <a href="#h3_elements_other_embeds"><h3 id="h3_elements_other_embeds">Other embeds</h3></a>
+  <h3 id="h3_elements_other_embeds"><a href="#h3_elements_other_embeds">Other embeds</a></h3>
 
-  <p>Use the <code class="lang_html">&ltiframe&gt</code> element to embed other web pages into the current one.</p>
+  <p>Use the <code class="lang_html">&lt;iframe&gt;</code> element to embed other web pages into the current one.</p>
 
   <p>To embed a YouTube video, click on "share" and then copy the code snipped that is provided.</p>
 
   <div class="example">
-  <pre><code class="lang_html">&ltiframe src="https://www.youtube.com/embed/xuCn8ux2gbs?si=Qf20w2baVv7CHCWT"
+  <pre><code class="lang_html">&lt;iframe src="https://www.youtube.com/embed/xuCn8ux2gbs?si=Qf20w2baVv7CHCWT"
   title="YouTube video player"
   width="560" height="315"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   referrerpolicy="strict-origin-when-cross-origin"
-  allowfullscreen&gt
-&lt/iframe&gt</code></pre>
+  allowfullscreen&gt;
+&lt;/iframe&gt;</code></pre>
 
   <iframe src="https://www.youtube.com/embed/xuCn8ux2gbs?si=Qf20w2baVv7CHCWT"
     title="YouTube video player"
@@ -504,11 +512,11 @@
 
   <a href="#h3_elements_captions"><h3 id="h3_elements_captions">Captions</h3></a>
 
-  <p>Add captions to any independent unit of content (an image, a gallery of images, a code snippet, audio, video, equations, a table, etc.) by using the <code class="lang_html">&ltfigure&gt</code> and <code class="lang_html">&ltfigcaption&gt</code> elements.</p>
+  <p>Add captions to any independent unit of content (an image, a gallery of images, a code snippet, audio, video, equations, a table, etc.) by using the <code class="lang_html">&lt;figure&gt;</code> and <code class="lang_html">&lt;figcaption&gt;</code> elements.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltfigure&gt&ltimg src="face.png" alt="A yellow smile on a gray background." width="500" height="500" /&gt
-  &ltfigcaption&gtSmile!&lt/figcaption&gt
-&lt/figure&gt</code></pre>
+  <pre><code class="lang_html">&lt;figure&gt;&lt;img src="face.png" alt="A yellow smile on a gray background." width="500" height="500" /&gt;
+  &lt;figcaption&gt;Smile!&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
   <figure><img src="face.png" alt="A yellow smile on a gray background."  width="500" height="500" />
     <figcaption>Smile!</figcaption>
   </figure>
@@ -522,51 +530,61 @@
 
   <a href="#h3_elements_tables"><h3 id="h3_elements_tables">Tables</h3></a>
 
-  <p>Use a <code class="lang_html">&lttable&gt</code> element to describe a table. <strong>Do not use HTML tables as a layout tool</strong>, but only to display tabular data.</p>
+  <p>Use a <code class="lang_html">&lt;table&gt;</code> element to describe a table. <strong>Do not use HTML tables as a layout tool</strong>, but only to display tabular data.</p>
 
-  <p>To add a single cell to a table, use the <code class="lang_html">&lttd&gt</code> (table-data) element.</p>
+  <p>To add a single cell to a table, use the <code class="lang_html">&lt;td&gt;</code> (table-data) element.</p>
   <div class="example">
-  <pre><code class="lang_html">&lttable&gt
-  &lttd&gtHi, I'm your first cell.&lt/td&gt
-&lt/table&gt</code></pre>
-  <table>
-    <td>Hi, I'm your first cell.</td>
-  </table>
+  <pre><code class="lang_html">&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;/tr&gt;&lt;td&gt;Hi, I'm your first cell.&lt;/td&gt;&lt;/tr&gt;
+  &lt;tbody&gt;
+&lt;/table&gt;</code></pre>
+  <table><tbody>
+    <tr><td>Hi, I'm your first cell.</td></tr>
+  </tbody></table>
   </div>
 
-  <p>Multiple <code class="lang_html">&lttd&gt</code> elements are arranged in a row.</p>
+  <p>Multiple <code class="lang_html">&lt;td&gt;</code> elements are arranged in a row.</p>
   <div class="example">
-  <pre><code class="lang_html">&lttable&gt
-  &lttd&gtHi, I'm your first cell.&lt/td&gt
-  &lttd&gtI'm your second cell.&lt/td&gt
-  &lttd&gtI'm your third cell.&lt/td&gt
-  &lttd&gtI'm your fourth cell.&lt/td&gt
-&lt/table&gt</code></pre>
-  <table>
-    <td>Hi, I'm your first cell.</td>
-    <td>I'm your second cell.</td>
-    <td>I'm your third cell.</td>
-    <td>I'm your fourth cell.</td>
-  </table>
+  <pre><code class="lang_html">&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Hi, I'm your first cell.&lt;/td&gt;
+      &lt;td&gt;I'm your second cell.&lt;/td&gt;
+      &lt;td&gt;I'm your third cell.&lt;/td&gt;
+      &lt;td&gt;I'm your fourth cell.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+  <table><tbody>
+    <tr>
+      <td>Hi, I'm your first cell.</td>
+      <td>I'm your second cell.</td>
+      <td>I'm your third cell.</td>
+      <td>I'm your fourth cell.</td>
+    </tr>
+  </tbody></table>
   </div>
 
-  <p>To create multiple rows, wrap each row in a <code class="lang_html">&lttr&gt</code> (table-row) element.</p>
+  <p>To create multiple rows, wrap each row in a <code class="lang_html">&lt;tr&gt;</code> (table-row) element.</p>
   <div class="example">
-  <pre><code class="lang_html">&lttable&gt
-  &lttr&gt
-    &lttd&gtFirst row, first cell.&lt/td&gt
-    &lttd&gtFirst row, second cell.&lt/td&gt
-    &lttd&gtFirst row, third cell.&lt/td&gt
-    &lttd&gtFirst row, fourth cell.&lt/td&gt
-  &lt/tr&gt
-  &lttr&gt
-    &lttd&gtSecond row, first cell.&lt/td&gt
-    &lttd&gtSecond row, second cell.&lt/td&gt
-    &lttd&gtSecond row, third cell.&lt/td&gt
-    &lttd&gtSecond row, fourth cell.&lt/td&gt
-  &lt/tr&gt
-&lt/table&gt</code></pre>
-  <table>
+  <pre><code class="lang_html">&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;First row, first cell.&lt;/td&gt;
+      &lt;td&gt;First row, second cell.&lt;/td&gt;
+      &lt;td&gt;First row, third cell.&lt;/td&gt;
+      &lt;td&gt;First row, fourth cell.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Second row, first cell.&lt;/td&gt;
+      &lt;td&gt;Second row, second cell.&lt;/td&gt;
+      &lt;td&gt;Second row, third cell.&lt;/td&gt;
+      &lt;td&gt;Second row, fourth cell.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+  <table><tbody>
     <tr>
       <td>First row, first cell.</td>
       <td>First row, second cell.</td>
@@ -579,10 +597,10 @@
       <td>Second row, third cell.</td>
       <td>Second row, fourth cell.</td>
     </tr>
-  </table>
+  </tbody></table>
   </div>
 
-  <p>The <code class="lang_html">&ltth&gt</code> (table-header) element is similar to the <code class="lang_html">&lttd&gt</code> element, but it is used to denote table headers.</p>
+  <p>The <code class="lang_html">&lt;th&gt;</code> (table-header) element is similar to the <code class="lang_html">&lt;td&gt;</code> element, but it is used to denote table headers.</p>
 
   <div class="example">
   <table>
@@ -628,7 +646,7 @@
 
   <hr />
 
-  <p>@Incomplete: cells spanning multiple rows/columns, styling with the &ltcol&gt element; captions/summaries and grouping your rows into table head, body and footer sections; accessibility of tables for visually impaired users.</p>
+  <p>@Incomplete: cells spanning multiple rows/columns, styling with the &lt;col&gt; element; captions/summaries and grouping your rows into table head, body and footer sections; accessibility of tables for visually impaired users.</p>
 
   <!--
   #################
@@ -638,19 +656,19 @@
 
   <a href="#h3_elements_forms"><h3 id="h3_elements_forms">Forms</h3></a>
 
-  <p>The <code>&ltform&gt</code> element is a container element that defines a form and its configuration.</p>
+  <p>The <code>&lt;form&gt;</code> element is a container element that defines a form and its configuration.</p>
 
-  <pre><code class="lang_html">&ltform action="/my-handling-form-page" method="post"&gt
-  &lt!-- Form elements --&gt
-&lt/form&gt</code></pre>
+  <pre><code class="lang_html">&lt;form action="/my-handling-form-page" method="post"&gt;
+  &lt;!-- Form elements --&gt;
+&lt;/form&gt;</code></pre>
 
-  <p>A form can contain a lot of different input elements, as well as <code>&ltlabel&gt</code>s for accessibility purposes:</p>
+  <p>A form can contain a lot of different input elements, as well as <code>&lt;label&gt;</code>s for accessibility purposes:</p>
 
   <form>
   <ul>
     <li>
       <label for="name">Name:</label>
-      <input type="text" id="name" name="user_name" value="Default value" autocomplete="first-name" />
+      <input type="text" id="name" name="user_name" value="Default value" autocomplete="name" />
     </li>
     <li>
       <label for="mail">Email:</label>
@@ -766,15 +784,15 @@
 
   <a href="#h3_math_formulas"><h3 id="h3_math_formulas">Math formulas</h3></a>
 
-  <p>Display a mathematical formula with the <code class="lang_html">&ltmath&gt</code> element.</p>
+  <p>Display a mathematical formula with the <code class="lang_html">&lt;math&gt;</code> element.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltp&gtThe number
-  &ltmath&gt
-    &ltmfrac&gt
-      &ltmn&gt1&lt/mn&gt &ltmn&gt3&lt/mn&gt
-    &lt/mfrac&gt
-  &lt/math&gt
-is rational.&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p&gt;The number
+  &lt;math&gt;
+    &lt;mfrac&gt;
+      &lt;mn&gt;1&lt;/mn&gt; &lt;mn&gt;3&lt;/mn&gt;
+    &lt;/mfrac&gt;
+  &lt;/math&gt;
+is rational.&lt;/p&gt;</code></pre>
   <p>The number
     <math>
       <mfrac>
@@ -788,13 +806,13 @@ is rational.&lt/p&gt</code></pre>
 
   <p>Set the <code>display</code> attribute to <code>block</code> to make a formula its own line.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltp&gtThe number
-  &ltmath display="block"&gt
-    &ltmfrac&gt
-      &ltmn&gt1&lt/mn&gt &ltmn&gt3&lt/mn&gt
-    &lt/mfrac&gt
-  &lt/math&gt
-is rational.&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p&gt;The number
+  &lt;math display="block"&gt;
+    &lt;mfrac&gt;
+      &lt;mn&gt;1&lt;/mn&gt; &lt;mn&gt;3&lt;/mn&gt;
+    &lt;/mfrac&gt;
+  &lt;/math&gt;
+is rational.&lt;/p&gt;</code></pre>
   <p class="mathy">The number
     <math display="block">
       <mfrac>
@@ -812,16 +830,16 @@ is rational.&lt/p&gt</code></pre>
   ################
   -->
 
-  <p>The <code class="lang_html">&ltmrow&gt</code> elements groups other elements in a row.</p>
+  <p>The <code class="lang_html">&lt;mrow&gt;</code> elements groups other elements in a row.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltmath display="block"&gt
-  &ltmfrac&gt
-    &ltmrow&gt
-      &ltmn&gt1&lt/mn&gt &ltmo&gt+&lt/mo&gt &ltmn&gt2&lt/mn&gt
-    &lt/mrow&gt
-    &ltmn&gt3&lt/mn&gt
-  &lt/mfrac&gt
-&lt/math&gt</code></pre>
+  <pre><code class="lang_html">&lt;math display="block"&gt;
+  &lt;mfrac&gt;
+    &lt;mrow&gt;
+      &lt;mn&gt;1&lt;/mn&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;mn&gt;2&lt;/mn&gt;
+    &lt;/mrow&gt;
+    &lt;mn&gt;3&lt;/mn&gt;
+  &lt;/mfrac&gt;
+&lt;/math&gt;</code></pre>
   <p class="mathy">
     <math display="block">
       <mfrac>
@@ -885,16 +903,16 @@ is rational.&lt/p&gt</code></pre>
   <p>Most of the math characters are not part of Basic Latin Unicode block; it is recommended to specify your document's character encoding and to serve it with appropriate web fonts.</p>
 
   <div class="example">
-  <pre><code class="lang_html">&lt!doctype html&gt
-&lthtml lang="en-US"&gt
-  &lthead&gt
-    &ltmeta charset="utf-8" /&gt
-    &lttitle&gtMy page with math characters&lt/title&gt
-    &ltlink
+  <pre><code class="lang_html">&lt;!doctype html&gt;
+&lt;html lang="en-US"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;title&gt;My page with math characters&lt;/title&gt;
+    &lt;link
       rel="stylesheet"
-      href="https://fred-wang.github.io/MathFonts/LatinModern/mathfonts.css" /&gt
-  &lt/head&gt
-&lt/html&gt</code></pre>
+      href="https://fred-wang.github.io/MathFonts/LatinModern/mathfonts.css" /&gt;
+  &lt;/head&gt;
+&lt;/html&gt;</code></pre>
   </div>
 
   <!--
@@ -915,19 +933,19 @@ is rational.&lt/p&gt</code></pre>
 
   <hr />
 
-  <p>Single-character <code class="lang_html">&ltmi&gt</code> elements are automatically italicized. To prevent this, use the <code>mathvariant</code> attribute.</p>
+  <p>Single-character <code class="lang_html">&lt;mi&gt;</code> elements are automatically italicized. To prevent this, use the <code>mathvariant</code> attribute.</p>
   <div class="example">
-<pre><code class="lang_html">&ltmi&gtsin&lt/mi&gt                      &lt!-- Multi-character identifier, not italicized --&gt
-&ltmtext&gt&amp;nbsp;&lt/mtext&gt
-&ltmi&gtx&lt/mi&gt                        &lt!-- Single-character identifier, italicized --&gt
-&ltmtext&gt&amp;nbsp&lt/mtext&gt
-&ltmi mathvariant="normal"&gtx&lt/mi&gt   &lt!-- Single-character identifier, explicitly not italicized --&gt</code></pre>
+<pre><code class="lang_html">&lt;mi&gt;sin&lt;/mi&gt;                      &lt;!-- Multi-character identifier, not italicized --&gt;
+&lt;mtext&gt;&amp;nbsp;&lt;/mtext&gt;
+&lt;mi&gt;x&lt;/mi&gt;                        &lt;!-- Single-character identifier, italicized --&gt;
+&lt;mtext&gt;&amp;nbsp&lt;/mtext&gt;
+&lt;mi mathvariant="normal"&gt;x&lt;/mi&gt;   &lt;!-- Single-character identifier, explicitly not italicized --&gt;</code></pre>
   <p class="mathy">
   <math display="block">
     <mi>sin</mi>
-    <mtext>&nbsp</mtext>
+    <mtext>&nbsp;</mtext>
     <mi>x</mi>
-    <mtext>&nbsp</mtext>
+    <mtext>&nbsp;</mtext>
     <mi mathvariant="normal">x</mi>
   </math>
   </p>
@@ -935,7 +953,7 @@ is rational.&lt/p&gt</code></pre>
 
   <hr />
 
-  <p>The browser will look up any operator enclosed in <code class="lang_html">&ltmo&gt</code> in a <em>operator dictionary</em> so that the necessary <em>spacing</em> or <em>stretching</em> between surrounding elements is respected.</p>
+  <p>The browser will look up any operator enclosed in <code class="lang_html">&lt;mo&gt;</code> in a <em>operator dictionary</em> so that the necessary <em>spacing</em> or <em>stretching</em> between surrounding elements is respected.</p>
 
   <div class="example">
   <p class="mathy">
@@ -949,7 +967,7 @@ is rational.&lt/p&gt</code></pre>
     <mo>|</mo>
     </mrow>
 
-    <mtext>&nbsp,&nbsp</mtext>
+    <mtext>&nbsp;,&nbsp;</mtext>
 
     <mover>
     <mrow>
@@ -969,12 +987,12 @@ is rational.&lt/p&gt</code></pre>
 
   <h4>Structural math elements</h4>
 
-  <p>Use <code class="lang_html">&ltmfrac&gt</code> to display a fraction.</p>
+  <p>Use <code class="lang_html">&lt;mfrac&gt;</code> to display a fraction.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltmfrac&gt
-  &ltmi&gta&lt/mi&gt
-  &ltmi&gtb&lt/mi&gt
-&lt/mfrac&gt</code></pre>
+  <pre><code class="lang_html">&lt;mfrac&gt;
+  &lt;mi&gt;a&lt;/mi&gt;
+  &lt;mi&gt;b&lt;/mi&gt;
+&lt;/mfrac&gt;</code></pre>
   <p class="mathy">
   <math display="block">
     <mfrac>
@@ -987,12 +1005,12 @@ is rational.&lt/p&gt</code></pre>
 
   <p>Set the <code>linethickness</code> attribute to <code>0</code> to display a fraction without a horizontal bar.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltmo&gt(&lt/mo&gt
-  &ltmfrac linethickness="0"&gt
-    &ltmi&gta&lt/mi&gt
-    &ltmi&gtb&lt/mi&gt
-  &lt/mfrac&gt
-&ltmo&gt)&lt/mo&gt</code></pre>
+  <pre><code class="lang_html">&lt;mo&gt;(&lt;/mo&gt;
+  &lt;mfrac linethickness="0"&gt;
+    &lt;mi&gt;a&lt;/mi&gt;
+    &lt;mi&gt;b&lt;/mi&gt;
+  &lt;/mfrac&gt;
+&lt;mo&gt;)&lt;/mo&gt;</code></pre>
   <p class="mathy">
   <math display="block">
     <mo>(</mo>
@@ -1009,11 +1027,11 @@ is rational.&lt/p&gt</code></pre>
 
   <hr />
 
-  <p>Use <code class="lang_html">&ltmsqrt&gt</code> to display a square root.</p>
+  <p>Use <code class="lang_html">&lt;msqrt&gt;</code> to display a square root.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltmsqrt&gt
-  &ltmn&gt5&lt/mn&gt
-&lt/msqrt&gt</code></pre>
+  <pre><code class="lang_html">&lt;msqrt&gt;
+  &lt;mn&gt;5&lt;/mn&gt;
+&lt;/msqrt&gt;</code></pre>
   <p class="mathy">
   <math display="block">
     <msqrt>
@@ -1025,12 +1043,12 @@ is rational.&lt/p&gt</code></pre>
 
   <hr />
 
-  <p>Use <code class="lang_html">&ltmroot&gt</code> to display an nth root. <strong>The first element is covered by the radical symbol while the second element is used as the degree of the root</strong>.</p>
+  <p>Use <code class="lang_html">&lt;mroot&gt;</code> to display an nth root. <strong>The first element is covered by the radical symbol while the second element is used as the degree of the root</strong>.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltmroot&gt
-  &ltmn&gt2&lt/mn&gt
-  &ltmi&gtn&lt/mi&gt
-&lt/mroot&gt</code></pre>
+  <pre><code class="lang_html">&lt;mroot&gt;
+  &lt;mn&gt;2&lt;/mn&gt;
+  &lt;mi&gt;n&lt;/mi&gt;
+&lt;/mroot&gt;</code></pre>
   <p class="mathy">
   <math display="block">
     <mroot>
@@ -1043,7 +1061,7 @@ is rational.&lt/p&gt</code></pre>
 
   <hr />
 
-  <p>Use <code class="lang_html">&ltmsub&gt</code>, <code class="lang_html">&ltmsup&gt</code> and <code class="lang_html">&ltmsubsup&gt</code> to display <em>subscripts</em> and/or <em>superscripts</em>.</p>
+  <p>Use <code class="lang_html">&lt;msub&gt;</code>, <code class="lang_html">&lt;msup&gt;</code> and <code class="lang_html">&lt;msubsup&gt;</code> to display <em>subscripts</em> and/or <em>superscripts</em>.</p>
   <div class="example">
   <p class="mathy">
   <math display="block">
@@ -1051,13 +1069,13 @@ is rational.&lt/p&gt</code></pre>
       <mi>x</mi> <mn>0</mn>
     </msub>
 
-    <mtext>&nbsp,&nbsp</mtext>
+    <mtext>&nbsp;,&nbsp;</mtext>
 
     <msup>
       <mi>e</mi> <mrow> <mi>i</mi><mi>π</mi> </mrow>
     </msup>
 
-    <mtext>&nbsp,&nbsp</mtext>
+    <mtext>&nbsp;,&nbsp;</mtext>
 
     <msubsup>
       <mi>A</mi>
@@ -1068,7 +1086,7 @@ is rational.&lt/p&gt</code></pre>
   </p>
   </div>
 
-  <p>Use <code class="lang_html">&ltmunder&gt</code>, <code class="lang_html">&ltmover&gt</code> and <code class="lang_html">&ltmunderover&gt</code> to display <em>underscripts</em> and/or <em>overscripts</em>.</p>
+  <p>Use <code class="lang_html">&lt;munder&gt;</code>, <code class="lang_html">&lt;mover&gt;</code> and <code class="lang_html">&lt;munderover&gt;</code> to display <em>underscripts</em> and/or <em>overscripts</em>.</p>
   <div class="example">
   <p class="mathy">
   <math display="block">
@@ -1079,13 +1097,13 @@ is rational.&lt/p&gt</code></pre>
       </mrow>
     </munder>
 
-    <mtext>&nbsp,&nbsp</mtext>
+    <mtext>&nbsp;,&nbsp;</mtext>
 
     <mover>
       <mi>v</mi> <mo>→</mo>
     </mover>
 
-    <mtext>&nbsp,&nbsp</mtext>
+    <mtext>&nbsp;,&nbsp;</mtext>
 
     <munderover>
       <mo>∑</mo>
@@ -1098,7 +1116,7 @@ is rational.&lt/p&gt</code></pre>
 
   <hr />
 
-  <p>To create tables in MathML, use the <code class="lang_html">&ltmtable&gt</code>, <code class="lang_html">&ltmtr&gt</code> and <code class="lang_html">&ltmtd&gt</code> elements.</p>
+  <p>To create tables in MathML, use the <code class="lang_html">&lt;mtable&gt;</code>, <code class="lang_html">&lt;mtr&gt;</code> and <code class="lang_html">&lt;mtd&gt;</code> elements.</p>
   <div class="example">
   <p class="mathy">
   <math display="block">
@@ -1120,6 +1138,10 @@ is rational.&lt/p&gt</code></pre>
 
   <p>Use the <code>rowspan</code> and <code>columnspan</code> attributes to make cells span multiple rows and columns. Read about <a href="#h3_elements_tables">HTML tables</a> for reference.</p>
 
+  <a href="#h2_html_debugging"><h2 id="h2_html_debugging">HTML debugging</h2></a>
+
+  <p>Go to the <a href="https://validator.w3.org/">Markup Validation Service</a> website to see syntax errors in HTML text.</p>
+
   </section>
 
   <!--
@@ -1136,7 +1158,7 @@ is rational.&lt/p&gt</code></pre>
 
   <p>You change the look of an element by applying a <em>style</em> to it.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltp style="text-decoration: underline;"&gtThis element has a style applied to it.&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p style="text-decoration: underline;"&gt;This element has a style applied to it.&lt;/p&gt;</code></pre>
   <p style="text-decoration: underline;">This element has a style applied to it.</p>
   </div>
 
@@ -1144,9 +1166,9 @@ is rational.&lt/p&gt</code></pre>
 
   <p>A style is made out of <em>declarations</em>, each consisting of a <em>property</em> and a list of <em>values</em>.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltp style="text-decoration: underline;
+  <pre><code class="lang_html">&lt;p style="text-decoration: underline;
           font-weight: bold;
-          font-family: Georgia, serif;"&gtThe style applied to this element contains 3 declarations.&lt/p&gt</code></pre>
+          font-family: Georgia, serif;"&gt;The style applied to this element contains 3 declarations.&lt;/p&gt;</code></pre>
   <p style="text-decoration: underline;
             font-weight: bold;
             font-family: Georgia, serif;">The style applied to this element contains 3 declarations.</p>
@@ -1156,10 +1178,10 @@ is rational.&lt/p&gt</code></pre>
 
   <p>Each property expects values of a different <em>type</em>.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltp style="width: 400px;
+  <pre><code class="lang_html">&lt;p style="width: 400px;
           padding: 10px;
           background-color: pink;
-          color: blue;"&gtThis paragraph has properties of type 'color' and properties of type 'length'.&lt/p&gt</code></pre>
+          color: blue;"&gt;This paragraph has properties of type 'color' and properties of type 'length'.&lt;/p&gt;</code></pre>
   <p style="width: 400px;
             padding: 10px;
             background-color: pink;
@@ -1170,7 +1192,7 @@ is rational.&lt/p&gt</code></pre>
 
   <p>A property can have <em>fallback</em> values in case the first one can't be applied.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltp style="font-family: Helvetica, Arial;"&gtThis paragraph is styled with a property that has more than 1 value.&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p style="font-family: Helvetica, Arial;"&gt;This paragraph is styled with a property that has more than 1 value.&lt;/p&gt;</code></pre>
   <p style="font-family: Helvetica, Arial;">This paragraph is styled with a property that has more than 1 value.</p>
   </div>
 
@@ -1182,12 +1204,12 @@ is rational.&lt/p&gt</code></pre>
 
   <div class="example">
 
-  <pre><code class="lang_html">&ltp style="font-style: italic;
+  <pre><code class="lang_html">&lt;p style="font-style: italic;
           font-weight: bold;
           font-size: 0.8em;
           line-height: 1.2;
-          font-family: Arial, sans-serif;"&gtThis paragraph doesn't use shorthand properties.&lt/p&gt
-&ltp style="font: italic bold 0.8em/1.2 Arial, sans-serif;"&gtThis paragraph does use shorthand properties.&lt/p&gt</code></pre>
+          font-family: Arial, sans-serif;"&gt;This paragraph doesn't use shorthand properties.&lt;/p&gt;
+&lt;p style="font: italic bold 0.8em/1.2 Arial, sans-serif;"&gt;This paragraph does use shorthand properties.&lt;/p&gt;</code></pre>
 
   <p style="font: italic bold 0.8em/1.2 Arial, sans-serif;">This paragraph doesn't use shorthand properties.</p>
   <p style="font: italic bold 0.8em/1.2 Arial, sans-serif;">This paragraph does use shorthand properties.</p>
@@ -1225,7 +1247,7 @@ is rational.&lt/p&gt</code></pre>
 
   <p>When a style is applied to an element, it is actually applied to its box.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltp style="background-color: #ffdddd;"&gtThis paragraph is short, but the whole box has been colored.&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p style="background-color: #ffdddd;"&gt;This paragraph is short, but the whole box has been colored.&lt;/p&gt;</code></pre>
   <p style="background-color: #ffdddd;">This paragraph is short, but the whole box has been colored.</p>
   </div>
 
@@ -1233,12 +1255,12 @@ is rational.&lt/p&gt</code></pre>
 
   <p>The default box type of an element can be changed using the <code>display</code> property.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltp style="display: inline;"&gtThis is the first paragraph.&lt/p&gt
-&ltp style="display: inline;"&gtThis is the second paragraph, and it is displayed on the same line as the previous one.&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p style="display: inline;"&gt;This is the first paragraph.&lt;/p&gt;
+&lt;p style="display: inline;"&gt;This is the second paragraph, and it is displayed on the same line as the previous one.&lt;/p&gt;</code></pre>
   <p style="display: inline;">This is the first paragraph.</p>
   <p style="display: inline;">This is the second paragraph, and it is displayed on the same line as the previous one.</p>
 
-  <pre><code class="lang_html">&ltp id="block_link"&gtThis paragraph contains a &lta style="display: block;" href="#block_link"&gtlink&lt/a&gt which is treated as a block.&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p id="block_link"&gt;This paragraph contains a &lt;a style="display: block;" href="#block_link"&gt;link&lt;/a&gt; which is treated as a block.&lt;/p&gt;</code></pre>
   <p id="block_link">This paragraph contains a <a style="display: block;" href="#block_link">link</a> which is treated as a block.</p>
   </div>
 
@@ -1246,7 +1268,7 @@ is rational.&lt/p&gt</code></pre>
 
   <p>The border of a box can be styled using the <code>border</code> shorthand property.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltp style="border: 1px solid black;"&gtThe box around this paragraph is now black.&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p style="border: 1px solid black;"&gt;The box around this paragraph is now black.&lt;/p&gt;</code></pre>
   <p style="border: 1px solid black;">The box around this paragraph is now black.</p>
   </div>
 
@@ -1254,7 +1276,7 @@ is rational.&lt/p&gt</code></pre>
 
   <p>The <code>padding</code> property controls the space <em>between</em> the <code>border</code> and the <code>content</code> of a <code>block</code> element.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltp style="border: 1px solid black; padding: 10px;"&gtThere is some space between this text and its border.&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p style="border: 1px solid black; padding: 10px;"&gt;There is some space between this text and its border.&lt;/p&gt;</code></pre>
   <p style="border: 1px solid black; padding: 10px;">There is some space between this text and its border.</p>
   </div>
 
@@ -1262,7 +1284,7 @@ is rational.&lt/p&gt</code></pre>
 
   <p>The <code>margin</code> property controls the space <em>around</em> the <code>border</code> of a <code>block</code> element.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltp style="border: 1px solid black; margin: 20px;"&gtThere is some space around the border of this paragraph.&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p style="border: 1px solid black; margin: 20px;"&gt;There is some space around the border of this paragraph.&lt;/p&gt;</code></pre>
   <p style="border: 1px solid black; margin: 20px;">There is some space around the border of this paragraph.</p>
   </div>
 
@@ -1308,34 +1330,34 @@ is rational.&lt/p&gt</code></pre>
   <p>Web browsers apply some default styles to web pages. You can overwrite those styles with <abbr title="Cascading Style Sheets">CSS</abbr>.</p>
 
   <div class="example">
-  <pre><code class="lang_html">&ltp&gtThis is a paragraph without any custom styles applied to it.&lt/p&gt
-&ltp style="font-family: Helvetica, Arial, sans-serif; color: #2288ff;"&gtThis is a paragraph with custom styles.&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p&gt;This is a paragraph without any custom styles applied to it.&lt;/p&gt;
+&lt;p style="font-family: Helvetica, Arial, sans-serif; color: #2288ff;"&gt;This is a paragraph with custom styles.&lt;/p&gt;</code></pre>
 
   <p>This is a paragraph without any custom styles applied to it.</p>
   <p style="font-family: Helvetica, Arial, sans-serif; color: #2288ff;">This is a paragraph with custom styles.</p>
   </div>
 
-  <p>To reference a stylesheet contained in a separate file with the <code>.css</code> extension, put a <code class="lang_html">&ltlink&gt</code> attribute in the <code class="lang_html">&lthead&gt</code> of the HTML document.
+  <p>To reference a stylesheet contained in a separate file with the <code>.css</code> extension, put a <code class="lang_html">&lt;link&gt;</code> attribute in the <code class="lang_html">&lt;head&gt;</code> of the HTML document.
   The <code>rel</code> attribute indicates how the linked file should be treated (in this case as a stylesheet), and the <code>href</code> attribute specifies the relative path of the file.</p>
 
   <div class="example">
-  <pre><code class="lang_html">&ltlink rel="stylesheet" href="styles.css" /&gt</code></pre>
+  <pre><code class="lang_html">&lt;link rel="stylesheet" href="styles.css" /&gt;</code></pre>
   </div>
 
-  <p><strong>Note</strong>: As I understand it, you should put the CSS in the <code class="lang_html">&lthead&gt</code> of the document so that the browser can parse it alongside the HTML and immediately generate the correct layout, rather than generating the wrong layout first and then changing it when styles are applied.</p>
+  <p><strong>Note</strong>: As I understand it, you should put the CSS in the <code class="lang_html">&lt;head&gt;</code> of the document so that the browser can parse it alongside the HTML and immediately generate the correct layout, rather than generating the wrong layout first and then changing it when styles are applied.</p>
 
-  <p>CSS can also be placed inside a <code class="lang_html">&ltstyle&gt</code> element contained inside the <code class="lang_html">&lthead&gt</code>.</p>
+  <p>CSS can also be placed inside a <code class="lang_html">&lt;style&gt;</code> element contained inside the <code class="lang_html">&lt;head&gt;</code>.</p>
   <div class="example">
-  <pre><code class="lang_html">&lthead&gt
-  &ltstyle&gt
+  <pre><code class="lang_html">&lt;head&gt;
+  &lt;style&gt;
     body { color: purple; }
     h1 { text-decoration: underline; }
-  &lt/style&gt
-&lt/head&gt
-&ltbody&gt
-  &lth1&gtInternal stylesheets!&lt/h1&gt
-  &ltp&gtThis page is styled with CSS written directly at the top of the document.&lt/p&gt
-&lt/body&gt</code></pre>
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Internal stylesheets!&lt;/h1&gt;
+  &lt;p&gt;This page is styled with CSS written directly at the top of the document.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
 
   <div style="color: purple">
   <h1 style="text-decoration: underline;">Internal stylesheets!</h1>
@@ -1345,7 +1367,7 @@ is rational.&lt/p&gt</code></pre>
 
   <p>To apply a style to <em>a single HTML element</em>, assign it to its <code>style</code> attribute.</p>
   <div class="example">
-  <pre><code class="lang_html">&ltp style="color: blue;"&gtThis paragraph uses inline styles.&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p style="color: blue;"&gt;This paragraph uses inline styles.&lt;/p&gt;</code></pre>
   <p style="color: blue;">This paragraph uses inline styles.</p>
   </div>
 
@@ -1364,8 +1386,8 @@ is rational.&lt/p&gt</code></pre>
 
   <p>A CSS rule opens with one or more <em>selector</em>s.</p>
   <div class="example">
-  <pre><code class="lang_css">h1 { }    /* Selects all the elements of type &lth1&gt */
-p, li { } /* Selects all the elements of type &ltp&gt and all the elements of type &ltli&gt */
+  <pre><code class="lang_css">h1 { }    /* Selects all the elements of type &lt;h1&gt; */
+p, li { } /* Selects all the elements of type &lt;p&gt; and all the elements of type &lt;li&gt; */
 </code></pre>
   </div>
 
@@ -1393,15 +1415,15 @@ p, li { } /* Selects all the elements of type &ltp&gt and all the elements of ty
   ##########################
   -->
 
-  <p><em>Type selectors</em> directly match an HTML element type - for example, all elements of type <code class="lang_html">&ltp&gt</code>.<br />
+  <p><em>Type selectors</em> directly match an HTML element type - for example, all elements of type <code class="lang_html">&lt;p&gt;</code>.<br />
   They are also called <em>tag name selectors</em> or <em>element</em> selectors. Just like HTML tags, they are not case-sensitive.</p>
 
   <div class="example">
   <pre><code class="lang_css">p { /* Select all paragraphs */
   color: green;
 }</code></pre>
-  <pre><code class="lang_html">&ltp&gtThis is the first paragraph, and it's green.&lt/p&gt
-&ltp&gtThis is the second paragraph, and it's green too.&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p&gt;This is the first paragraph, and it's green.&lt;/p&gt;
+&lt;p&gt;This is the second paragraph, and it's green too.&lt;/p&gt;</code></pre>
 
   <p style="color: green">This is the first paragraph, and it's green.</p>
   <p style="color: green">This is the second paragraph, and it's green too.</p>
@@ -1420,11 +1442,11 @@ p, li { } /* Selects all the elements of type &ltp&gt and all the elements of ty
   color: orange;
   font-weight: bold;
 }</code></pre>
-  <pre><code class="lang_html">&ltul&gt
-  &ltli&gtItem one&lt/li&gt
-  &ltli class="special"&gtItem two&lt/li&gt &lt!-- This element has a class of "special" --&gt
-  &ltli&gtItem three&lt/li&gt
-&lt/ul&gt</code></pre>
+  <pre><code class="lang_html">&lt;ul&gt;
+  &lt;li&gt;Item one&lt;/li&gt;
+  &lt;li class="special"&gt;Item two&lt;/li&gt; &lt;!-- This element has a class of "special" --&gt;
+  &lt;li&gt;Item three&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
 
 
   <ul>
@@ -1459,7 +1481,7 @@ p, li { } /* Selects all the elements of type &ltp&gt and all the elements of ty
 #cooler { /* Select only the element with id 'cooler' */
   font-family: Georgia;
 }</code></pre>
-  <pre><code class="lang_html">&ltp&gt&ltspan id="cool"&gtSans-serif fonts are cool;&lt/span&gt &ltspan id="cooler"&gtbut serif fonts are cooler.&lt/span&gt&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p&gt;&lt;span id="cool"&gt;Sans-serif fonts are cool;&lt;/span&gt; &lt;span id="cooler"&gt;but serif fonts are cooler.&lt;/span&gt;&lt;/p&gt;</code></pre>
 
   <p><span style="font-family: Arial;">Sans-serif fonts are cool;</span> <span style="font-family: Georgia;">but serif fonts are cooler.</span></p>
   </div>
@@ -1487,7 +1509,7 @@ p, li { } /* Selects all the elements of type &ltp&gt and all the elements of ty
   font-weight: bold;
 }</code></pre>
 
-  <pre><code class="lang_html">&ltp&gtI do not live in the &ltabbr&gtUS&lt/abbr&gt; I live in the &ltabbr title="European Union"&gtEU&lt/abbr&gt.&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p&gt;I do not live in the &lt;abbr&gt;US&lt;/abbr&gt;; I live in the &lt;abbr title="European Union"&gt;EU&lt;/abbr&gt;.&lt;/p&gt;</code></pre>
   <p>I do not live in the <abbr>US</abbr>; I live in the <abbr title="European Union" style="font-weight: bold;">EU</abbr>.</p>
   </div>
 
@@ -1498,7 +1520,7 @@ p, li { } /* Selects all the elements of type &ltp&gt and all the elements of ty
   font-weight: bold;
 }</code></pre>
 
-  <pre><code class="lang_html">&ltp&gtI do not live in the &ltabbr title="United States"&gtUS&lt/abbr&gt; I live in the &ltabbr title="European Union"&gtEU&lt/abbr&gt.&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p&gt;I do not live in the &lt;abbr title="United States"&gt;US&lt;/abbr&gt;; I live in the &lt;abbr title="European Union"&gt;EU&lt;/abbr&gt;.&lt;/p&gt;</code></pre>
   <p>I do not live in the <abbr title="United States">US</abbr>; I live in the <abbr title="European Union" style="font-weight: bold;">EU</abbr>.</p>
   </div>
 
@@ -1508,7 +1530,7 @@ p, li { } /* Selects all the elements of type &ltp&gt and all the elements of ty
   font-weight: bold;
 }</code></pre>
 
-  <pre><code class="lang_html">&ltp&gtI do not live in the &ltabbr title="United States"&gtUS&lt/abbr&gt; neither do I live in the &ltabbr title="United Kingdom"&gtUK&lt/abbr&gt.&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p&gt;I do not live in the &lt;abbr title="United States"&gt;US&lt;/abbr&gt;; neither do I live in the &lt;abbr title="United Kingdom"&gt;UK&lt;/abbr&gt;.&lt;/p&gt;</code></pre>
   <p>I do not live in the <abbr title="United States" style="font-weight: bold;">US</abbr>; neither do I live in the <abbr title="United Kingdom" style="font-weight: bold;">UK</abbr>.</p>
   </div>
 
@@ -1546,36 +1568,31 @@ p, li { } /* Selects all the elements of type &ltp&gt and all the elements of ty
   color: pink;
   background-color: black;
 }</code></pre>
-  <code class="lang_html">&lta&gtHover over me!&lt/a&gt</code>
+  <code class="lang_html">&lt;a&gt;Hover over me!&lt;/a&gt;</code>
   <p><a class="hover_example">Hover over me!</a></p>
   </div>
 
   <p>Some useful pseudo-classes are the following.</p>
 
   <ul>
-    <div style="margin-bottom: 10px;">
     <li><code>:empty</code>: Represents an element with no children other than white-space characters.</li>
     <li><code>:first-child</code>: Match an element that is the first of its siblings. Also see <code>:last-child</code>.</li>
     <li><code>:nth-child</code>: Uses An+B notation to select elements from a list of sibling elements. Also see <code>:nth-last-child</code>.</li>
-    </div>
+    <li role="separator"></li>
 
-    <div style="margin-bottom: 10px;">
     <li><code>:hover</code>: Matches when a user designates an item with a pointing device, such as holding the mouse pointer over the item.</li>
     <li><code>:active</code>: Matches when an item is being activated by the user. For example, when the item is clicked on.</li>
     <li><code>:focus</code>: Matches when an element has focus.</li>
-    </div>
+    <li role="separator"></li>
 
-    <div style="margin-bottom: 10px;">
     <li><code>:enabled</code>: Represents a user interface element that is in an enabled state. Also see <code>:disabled</code>.</li>
     <li><code>:blank</code>: Matches a user-input element which is empty, containing an empty string or other null input.</li>
     <li><code>:valid</code>: Matches an element with valid contents. For example, an input element with the type 'email' that contains a validly formed email address or an empty value if the control is not required. Also see <code>:invalid</code>.</li>
     <li><code>:in-range</code>: Applies to elements with range limitations. For example, a slider control when the selected value is in the allowed range. Also see <code>:out-of-range</code>.</li>
     <li><code>:link</code>: Matches links that have not yet been visited. Also see <code>:visited</code>.</li>
-    </div>
+    <li role="separator"></li>
 
-    <div style="margin-bottom: 10px;">
     <li><code>:playing</code>: Represents a media element that is playing. Also see <code>:paused</code>.</li>
-    </div>
   </ul>
 
   <p>There are more pseudo-classes not listed here. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">See a list of all the pseudo-classes.</a></p>
@@ -1593,7 +1610,7 @@ p, li { } /* Selects all the elements of type &ltp&gt and all the elements of ty
   <pre><code class="lang_css">p::first-line {
     text-decoration: underline;
 }</code></pre>
-  <pre><code class="lang_html">&ltp&gtThe first line of the paragraph is underlined,&ltbr /&gt while every other one isn't.&lt/p&gt</code></pre>
+  <pre><code class="lang_html">&lt;p&gt;The first line of the paragraph is underlined,&lt;br /&gt; while every other one isn't.&lt;/p&gt;</code></pre>
 
   <p><span style="text-decoration: underline;">The first line of the paragraph is underlined,</span><br /> while every other one isn't.</p>
   </div>
@@ -1612,10 +1629,10 @@ p, li { } /* Selects all the elements of type &ltp&gt and all the elements of ty
 li {
   color: green;
 }</code></pre>
-  <pre><code class="lang_html">&ltp&gtThis is a paragraph, and it is green.&lt/p&gt
-&ltul&gt
-  &ltli&gtThis is a list item, and it is green too.&lt/li&gt
-&lt/ul&gt</code></pre>
+  <pre><code class="lang_html">&lt;p&gt;This is a paragraph, and it is green.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;This is a list item, and it is green too.&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
 
   <p style="color: green;">This is a paragraph, and it is green.</p>
   <ul>
@@ -1631,9 +1648,9 @@ li {
 
   <a href="#h3_descendant_combinators"><h3 id="h3_descendant_combinators">Descendant combinators</h3></a>
 
-  <p>To select only an <code>&ltem&gt</code> that is nested inside an <code>&ltli&gt</code> element, you can use a selector called the descendant combinator, which takes the form of a space between two other selectors:</p>
+  <p>To select only an <code>&lt;em&gt;</code> that is nested inside an <code>&lt;li&gt;</code> element, you can use a selector called the descendant combinator, which takes the form of a space between two other selectors:</p>
   <div class="example">
-  <pre><code class="lang_css">li em { /*Select any &ltem&gt element that is inside (a descendant of) an &ltli&gt.*/
+  <pre><code class="lang_css">li em { /*Select any &lt;em&gt; element that is inside (a descendant of) an &lt;li&gt;.*/
   color: rebeccapurple;
 }</code></pre>
   </div>
@@ -1648,7 +1665,7 @@ li {
 
   <p>Something else you might like to try is styling a paragraph when it comes directly after a heading at the same hierarchy level in the HTML. To do so, place a + between the selectors.</p>
   <div class="example">
-  <pre><code class="lang_css">h1 + p { /*Select any &ltp&gt element that is immediately after (a next-sibling of) an &lth1&gt.*/
+  <pre><code class="lang_css">h1 + p { /*Select any &lt;p&gt; element that is immediately after (a next-sibling of) an &lt;h1&gt;.*/
   font-size: 200%;
 }</code></pre>
   </div>
@@ -1661,9 +1678,9 @@ li {
 
   <a href="#h3_child_combinators"><h3 id="h3_child_combinators">Child combinators</h3></a>
 
-  <p>The following selects paragraphs that are direct children of &ltarticle&gt elements using the child combinator (&gt):
+  <p>The following selects paragraphs that are direct children of &lt;article&gt; elements using the child combinator (&gt;):
   <div class="example">
-  <pre><code class="lang_css">article &gt p {
+  <pre><code class="lang_css">article &gt; p {
 }</code></pre>
   </div>
 
@@ -1831,12 +1848,12 @@ light-dark(rgb(255 255 255), rgb(0 0 0))</code></pre>
 h2   { background-color: black; color: white; }
 span { background-color: rgb(255 255 255 / 50%); }</code></pre>
 
-<pre><code class="lang_html">&ltdiv class="background-color"&gt
-    &ltdiv "box"&gt
-      &lth2&gtBackground Colors&lt/h2&gt
-      &ltp&gtHere we're using the background &ltspan&gtcolor&lt/span&gt.&lt/p&gt
-    &lt/div&gt
-  &lt/div&gt</code></pre>
+<pre><code class="lang_html">&lt;div class="background-color"&gt;
+    &lt;div "box"&gt;
+      &lt;h2&gt;Background Colors&lt;/h2&gt;
+      &lt;p&gt;Here we're using the background &lt;span&gt;color&lt;/span&gt;.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</code></pre>
 
   <div class="background-color">
     <div class="box">
@@ -1880,7 +1897,7 @@ span { background-color: rgb(255 255 255 / 50%); }</code></pre>
   <p>Text inside an element is laid out inside the element's content box. It starts at the top left of the content area (or the top right, in the case of RTL language content), and flows towards the end of the line.<br />
   Once it reaches the end, it goes down to the next line and flows to the end again.</p>
 
-  <p>The text inside an element is all affected as one single entity. You can't select and style subsections of text unless you wrap them in an appropriate element (such as a &ltspan&gt or &ltstrong&gt), or use a text-specific<br />
+  <p>The text inside an element is all affected as one single entity. You can't select and style subsections of text unless you wrap them in an appropriate element (such as a &lt;span&gt; or &lt;strong&gt;), or use a text-specific<br />
   pseudo-element like ::first-letter (selects the first letter of an element's text), ::first-line (selects the first line of an element's text), or ::selection (selects the text currently highlighted by the cursor).</p>
 
   <h3>Specifying color</h3>
@@ -1890,7 +1907,7 @@ span { background-color: rgb(255 255 255 / 50%); }</code></pre>
   <pre><code class="lang_css">p {
   color: red;
 }</code></pre>
-  <code class="lang_html">&ltp&gtTommy the cat had many a story to tell.&lt/p&gt</code>
+  <code class="lang_html">&lt;p&gt;Tommy the cat had many a story to tell.&lt;/p&gt;</code>
 
   <p style="color:red">Tommy the cat had many a story to tell.</p>
 
@@ -1901,15 +1918,17 @@ span { background-color: rgb(255 255 255 / 50%); }</code></pre>
   <pre><code class="lang_css">p {
   font-family: Arial;
 }</code></pre>
-  <code class="lang_html">&ltp&gtTommy the cat had many a story to tell.&lt/p&gt</code>
+  <code class="lang_html">&lt;p&gt;Tommy the cat had many a story to tell.&lt;/p&gt;</code>
   <p style="font-family: Arial;">Tommy the cat had many a story to tell.</p>
 
   <h4>Default fonts</h4>
 
   <p>CSS defines five default <em>names</em> for fonts - the exact font face used from these generic names can vary between each browser and each operating system. It represents a worst case scenario where the browser will try its best to provide a font that looks appropriate.</p>
 
-  <dt>serif</td>
+  <dl>
+  <dt>serif</dt>
   <dd>The flourishes and other small details you see at the ends of the strokes in some typefaces</dd>
+  </dl>
 
   <ul>
     <li><span style="font-family: serif;">serif: Fonts that have serifs.</span></li>
@@ -1928,37 +1947,37 @@ span { background-color: rgb(255 255 255 / 50%); }</code></pre>
       <td><strong>Name</strong></td>
       <td><strong>Type</strong></td>
       <td><strong>Notes</strong></td>
-    <tr>
+    </tr>
     <tr>
       <td>Arial</td>
       <td>Sans-serif</td>
       <td>Can be used as a fallback font for Helvetica since their shapes are similar.</td>
-    <tr>
+    </tr>
     <tr>
       <td>Courier New</td>
       <td>Monospace</td>
       <td></td>
-    <tr>
+    </tr>
     <tr>
       <td>Georgia</td>
       <td>Serif</td>
       <td></td>
-    <tr>
+    </tr>
     <tr>
       <td>Times New Roman</td>
       <td>Serif</td>
       <td></td>
-    <tr>
+    </tr>
     <tr>
       <td>Trebuchet MS</td>
       <td>Sans-serif</td>
       <td>Less common on mobile OSes.</td>
-    <tr>
+    </tr>
     <tr>
       <td>Verdana</td>
       <td>Sans-serif</td>
       <td></td>
-    <tr>
+    </tr>
   </tbody></table>
 
   <h4>Web fonts</h4>
@@ -1983,7 +2002,7 @@ span { background-color: rgb(255 255 255 / 50%); }</code></pre>
     <li>All major browsers support <abbr title="Web Open Font Format 1">WOFF</abbr>/<abbr title="Web Open Font Format 2">WOFF2</abbr>.</li>
     <li>WOFF2 supports the entirety of the TrueType and OpenType specifications, including variable fonts, chromatic fonts, and font collections.</li>
     <li>The order in which you list font files is important. If you provide the browser with a list of multiple font files to download, the browser will choose the first font file it's able to use. That's why the format you list first should be the preferred format — that is, WOFF2 — with the older formats listed after that. Browsers that don't understand one format will then fall back to the next format in the list.</li>
-    <li>If you need to work with legacy browsers, you should provide <abbr title"Embedded Open Type">EOT</abbr>, <abbr title="TrueType Font">TTF</abbr>, and SVG web fonts for download.</li>
+    <li>If you need to work with legacy browsers, you should provide <abbr title="Embedded Open Type">EOT</abbr>, <abbr title="TrueType Font">TTF</abbr>, and SVG web fonts for download.</li>
   </ul>
 
   <h4>Font stacks</h4>
@@ -1997,6 +2016,8 @@ span { background-color: rgb(255 255 255 / 50%); }</code></pre>
 
 <p>It is a good idea to provide a suitable generic font name at the end of the stack so that if none of the listed fonts are available, the browser can at least provide something approximately suitable.</p>
 
+  <a href="#h2_css_debugging"><h2 id="h2_css_debugging">CSS debugging</h2></a>
+
   </section>
 
   <!--
@@ -2007,12 +2028,12 @@ span { background-color: rgb(255 255 255 / 50%); }</code></pre>
 
   <section>
 
-  <a href="#h1_js"><h1 id="h1_js">Behavious: JS</h1></a>
+  <a href="#h1_js"><h1 id="h1_js">Behaviour: JS</h1></a>
 
   <p>To add custom behaviour to a web page, you can use a JavaScript script.</p>
 
-  <pre><code class="lang_html">&ltbutton type="button"&gtPlayer 1: Chris&lt/button&gt</code></pre>
-  <pre><code class="lang_js">const button = document.querySelector("button"); /* Select the first &ltbutton&gt element of the page */
+  <pre><code class="lang_html">&lt;button type="button"&gt;Player 1: Chris&lt;/button&gt;</code></pre>
+  <pre><code class="lang_js">const button = document.querySelector("button"); /* Select the first &lt;button&gt; element of the page */
 
 button.addEventListener("click", update_name);
 
@@ -2035,30 +2056,30 @@ function update_name() {
 
   <a href="#h3_external_js"><h3 id="h3_external_js">External JavaScript</h3></a>
 
-  <p><strong>External</strong> JavaScript is written in a separate file with the <code>.js</code> extension, and then referenced in the HTML using <code class="lang_html">&ltscript&gt</code> tags:</p>
-  <pre><code class="lang_html">&ltscript src="script.js" defer&gt&lt/script&gt</code></pre>
+  <p><strong>External</strong> JavaScript is written in a separate file with the <code>.js</code> extension, and then referenced in the HTML using <code class="lang_html">&lt;script&gt;</code> tags:</p>
+  <pre><code class="lang_html">&lt;script src="script.js" defer&gt;&lt;/script&gt;</code></pre>
 
   <p>The <code>defer</code> attribute tells the browser to parse the script but to <em>not run it immediately</em>, and instead to wait until the document tree has been generated.</p>
 
   <a href="#h3_internal_js"><h3 id="h3_internal_js">Internal JavaScript</h3></a>
 
-  <p><strong>Internal</strong> JavaScript is written directly inside the HTML file, between two <code class="lang_html">&ltscript&gt</code> tags:</p>
-  <pre><code class="lang_html">&ltscript&gt
+  <p><strong>Internal</strong> JavaScript is written directly inside the HTML file, between two <code class="lang_html">&lt;script&gt;</code> tags:</p>
+  <pre><code class="lang_html">&lt;script&gt;
   // JavaScript goes here
-&lt/script&gt</code></pre>
+&lt;/script&gt;</code></pre>
 
-  <a href="#h3_inline_js"><h3 id="h3_inline_js"><h3>Inline JavaScript</h3></a>
+  <h3 id="h3_inline_js"><a href="#h3_inline_js">Inline JavaScript</a></h3>
 
   <p><strong>Inline</strong> JavaScript is a snippet of code written as the value of an element's attribute:</p>
-  <pre><code class="lang_html">&ltbutton onclick="/* JavaScript goes here */"&gt&lt/button&gt</code></pre>
+  <pre><code class="lang_html">&lt;button onclick="/* JavaScript goes here */"&gt;&lt;/button&gt;</code></pre>
 
   <hr />
 
   <p><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript">MDN</a> says <q>It is bad practice to pollute your HTML with JavaScript</q>.<br />
   Instead of including JavaScript in your HTML, use a JS procedure to get a handle to the element(s) which should have the custom behaviour, then add one or more events to it/them.</p>
-  <pre><code class="lang_html">&ltbutton&gtClick me!&lt/button&gt
-&ltbutton&gtClick me!&lt/button&gt
-&ltbutton&gtClick me!&lt/button&gt</code></pre>
+  <pre><code class="lang_html">&lt;button&gt;Click me!&lt;/button&gt;
+&lt;button&gt;Click me!&lt;/button&gt;
+&lt;button&gt;Click me!&lt;/button&gt;</code></pre>
 
   <pre><code class="lang_js">const buttons = document.querySelectorAll("button"); /* Get an array with all the buttons on the page */
 
@@ -2080,7 +2101,7 @@ function alert_click() { alert("You clicked a button!"); }</code></pre>
 
   <a href="#h2_basic_browser_api"><h2 id="h2_basic_browser_api">Basic browser API</h2></a>
 
-  <a href="#h3_document_search_methods"><h3 id="h3_document_search_methods"><code>document</code> search methods</h2></a>
+  <a href="#h3_document_search_methods"><h3 id="h3_document_search_methods"><code>document</code> search methods</h3></a>
 
   <p>The <code>document</code> object offers some methods to search for elements.</p>
 
@@ -2129,7 +2150,7 @@ document.querySelectorAll(selectors: String) -> NodeList</code></pre>
 
   <p>To react to an event, you define a block of code that should run when the event fires - the <strong>event handler</strong> - and then<br />
   you <strong>register</strong> it to the element that will fire the event.</p>
-  <code class="lang_html">&ltbutton type="button"&gtRandomize background&lt/button&gt</code>
+  <code class="lang_html">&lt;button type="button"&gt;Randomize background&lt;/button&gt;</code>
   <pre><code class="lang_js">const button = document.querySelector("button"); /* Find the first button in the page */
 
 button.addEventListener("click", randomize_background()) /* Add a listener to the button's "click" event */
@@ -2209,7 +2230,7 @@ button.onclick = do_thing_B;</code></pre>
   The <code>target</code> field of this parameter refers to the HTML element that triggered the event (e.g. for a "click" event, <code>event.target</code> represents<br />
   the element that was clicked).</p>
 
-  <code class="lang_html>&ltbutton type="button"&gtClick to randomize, double-click to reset&lt/button&gt</code>
+  <code class="lang_html">&lt;button type="button"&gt;Click to randomize, double-click to reset&lt;/button&gt;</code>
   <pre><code class="lang_js">document.querySelector("button").addEventListener("click", randomize_self);
 
 function randomize_self(event) {
@@ -2232,24 +2253,24 @@ function random(min, max) {
 
   <a href="#h2_image_gallery"><h2 id="h2_image_gallery">Image gallery</h2></a>
 
-<pre><code class="lang_html">&ltdiv class="full-img"&gt
-  &ltimg
+<pre><code class="lang_html">&lt;div class="full-img"&gt;
+  &lt;img
     class="displayed-img"
     src="gallery/1.jpg"
-    alt="1" /&gt
-  &ltdiv class="overlay"&gt&lt/div&gt
-  &ltbutton class="dark"&gtDarken&lt/button&gt
-&lt/div&gt
-&ltdiv class="thumb-bar"&gt&lt/div&gt</code></pre>
+    alt="1" /&gt;
+  &lt;div class="overlay"&gt;&lt;/div&gt;
+  &lt;button class="dark"&gt;Darken&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="thumb-bar"&gt;&lt;/div&gt;</code></pre>
 
-  <span class="image-gallery">
+  <div class="image-gallery">
     <div class="full-img">
       <img class="displayed-img" src="gallery/1.png" alt="1" />
       <div class="overlay"></div>
       <button class="dark">Darken</button>
     </div>
     <div class="thumb-bar"></div>
-  </span>
+  </div>
 
   <!--
   ##########################
