@@ -1391,9 +1391,11 @@ is rational.&lt;/p&gt;</code></pre>
   ##### INLINE AND BLOCK DIRECTIONS #####
   #######################################
   -->
+
 <!--
   <h4 id="inline_and_block_directions"><a href="#inline_and_block_directions">Inline and block directions</a></h4>
 -->
+
   <!--
   #####################
   ##### SELECTORS #####
@@ -1402,24 +1404,26 @@ is rational.&lt;/p&gt;</code></pre>
 
   <h3 id="selectors_and_combinators"><a href="#selectors_and_combinators">Selectors and combinators</a></h3>
 
+  <p>A CSS rule starts with one or more <em>selectors</em>.</p>
+  <div class="example">
+  <pre><code class="lang_css">selector1, selector2 { /* ... */ }</code></pre>
+  </div>
+
   <!--
   ##########################
   ##### TYPE SELECTORS #####
   ##########################
   -->
 
-  <p>A CSS rule starts with a <em>selector</em>.</p>
+  <h4 id="type_selectors"><a href="#type_selectors">Type selectors</a></h3>
 
-  <p><em>Type selectors</em> directly match an HTML element type - for example, all elements of type <code class="lang_html">&lt;p&gt;</code>.<br />
-  They are also called <em>tag name selectors</em> or <em>element</em> selectors. Just like HTML tags, they are not case-sensitive.</p>
-
+  <p><em>Type selectors</em> directly match an HTML element type. They are also called <em>tag name selectors</em> or <em>element</em> selectors. Just like HTML tags, they are not case-sensitive.</p>
   <div class="example">
   <pre><code class="lang_css">p { /* Select all paragraphs */
   color: green;
 }</code></pre>
   <pre><code class="lang_html">&lt;p&gt;This is the first paragraph, and it's green.&lt;/p&gt;
 &lt;p&gt;This is the second paragraph, and it's green too.&lt;/p&gt;</code></pre>
-
   <p style="color: green">This is the first paragraph, and it's green.</p>
   <p style="color: green">This is the second paragraph, and it's green too.</p>
   </div>
@@ -1430,8 +1434,9 @@ is rational.&lt;/p&gt;</code></pre>
   ###########################
   -->
 
-  <p>To select a subset of the elements, use a <em>class selector</em>.</p>
+  <h4 id="class_selectors"><a href="#class_selectors">Class selectors</a></h3>
 
+  <p>To select a subset of the elements, use a <em>class selector</em>.</p>
   <div class="example">
   <pre><code class="lang_css">.special { /* Select all elements with class 'special' */
   color: orange;
@@ -1439,28 +1444,39 @@ is rational.&lt;/p&gt;</code></pre>
 }</code></pre>
   <pre><code class="lang_html">&lt;ul&gt;
   &lt;li&gt;Item one&lt;/li&gt;
-  &lt;li class="special"&gt;Item two&lt;/li&gt; &lt;!-- This element has a class of "special" --&gt;
+  &lt;li class="special"&gt;Item two&lt;/li&gt; &lt;!-- This list item has a class of 'special' --&gt;
   &lt;li&gt;Item three&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-
-
+&lt;/ul&gt;
+&lt;/p class="special"&gt;Paragraph&lt;/p&gt;   &lt;!-- This paragraph has a class of 'special' --&gt;</code></pre>
   <ul>
     <li>Item one</li>
     <li style="color: orange; font-weight: bold;">Item two</li>
     <li>Item three</li>
   </ul>
+  <p style="color: orange; font-weight: bold;">Paragraph</p>
   </div>
 
   <p>If you want to select only elements of a specific type <em>and</em> with a specific class, you can write the type and the class as a single selector.</p>
-
   <div class="example">
   <pre><code class="lang_css">li.special { /* Select all list items of class 'special' */
   color: orange;
   font-weight: bold;
 }</code></pre>
+  <pre><code class="lang_html">&lt;ul&gt;
+  &lt;li&gt;Item one&lt;/li&gt;
+  &lt;li class="special"&gt;Item two&lt;/li&gt; &lt;!-- This list item has a class of 'special' and is selected by the rule --&gt;
+  &lt;li&gt;Item three&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p class="special"&gt;Paragraph&lt;/p&gt;   &lt;!-- This paragraph has a class of 'special' and is NOT selected by the rule --&gt;</code></pre>
+  <ul>
+    <li>Item one</li>
+    <li style="color: orange; font-weight: bold;">Item two</li>
+    <li>Item three</li>
+  </ul>
+  <p>Paragraph</p>
   </div>
 
-  <p><strong>Do not put a space between the type and the class</strong>. If you do it, it becomes a <a href="#h3_descendant_combinator">descendant combinator</a>.</p>
+  <p><strong>Do not put a space between the type and the class</strong>. If you do, it becomes a <a href="#descendant_combinators">descendant combinator</a>.</p>
 
   <!--
   ########################
@@ -1468,16 +1484,20 @@ is rational.&lt;/p&gt;</code></pre>
   ########################
   -->
 
-  <p><em>ID selectors</em> target an element that has a specific value for its id attribute:</p>
+  <h4 id="id_selectors"><a href="#id_selectors">Id selectors</a></h3>
+
+  <p>To target exactly 1 element, use an <em>ID selector</em>.</p>
   <div class="example">
-  <pre><code class="lang_css">#cool { /* Select only the element with id 'cool' */
+  <pre><code class="lang_css">#cool {      /* Select only the element with id 'cool' */
   font-family: Arial;
 }
-#cooler { /* Select only the element with id 'cooler' */
+#cooler {    /* Select only the element with id 'cooler' */
   font-family: Georgia;
 }</code></pre>
-  <pre><code class="lang_html">&lt;p&gt;&lt;span id="cool"&gt;Sans-serif fonts are cool;&lt;/span&gt; &lt;span id="cooler"&gt;but serif fonts are cooler.&lt;/span&gt;&lt;/p&gt;</code></pre>
-
+  <pre><code class="lang_html">&lt;p&gt;
+  &lt;span id="cool"&gt;Sans-serif fonts are cool;&lt;/span&gt;      &lt;!-- This span has an id of 'cool' --&gt;
+  &lt;span id="cooler"&gt;but serif fonts are cooler.&lt;/span&gt;   &lt;!-- This span has an id of 'cooler' --&gt;
+&lt;/p&gt;</code></pre>
   <p><span style="font-family: Arial;">Sans-serif fonts are cool;</span> <span style="font-family: Georgia;">but serif fonts are cooler.</span></p>
   </div>
 
@@ -1485,7 +1505,7 @@ is rational.&lt;/p&gt;</code></pre>
 
   <p>If you want to select only the element of a specific type <em>and</em> with a specific id, you can write the type and the id as a single selector.
   <div class="example">
-<pre><code class="lang_css">p.sans { /* Select all paragraphs with id 'sans' */
+<pre><code class="lang_css">p#sans { /* Select all paragraphs with id 'sans' */
   font-family: Arial;
 }</code></pre>
   </div>
@@ -1498,12 +1518,13 @@ is rational.&lt;/p&gt;</code></pre>
   ###############################
   -->
 
+  <h4 id="attribute_selectors"><a href="#attribute_selectors">Attribute selectors</a></h3>
+
   <p>You can select elements based on the presence of a certain attribute on an element using an <em>attribute selector</em>.</p>
   <div class="example">
   <pre><code class="lang_css">a[title] { /* Selects only elements with the attribute 'title' */
   font-weight: bold;
 }</code></pre>
-
   <pre><code class="lang_html">&lt;p&gt;I do not live in the &lt;abbr&gt;US&lt;/abbr&gt;; I live in the &lt;abbr title="European Union"&gt;EU&lt;/abbr&gt;.&lt;/p&gt;</code></pre>
   <p>I do not live in the <abbr>US</abbr>; I live in the <abbr title="European Union" style="font-weight: bold;">EU</abbr>.</p>
   </div>
@@ -1514,7 +1535,6 @@ is rational.&lt;/p&gt;</code></pre>
   <pre><code class="lang_css">a[title="European Union"] { /* Selects only elements where the attribute 'title' has value 'European Union' */
   font-weight: bold;
 }</code></pre>
-
   <pre><code class="lang_html">&lt;p&gt;I do not live in the &lt;abbr title="United States"&gt;US&lt;/abbr&gt;; I live in the &lt;abbr title="European Union"&gt;EU&lt;/abbr&gt;.&lt;/p&gt;</code></pre>
   <p>I do not live in the <abbr title="United States">US</abbr>; I live in the <abbr title="European Union" style="font-weight: bold;">EU</abbr>.</p>
   </div>
@@ -1524,7 +1544,6 @@ is rational.&lt;/p&gt;</code></pre>
   <pre><code class="lang_css">a[title~="United"] { /* Selects only elements where the attribute 'title' and whose list of values contains 'United' */
   font-weight: bold;
 }</code></pre>
-
   <pre><code class="lang_html">&lt;p&gt;I do not live in the &lt;abbr title="United States"&gt;US&lt;/abbr&gt;; neither do I live in the &lt;abbr title="United Kingdom"&gt;UK&lt;/abbr&gt;.&lt;/p&gt;</code></pre>
   <p>I do not live in the <abbr title="United States" style="font-weight: bold;">US</abbr>; neither do I live in the <abbr title="United Kingdom" style="font-weight: bold;">UK</abbr>.</p>
   </div>
@@ -1550,14 +1569,14 @@ is rational.&lt;/p&gt;</code></pre>
   </tbody></table>
 
   <!--
-  ###########################
-  ##### STATE SELECTORS #####
-  ###########################
+  ##################################
+  ##### PSEUDO-CLASS SELECTORS #####
+  ##################################
   -->
 
-  <a href="#h3_state_selectors"><h3 id="h3_state_selectors">State selectors</h3></a>
+  <h4 id="pseudo_class_selectors"><a href="#pseudo_class_selectors">Pseudo-class selectors</a></h4>
 
-  <p><strong>Pseudo-classes</strong> select style certain <em>states</em> of an element. For example, they are the first element of their type (<code>:first-child</code>), or they are being hovered over by the mouse pointer (<code>:hover</code>).</p>
+  <p><strong>Pseudo-class selectors</strong> (or <em>state selectors</em>) select style certain <em>states</em> of an element. For example, they are the first element of their type (<code>:first-child</code>), or they are being hovered over by the mouse pointer (<code>:hover</code>).</p>
   <div class="example">
   <pre><code class="lang_css">a:hover { /* Selects links which are being hovered over */
   color: pink;
@@ -1568,7 +1587,6 @@ is rational.&lt;/p&gt;</code></pre>
   </div>
 
   <p>Some useful pseudo-classes are the following.</p>
-
   <ul>
     <li><code>:empty</code>: Represents an element with no children other than white-space characters.</li>
     <li><code>:first-child</code>: Match an element that is the first of its siblings. Also see <code>:last-child</code>.</li>
@@ -1598,41 +1616,15 @@ is rational.&lt;/p&gt;</code></pre>
   ####################################
   -->
 
-  <a href="#h3_pseudo_element_selectors"><h3 id="h3_pseudo_element_selectors">Pseudo-element selectors</h3></a>
+  <h4 id="pseudo_element_selectors"><a href="#pseudo_element_selectors">Pseudo-element selectors</a></h4>
 
-  <p><em>Pseudo-elements</em> select a certain <em>part</em> of an element rather than the element itself.</p>
+  <p><em>Pseudo-element selectors</em> select a certain <em>part</em> of an element rather than the element itself.</p>
   <div class="example">
   <pre><code class="lang_css">p::first-line {
     text-decoration: underline;
 }</code></pre>
   <pre><code class="lang_html">&lt;p&gt;The first line of the paragraph is underlined,&lt;br /&gt; while every other one isn't.&lt;/p&gt;</code></pre>
-
   <p><span style="text-decoration: underline;">The first line of the paragraph is underlined,</span><br /> while every other one isn't.</p>
-  </div>
-
-  <!--
-  ##################################
-  ##### SELECTOR CONCATENATION #####
-  ##################################
-  -->
-
-  <a href="#h3_selector_concatenation"><h3 id="h3_selector_concatenation">Selector concatenation</h3></a>
-
-  <p>You can target multiple selectors at the same time by separating the selectors with a comma.</p>
-  <div class="example">
-  <pre><code class="lang_css">p,
-li {
-  color: green;
-}</code></pre>
-  <pre><code class="lang_html">&lt;p&gt;This is a paragraph, and it is green.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;This is a list item, and it is green too.&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-
-  <p style="color: green;">This is a paragraph, and it is green.</p>
-  <ul>
-    <li style="color: green;">This is a list item, and it is green too.</li>
-  </ul>
   </div>
 
   <!--
@@ -1641,27 +1633,12 @@ li {
   ##################################
   -->
 
-  <a href="#h3_descendant_combinators"><h3 id="h3_descendant_combinators">Descendant combinators</h3></a>
+  <h4 id="descendant_combinators"><a href="#descendant_combinators">Descendant combinators</a></h4>
 
-  <p>To select only an <code>&lt;em&gt;</code> that is nested inside an <code>&lt;li&gt;</code> element, you can use a selector called the descendant combinator, which takes the form of a space between two other selectors:</p>
+  <p>To restrict the selection to the subtree of an element, put a space between two selectors to create a <em>descendant combinator</em>.</p>
   <div class="example">
-  <pre><code class="lang_css">li em { /*Select any &lt;em&gt; element that is inside (a descendant of) an &lt;li&gt;.*/
+  <pre><code class="lang_css">li em { /* Select any &lt;em&gt; element that is inside (a descendant of) a &lt;li&gt;. */
   color: rebeccapurple;
-}</code></pre>
-  </div>
-
-  <!--
-  ####################################
-  ##### NEXT-SIBLING COMBINATORS #####
-  ####################################
-  -->
-
-  <a href="#h3_next_sibling_combinators"><h3 id="h3_next_sibling_combinators">Next-sibling combinators</h3></a>
-
-  <p>Something else you might like to try is styling a paragraph when it comes directly after a heading at the same hierarchy level in the HTML. To do so, place a + between the selectors.</p>
-  <div class="example">
-  <pre><code class="lang_css">h1 + p { /*Select any &lt;p&gt; element that is immediately after (a next-sibling of) an &lt;h1&gt;.*/
-  font-size: 200%;
 }</code></pre>
   </div>
 
@@ -1671,11 +1648,27 @@ li {
   #############################
   -->
 
-  <a href="#h3_child_combinators"><h3 id="h3_child_combinators">Child combinators</h3></a>
+  <h4 id="child_combinators"><a href="#child_combinators">Child combinators</a></h4>
 
-  <p>The following selects paragraphs that are direct children of &lt;article&gt; elements using the child combinator (&gt;):
+  <p>To restrict the selection to the <em>direct children</em> of an element, put a <code>&gt;</code> between two selectors to create a <em>child combinator</em>.</p>
   <div class="example">
-  <pre><code class="lang_css">article &gt; p {
+  <pre><code class="lang_css">article &gt; p { /* Select any &lt;p&gt; element that is a child of an &lt;article&gt;. */
+  font-family: Arial;
+}</code></pre>
+  </div>
+
+  <!--
+  ####################################
+  ##### NEXT-SIBLING COMBINATORS #####
+  ####################################
+  -->
+
+  <h4 id="next_sibling_combinators"><a href="#next_sibling_combinators">Next-sibling combinators</a></h4>
+
+  <p>To restrict the selection to the first element <em>on the same level</em> of another, put a <code>+</code> between two selectors to create a <em>next-sibling combinator</em>.</p>
+  <div class="example">
+  <pre><code class="lang_css">h1 + p { /* Select any &lt;p&gt; element that is immediately after (a next-sibling of) an &lt;h1&gt;. */
+  font-size: 200%;
 }</code></pre>
   </div>
 
