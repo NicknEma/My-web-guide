@@ -371,8 +371,8 @@
 
   <p>To embed an image into a webpage, use the void <code class="lang_html">&lt;img&gt;</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the image.</p>
   <div class="example">
-  <pre><code class="lang_html">&lt;img src="face.png" alt="A yellow smile on a gray background." width="500" height="500" title="Smile!" /&gt;</code></pre>
-  <img src="face.png" alt="A yellow smile on a gray background." width="500" height="500" title="Smile!" />
+  <pre><code class="lang_html">&lt;img src="images/face.png" alt="A yellow smile on a gray background." width="500" height="500" title="Smile!" /&gt;</code></pre>
+  <img src="images/face.png" alt="A yellow smile on a gray background." width="500" height="500" title="Smile!" />
   </div>
 
   <p>Search engines read image filenames and count them towards <abbr title="Search Engine Optimizations">SEO</abbr>; you should give your image a descriptive filename.</p>
@@ -382,8 +382,8 @@
   <p>The <code>alt</code> attribute specifies text that will be displayed when the image can't be loaded, and/or will be read out loud by screen readers.</p>
 
   <div class="example">
-  <pre><code class="lang_html">&lt;img src="facee.png" alt="A yellow smile on a gray background." width="500" height="500" title="Smile!" /&gt;</code></pre>
-  <img src="facee.png" alt="A yellow smile on a gray background." width="500" height="500" title="Smile!" />
+  <pre><code class="lang_html">&lt;img src="images/facee.png" alt="A yellow smile on a gray background." width="500" height="500" title="Smile!" /&gt;</code></pre>
+  <img src="images/facee.png" alt="A yellow smile on a gray background." width="500" height="500" title="Smile!" />
   </div>
 
   <p>There are many reasons for adding alt text:</p>
@@ -427,17 +427,17 @@
   <p>To embed a video into a webpage, use the <code class="lang_html">&lt;video&gt;</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the video, and the <code>controls</code> boolean attribute to display <em>start</em>, <em>pause</em>, <em>volume</em> and similar controls.</p>
 
   <div class="example">
-  <pre><code class="lang_html">&lt;video src="pong.mp4" controls&gt;
+  <pre><code class="lang_html">&lt;video src="videos/pong.mp4" controls&gt;
   &lt;p&gt;
     Your browser doesn't support HTML video. Here is a
-    &lt;a href="pong.mp4"&gt;link to the video&lt;/a&gt; instead.
+    &lt;a href="videos/pong.mp4"&gt;link to the video&lt;/a&gt; instead.
   &lt;/p&gt;
 &lt;/video&gt;</code></pre>
 
-  <video src="pong.mp4" controls width="800" height="600">
+  <video src="videos/pong.mp4" controls width="800" height="600">
     <p>
       Your browser doesn't support HTML video. Here is a
-      <a href="pong.mp4">link to the video</a> instead.
+      <a href="videos/pong.mp4">link to the video</a> instead.
     </p>
   </video>
   </div>
@@ -507,10 +507,10 @@
 
   <p>Add captions to any independent unit of content (an image, a gallery of images, a code snippet, audio, video, equations, a table, etc.) by using the <code class="lang_html">&lt;figure&gt;</code> and <code class="lang_html">&lt;figcaption&gt;</code> elements.</p>
   <div class="example">
-  <pre><code class="lang_html">&lt;figure&gt;&lt;img src="face.png" alt="A yellow smile on a gray background." width="500" height="500" /&gt;
+  <pre><code class="lang_html">&lt;figure&gt;&lt;img src="images/face.png" alt="A yellow smile on a gray background." width="500" height="500" /&gt;
   &lt;figcaption&gt;Smile!&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre>
-  <figure><img src="face.png" alt="A yellow smile on a gray background."  width="500" height="500" />
+  <figure><img src="images/face.png" alt="A yellow smile on a gray background." width="500" height="500" />
     <figcaption>Smile!</figcaption>
   </figure>
   </div>
@@ -2249,16 +2249,15 @@ function random(min, max) {
 <pre><code class="lang_html">&lt;div class="full-img"&gt;
   &lt;img
     class="displayed-img"
-    src="gallery/1.jpg"
+    src="images/gallery/1.jpg"
     alt="1" /&gt;
   &lt;div class="overlay"&gt;&lt;/div&gt;
   &lt;button class="dark"&gt;Darken&lt;/button&gt;
 &lt;/div&gt;
 &lt;div class="thumb-bar"&gt;&lt;/div&gt;</code></pre>
-
   <div class="image-gallery">
     <div class="full-img">
-      <img class="displayed-img" src="gallery/1.png" alt="1" />
+      <img class="displayed-img" src="images/gallery/1.png" alt="1" />
       <div class="overlay"></div>
       <button class="dark">Darken</button>
     </div>

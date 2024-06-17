@@ -60,7 +60,7 @@ const image_alt_texts = ["1", "2", "3", "4", "5"];
 const thumb_bar_div = document.getElementsByClassName("thumb-bar")[0];
 for (const i in image_names) {
 	const image = document.createElement("img");
-	image.src = `gallery/${image_names[i]}`;
+	image.src = `images/gallery/${image_names[i]}`;
 	image.alt = image_alt_texts[i];
 	image.addEventListener("click", (event) => {
 							   const displayed_image = document.getElementsByClassName("displayed-img")[0];
@@ -302,22 +302,22 @@ function do_syntax_highlighting(element, lang = "html") {
 			endpos = -1;
 			startpos = rest.indexOf("=");
 			singlefnuttpos = rest.indexOf("'", startpos);
-			doublefnuttpos = rest.indexOf('"', startpos);
-			spacepos = rest.indexOf(" ", startpos + 2);
-			
-			if (spacepos > -1 && (spacepos < singlefnuttpos || singlefnuttpos == -1) && (spacepos < doublefnuttpos || doublefnuttpos == -1)) {
-				endpos = rest.indexOf(" ", startpos);      
-			} else if (doublefnuttpos > -1 && (doublefnuttpos < singlefnuttpos || singlefnuttpos == -1) && (doublefnuttpos < spacepos || spacepos == -1)) {
-				endpos = rest.indexOf('"', rest.indexOf('"', startpos) + 1);
-			} else if (singlefnuttpos > -1 && (singlefnuttpos < doublefnuttpos || doublefnuttpos == -1) && (singlefnuttpos < spacepos || spacepos == -1)) {
-				endpos = rest.indexOf("'", rest.indexOf("'", startpos) + 1);
-			}
-			
-			if (!endpos || endpos == -1 || endpos < startpos) { endpos = rest.length; }
-			
-			done += rest.substring(0, startpos);
-			done += attribute_value_mode(rest.substring(startpos, endpos + 1));
-			rest = rest.substr(endpos + 1);
+										  doublefnuttpos = rest.indexOf('"', startpos);
+																		spacepos = rest.indexOf(" ", startpos + 2);
+																		
+																		if (spacepos > -1 && (spacepos < singlefnuttpos || singlefnuttpos == -1) && (spacepos < doublefnuttpos || doublefnuttpos == -1)) {
+																			endpos = rest.indexOf(" ", startpos);      
+																		} else if (doublefnuttpos > -1 && (doublefnuttpos < singlefnuttpos || singlefnuttpos == -1) && (doublefnuttpos < spacepos || spacepos == -1)) {
+																			endpos = rest.indexOf('"', rest.indexOf('"', startpos) + 1);
+																		} else if (singlefnuttpos > -1 && (singlefnuttpos < doublefnuttpos || doublefnuttpos == -1) && (singlefnuttpos < spacepos || spacepos == -1)) {
+																			endpos = rest.indexOf("'", rest.indexOf("'", startpos) + 1);
+																		}
+																		
+																		if (!endpos || endpos == -1 || endpos < startpos) { endpos = rest.length; }
+																		
+																		done += rest.substring(0, startpos);
+																		done += attribute_value_mode(rest.substring(startpos, endpos + 1));
+																		rest = rest.substr(endpos + 1);
 		}
 		
 		let result = "<span style=color:" + attributecolor + ">" + done + rest + "</span>";
