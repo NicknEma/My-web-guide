@@ -146,7 +146,7 @@ p.mathy > math {
 	font-size: 1.1em;
 }
 
-/* --- BOX MODEL --- */
+/* --- SECTION: BOX MODEL --- */
 
 .box_model_box {
 	border: 5px solid rebeccapurple;
@@ -161,7 +161,24 @@ p.mathy > math {
 	box-sizing: border-box;
 }
 
-/* --- HOVER --- */
+/* ----- SECTION: OVERFLOW ----- */
+
+.overflow_container .box {
+	border: 1px solid black;
+	width: 250px;
+	height: 90px;
+	font-size: 1.0em;
+	margin: 10px;
+	padding-left: 2px;
+}
+
+.overflow_container .visible { overflow: visible; margin-bottom: 2.5em; }
+.overflow_container .hidden { overflow: hidden; }
+.overflow_container .scroll { overflow: scroll; }
+.overflow_container .auto { overflow: auto; }
+.overflow_container .scroll-y { overflow-y: scroll; }
+
+/* --- SECTION: SELECTORS --- */
 
 a:hover.hover_example {
 	color: pink;
@@ -170,37 +187,6 @@ a:hover.hover_example {
 
 a:visited {
 	color: blue;
-}
-
-/* ----- OVERFLOW ----- */
-
-div.css_overflow .box {
-	border: 1px solid black;
-	width: 350px;
-	height: 100px;
-	font-size: 130%;
-	margin: 10px;
-}
-
-div.css_overflow .visible {
-	overflow: visible;
-	margin-bottom: 60px;
-}
-
-div.css_overflow .hidden {
-	overflow: hidden;
-}
-
-div.css_overflow .scroll {
-	overflow: scroll;
-}
-
-div.css_overflow .auto {
-	overflow: auto;
-}
-
-div.css_overflow .scroll-y {
-	overflow-y: scroll;
 }
 
 /* ----- BACKGROUND COLOR ----- */

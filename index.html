@@ -1402,6 +1402,56 @@ is rational.&lt;/p&gt;</code></pre>
   <p><code>width</code> and <code>height</code> are called <em>physical properties</em> while <code>inline-size</code> and <code>block-size</code> are called <em>logical properties</em>.</p>
 
   <!--
+  ###############################
+  ##### OVERFLOWING CONTENT #####
+  ###############################
+  -->
+
+  <h4 id="overflowing_content"><a href="#overflowing_content">Overflowing content</a></h4>
+
+  <p>The <code>overflow</code> property controls what happens when content is too big to fit its box.</p>
+  <div class="example">
+  <pre><code class="lang_css">{ overflow: visible; } /* Make the content be visible outside the box (default) */</code></pre>
+  <div class="overflow_container">
+    <div class="box visible">
+      This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.
+    </div>
+  </div>
+
+  <code class="lang_css">{ overflow: hidden; } /* Make the content outside the box be invisible (not recommended) */</code>
+  <div class="overflow_container">
+    <div class="box hidden">
+      This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.
+    </div>
+  </div>
+
+  <code class="lang_css">{ overflow: scroll; } /* Display scrollbars (both if the content fits or doesn't) */</code>
+  <div class="overflow_container">
+    <div class="box scroll">
+      This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.
+    </div>
+  </div>
+
+  <code class="lang_css">{ overflow: visible; } /* Make the browser detect if it should display scrollbars */</code>
+  <div class="overflow_container">
+    <div class="box auto">
+      This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.
+    </div>
+  </div>
+  </div>
+
+  <p>The overflow value can be different for <code>x</code> and <code>y</code> axes.</p>
+
+  <div class="example">
+  <code class="lang_css">{ overflow-y: scroll; } /* Display vertical scrollbar */</code>
+  <div class="overflow_container">
+    <div class="box scroll-y">
+      This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.
+    </div>
+  </div>
+  </div>
+
+  <!--
   #####################
   ##### SELECTORS #####
   #####################
@@ -1837,52 +1887,6 @@ light-dark(rgb(255 255 255), rgb(0 0 0))</code></pre>
   -->
 
   <a href="#h2_css_properties"><h2 id="h2_css_properties">CSS properties</h2></a>
-
-  <!--
-  ###############################
-  ##### OVERFLOW PROPERTIES #####
-  ###############################
-  -->
-
-  <h3>Overflow</h3>
-
-  <code class="lang_css">overflow: visible; /* Make the content be visible outside the box (default) */</code>
-  <div class="css_overflow">
-    <div class="box visible">
-      This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.
-    </div>
-  </div>
-
-  <code class="lang_css">overflow: hidden; /* Make the content outside the box be invisible (not recommended) */</code>
-  <div class="css_overflow">
-    <div class="box hidden">
-      This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.
-    </div>
-  </div>
-
-  <code class="lang_css">overflow: scroll; /* Display scrollbars (both if the content fits or doesn't) */</code>
-  <div class="css_overflow">
-    <div class="box scroll">
-      This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.
-    </div>
-  </div>
-
-  <code class="lang_css">overflow: visible; /* Make the browser detect if it should display scrollbars */</code>
-  <div class="css_overflow">
-    <div class="box auto">
-      This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.
-    </div>
-  </div>
-
-  <hr />
-  <p>The overflow value can be different for <code>x</code> and <code>y</code> axes.</p>
-
-  <code class="lang_css">overflow-y: scroll; /* Display vertical scrollbar */</code>
-  <div class="css_overflow">
-    <div class="box scroll-y">
-      This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.
-    </div>
-  </div>
 
   <!--
   #################################
