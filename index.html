@@ -1155,8 +1155,6 @@ is rational.&lt;/p&gt;</code></pre>
   <p style="text-decoration: underline;">This element has a style applied to it.</p>
   </div>
 
-  <hr />
-
   <p>A style is made out of <em>declarations</em>, each consisting of a <em>property</em> and a list of <em>values</em>.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;p style="text-decoration: underline;
@@ -1166,8 +1164,6 @@ is rational.&lt;/p&gt;</code></pre>
             font-weight: bold;
             font-family: Georgia, serif;">The style applied to this element contains 3 declarations.</p>
   </div>
-
-  <hr />
 
   <p>Each property expects values of a different <em>type</em>.</p>
   <div class="example">
@@ -1181,25 +1177,16 @@ is rational.&lt;/p&gt;</code></pre>
             color: blue;">This paragraph has properties of type 'color' and properties of type 'length'.</p>
   </div>
 
-  <hr />
-
-  <p>A property can have <em>fallback</em> values in case the first one can't be applied.</p>
+  <p>A property can have <em>fallback</em> values in case the first ones can't be applied.</p>
   <div class="example">
-  <pre><code class="lang_html">&lt;p style="font-family: Helvetica, Arial;"&gt;This paragraph is styled with a property that has more than 1 value.&lt;/p&gt;</code></pre>
-  <p style="font-family: Helvetica, Arial;">This paragraph is styled with a property that has more than 1 value.</p>
+  <pre><code class="lang_html">&lt;p style="font-family: Helvetica, Arial;"&gt;This paragraph's font is set to Helvetica, or Arial if Helvetica is not available on the current system.&lt;/p&gt;</code></pre>
+  <p style="font-family: Helvetica, Arial;">This paragraph's font is set to Helvetica, or Arial if Helvetica is not available on the current system.</p>
   </div>
 
-  <p>In the example, the font of the paragraph is set to Helvetica, but that might not be available on the current system. In that case, Arial will take its place.</p>
-
-  <hr />
-
-  <p>Some groups of properties have <em>shorthands</em>: a single property that combines multiple other ones.</p>
-
+  <p>Some groups of properties have <em>shorthands</em>, a single property that combines multiple other ones.</p>
   <div class="example">
-
-  <pre><code class="lang_html">&lt;p style="font: italic bold 0.8em/1.2 Arial, sans-serif;"&gt;This paragraph uses shorthand properties.&lt;/p&gt;</code></pre>
-
-  <p style="font: italic bold 0.8em/1.2 Arial, sans-serif;">This paragraph uses shorthand properties.</p>
+  <pre><code class="lang_html">&lt;p style="font: italic bold 0.8em/1.2 Arial, sans-serif;"&gt;This paragraph uses a shorthand property.&lt;/p&gt;</code></pre>
+  <p style="font: italic bold 0.8em/1.2 Arial, sans-serif;">This paragraph uses a shorthand property.</p>
   </div>
 
   <p>Each shorthand property accepts its values in a specific order. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">See details for each shorthand</a>.</p>
@@ -1221,8 +1208,8 @@ is rational.&lt;/p&gt;</code></pre>
   <p>To apply a style to multiple HTML elements at once, you write a <em>rule</em>.</p>
   <div class="example">
   <pre><code class="lang_css">p { color: blue; }</code></pre>
-  <pre><code class="lang_html">&lt;p&gt;All paragraphs are targeted by the rule.&lt;/p&gt;</code></pre>
-  <p style="color: blue;">All paragraphs are targeted by the rule.</p>
+  <pre><code class="lang_html">&lt;p&gt;All 'p' elements are now blue.&lt;/p&gt;</code></pre>
+  <p style="color: blue;">All 'p' elements are now blue.</p>
   </div>
 
   <p>A set of rules forms a <em>stylesheet</em>. You can put rules between two <code class="lang_html">&lt;style&gt;</code> tags inside the <code class="lang_html">&lt;head&gt;</code> to define an <em>internal stylesheet</em>.</p>
@@ -1288,12 +1275,12 @@ is rational.&lt;/p&gt;</code></pre>
 &lt;p style="display: inline;"&gt;This is the second paragraph, and it is displayed on the same line as the previous one.&lt;/p&gt;</code></pre>
   <p style="display: inline;">This is the first paragraph.</p>
   <p style="display: inline;">This is the second paragraph, and it is displayed on the same line as the previous one.</p>
-
+  <hr />
   <pre><code class="lang_html">&lt;p id="block_link"&gt;This paragraph contains a &lt;a style="display: block;" href="#block_link"&gt;link&lt;/a&gt; which is treated as a block.&lt;/p&gt;</code></pre>
   <p id="block_link">This paragraph contains a <a style="display: block;" href="#block_link">link</a> which is treated as a block.</p>
   </div>
 
-  <p>To change how an element interacts with the elements <em>around</em> it, set its <code>display</code> property to one of these values:</p>
+  <p>To change how an element interacts with the elements around it, set its <code>display</code> property to one of these values:</p>
   <table border="1">
     <thead>
       <tr>
@@ -1340,7 +1327,7 @@ is rational.&lt;/p&gt;</code></pre>
   <p>The <code>padding</code> property controls the space around the <code>content</code> and inside the <code>border</code>.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;p style="padding: 10px;"&gt;There is some space between this text and its border.&lt;/p&gt;</code></pre>
-  <p style="border: 1px solid #bbb; background-color: #fdd; padding: 10px;">There is some space between this text and its border.</p>
+  <p style="border: 1px solid #bbb; padding: 10px;">There is some space between this text and its border.</p>
   </div>
 
   <p>The <code>border</code> property controls the border of a box.</p>
