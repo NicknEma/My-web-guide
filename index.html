@@ -1392,9 +1392,27 @@ is rational.&lt;/p&gt;</code></pre>
   #######################################
   -->
 
-<!--
   <h4 id="inline_and_block_directions"><a href="#inline_and_block_directions">Inline and block directions</a></h4>
--->
+
+  <p><em>Inline direction</em> refers to the direction the text is flowing in. By default, the <code>inline-size</code> property means the same as <code>width</code>.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;p style="inline-size: 150px; padding: 5px;"&gt;This paragraph is very narrow. It has been squashed by setting its inline size to a small value.&lt;/p&gt;</code></pre>
+  <p style="inline-size: 150px; border: 1px solid #ccc; padding: 5px;">This paragraph is very narrow. It has been squashed by setting its inline size to a small value.</p>
+  </div>
+
+  <p><em>Block direction</em> refers to direction blocks are displayed on a page. By default, the <code>block-size</code> property means the same as <code>height</code>.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;p style="block-size: 100px; padding: 5px;"&gt;This paragraph is very tall. It has been stretched vertically by setting its block size to a big value.&lt;/p&gt;</code></pre>
+  <p style="block-size: 100px; border: 1px solid #ccc; padding: 5px;">This paragraph is very tall. It has been stretched vertically by setting its block size to a big value.</p>
+  </div>
+
+  <p>The <code>inline</code> and <code>block</code> size properties change their meaning depending on the text direction: horizontal (like most languages) or vertical (like Japanese). The text direction can be set with the <code>writing-mode</code> property:</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;p style="writing-mode: vertical-rl; inline-size: 80px; padding: 5px; font-size: 1.2em;"&gt;Sideways text.&lt;/p&gt;</code></pre>
+  <p style="writing-mode: vertical-rl; inline-size: 80px; border: 1px solid #ccc; padding: 5px; font-size: 1.2em;">Sideways text.</p>
+  </div>
+
+  <p><code>width</code> and <code>height</code> are called <em>physical properties</em> while <code>inline-size</code> and <code>block-size</code> are called <em>logical properties</em>.</p>
 
   <!--
   #####################
