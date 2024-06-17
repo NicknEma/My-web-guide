@@ -26,6 +26,10 @@ h6 { font-size: 1.05em; }
 	margin-bottom: 0.1em;
 }
 
+.example iframe {
+	border: 0;
+}
+
 /* --- CODE --- */
 
 code {
