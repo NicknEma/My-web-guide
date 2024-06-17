@@ -145,8 +145,8 @@ p.mathy > math {
 /* --- BOX MODEL --- */
 
 .box_model_box {
-	border: 5px solid purple;
-	/*background-color: lightgray;*/
+	border: 5px solid rebeccapurple;
+	background-color: #ddd;
 	padding: 40px;
 	margin: 20px;
 	width: 300px;

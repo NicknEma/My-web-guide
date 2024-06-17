@@ -1147,7 +1147,7 @@ is rational.&lt;/p&gt;</code></pre>
 
   <h2 id="css"><a href="#css">Style: CSS</a></h2>
 
-  <h3>Styles, properties and values</h3>
+  <h3 id="styles_properties_and_values"><a href="#styles_properties_and_values">Styles, properties and values</a></h3>
 
   <p>You change the look of an element by applying a <em>style</em> to it.</p>
   <div class="example">
@@ -1205,48 +1205,57 @@ is rational.&lt;/p&gt;</code></pre>
   <p>Each shorthand property accepts its values in a specific order. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">See details for each shorthand</a>.</p>
 
   <!--
-  ##################################
-  ##### STYLES AND STYLESHEETS #####
-  ##################################
+  #################################
+  ##### RULES AND STYLESHEETS #####
+  #################################
   -->
 
-  <h3 id="styles_and_stylesheets"><a href="#styles_and_stylesheets">Styles and stylesheets</a></h3>
+  <h3 id="rules_and_stylesheets"><a href="#rules_and_stylesheets">Rules and stylesheets</a></h3>
 
-  <p>To apply a style to <em>a single HTML element</em>, assign it to its <code>style</code> attribute.</p>
+  <p>To apply a style to a single HTML element, modify its <code>style</code> attribute.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;p style="color: blue;"&gt;This paragraph uses inline styles.&lt;/p&gt;</code></pre>
   <p style="color: blue;">This paragraph uses inline styles.</p>
   </div>
 
-  <p>To apply a style to <em>multiple HTML elements at once</em>, use a <em>stylesheet</em>. You can write a stylesheet inside a <code class="lang_html">&lt;style&gt;</code> element contained inside the <code class="lang_html">&lt;head&gt;</code>.</p>
+  <p>To apply a style to multiple HTML elements at once, you write a <em>rule</em>.</p>
+  <div class="example">
+  <pre><code class="lang_css">p { color: blue; }</code></pre>
+  <pre><code class="lang_html">&lt;p&gt;All paragraphs are targeted by the rule.&lt;/p&gt;</code></pre>
+  <p style="color: blue;">All paragraphs are targeted by the rule.</p>
+  </div>
+
+  <p>A set of rules forms a <em>stylesheet</em>. You can put rules between two <code class="lang_html">&lt;style&gt;</code> tags inside the <code class="lang_html">&lt;head&gt;</code> to define an <em>internal stylesheet</em>.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;head&gt;
   &lt;style&gt;
-    body { color: purple; }
-    h2 { text-decoration: underline; }
+    p { color: blue; }
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;h2&gt;Internal stylesheets!&lt;/h2&gt;
   &lt;p&gt;This page is styled with CSS written directly at the top of the document.&lt;/p&gt;
 &lt;/body&gt;</code></pre>
-  <div style="color: purple">
-  <h2 style="text-decoration: underline;">Internal stylesheets!</h2>
-  <p>This page is styled with CSS written directly at the top of the document.</p>
-  </div>
+  <p style="color: blue">This page is styled with CSS written directly at the top of the document.</p>
   </div>
 
-  <p>You can also write a stylesheet in a separate file with the <code>.css</code> extension; to reference it, put a <code class="lang_html">&lt;link&gt;</code> attribute in the <code class="lang_html">&lt;head&gt;</code> of the HTML document.</p>
+  <p>You can also write rules in a separate file with the <code>.css</code> extension to define an <em>external stylesheet</em>. To reference it, put a <code class="lang_html">&lt;link&gt;</code> attribute in the <code class="lang_html">&lt;head&gt;</code> of the HTML document.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;link rel="stylesheet" href="styles.css" /&gt;</code></pre>
   </div>
 
   <p><strong>Note</strong>: As I understand it, you should put the CSS in the <code class="lang_html">&lt;head&gt;</code> of the document so that the browser can parse it alongside the HTML and immediately generate the correct layout, rather than generating the wrong layout first and then changing it when styles are applied.</p>
 
+  <h4>Stylesheet comments</h4>
+
+  <p>Text enclosed within <code>/*</code> and <code>*/</code> is treated as a <em>comment</em> and will not change the behaviour of a stylesheet.</p>
+  <div class="example">
+  <pre><code class="lang_css">/* This is a comment! Boo-yaa */</code></pre>
+  </div>
+
   <!--
-  #################
-  ##### BOXES #####
-  #################
+  #########################
+  ##### THE BOX MODEL #####
+  #########################
   -->
 
   <h3 id="the_box_model"><a href="#the_box_model">The box model</a></h3>
@@ -1312,7 +1321,13 @@ is rational.&lt;/p&gt;</code></pre>
 
   <p>The <code>display</code> property also controls <em>how an element's childred are laid out</em>. More on this later.</p>
 
-  <h4>Parts of a box</h4>
+  <!--
+  ##########################
+  ##### PARTS OF A BOX #####
+  ##########################
+  -->
+
+  <h4 id="parts_of_a_box"><a href="#parts_of_a_box">Parts of a box</a></h4>
 
   <p>A <code>block</code> box is made of (from inside to outside):</p>
   <ul>
@@ -1322,29 +1337,37 @@ is rational.&lt;/p&gt;</code></pre>
     <li>A margin box.</li>
   </ul>
 
-  <p>The <code>padding</code> property controls the space <em>between</em> the <code>border</code> and the <code>content</code> of a <code>block</code> element.</p>
+  <p>The <code>padding</code> property controls the space around the <code>content</code> and inside the <code>border</code>.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;p style="padding: 10px;"&gt;There is some space between this text and its border.&lt;/p&gt;</code></pre>
-  <p style="border: 1px solid #bbb; padding: 10px;">There is some space between this text and its border.</p>
+  <p style="border: 1px solid #bbb; background-color: #fdd; padding: 10px;">There is some space between this text and its border.</p>
   </div>
 
-  <p>The border of a box can be styled using the <code>border</code> property.</p>
+  <p>The <code>border</code> property controls the border of a box.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;p style="border: 1px solid black;"&gt;The border around this paragraph is now black.&lt;/p&gt;</code></pre>
   <p style="border: 1px solid black;">The border around this paragraph is now black.</p>
   </div>
 
-  <p>The <code>margin</code> property controls the space <em>around</em> the <code>border</code> of a <code>block</code> element.</p>
+  <p>The <code>margin</code> property controls the space the <code>border</code>.</p>
   <div class="example">
-  <pre><code class="lang_html">&lt;p style="border: 1px solid black; margin: 20px;"&gt;There is some space around the border of this paragraph.&lt;/p&gt;</code></pre>
-  <p style="border: 1px solid black; margin: 20px;">There is some space around the border of this paragraph.</p>
+  <pre><code class="lang_html">&lt;p style="margin: 20px;"&gt;There is some space around the border of this paragraph.&lt;/p&gt;</code></pre>
+  <p style="border: 1px solid #bbb; background-color: white; margin: 20px;">There is some space around the border of this paragraph.</p>
   </div>
+
+  <!--
+  #############################################
+  ##### STANDARD AND ALTERNATE BOX MODELS #####
+  #############################################
+  -->
+
+  <h4 id="standard_and_alternate_box_models"><a href="#standard_and_alternate_box_models">Standard and alternate box models</a></h4>
 
   <p>In the <em>standard box model</em>, properties like <code>width</code>, <code>height</code>, <code>inline-size</code> and <code>block-size</code> describe the size of the <em>content box</em>. In the <em>alternate box model</em>, they describe the size of <em>content, padding and border</em>.</p>
   <div class="example">
   <pre><code class="lang_css">.box {
   border: 5px solid rebeccapurple;
-  background-color: lightgray;
+  background-color: #ddd;
   padding: 40px;
   margin: 40px;
   width: 300px;
@@ -1356,8 +1379,6 @@ is rational.&lt;/p&gt;</code></pre>
 }</code></pre>
   <pre><code class="lang_html">&lt;div class="box"&gt;I use the standard box model.&lt;/div&gt;
 &lt;div class="box alternate"&gt;I use the alternate box model.&lt;/div&gt;</code></pre>
-  <pre><code class="lang_html">&lt;div style="width: 300px; height: 150px; padding: 40px; margin: 20px; border: 2px solid purple;"&gt;I use the standard box model.&lt;/div&gt;
-&lt;div style="width: 300px; height: 150px; padding: 40px; margin: 20px; border: 2px solid purple; box-sizing: border-box;"&gt;I use the alternate box model.&lt;/div&gt;</code></pre>
   <div class="box_model_box">I use the standard box model.</div>
   <div class="box_model_box alternate">I use the alternate box model.</div>
   <p>These two boxes have the same <code>width</code> and <code>height</code> values, but the second one is set to use the alternate box model with the <code>box-sizing</code> property.</p>
@@ -1366,11 +1387,13 @@ is rational.&lt;/p&gt;</code></pre>
   <p>To use the alternative box model for all of your elements (which is a common choice among developers), see <a href="https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/">this article on box sizing</a>.</p>
 
   <!--
-  ###########################
-  ##### TEXT DIRECTIONS #####
-  ###########################
+  #######################################
+  ##### INLINE AND BLOCK DIRECTIONS #####
+  #######################################
   -->
-
+<!--
+  <h4 id="inline_and_block_directions"><a href="#inline_and_block_directions">Inline and block directions</a></h4>
+-->
   <!--
   #####################
   ##### SELECTORS #####
