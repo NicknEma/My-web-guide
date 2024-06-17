@@ -1785,6 +1785,58 @@ table { background-color: white; }</code></pre>
   </div>
 
   <!--
+  #########################
+  ##### STYLING FORMS #####
+  #########################
+  -->
+
+  <h3 id="styling_forms"><a href="#styling_forms">Styling forms</a></h3>
+
+  <p>Simple form controls, like <code>text</code>, can be selected and styled by using attribute selectors.</p>
+  <div class="example">
+  <pre><code class="lang_css">input[type="text"] { border: 1px solid black; }</code></pre>
+  <pre><code class="lang_html">&lt;input type="text" id="name" /&gt;</code></pre>
+  <form>
+    <label for="styling_forms_name">Name</label>
+    <input type="text" id="styling_forms_name" style="border: 1px solid black;" />
+  </form>
+  </div>
+
+  <p>Many of the more complex input types are rendered by the operating system and are inaccessible to styling, so they are probabily look different for different users.</p>
+
+  <hr />
+
+  <p>In some browsers, form elements do not inherit font styling by default. Therefore, if you want to be sure that your form fields use the font defined on the body, or on a parent element, you should add this rule to your CSS.</p>
+  <div class="example">
+  <pre><code class="lang_css">button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}</code></pre>
+  </div>
+
+  <p>Across browsers, form elements use different box sizing rules for different widgets. It is also a good idea to set margins and padding to 0 on all elements, then add these back in when styling particular controls.</p>
+  <div class="example">
+  <pre><code class="lang_css">button,
+input,
+select,
+textarea {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}</code></pre>
+  </div>
+
+  <p>Set <code>overflow: auto</code> on <code class="lang_html">&lt;textarea&gt;</code> elements to stop showing a scrollbar when there is no need for one.</p>
+  <div class="example">
+  <pre><code class="lang_css">textarea { overflow: auto; }</code></pre>
+  </div>
+
+  <p><em>Normalizing stylesheets</em> create a set of baseline styles to use on all projects. For an example of a normalizing stylesheet, see <a href="https://necolas.github.io/normalize.css/">Normalize.css</a>.</p>
+
+  <!--
   ##############################
   ##### NUMERIC DATA TYPES #####
   ##############################
