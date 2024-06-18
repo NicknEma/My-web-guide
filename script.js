@@ -168,7 +168,7 @@ function do_syntax_highlighting(element, lang = "html") {
 	
 	let elementObj = (document.getElementById(element) || element);
 	let elementTxt = elementObj.innerHTML;
-	elementObj.style.fontFamily = "monospace";
+	// elementObj.style.fontFamily = "monospace";
 	
 	if (lang == "html") { elementTxt = html_mode(elementTxt); }
 	if (lang == "css")  { elementTxt = css_mode(elementTxt); }

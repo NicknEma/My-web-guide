@@ -24,11 +24,15 @@
        correctly) -->
 
   
-  <!-- Merriweather font -->
-
+  <!-- Google font connection -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Merriweather font -->
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Source Code Pro font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
   
 
   <!-- Script to warn the user the browser doesn't support MathML -->
@@ -93,8 +97,8 @@
 
   <p>Elements can also have <em>attributes</em>.</p>
   <div class="example">
-  <pre><code class="lang_html">&lt;p style="color: red"&gt;My cat is very grumpy.&lt;/p&gt;</code></pre>
-  <p style="color: red">My cat is very grumpy.</p>
+  <pre><code class="lang_html">&lt;p style="color: darkred"&gt;My cat is very grumpy.&lt;/p&gt;</code></pre>
+  <p style="color:darkred">My cat is very grumpy.</p>
   </div>
 
   <p>Attributes with only one value don't require the value to be specified. They are called <em>boolean attributes</em> (either they exist or they don't).</p>
@@ -457,7 +461,7 @@ This has made a lot of people very angry and been widely regarded as a bad move.
 
   <div class="example">
   <pre><code class="lang_html">&lt;img src="images/black-star-127.png" alt="A black star on a transparent background." width="128" height="128" title="It's a star!" /&gt;</code></pre>
-  <img src="images/black-star-127.png" alt="A black star on a transparent background." width="128" height="128" title="It's a star!" />
+  <img src="images/black-star-127.png" alt="A black star on a transparent background." width="128" height="128" title="It's a star!" loading="lazy" />
   </div>
 
   <p>There are many reasons for adding alt text:</p>
@@ -1872,9 +1876,9 @@ is rational.&lt;/p&gt;</code></pre>
 
   <p>The <code>color</code> property sets the color of the foreground content of the selected elements, which is usually the text, but can also include a couple of other things, such as an underline or overline placed on text using the text-decoration property. Color can accept any CSS color unit.</p>
   <div class="example">
-  <pre><code class="lang_css">p { color: red; }</code></pre>
+  <pre><code class="lang_css">p { color: darkred; }</code></pre>
   <pre><code class="lang_html">&lt;p&gt;Tommy the cat had many a story to tell.&lt;/p&gt;</code></pre>
-  <p style="color:red">Tommy the cat had many a story to tell.</p>
+  <p style="color:darkred">Tommy the cat had many a story to tell.</p>
   </div>
 
   <h4>Font</h4>
@@ -2038,7 +2042,7 @@ html { font-family: "spongebob-squarepants", serif; }</code></pre>
 
   <p>The following table uses default browser styles:</p>
   <div class="example">
-  <iframe width="100%" height="260" src="pages/punk-bands-unstyled.html"></iframe>
+  <iframe width="100%" height="260" src="pages/punk-bands-unstyled.html" title="Punk bands table, unstyled"></iframe>
   </div>
 
   <p>To customize the widths of each column, set the <code>table-layout</code> property to <code>fixed</code>:</p>
@@ -2057,7 +2061,7 @@ thead th:nth-child(4) { width: 35%; }</code></pre>
 tfoot th { text-align: right; }
 
 th, td { padding: 5px; }</code></pre>
-  <iframe width="100%" height="340" src="pages/punk-bands-styled-2.html"></iframe>
+  <iframe width="100%" height="340" src="pages/punk-bands-styled-2.html" title="Punk bands table, with alignment"></iframe>
   </div>
 
   <p>To add <em>zebra striping</em>, use the <code>odd</code> and <code>even</code> formulae as arguments for the <code>nth-child</code> selector. Set the table's color as a fallback for older browsers.</p>
@@ -2065,13 +2069,13 @@ th, td { padding: 5px; }</code></pre>
   <pre><code class="lang_css">tbody tr:nth-child(odd)  { background-color: #ddd; }
 tbody tr:nth-child(even) { background-color: #fff; }
 table { background-color: white; }</code></pre>
-  <iframe width="100%" height="340" src="pages/punk-bands-styled-3.html"></iframe>
+  <iframe width="100%" height="340" src="pages/punk-bands-styled-3.html" title="Punk bands table, with colors"></iframe>
   </div>
 
   <p>To hide the automatic border that is drawn around each cell, set the <code>border-collapse</code> property to <code>collapse</code>.</p>
   <div class="example">
   <pre><code class="lang_css">table { border-collapse: collapse; }</code></pre>
-  <iframe width="100%" height="320" src="pages/punk-bands-styled-4.html"></iframe>
+  <iframe width="100%" height="320" src="pages/punk-bands-styled-4.html" title="Punk bands table, without border"></iframe>
   </div>
 
   <p>To position the table's caption, use the <code>caption-size</code> property.</p>
@@ -2082,7 +2086,7 @@ table { background-color: white; }</code></pre>
   caption-side: bottom;
   text-align: right;
 }</code></pre>
-  <iframe width="100%" height="340" src="pages/punk-bands-styled-5.html"></iframe>
+  <iframe width="100%" height="340" src="pages/punk-bands-styled-5.html" title="Punk bands table, with the caption at the bottom"></iframe>
   </div>
 
   <!--

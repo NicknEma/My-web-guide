@@ -67,11 +67,26 @@ h6 { font-size: 1.05em; }
 
 a:visited { color: blue; }
 
-pre { font-family: serif; }
-
 .border {
 	border: 1px solid #bbb;
 	padding: 3px;
+}
+
+/* --- CODE --- */
+
+pre { font-family: serif; }
+
+code {
+	font-family: "Source Code Pro", monospace;
+	font-size: 0.85em;
+	
+	border-radius: 0.3em;
+	background: #eee;
+	padding: 0.1em;
+}
+
+pre > code {
+	display: block;
 }
 
 /* --- EXAMPLES --- */
@@ -93,18 +108,6 @@ pre { font-family: serif; }
 }
 
 .example iframe { border: 0; }
-
-/* --- CODE --- */
-
-code {
-	border-radius: 0.3em;
-	background: #eee;
-	padding: 0.1em;
-}
-
-pre > code {
-	display: block;
-}
 
 /* --- LISTS --- */
 
