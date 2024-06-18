@@ -1,3 +1,8 @@
+/* 
+Minify stylesheets with cssnano:
+https://cssnano.github.io/cssnano/
+*/
+
 /* --- GENERAL --- */
 
 h1 { font-size: 2.2em; }
@@ -5,10 +10,17 @@ h2 { font-size: 2.0em; }
 h3 { font-size: 1.6em; }
 h4 { font-size: 1.4em; }
 h4 { font-size: 1.2em; }
-h5 { font-size: 1.1em; }
+h5 { font-size: 1.1em; margin: 1.67em 0em 0.83em 0em; }
 h6 { font-size: 1.05em; }
 
 a:visited { color: blue; }
+
+pre { font-family: serif; }
+
+.border {
+	border: 1px solid #bbb;
+	padding: 3px;
+}
 
 /* --- EXAMPLES --- */
 
@@ -142,27 +154,19 @@ tbody tr:nth-child(even) { background-color: #e6e6e6; }
 		/* --- SECTION: BOX MODEL --- */
 		
 		.box_model_box {
-			border: 5px solid rebeccapurple;
-			background-color: #ddd;
-			padding: 40px;
-			margin: 20px;
-			width: 300px;
-			height: 150px;
-		}
-		
-		.box_model_box.alternate {
-			box-sizing: border-box;
+			margin: 20px; padding: 40px;
+			width: 300px; height: 150px;
 		}
 		
 		/* ----- SECTION: OVERFLOW ----- */
 		
 		.overflow_container .box {
-			border: 1px solid black;
+			/*border: 1px solid black;*/
 			width: 250px;
 			height: 90px;
 			font-size: 1.0em;
 			margin: 10px;
-			padding-left: 2px;
+			padding: 0 2px 0 2px;
 		}
 		
 		.overflow_container .visible  { overflow:   visible; margin-bottom: 2.5em; }
@@ -207,11 +211,11 @@ tbody tr:nth-child(even) { background-color: #e6e6e6; }
 		}
 		
 		div.background-image .big {
-			background-image: url(big-star.png);
+			background-image: url(images/big-star.png);
 		}
 		
 		div.background-image .small {
-			background-image: url(small-star.png);
+			background-image: url(images/small-star.png);
 		}
 		
 		/* --- SECTION: IMAGE GALLERY --- */

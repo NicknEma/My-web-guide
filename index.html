@@ -62,15 +62,17 @@
   <p>My cat is very grumpy.</p>
   </div>
 
-  <hr />
+  <p>Tag names are <em>case-insensitive</em>.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;p&gt;My cat is very grumpy.&lt;/P&gt;</code></pre>
+  <p>My cat is very grumpy.</p>
+  </div>
 
   <p>Tags can be <em>nested</em>.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;p&gt;My cat is &lt;em&gt;very&lt;/em&gt; grumpy.&lt;/p&gt;</code></pre>
   <p>My cat is <em>very</em> grumpy.</p>
   </div>
-
-  <hr />
 
   <p>Some tags are <em>void</em> and don't enclose anything. They stand on their own and don't need a corresponding closing tag.</p>
   <div class="example">
@@ -85,8 +87,6 @@
   <pre><code class="lang_html">&lt;p style="color: red"&gt;My cat is very grumpy.&lt;/p&gt;</code></pre>
   <p style="color: red">My cat is very grumpy.</p>
   </div>
-
-  <hr />
 
   <p>Attributes with only one value don't require the value to be specified. They are called <em>boolean attributes</em> (either they exist or they don't).</p>
   <div class="example">
@@ -125,17 +125,17 @@
     <tr>
       <td>&lt;;</td>
       <td><code>&amp;lt;</code></td>
-      <td>Interpreted as the beginning of a <a href="#h2_tags">tag</a></td>
+      <td>Interpreted as the beginning of a <a href="#tags">tag</a></td>
     </tr>
     <tr>
       <td>&gt;;</td>
       <td><code>&amp;gt;</code></td>
-      <td>Interpreted as the ending of a <a href="#h2_tags">tag</a></td>
+      <td>Interpreted as the ending of a <a href="#tags">tag</a></td>
     </tr>
     <tr>
       <td>"</td>
       <td><code>&amp;quot;</code></td>
-      <td>Interpreted as the beginning and end of an <a href="#h2_attributes">attribute</a>'s value.</td>
+      <td>Interpreted as the beginning and end of an <a href="#attributes">attribute</a>'s value.</td>
     </tr>
     <tr>
       <td></td>
@@ -271,6 +271,7 @@
     <li><code class="lang_html">&lt;p&gt;</code> (<strong>p</strong>aragraph): a paragraph of text.</li>
     <li><code class="lang_html">&lt;h1&gt;, &lt;h2&gt; ... &lt;h6&gt;</code> (<strong>h</strong>eading): headings 1 through 6.</li>
     <li><code class="lang_html">&lt;br /&gt;</code> (<strong>br</strong>eak): a newline, or line break.</li>
+    <li><code class="lang_html">&lt;hr /&gt;</code> (<strong>h</strong>o<strong>r</strong>izontal): a horizontal like, signifying a thematic break.</li>
     <li><code class="lang_html">&lt;ul&gt;</code> (<strong>u</strong>nordered <strong>l</strong>ist): an unordered list of items – typically rendered as a bulleted list.</li>
     <li><code class="lang_html">&lt;ol&gt;</code> (<strong>o</strong>rdered <strong>l</strong>ist): an ordered list of items – typically rendered as a numbered list.</li>
     <li><code class="lang_html">&lt;li&gt;</code> (<strong>l</strong>ist <strong>i</strong>tem): a list item.</li>
@@ -285,42 +286,110 @@
     <li><code class="lang_html">&lt;abbr&gt;</code> (<strong>abbr</strong>eviation): an abbreviation or acronym.</li>
     <li><code class="lang_html">&lt;address&gt;</code> (<strong>address</strong>): contact info.</li>
     <li><code class="lang_html">&lt;time&gt;</code> (<strong>time</strong>): either a time on a 24-hour clock, a date in the calendar or a time duration.</li>
+    <li><code class="lang_html">&lt;i&gt;</code> (<strong>i</strong>diomatic): range of text that is set off from the normal text for some reason (idiomatic text, technical terms, taxonomical designations, etc).</li>
+    <li><code class="lang_html">&lt;small&gt;</code> (<strong>small</strong>): small print, copyright or legal text.</li>
   </ul>
 
-  <hr />
+  <h5>Line, word and thematic breaks</h5>
 
-  <p>You can use <code class="lang_html">&lt;blockquote&gt;</code> and <code class="lang_html">&lt;q&gt;</code> for quotes:</p>
+  <p>Excess whitespace is ignored by the browser. Use the <code>&amp;nbsp;</code> entity as an extra whitespace and the <code class="lang_html">&lt;br /&gt;</code> element to force a line break.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;p&gt;This is a      paragraph &lt;br /&gt; spanning &amp;nbsp; multiple &amp;nbsp; lines.&lt;/p&gt;</code></pre>
+  <p>This is a paragraph <br /> spanning &nbsp; multiple &nbsp; lines.</p>
+  </div>
+
+  <p>To represent a position within text where the browser may optionally break a line &ndash; but it is not forced to &ndash; either use the <code class="lang_html">&lt;wbr /&gt;</code> element or the <code>&amp;shy;</code> (<strong>s</strong>oft <strong>hy</strong>phen) entity.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;p&gt;http://this&lt;wbr /&gt;.is&lt;wbr /&gt;.a&lt;wbr /&gt;.really&lt;wbr /&gt;.long&lt;wbr /&gt;.example&lt;wbr /&gt;.url&lt;wbr /&gt;.that&lt;wbr /&gt;.does&lt;wbr /&gt;.not&lt;wbr /&gt;.actually&lt;wbr /&gt;.lead&lt;wbr /&gt;.anywhere&lt;wbr /&gt;.com&lt;/p&gt;</code></pre>
+  <p class="border" style="width: 250px;">http://this<wbr />.is<wbr />.a<wbr />.really<wbr />.long<wbr />.example<wbr />.url<wbr />.that<wbr />.does<wbr />.not<wbr />.actually<wbr />.lead<wbr />.anywhere<wbr />.com</p>
+  <pre><code class="lang_html">&lt;p"&gt;Fernstraßen&amp;shy;bau&amp;shy;privat&amp;shy;finanzierungs&amp;shy;gesetz&lt;/p&gt;</code></pre>
+  <p class="border" style="width: 250px;">Fernstraßen&shy;bau&shy;privat&shy;finanzierungs&shy;gesetz</p>
+  </div>
+
+  <p>For marking thematic breaks, use the <code class="lang_html">&lt;hr /&gt;</code> element.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;p&gt;This text talks about a certain topic.&lt;/p&gt; &lt;hr /&gt; &lt;p&gt;This section's topic is completely different.&lt;/p&gt;</code></pre>
+  <p>This text talks about a certain topic.</p> <hr /> <p>This section's topic is completely different.</p>
+  </div>
+
+  <h5>Lists</h5>
+
+  <p>To nest lists, place a list inside one of the parent's list items.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;ul&gt;
+  &lt;li&gt;A&lt;/li&gt;
+  &lt;li&gt;B
+    &lt;ul&gt;
+      &lt;li&gt;B.a&lt;/li&gt;
+      &lt;li&gt;B.b&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;C&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+  <ul>
+    <li>A</li>
+    <li>B
+      <ul>
+        <li>B.a</li>
+        <li>B.b</li>
+      </ul>
+    </li>
+    <li>C</li>
+  </ul>
+  </div>
+
+  <h5>Other</h5>
+
+  <p>Use <code class="lang_html">&lt;blockquote&gt;</code> and <code class="lang_html">&lt;q&gt;</code> for block quotes and inline quotes respectively. Use <code class="lang_html">&lt;cite&gt;</code> to define the title of origin of the quote.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;p&gt;The following is a block quote:&lt;/p&gt;
 &lt;blockquote cite="index.html"&gt;
-  &lt;p&gt;The page title is also used to describe the page when it is bookmarked.&lt;/p&gt;
-  &amp;mdash; &lt;cite&gt;mdn web docs&lt;/cite&gt;
+  &lt;pre&gt;The story so far:
+In the beginning the Universe was created.
+This has made a lot of people very angry and been widely regarded as a bad move.&lt;/pre&gt;
+  &amp;mdash; Douglas Adams, &lt;cite&gt;The Restaurant at the End of the Universe&lt;/cite&gt;
 &lt;/blockquote&gt;</code></pre>
   <p>The following is a block quote:</p>
   <blockquote cite="index.html">
-    <p>The page title is also used to describe the page when it is bookmarked.</p>
-    &mdash; <cite>mdn web docs</cite>
+    <pre>The story so far:
+In the beginning the Universe was created.
+This has made a lot of people very angry and been widely regarded as a bad move.</pre>
+    &mdash; Douglas Adams, <cite>The Restaurant at the End of the Universe</cite>
   </blockquote>
 
-  <pre><code class="lang_html">&lt;p&gt;The following is an inline quote: &lt;q cite="index.html"&gt;The page title is also used to describe the page when it is bookmarked.&lt;/q&gt;&lt;/p&gt;</code></pre>
-  <p>The following is an inline quote: <q cite="index.html">The page title is also used to describe the page when it is bookmarked.</q></p>
+  <pre><code class="lang_html">&lt;p&gt;The following is an inline quote: &lt;q cite="index.html"&gt;Don't panic!&lt;/q&gt;&lt;/p&gt;</code></pre>
+  <p>The following is an inline quote: <q cite="index.html">Don't panic!</q></p>
   </div>
 
-  <hr />
-
-  <p>Abbreviations and acronyms can be marked as such using <code class="lang_html">&lt;abbr&gt;</code>. Put the mouse on the abbreviated word to see the full expansion.</p>
+  <p>Abbreviations and acronyms can be marked as such using <code class="lang_html">&lt;abbr&gt;</code>. Put the mouse on the abbreviated word with the <code>title</code> attribute to see the full expansion.</p>
   <div class="example">
   <pre><code class="lang_html">The language of the web is &lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;.</code></pre>
   <p>The language of the web is <abbr title="HyperText Markup Language">HTML</abbr>.</p>
   </div>
-
-  <hr />
 
   <p>Use <code class="lang_html">&lt;address&gt;</code> to define contact information:</p>
   <div class="example">
   <pre><code class="lang_html">&lt;address&gt;Chris Mills, Manchester, The Grim North, UK&lt;/address&gt;</code></pre>
   <address>Chris Mills, Manchester, The Grim North, UK</address>
   </div>
+
+  <p>Use <code class="lang_html">&lt;time&gt;</code> to represents a specific period in time. Include the <code>datetime</code> attribute to translate dates into machine-readable format.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;p&gt;I was born on &lt;time datetime="1998-07-07"&gt;July 7&lt;/time&gt;.&lt;/p&gt;
+&lt;p&gt;The concert starts at &lt;time datetime="20:00"&gt;20:00&lt;/time&gt;.&lt;/p&gt;
+&lt;p&gt;I only slept for &lt;time datetime="PT6H30M"&gt;6h 30m&lt;/time&gt; last night.&lt;/p&gt;</code></pre>
+  <p>I was born on <time datetime="1998-07-07">July 7</time>.</p>
+  <p>The concert starts at <time datetime="20:00">20:00</time>.</p>
+  <p>I only slept for <time datetime="PT6H30M">6h 30m</time> last night.</p>
+  </div>
+
+  <!--
+  <p>@Incomplete: "bdi" and "bdo" for text directionality. "data" for assigning ids to text. "hgroup" for grouping headings and text. "i" for idiomatic text; "mark" for highlights; "menu" for interactive lists; "meter" and "progress" for ranges; "ruby", "rt" and "rp" for pronounciation annotations; "s" for striked text that is no longer accurate; "details" and "summary" for toggleable text; "u" for text with non-textual annotations like underline.</p>
+
+  <p>@Incomplete: "del" and "ins" for tracking changes in a document.</p>
+
+  <p>@Incomplete: "noscript" for adding text if scripting is disabled.</p>
+  -->
 
   <!--
   ################
@@ -369,21 +438,17 @@
 
   <h4 id="elements_images"><a href="#elements_images">Images</a></h4>
 
-  <p>To embed an image into a webpage, use the void <code class="lang_html">&lt;img&gt;</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the image.</p>
+  <p>To embed an image into a webpage, use the void <code class="lang_html">&lt;img&gt;</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the image. Give images descriptive filenames as they are counted towards <abbr title="Search Engine Optimizations">SEO</abbr>.</p>
   <div class="example">
-  <pre><code class="lang_html">&lt;img src="images/face.png" alt="A yellow smile on a gray background." width="500" height="500" title="Smile!" /&gt;</code></pre>
-  <img src="images/face.png" alt="A yellow smile on a gray background." width="500" height="500" title="Smile!" />
+  <pre><code class="lang_html">&lt;img src="images/black-star-128.png" alt="A black star on a transparent background." width="128" height="128" title="It's a star!" /&gt;</code></pre>
+  <img src="images/black-star-128.png" alt="A black star on a transparent background." width="128" height="128" title="It's a star!" />
   </div>
-
-  <p>Search engines read image filenames and count them towards <abbr title="Search Engine Optimizations">SEO</abbr>; you should give your image a descriptive filename.</p>
-
-  <hr />
 
   <p>The <code>alt</code> attribute specifies text that will be displayed when the image can't be loaded, and/or will be read out loud by screen readers.</p>
 
   <div class="example">
-  <pre><code class="lang_html">&lt;img src="images/facee.png" alt="A yellow smile on a gray background." width="500" height="500" title="Smile!" /&gt;</code></pre>
-  <img src="images/facee.png" alt="A yellow smile on a gray background." width="500" height="500" title="Smile!" />
+  <pre><code class="lang_html">&lt;img src="images/black-star-127.png" alt="A black star on a transparent background." width="128" height="128" title="It's a star!" /&gt;</code></pre>
+  <img src="images/black-star-127.png" alt="A black star on a transparent background." width="128" height="128" title="It's a star!" />
   </div>
 
   <p>There are many reasons for adding alt text:</p>
@@ -410,11 +475,15 @@
 
   <p>The <code>width</code> and <code>height</code> attributes represent the image's width and height in pixels.</p>
 
-  <p>You should specify the actual size of your source images, not the size you want them to appear on the website. If you do need to alter an image's size, either change the actual size of the source image or use CSS. The HTML for your page and the image are separate resources, fetched by the browser as separate HTTP(S) requests. As soon as the browser has received the HTML, it will start to display it to the user. If the images haven't yet been received (and this will often be the case, as image file sizes are often much larger than HTML files), then the browser will render only the HTML, and will update the page with the image as soon as it is received (causing the rest of the content to move). By specifying the width and height of the image in advance, the browser will reserve an appropriate amount of space for them and won't cause the rest of the content to be pushed away.</p>
+  <p>You should specify the actual size of your source images, not the size you want them to appear on the website. If you do need to alter an image's size, either change the actual size of the source image or use CSS. <br />
+  The HTML for your page and the image are separate resources, fetched by the browser as separate HTTP(S) requests. As soon as the browser has received the HTML, it will start to display it to the user. If the images haven't yet been received (and this will often be the case, as image file sizes are often much larger than HTML files), then the browser will render only the HTML, and will update the page with the image as soon as it is received (causing the rest of the content to move). <br />
+  By specifying the width and height of the image in advance, the browser will reserve an appropriate amount of space for them and won't cause the rest of the content to be pushed away.</p>
 
   <hr />
 
-  <p>The <code>title</code> attribute gives us a tooltip on mouse hover. It has a number of accessibility problems, and it is better to include supporting information in the main article text, rather than attached to the image in this way.</p>
+  <p>The <code>title</code> attribute displays a tooltip on mouse hover. It has a number of accessibility problems, and it is better to include supporting information in the main article text.</p>
+
+  <!--<p>@Incomplete: "map" and "area" elements, "picture" for alternative versions of the same image.</p>-->
 
   <!--
   ##################################
@@ -424,7 +493,7 @@
 
   <h4 id="elements_videos_and_audio_clips"><a href="#elements_videos_and_audio_clips">Videos and audio clips</a></h4>
 
-  <p>To embed a video into a webpage, use the <code class="lang_html">&lt;video&gt;</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the video, and the <code>controls</code> boolean attribute to display <em>start</em>, <em>pause</em>, <em>volume</em> and similar controls.</p>
+  <p>To embed a video into a webpage, use the <code class="lang_html">&lt;video&gt;</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the video, and the <code>controls</code> boolean attribute to display <em>start</em>, <em>pause</em> and similar controls.</p>
 
   <div class="example">
   <pre><code class="lang_html">&lt;video src="videos/pong.mp4" controls&gt;
@@ -465,6 +534,8 @@
   <hr />
 
   <p>The <code class="lang_html">&lt;audio&gt;</code> element is exactly like the <code class="lang_html">&lt;video&gt;</code> element, except that it doesn't have the <code>width</code>, <code>height</code> and <code>poster</code> attributes.
+
+  <!--<p>@Incomplete: "track" for captions.</p>-->
 
   <!--
   ########################
@@ -637,9 +708,9 @@
 
   <p>Table headers make the table easier to read for screen readers, and can be styled to look different than regular table cells.</p>
 
-  <hr />
-
+  <!--
   <p>@Incomplete: cells spanning multiple rows/columns, styling with the &lt;col&gt; element; captions/summaries and grouping your rows into table head, body and footer sections; accessibility of tables for visually impaired users.</p>
+  -->
 
   <!--
   #################
@@ -649,13 +720,14 @@
 
   <h4 id="elements_forms"><a href="#elements_forms">Forms</a></h4>
 
-  <p>The <code>&lt;form&gt;</code> element is a container element that defines a form and its configuration.</p>
-
+  <p>The <code class="lang_html">&lt;form&gt;</code> element is a container element that defines a form and its configuration.</p>
+  <div class="example">
   <pre><code class="lang_html">&lt;form action="/my-handling-form-page" method="post"&gt;
   &lt;!-- Form elements --&gt;
 &lt;/form&gt;</code></pre>
+  </div>
 
-  <p>A form can contain a lot of different input elements, as well as <code>&lt;label&gt;</code>s for accessibility purposes:</p>
+  <p>A form can contain a lot of different input elements, as well as <code class="lang_html">&lt;label&gt;</code>s for accessibility purposes:</p>
 
   <form>
   <ul>
@@ -705,7 +777,8 @@
       <input type="week" id="week" name="user_favourite_week" />
     </li>
 
-    <li>Favourite day of the week:
+    <li><fieldset name="day_of_week">
+      <legend>Favourite day of the week:</legend>
       <ul>
         <li>
           <label for="monday">Monday</label>
@@ -736,8 +809,7 @@
           <input type="radio" id="sunday" name="day_of_week"/>
         </li>
       </ul>
-
-    </li>
+    </fieldset></li>
 
     <li>
       <label for="color">Favourite color:</label>
@@ -768,6 +840,10 @@
     </li>
   </ul>
   </form>
+
+  <!--
+  <p>@Incomplete: "datalist" and "option" for dropdown menus, "optgroup" for grouping options.</p>
+  -->
 
   <!--
   ################
@@ -1131,11 +1207,37 @@ is rational.&lt;/p&gt;</code></pre>
 
   <p>Use the <code>rowspan</code> and <code>columnspan</code> attributes to make cells span multiple rows and columns. Read about <a href="#h3_elements_tables">HTML tables</a> for reference.</p>
 
+  <!--
+  ###########################
+  ##### ORGANIZING HTML #####
+  ###########################
+  -->
+
+  <h3 id="organizing_html"><a href="#organizing_html">Organizing HTML</a></h3>
+  <p>Each <code>.html</code> file corresponds to a different HTML page.</p>
+
+  <!--
+  ##########################
+  ##### HTML DEBUGGING #####
+  ##########################
+  -->
+
   <h3 id="html_debugging"><a href="#html_debugging">HTML debugging</a></h3>
 
-  <p>Go to the <a href="https://validator.w3.org/">Markup Validation Service</a> website to see syntax errors in HTML text.</p>
+  <p>Go to the <a href="https://validator.w3.org/">Markup Validation Service</a> website to see syntax and semantic errors in HTML text.</p>
+
+  <p>Common errors include:</p>
+  <ul>
+    <li>Forgetting to close an open tag</li>
+    <li>Forgetting to close the quotes on an attribute</li>
+    <li>Forgetting to quote an attribute value containing spaces</li>
+  </ul>
 
   </section>
+
+  <!--
+  <p>@Incomplete: canvas, datalist, search, output, progress </p>
+  -->
 
   <!--
   ###############
@@ -1183,7 +1285,7 @@ is rational.&lt;/p&gt;</code></pre>
   <p style="font-family: Helvetica, Arial;">This paragraph's font is set to Helvetica, or Arial if Helvetica is not available on the current system.</p>
   </div>
 
-  <p>Some groups of properties have <em>shorthands</em>, a single property that combines multiple other ones.</p>
+  <p>Some groups of properties have <em>shorthands</em>, single properties that combines multiple other ones.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;p style="font: italic bold 0.8em/1.2 Arial, sans-serif;"&gt;This paragraph uses a shorthand property.&lt;/p&gt;</code></pre>
   <p style="font: italic bold 0.8em/1.2 Arial, sans-serif;">This paragraph uses a shorthand property.</p>
@@ -1205,11 +1307,11 @@ is rational.&lt;/p&gt;</code></pre>
   <p style="color: blue;">This paragraph uses inline styles.</p>
   </div>
 
-  <p>To apply a style to multiple HTML elements at once, you write a <em>rule</em>.</p>
+  <p>To apply a style to multiple HTML elements at once, you can write a <em>rule</em>.</p>
   <div class="example">
   <pre><code class="lang_css">p { color: blue; }</code></pre>
-  <pre><code class="lang_html">&lt;p&gt;All 'p' elements are now blue.&lt;/p&gt;</code></pre>
-  <p style="color: blue;">All 'p' elements are now blue.</p>
+  <pre><code class="lang_html">&lt;p&gt;The rule targets all elements of type ‘p’.&lt;/p&gt;</code></pre>
+  <p style="color: blue;">The rule targets all elements of type ‘p’.</p>
   </div>
 
   <p>A set of rules forms a <em>stylesheet</em>. You can put rules between two <code class="lang_html">&lt;style&gt;</code> tags inside the <code class="lang_html">&lt;head&gt;</code> to define an <em>internal stylesheet</em>.</p>
@@ -1249,24 +1351,24 @@ is rational.&lt;/p&gt;</code></pre>
 
   <p>Every HTML element is contained in a <em>box</em>.</p>
   <div class="example">
-  <p style="border: 1px solid #bbb;">The box around this paragraph has been made visible.</p>
+  <p class="border">The box around this paragraph has been made visible.</p>
   </div>
 
   <p>Some elements, such as paragraphs, have a box of type <code>block</code>.</p>
   <div class="example">
-  <p style="border: 1px solid #bbb;">This element is a paragraph.</p>
-  <p style="border: 1px solid #bbb;">This is another paragraph; as such, it is automatically placed on a new line, and it expands horizontally to fit the width of its parent (unless otherwise specified).</p>
+  <p class="border">This element is a paragraph.</p>
+  <p class="border">This is another paragraph; as such, it is automatically placed on a new line, and it expands horizontally to fit the width of its parent (unless otherwise specified).</p>
   </div>
 
   <p>Other elements, such as anchors, have a box of type <code>inline</code>.</p>
   <div class="example">
-  <p>This paragraph <a style="border: 1px solid #bbb;" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model">contains a link</a>. A link does not cause the text to go a new line, and its size matches the size of its content.</p>
+  <p>This paragraph <a class="border" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model">contains a link</a>. A link does not cause the text to go a new line, and its size matches the size of its content.</p>
   </div>
 
   <p>When a style is applied to an element, it is actually applied to its box.</p>
   <div class="example">
-  <pre><code class="lang_html">&lt;p style="background-color: #ffdddd;"&gt;This paragraph is short, but the whole box has been colored.&lt;/p&gt;</code></pre>
-  <p style="background-color: #ffdddd;">This paragraph is short, but the whole box has been colored.</p>
+  <pre><code class="lang_html">&lt;p style="background-color: #fdd;"&gt;This paragraph is short, but the whole box has been colored.&lt;/p&gt;</code></pre>
+  <p class="border" style="background-color: #fdd;">This paragraph is short, but the whole box has been colored.</p>
   </div>
 
   <p>The default box type of an element can be changed using the <code>display</code> property.</p>
@@ -1326,20 +1428,20 @@ is rational.&lt;/p&gt;</code></pre>
 
   <p>The <code>padding</code> property controls the space around the <code>content</code> and inside the <code>border</code>.</p>
   <div class="example">
-  <pre><code class="lang_html">&lt;p style="padding: 10px;"&gt;There is some space between this text and its border.&lt;/p&gt;</code></pre>
-  <p style="border: 1px solid #bbb; padding: 10px;">There is some space between this text and its border.</p>
+  <pre><code class="lang_html">&lt;p style="padding: 15px;"&gt;There is some space between this text and its border.&lt;/p&gt;</code></pre>
+  <p class="border" style="padding: 15px;">There is some space between this text and its border.</p>
   </div>
 
   <p>The <code>border</code> property controls the border of a box.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;p style="border: 1px solid black;"&gt;The border around this paragraph is now black.&lt;/p&gt;</code></pre>
-  <p style="border: 1px solid black;">The border around this paragraph is now black.</p>
+  <p class="border" style="border: 1px solid black;">The border around this paragraph is now black.</p>
   </div>
 
   <p>The <code>margin</code> property controls the space the <code>border</code>.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;p style="margin: 20px;"&gt;There is some space around the border of this paragraph.&lt;/p&gt;</code></pre>
-  <p style="border: 1px solid #bbb; background-color: white; margin: 20px;">There is some space around the border of this paragraph.</p>
+  <p class="border" style="margin: 20px;">There is some space around the border of this paragraph.</p>
   </div>
 
   <!--
@@ -1350,24 +1452,17 @@ is rational.&lt;/p&gt;</code></pre>
 
   <h4 id="standard_and_alternate_box_models"><a href="#standard_and_alternate_box_models">Standard and alternate box models</a></h4>
 
-  <p>In the <em>standard box model</em>, properties like <code>width</code>, <code>height</code>, <code>inline-size</code> and <code>block-size</code> describe the size of the <em>content box</em>. In the <em>alternate box model</em>, they describe the size of <em>content, padding and border</em>.</p>
+  <p>In the <em>standard box model</em>, properties like <code>width</code>, <code>height</code>, <code>inline-size</code> and <code>block-size</code> describe the size of the <em>content box</em>. In the <em>alternate box model</em>, they describe the total size of <em>content, padding and border</em>.</p>
   <div class="example">
-  <pre><code class="lang_css">.box {
-  border: 5px solid rebeccapurple;
-  background-color: #ddd;
-  padding: 40px;
-  margin: 40px;
-  width: 300px;
-  height: 150px;
-}
-
-.box.alternate {
-  box-sizing: border-box; /* Set the elements to use the alternate box model */
+  <pre><code class="lang_css">div {
+  border: 1px solid #bbb;
+  margin: 40px; padding: 40px;
+  width: 300px; height: 150px;
 }</code></pre>
-  <pre><code class="lang_html">&lt;div class="box"&gt;I use the standard box model.&lt;/div&gt;
-&lt;div class="box alternate"&gt;I use the alternate box model.&lt;/div&gt;</code></pre>
-  <div class="box_model_box">I use the standard box model.</div>
-  <div class="box_model_box alternate">I use the alternate box model.</div>
+  <pre><code class="lang_html">&lt;div&gt;I use the standard box model.&lt;/div&gt;
+&lt;div style="box-sizing: border-box;"&gt;I use the alternate box model.&lt;/div&gt;</code></pre>
+  <div class="border box_model_box">I use the standard box model.</div>
+  <div class="border box_model_box" style="box-sizing: border-box;">I use the alternate box model.</div>
   <p>These two boxes have the same <code>width</code> and <code>height</code> values, but the second one is set to use the alternate box model with the <code>box-sizing</code> property.</p>
   </div>
 
@@ -1384,22 +1479,23 @@ is rational.&lt;/p&gt;</code></pre>
   <p><em>Inline direction</em> refers to the direction the text is flowing in. By default, the <code>inline-size</code> property means the same as <code>width</code>.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;p style="inline-size: 150px; padding: 5px;"&gt;This paragraph is very narrow. It has been squashed by setting its inline size to a small value.&lt;/p&gt;</code></pre>
-  <p style="inline-size: 150px; border: 1px solid #ccc; padding: 5px;">This paragraph is very narrow. It has been squashed by setting its inline size to a small value.</p>
+  <p class="border" style="inline-size: 150px; padding: 5px;">This paragraph is very narrow. It has been squashed by setting its inline size to a small value.</p>
   </div>
 
   <p><em>Block direction</em> refers to direction blocks are displayed on a page. By default, the <code>block-size</code> property means the same as <code>height</code>.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;p style="block-size: 100px; padding: 5px;"&gt;This paragraph is very tall. It has been stretched vertically by setting its block size to a big value.&lt;/p&gt;</code></pre>
-  <p style="block-size: 100px; border: 1px solid #ccc; padding: 5px;">This paragraph is very tall. It has been stretched vertically by setting its block size to a big value.</p>
+  <p class="border" style="block-size: 100px; padding: 5px;">This paragraph is very tall. It has been stretched vertically by setting its block size to a big value.</p>
   </div>
 
   <p>The <code>inline</code> and <code>block</code> size properties change their meaning depending on the text direction: horizontal (like most languages) or vertical (like Japanese). The text direction can be set with the <code>writing-mode</code> property:</p>
   <div class="example">
   <pre><code class="lang_html">&lt;p style="writing-mode: vertical-rl; inline-size: 80px; padding: 5px; font-size: 1.2em;"&gt;Sideways text.&lt;/p&gt;</code></pre>
-  <p style="writing-mode: vertical-rl; inline-size: 80px; border: 1px solid #ccc; padding: 5px; font-size: 1.2em;">Sideways text.</p>
+  <p class="border" style="writing-mode: vertical-rl; inline-size: 80px; padding: 5px; font-size: 1.2em; margin: 0 0 16px 0;">Sideways text.</p>
+  <p>In this case, <code>inline-size</code> means the same as <code>height</code>.</p>
   </div>
 
-  <p><code>width</code> and <code>height</code> are called <em>physical properties</em> while <code>inline-size</code> and <code>block-size</code> are called <em>logical properties</em>.</p>
+  <p>The <code>width</code> and <code>height</code> properties are called <em>physical properties</em>; the <code>inline-size</code> and <code>block-size</code> properties are called <em>logical properties</em>.</p>
 
   <!--
   ###############################
@@ -1413,39 +1509,39 @@ is rational.&lt;/p&gt;</code></pre>
   <div class="example">
   <pre><code class="lang_css">{ overflow: visible; } /* Make the content be visible outside the box (default) */</code></pre>
   <div class="overflow_container">
-    <div class="box visible">
+    <div class="border box visible">
       This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.
     </div>
   </div>
 
   <pre><code class="lang_css">{ overflow: hidden; } /* Make the content outside the box be invisible (not recommended) */</code></pre>
   <div class="overflow_container">
-    <div class="box hidden">
+    <div class="border box hidden">
       This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.
     </div>
   </div>
 
   <pre><code class="lang_css">{ overflow: scroll; } /* Display scrollbars (both if the content fits or doesn't) */</code></pre>
   <div class="overflow_container">
-    <div class="box scroll">
+    <div class="border box scroll">
       This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.
     </div>
   </div>
 
   <pre><code class="lang_css">{ overflow: visible; } /* Make the browser detect if it should display scrollbars */</code></pre>
   <div class="overflow_container">
-    <div class="box auto">
+    <div class="border box auto">
       This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.
     </div>
   </div>
   </div>
 
-  <p>The overflow value can be different for <code>x</code> and <code>y</code> axes.</p>
+  <p>The overflow value can be different for the <code>x</code> and <code>y</code> axes.</p>
 
   <div class="example">
   <pre><code class="lang_css">{ overflow-y: scroll; } /* Display vertical scrollbar */</code></pre>
   <div class="overflow_container">
-    <div class="box scroll-y">
+    <div class="border box scroll-y">
       This box has a height and a width. This means that if there is too much content to be displayed within the assigned height, there will be an overflow situation. If overflow is set to hidden then any overflow will not be visible.
     </div>
   </div>
@@ -1726,6 +1822,25 @@ is rational.&lt;/p&gt;</code></pre>
   font-size: 200%;
 }</code></pre>
   </div>
+
+  <!--
+  <p>@Incomplete: universal selector; cascade, specificity and inheritance rules. Variables.</p>
+  -->
+
+  <!--
+  ##########################
+  ##### CSS DATA TYPES #####
+  ##########################
+  -->
+
+  <h3 id="css_data_types"><a href="#css_data_types">CSS data types</a></h3>
+
+  <!--
+  <h4>Numeric data types</h4>
+  <h4>Colors</h4>
+  <h4>Images</h4>
+  <h4>Special types</h4>
+  -->
 
   <!--
   ##########################
