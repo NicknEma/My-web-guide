@@ -10,6 +10,7 @@
   <meta name="keywords" content="Web, HTML, CSS, JS, guide" />
   <meta name="theme-color" content="white" />
   <meta name="color-scheme" content="only light" />
+  <meta name="viewport" content="width=device-width">
 
   <link
    rel="stylesheet"
@@ -21,6 +22,13 @@
   <!-- @Speed: Downloading and using this font is what makes the page flicker on reload. If we
        render math with Cambria, the reload is instantaneous (but Cambria doesn't stretch operators
        correctly) -->
+
+  <!--
+  <!-- Merriweather font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  -->
 
   <!-- Script to warn the user the browser doesn't support MathML -->
   <script src="https://fred-wang.github.io/mathml-warning.js/mpadded-min.js"></script>
@@ -229,7 +237,7 @@
     <li><code class="lang_html">&lt;link /&gt;</code>: a link to an external stylesheet for the page.</li>
     <li><code class="lang_html">&lt;script&gt;</code>: a script (or a link to one) that will run in tandem with the page.</li>
     <li><code class="lang_html">&lt;base /&gt;</code>: the base URL to use for all relative URLs in a document. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base">See more</a>.</li>
-    <li><code class="lang_html">&lt;meta /&gt;</code>: description of metadata (data about the page) not captured by the previous elements. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">See more</a>.</li>
+    <li><code class="lang_html">&lt;meta /&gt;</code>: description of metadata (data about the page) not captured by the previous elements. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">See more here</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag">and here</a>.</li>
   </ul>
 
   <!--
@@ -547,6 +555,8 @@ This has made a lot of people very angry and been widely regarded as a bad move.
 
   <p>Use the <code class="lang_html">&lt;iframe&gt;</code> element to embed other web pages into the current one.</p>
 
+  <!-- @Todo: Consider re-enabling this, but use a facade as suggested on https://pagespeed.web.dev/ -->
+  <!--
   <p>To embed a YouTube video, click on "share" and then copy the code snipped that is provided.</p>
 
   <div class="example">
@@ -558,7 +568,6 @@ This has made a lot of people very angry and been widely regarded as a bad move.
   referrerpolicy="strict-origin-when-cross-origin"
   allowfullscreen&gt;
 &lt;/iframe&gt;</code></pre>
-
   <iframe src="https://www.youtube.com/embed/xuCn8ux2gbs?si=Qf20w2baVv7CHCWT"
     title="YouTube video player"
     width="560" height="315"
@@ -567,6 +576,7 @@ This has made a lot of people very angry and been widely regarded as a bad move.
     allowfullscreen>
   </iframe>
   </div>
+  -->
 
   <!--
   ####################
@@ -1844,6 +1854,180 @@ is rational.&lt;/p&gt;</code></pre>
   -->
 
   <!--
+  ########################
+  ##### STYLING TEXT #####
+  ########################
+  -->
+
+  <h3 id="styling_text"><a href="#styling_text">Styling text</a></h3>
+
+  <!-- @Todo: summarize this part, with links to the concepts of "start" and "end" -->
+  <p>Text inside an element is laid out inside the element's content box. It starts at the top left of the content area (or the top right, in the case of RTL language content), and flows towards the end of the line.<br />
+  Once it reaches the end, it goes down to the next line and flows to the end again.</p>
+  <p>The text inside an element is all affected as one single entity. You can't select and style subsections of text unless you wrap them in an appropriate element (such as a &lt;span&gt; or &lt;strong&gt;), or use a text-specific<br />
+  pseudo-element like ::first-letter (selects the first letter of an element's text), ::first-line (selects the first line of an element's text), or ::selection (selects the text currently highlighted by the cursor).</p>
+
+  <h4>Color</h4>
+
+  <p>The <code>color</code> property sets the color of the foreground content of the selected elements, which is usually the text, but can also include a couple of other things, such as an underline or overline placed on text using the text-decoration property. Color can accept any CSS color unit.</p>
+  <div class="example">
+  <pre><code class="lang_css">p { color: red; }</code></pre>
+  <pre><code class="lang_html">&lt;p&gt;Tommy the cat had many a story to tell.&lt;/p&gt;</code></pre>
+  <p style="color:red">Tommy the cat had many a story to tell.</p>
+  </div>
+
+  <h4>Font</h4>
+
+  <p>The <code>font-family</code> property allows you to specify a font (or list of fonts) to apply to the selected elements.</p>
+  <div class="example">
+  <pre><code class="lang_css">p { font-family: Helvetica, Arial; }</code></pre>
+  <pre><code class="lang_html">&lt;p&gt;Tommy the cat had many a story to tell.&lt;/p&gt;</code></pre>
+  <p style="font-family: Arial;">Tommy the cat had many a story to tell.</p>
+  </div>
+
+  <!--
+  #########################
+  ##### DEFAULT FONTS #####
+  #########################
+  -->
+
+  <h5>Default fonts</h5>
+
+  <p>CSS defines five default <em>names</em> for fonts - the exact font face used from these generic names can vary between each browser and each operating system. It represents a worst case scenario where the browser will try its best to provide a font that looks appropriate.</p>
+
+  <!--
+  <dl>
+  <dt>serif</dt>
+  <dd>The flourishes and other small details you see at the ends of the strokes in some typefaces</dd>
+  </dl>
+  -->
+
+  <ul>
+    <li><span style="font-family: serif;">serif: Fonts that have serifs.</span></li>
+    <li><span style="font-family: sans-serif;">sans-serif: Fonts that don't have serifs.</span></li>
+    <li><span style="font-family: monospace;">monospace: Fonts where every character has the same width, typically used in code listings.</span></li>
+    <li><span style="font-family: cursive;">cursive: Fonts that are intended to emulate handwriting, with flowing, connected strokes.</span></li>
+    <li><span style="font-family: fantasy;">fantasy: Fonts that are intended to be decorative.</span></li>
+  </ul>
+
+  <!--
+  ########################
+  ##### SYSTEM FONTS #####
+  ########################
+  -->
+
+  <h5>System fonts</h5>
+
+  <p>Fonts provided by the operating system are generally available across all platforms and are therefore called <i>web-safe fonts</i>. The list of actual web safe fonts will change as operating systems evolve, but it's reasonable to consider the following fonts <i>web safe</i>, at least for now.</p>
+
+  <table><tbody>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Notes</th>
+    </tr>
+    <tr>
+      <td>Arial</td>
+      <td>Sans-serif</td>
+      <td>Can be used as a fallback font for <i>Helvetica</i> since their shapes are similar.</td>
+    </tr>
+    <tr>
+      <td>Courier New</td>
+      <td>Monospace</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Georgia</td>
+      <td>Serif</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Times New Roman</td>
+      <td>Serif</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Trebuchet MS</td>
+      <td>Sans-serif</td>
+      <td>Less common on mobile OSes.</td>
+    </tr>
+    <tr>
+      <td>Verdana</td>
+      <td>Sans-serif</td>
+      <td></td>
+    </tr>
+  </tbody></table>
+
+  <!--
+  #####################
+  ##### WEB FONTS #####
+  #####################
+  -->
+
+  <h5>Web fonts</h5>
+
+  <p>CSS allows you to specify font files, available on the web, to be downloaded along with your website as it's accessed. This means that any browser supporting this CSS feature can display the fonts you've specifically chosen.</p>
+
+  <p>Use a <code>@font-face</code> ruleset at the start of the stylesheet to specify the font file(s) to download. Below it, use the font family name as usual.</p>
+  <div class="example">
+  <pre><code class="lang_css">@font-face {
+  font-family: "my-custom-font";
+  src: url("my-custom-font.woff2");
+}
+
+html { font-family: "my-custom-font", serif; }</code></pre>
+  </div>
+
+  <p>The <code>font-family</code> property defines the identifier through which the rest of the stylesheet can refer to the font. It can be any string, not necessarily the name of the font.</p>
+  <div class="example">
+  <pre><code class="lang_css">@font-face {
+  font-family: "spongebob-squarepants";
+  src: url("my-custom-font.woff2");
+}
+
+html { font-family: "spongebob-squarepants", serif; }</code></pre>
+  </div>
+
+  <p>The <code>src</code> property expects the <code>URL</code> from which to load the font file, and an optional <code>format</code> value. Though optional, it is recommented so that browsers don't have to figure out the format themselves. <br /> Multiple values can be listed here, so that older browsers can fallback to older formats they can recognize.</p>
+  <div class="example">
+  <pre><code class="lang_css">@font-face {
+  font-family: "my-custom-font";
+  src: url("my-custom-font.woff2") format("woff2"),
+       url("my-custom-font.woff") format("woff");
+}</code></pre>
+  </div>
+
+  <p>To load multiple variations of the same font and assign them to a single identifier, <a href="https://www.456bereastreet.com/archive/201012/font-face_tip_define_font-weight_and_font-style_to_keep_your_css_simple/">see this article</a>.</p>
+
+  <p>Note that:</p>
+  <ul>
+    <li>Fonts generally aren't free to use. You have to pay for them and/or follow other license conditions, such as crediting the font creator in your code (or on your site).</li>
+    <li>All major browsers support <abbr title="Web Open Font Format 1">WOFF</abbr>/<abbr title="Web Open Font Format 2">WOFF2</abbr>.</li>
+    <li>WOFF2 supports the entirety of the TrueType and OpenType specifications, including variable fonts, chromatic fonts, and font collections.</li>
+    <li>The order in which you list font files is important. If you provide the browser with a list of multiple font files to download, the browser will choose the first font file it's able to use. That's why the format you list first should be the preferred format — that is, WOFF2 — with the older formats listed after that. Browsers that don't understand one format will then fall back to the next format in the list.</li>
+    <li>If you need to work with legacy browsers, you should provide <abbr title="Embedded Open Type">EOT</abbr>, <abbr title="TrueType Font">TTF</abbr>, and SVG web fonts for download.</li>
+  </ul>
+
+  <p>Steps for using a web font from a font provider: 1) download the TTF/OTF file. 2) Use a converter to generate WOFF/WOFF2 files + the corresponding stylesheet containint the @font-face rule.</p>
+
+  <!--
+  #######################
+  ##### FONT STACKS #####
+  #######################
+  -->
+
+  <h5>Font stacks</h5>
+  <p>Since you can't guarantee the availability of the fonts you want to use on your webpages (even a web font could fail for some reason), you can supply a font stack so that the browser has multiple fonts it can choose from. This involves a font-family value consisting of multiple font names separated by commas, e.g.,</p>
+
+<pre>p {
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+}</pre>
+
+  <p>In such a case, the browser starts at the beginning of the list and looks to see if that font is available on the machine. If it is, it applies that font to the selected elements. If not, it moves on to the next font, and so on.</p>
+
+<p>It is a good idea to provide a suitable generic font name at the end of the stack so that if none of the listed fonts are available, the browser can at least provide something approximately suitable.</p>
+
+  <!--
   ##########################
   ##### STYLING TABLES #####
   ##########################
@@ -2107,136 +2291,6 @@ span { background-color: rgb(255 255 255 / 50%); }</code></pre>
     <li>space — repeat in both directions, adding space between the images if there is extra space available.</li>
     <li>round — repeat in both directions, stretching the images if there is extra space available.</li>
   </ul>
-
-  <!--
-  ########################
-  ##### STYLING TEXT #####
-  ########################
-  -->
-
-  <a href="#h2_styling_text"><h2 id="h2_styling_text">Styling text</h2></a>
-
-  <p>Text inside an element is laid out inside the element's content box. It starts at the top left of the content area (or the top right, in the case of RTL language content), and flows towards the end of the line.<br />
-  Once it reaches the end, it goes down to the next line and flows to the end again.</p>
-
-  <p>The text inside an element is all affected as one single entity. You can't select and style subsections of text unless you wrap them in an appropriate element (such as a &lt;span&gt; or &lt;strong&gt;), or use a text-specific<br />
-  pseudo-element like ::first-letter (selects the first letter of an element's text), ::first-line (selects the first line of an element's text), or ::selection (selects the text currently highlighted by the cursor).</p>
-
-  <h3>Specifying color</h3>
-
-  <p>The color property sets the color of the foreground content of the selected elements, which is usually the text, but can also include a couple of other things, such as an underline or overline placed on text using the text-decoration property. Color can accept any CSS color unit.</p>
-
-  <pre><code class="lang_css">p {
-  color: red;
-}</code></pre>
-  <code class="lang_html">&lt;p&gt;Tommy the cat had many a story to tell.&lt;/p&gt;</code>
-
-  <p style="color:red">Tommy the cat had many a story to tell.</p>
-
-  <h3>Specifying font</h3>
-
-  <p>The font-family attribute allows you to specify a font (or list of fonts) to apply to the selected elements.</p>
-
-  <pre><code class="lang_css">p {
-  font-family: Arial;
-}</code></pre>
-  <code class="lang_html">&lt;p&gt;Tommy the cat had many a story to tell.&lt;/p&gt;</code>
-  <p style="font-family: Arial;">Tommy the cat had many a story to tell.</p>
-
-  <h4>Default fonts</h4>
-
-  <p>CSS defines five default <em>names</em> for fonts - the exact font face used from these generic names can vary between each browser and each operating system. It represents a worst case scenario where the browser will try its best to provide a font that looks appropriate.</p>
-
-  <dl>
-  <dt>serif</dt>
-  <dd>The flourishes and other small details you see at the ends of the strokes in some typefaces</dd>
-  </dl>
-
-  <ul>
-    <li><span style="font-family: serif;">serif: Fonts that have serifs.</span></li>
-    <li><span style="font-family: sans-serif;">sans-serif: Fonts that don't have serifs.</span></li>
-    <li><span style="font-family: monospace;">monospace: Fonts where every character has the same width, typically used in code listings.</span></li>
-    <li><span style="font-family: cursive;">cursive: Fonts that are intended to emulate handwriting, with flowing, connected strokes.</span></li>
-    <li><span style="font-family: fantasy;">fantasy: Fonts that are intended to be decorative.</span></li>
-  </ul>
-
-  <h4>System fonts</h4>
-
-  <p>Fonts that are generally available across all systems and can therefore be used without much worry; they are called "web-safe fonts". The list of actual web safe fonts will change as operating systems evolve, but it's reasonable to consider the following fonts web safe, at least for now.</p>
-
-  <table border="1"><tbody>
-    <tr>
-      <td><strong>Name</strong></td>
-      <td><strong>Type</strong></td>
-      <td><strong>Notes</strong></td>
-    </tr>
-    <tr>
-      <td>Arial</td>
-      <td>Sans-serif</td>
-      <td>Can be used as a fallback font for Helvetica since their shapes are similar.</td>
-    </tr>
-    <tr>
-      <td>Courier New</td>
-      <td>Monospace</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Georgia</td>
-      <td>Serif</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Times New Roman</td>
-      <td>Serif</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Trebuchet MS</td>
-      <td>Sans-serif</td>
-      <td>Less common on mobile OSes.</td>
-    </tr>
-    <tr>
-      <td>Verdana</td>
-      <td>Sans-serif</td>
-      <td></td>
-    </tr>
-  </tbody></table>
-
-  <h4>Web fonts</h4>
-
-  <p>CSS allows you to specify font files, available on the web, to be downloaded along with your website as it's accessed. This means that any browser supporting this CSS feature can display the fonts you've specifically chosen. </p>
-
-  <p>First of all, you have a @font-face ruleset at the start of the CSS, which specifies the font file(s) to download.</p>
-  <pre><code class="lang_css">@font-face {
-  font-family: "myFont";
-  src: url("myFont.woff2");
-}</code></pre>
-
-  <p>Below this you use the font family name specified inside @font-face to apply your custom font to anything you like, as normal.</p>
-  <pre><code class="lang_html">html {
-  font-family: "myFont", "Bitstream Vera Serif", serif;
-}</code></pre>
-
-  <p>Note that:</p>
-
-  <ul>
-    <li>Fonts generally aren't free to use. You have to pay for them and/or follow other license conditions, such as crediting the font creator in your code (or on your site).</li>
-    <li>All major browsers support <abbr title="Web Open Font Format 1">WOFF</abbr>/<abbr title="Web Open Font Format 2">WOFF2</abbr>.</li>
-    <li>WOFF2 supports the entirety of the TrueType and OpenType specifications, including variable fonts, chromatic fonts, and font collections.</li>
-    <li>The order in which you list font files is important. If you provide the browser with a list of multiple font files to download, the browser will choose the first font file it's able to use. That's why the format you list first should be the preferred format — that is, WOFF2 — with the older formats listed after that. Browsers that don't understand one format will then fall back to the next format in the list.</li>
-    <li>If you need to work with legacy browsers, you should provide <abbr title="Embedded Open Type">EOT</abbr>, <abbr title="TrueType Font">TTF</abbr>, and SVG web fonts for download.</li>
-  </ul>
-
-  <h4>Font stacks</h4>
-  <p>Since you can't guarantee the availability of the fonts you want to use on your webpages (even a web font could fail for some reason), you can supply a font stack so that the browser has multiple fonts it can choose from. This involves a font-family value consisting of multiple font names separated by commas, e.g.,</p>
-
-<pre>p {
-  font-family: "Trebuchet MS", Verdana, sans-serif;
-}</pre>
-
-  <p>In such a case, the browser starts at the beginning of the list and looks to see if that font is available on the machine. If it is, it applies that font to the selected elements. If not, it moves on to the next font, and so on.</p>
-
-<p>It is a good idea to provide a suitable generic font name at the end of the stack so that if none of the listed fonts are available, the browser can at least provide something approximately suitable.</p>
 
   <a href="#h3_css_debugging"><h3 id="h3_css_debugging">CSS debugging</h3></a>
 

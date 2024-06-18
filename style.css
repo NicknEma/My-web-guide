@@ -1,3 +1,55 @@
+/*.merriweather-light {
+	font-family: "Merriweather", serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
+.merriweather-regular {
+	font-family: "Merriweather", serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.merriweather-bold {
+	font-family: "Merriweather", serif;
+	font-weight: 700;
+	font-style: normal;
+}
+
+.merriweather-black {
+	font-family: "Merriweather", serif;
+	font-weight: 900;
+	font-style: normal;
+}
+
+.merriweather-light-italic {
+	font-family: "Merriweather", serif;
+	font-weight: 300;
+	font-style: italic;
+}
+
+.merriweather-regular-italic {
+	font-family: "Merriweather", serif;
+	font-weight: 400;
+	font-style: italic;
+}
+
+.merriweather-bold-italic {
+	font-family: "Merriweather", serif;
+	font-weight: 700;
+	font-style: italic;
+}
+
+.merriweather-black-italic {
+	font-family: "Merriweather", serif;
+	font-weight: 900;
+	font-style: italic;
+}
+*//*
+html {
+	font-family: Merriweather, serif;
+}*/
+
 /* 
 Minify stylesheets with cssnano:
 https://cssnano.github.io/cssnano/
@@ -66,8 +118,7 @@ li[role="separator"] {
 table { border-collapse: collapse; }
 tbody tr:nth-child(even) { background-color: #e6e6e6; }
 	tbody tr:nth-child(odd)  { background-color: white; }
-	
-	td, th { padding: 0.3em; }
+	td, th { border: 1px solid black; padding: 0.3em; }
 	
 	/* Exclude example tables from the restyling */
 	.example table tr { background-color: #ffffff00; }
