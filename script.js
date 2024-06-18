@@ -66,6 +66,8 @@ for (const i in image_names) {
 							   const displayed_image = document.getElementsByClassName("displayed-img")[0];
 							   displayed_image.src = event.target.src;
 							   displayed_image.alt = event.target.alt;
+							   displayed_image.width = event.target.width;
+							   displayed_image.height = event.target.height;
 						   });
 	
 	thumb_bar_div.append(image);
