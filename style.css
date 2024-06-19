@@ -1,7 +1,4 @@
-/* 
-Minify stylesheets with cssnano:
-https://cssnano.github.io/cssnano/
-*/
+/* Minify stylesheets with cssnano: https://cssnano.github.io/cssnano/ */
 
 /* --- GENERAL --- */
 
@@ -18,248 +15,257 @@ h6 { font-size: 1.05em; }
 strong {font-weight: 900;}
 pre {font-family: inherit;}
 
-a:visited {color: blue;}
-
-/* --- UTILITY CLASSES --- */
-
-.border {border: 1px solid #bbb;padding: 3px;}
-	.block {display:block;}
-	.inline {display:inline}
-	.p {margin:16px 0 16px 0;}
-	
-	/* --- CODE --- */
-	
-	code, var, kbd, samp {
-		font-family: "Source Code Pro", monospace;
-		font-size: 0.85em;
+ins {background-color:#bfb;}
+	del {background-color:#fbb;}
 		
-		border-radius: 0.3em;
-		background: #eee;
-		padding: 0.1em;
-	}
-	
-	pre > code {
-		display: block;
-	}
-	
-	/* --- EXAMPLES --- */
-	
-	.example {
-		overflow: auto;
+		a:visited {color: blue;}
 		
-		border: 1px solid black;
-		border-radius: 0.3em;
+		/* --- UTILITY CLASSES --- */
 		
-		padding-left: 0.6em;
-		padding-right: 0.6em;
-		padding-top: 0.3em;
-		padding-bottom: 0.3em;
-		
-		background-color: #fcfcfc;
-		margin-top: 0.1em;
-		margin-bottom: 0.1em;
-	}
-	
-	.example iframe { border: 0; }
-	
-	/* --- LISTS --- */
-	
-	li[role="separator"] {
-		margin-bottom: 10px;
-		list-style-type: none;
-	}
-	
-	/* --- TABLES --- */
-	
-	table { border-collapse: collapse; }
-	tbody tr:nth-child(even) { background-color: #e6e6e6; }
-		tbody tr:nth-child(odd)  { background-color: white; }
-		td, th { border: 1px solid black; padding: 0.3em; }
-		
-		/* Exclude example tables from the restyling */
-		.example table tr { background-color: #ffffff00; }
-			.example table td, .example table th { border: 0; }
-			.example table { border-collapse: separate; }
+		.border {border: 1px solid #bbb;padding: 3px;}
+			.block {display:block;}
+			.inline {display:inline}
+			.p {margin:16px 0 16px 0;}
 			
-			/* --- FORMS --- */
+			/* --- CODE --- */
 			
-			form {
-				display: inline-block;
+			code, var, kbd, samp {
+				font-family: "Source Code Pro", monospace;
+				font-size: 0.85em;
 				
-				/* Form outline */
-				padding: 1em;
-				border: 1px solid #ccc;
-				border-radius: 1em;
+				border-radius: 0.3em;
+				background: #eee;
+				padding: 0.1em;
 			}
 			
-			form ul {
-				list-style: none;
-				padding: 0;
-				margin: 0;
-			}
+			pre > code {display: block;}
 			
-			form li + li {
-				margin-top: 1em;
-			}
+			/* --- EXAMPLES --- */
 			
-			label {
-				/* Uniform size & alignment */
-				display: inline-block;
-				min-width: 140px;
-				text-align: right;
-			}
-			
-			input,
-			textarea {
-				/* To make sure that all text fields have the same font settings
-				   By default, textareas have a monospace font */
-				font: 1em sans-serif;
+			.example {
+				overflow: auto;
 				
-				/* Uniform text field size */
-				width: 300px;
-				box-sizing: border-box;
-				
-				/* Match form field borders */
-				border: 1px solid #999;
-			}
-			
-			input:focus,
-			textarea:focus {
-				/* Additional highlight for focused elements */
-				border-color: #000;
-			}
-			
-			textarea {
-				/* Align multiline text fields with their labels */
-				vertical-align: top;
-				
-				/* Provide space to type some text */
-				height: 5em;
-			}
-			
-			.button {
-				/* Align buttons with the text fields */
-				padding-left: 124px; /* same size as the label elements */
-			}
-			
-			button {
-				/* This extra margin represent roughly the same space as the space
-				   between the labels and their text fields */
-				margin-left: 0.5em;
-			}
-			
-			/* --- MATH --- */
-			
-			p.mathy {
-				width: 20em;
-			}
-			
-			p.mathy > math {
-				font-family: "Latin Modern Math", "Cambria Math", Cambria, serif;
-				font-size: 1.1em;
-			}
-			
-			/* --- SECTION: BOX MODEL --- */
-			
-			.box_model_box {
-				margin: 20px; padding: 40px;
-				width: 300px; height: 150px;
-			}
-			
-			/* ----- SECTION: OVERFLOW ----- */
-			
-			.overflow_container .box {
-				/*border: 1px solid black;*/
-				font-size: 1.0em;
-				width: 16em;
-				height: 7.5em;
-				margin: 10px;
-				padding: 0 2px 0 2px;
-			}
-			
-			.overflow_container .visible  { overflow:   visible; margin-bottom: 3.2em; }
-			.overflow_container .hidden   { overflow:   hidden; }
-			.overflow_container .scroll   { overflow:   scroll; }
-			.overflow_container .auto     { overflow:   auto;   }
-			.overflow_container .scroll-y { overflow-y: scroll; }
-			
-			/* --- SECTION: SELECTORS --- */
-			
-			a:hover.hover_example {
-				color: pink;
-				background-color: black;
-			}
-			
-			/* --- SECTION: BACKGROUND COLOR --- */
-			
-			div.background-color * {
-				margin-top: 10px;
-				margin-bottom: 10px;
-			}
-			
-			div.background-color .box {
-				background-color: #567895;
-			}
-			
-			div.background-color h2 {
-				background-color: black;
-				color: white;
-			}
-			
-			div.background-color span {
-				background-color: rgb(255 255 255 / 50%);
-			}
-			
-			/* --- SECTION: BACKGROUND IMAGE --- */
-			
-			div.background-image div {
-				margin: 10px;
-				width: 300px;
-				height: 200px;
-			}
-			
-			div.background-image .big {
-				background-image: url(images/big-star.png);
-			}
-			
-			div.background-image .small {
-				background-image: url(images/small-star.png);
-			}
-			
-			/* --- SECTION: IMAGE GALLERY --- */
-			
-			span.image-gallery .full-img {
-				position: relative;
-				display: block;
-				width: 256px;
-				height: 256px;
 				border: 1px solid black;
+				border-radius: 0.3em;
+				
+				padding-left: 0.6em;
+				padding-right: 0.6em;
+				padding-top: 0.3em;
+				padding-bottom: 0.3em;
+				
+				background-color: #fcfcfc;
+				margin-top: 0.1em;
+				margin-bottom: 0.1em;
 			}
 			
-			span.image-gallery .overlay {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 256px;
-				height: 256px;
-				background-color: rgba(0,0,0,0);
+			.example iframe { border: 0; }
+			
+			/* --- LISTS --- */
+			
+			li[role="separator"] {
+				margin-bottom: 10px;
+				list-style-type: none;
 			}
 			
-			span.image-gallery button {
-				position: absolute;
-				top: 2px;
-				left: 2px;
-			}
+			/* --- TABLES --- */
 			
-			span.image-gallery .thumb-bar img {
-				display: block;
-				width: 7%;
-				float: left;
-				cursor: pointer;
-			}
-			
-			/* --- SECTION: BOUNCING BALLS DEMO --- */
-			
-			span.bouncing-balls {
-			}
-			
+			table { border-collapse: collapse; }
+			tbody tr:nth-child(even) { background-color: #e6e6e6; }
+				tbody tr:nth-child(odd)  { background-color: white; }
+				td, th { border: 1px solid black; padding: 0.3em; }
+				
+				caption {
+					padding-top: 20px;
+					padding-right: 20px;
+					font-style: italic;
+					caption-side: bottom;
+					text-align: right;
+				}
+				
+				/* Exclude example tables from the restyling */
+				.example table tr { background-color: #ffffff00; }
+					.example table td, .example table th { border: 0; }
+					.example table { border-collapse: separate; }
+					
+					/* --- FORMS --- */
+					
+					form {
+						display: inline-block;
+						
+						/* Form outline */
+						padding: 1em;
+						border: 1px solid #ccc;
+						border-radius: 1em;
+					}
+					
+					form ul {
+						list-style: none;
+						padding: 0;
+						margin: 0;
+					}
+					
+					form li + li {
+						margin-top: 1em;
+					}
+					
+					label {
+						/* Uniform size & alignment */
+						display: inline-block;
+						min-width: 140px;
+						text-align: right;
+					}
+					
+					input,
+					textarea {
+						/* To make sure that all text fields have the same font settings
+						   By default, textareas have a monospace font */
+						font: 1em sans-serif;
+						
+						/* Uniform text field size */
+						width: 300px;
+						box-sizing: border-box;
+						
+						/* Match form field borders */
+						border: 1px solid #999;
+					}
+					
+					input:focus,
+					textarea:focus {
+						/* Additional highlight for focused elements */
+						border-color: #000;
+					}
+					
+					textarea {
+						/* Align multiline text fields with their labels */
+						vertical-align: top;
+						
+						/* Provide space to type some text */
+						height: 5em;
+					}
+					
+					.button {
+						/* Align buttons with the text fields */
+						padding-left: 124px; /* same size as the label elements */
+					}
+					
+					button {
+						/* This extra margin represent roughly the same space as the space
+						   between the labels and their text fields */
+						margin-left: 0.5em;
+					}
+					
+					/* --- MATH --- */
+					
+					p.mathy {
+						width: 20em;
+					}
+					
+					p.mathy > math {
+						font-family: "Latin Modern Math", "Cambria Math", Cambria, serif;
+						font-size: 1.1em;
+					}
+					
+					/* --- SECTION: BOX MODEL --- */
+					
+					.box_model_box {
+						margin: 20px; padding: 40px;
+						width: 300px; height: 150px;
+					}
+					
+					/* ----- SECTION: OVERFLOW ----- */
+					
+					.overflow_container .box {
+						/*border: 1px solid black;*/
+						font-size: 1.0em;
+						width: 16em;
+						height: 7.5em;
+						margin: 10px;
+						padding: 0 2px 0 2px;
+					}
+					
+					.overflow_container .visible  { overflow:   visible; margin-bottom: 3.2em; }
+					.overflow_container .hidden   { overflow:   hidden; }
+					.overflow_container .scroll   { overflow:   scroll; }
+					.overflow_container .auto     { overflow:   auto;   }
+					.overflow_container .scroll-y { overflow-y: scroll; }
+					
+					/* --- SECTION: SELECTORS --- */
+					
+					a:hover.hover_example {
+						color: pink;
+						background-color: black;
+					}
+					
+					/* --- SECTION: BACKGROUND COLOR --- */
+					
+					div.background-color * {
+						margin-top: 10px;
+						margin-bottom: 10px;
+					}
+					
+					div.background-color .box {
+						background-color: #567895;
+					}
+					
+					div.background-color h2 {
+						background-color: black;
+						color: white;
+					}
+					
+					div.background-color span {
+						background-color: rgb(255 255 255 / 50%);
+					}
+					
+					/* --- SECTION: BACKGROUND IMAGE --- */
+					
+					div.background-image div {
+						margin: 10px;
+						width: 300px;
+						height: 200px;
+					}
+					
+					div.background-image .big {
+						background-image: url(images/big-star.png);
+					}
+					
+					div.background-image .small {
+						background-image: url(images/small-star.png);
+					}
+					
+					/* --- SECTION: IMAGE GALLERY --- */
+					
+					span.image-gallery .full-img {
+						position: relative;
+						display: block;
+						width: 256px;
+						height: 256px;
+						border: 1px solid black;
+					}
+					
+					span.image-gallery .overlay {
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 256px;
+						height: 256px;
+						background-color: rgba(0,0,0,0);
+					}
+					
+					span.image-gallery button {
+						position: absolute;
+						top: 2px;
+						left: 2px;
+					}
+					
+					span.image-gallery .thumb-bar img {
+						display: block;
+						width: 7%;
+						float: left;
+						cursor: pointer;
+					}
+					
+					/* --- SECTION: BOUNCING BALLS DEMO --- */
+					
+					span.bouncing-balls {
+					}
+					
