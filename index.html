@@ -1212,20 +1212,27 @@ is rational.&lt;/p&gt;</code></pre>
 
   </section>
 
-  <h2>Web performance</h2>
-
-  <ul>
-    <li><strong>Reduce load time</strong>: Make your files as small as possible, reduce the number of HTTP requests made as much as possible, and employ clever loading techniques (such as preload)</li>
-    <li><strong>Make the site usable as soon as possible</strong>: Load assets in a sensible order so that the user can start to actually use it really quickly.</li>
-    <li><strong>Make it smooth and pleasurable</strong>: use CSS rather than JavaScript for animations, minimizing the number of repaints the UI requires due to changes in the DOM.</li>
-  </ul>
-
   <!-- https://pagespeed.web.dev/ -->
 
-  <h2>HTML performance</h2>
+  <section>
+  <h3>HTML performance</h3>
 
+  <ul>
+    <li>Prefer <code>.svg</code> to other image formats when possible. Use jpg for photos and png for screenshots and logos.</li>
+    <li>Use <i>responsive images</i> with the "secret" and "size" attributes.</li>
+    <li>Use Lazy Loading. Use attribute loading="lazy"</li>
+    <li>Prefer smaller files across all categories - images, fonts, videos, etc. &nbsp; Page size should be under 1.5-2MB.</li>
+    <li>Reduce the number of HTTP requests. There are several techniques by which we can minimize the number of requests like combining the files, merging a multiple number of scripts to one, using CSS sprites and image maps, etc.</li>
+    <li>Reduce the number of nodes in the DOM - ideally under 1400 total nodes, better if under 800 total nodes.</li>
+    <li>Minify HTML files - that is, remove all comments and unnecessary spaces so that they load faster.</li>
+    <li>Clean up your media library by deleting unnecessary images and other media files for faster average page load times.</li>
+  </ul>
+  </section>
 
-  
+  <!-- Use Expires Headers: https://terakeet.com/blog/page-load-time/ -->
+
+  <!-- https://bigsea.co/ideas/how-to-improve-website-page-speed/ -->
+
   </article>
   </main>
 
