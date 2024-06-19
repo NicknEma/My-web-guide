@@ -60,25 +60,25 @@
 
   <h3 id="tags"><a href="#tags">Tags</a></h3>
 
-  <p>HTML elements are enclosed within <em>tags</em>.</p>
+  <p>HTML elements are enclosed within <i>tags</i>.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;p&gt;My cat is very grumpy.&lt;/p&gt;</code></pre>
   <p>My cat is very grumpy.</p>
   </div>
 
-  <p>Tag names are <em>case-insensitive</em>.</p>
+  <p>Tag names are <i>case-insensitive</i>.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;p&gt;My cat is very grumpy.&lt;/P&gt;</code></pre>
   <p>My cat is very grumpy.</p>
   </div>
 
-  <p>Tags can be <em>nested</em>.</p>
+  <p>Tags can be <i>nested</i>.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;p&gt;My cat is &lt;em&gt;very&lt;/em&gt; grumpy.&lt;/p&gt;</code></pre>
   <p>My cat is <em>very</em> grumpy.</p>
   </div>
 
-  <p>Some tags are <em>void</em> and don't enclose anything. They stand on their own and don't need a corresponding closing tag.</p>
+  <p>Some tags are <i>void</i> and don't enclose anything. They stand on their own and don't need a corresponding closing tag.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;p&gt;My cat&lt;br /&gt;is very grumpy.&lt;/p&gt;</code></pre>
   <p>My cat <br />is very grumpy.</p>
@@ -86,20 +86,20 @@
 
   <h3 id="attributes"><a href="#attributes">Attributes</a></h3>
 
-  <p>Elements can also have <em>attributes</em>.</p>
+  <p>Elements can also have <i>attributes</i>.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;p style="color: darkred"&gt;My cat is very grumpy.&lt;/p&gt;</code></pre>
   <p style="color:darkred">My cat is very grumpy.</p>
   </div>
 
-  <p>Attributes with only one value don't require the value to be specified. They are called <em>boolean attributes</em> (either they exist or they don't).</p>
+  <p>Attributes with only one value don't require the value to be specified. They are called <i>boolean attributes</i> (either they exist or they don't).</p>
   <div class="example">
   <pre><code class="lang_html">&lt;input type="text" disabled="disabled"/&gt;
 &lt;input type="text" disabled/&gt;
 &lt;input type="text"/&gt;</code></pre>
-  <p><input id="disabled_1" type="text" disabled="disabled"/></p>
-  <p><input id="disabled_2" type="text" disabled/></p>
-  <p><input id="disabled_3" type="text"/></p>
+  <p><input id="disabled_1" type="text" disabled="disabled"/><label for="disabled_1" class="inline"></label></p>
+  <p><input id="disabled_2" type="text" disabled/><label for="disabled_2" class="inline"></label></p>
+  <p><input id="disabled_3" type="text"/><label for="disabled_3" class="inline"></label></p>
   </div>
 
   <h3 id="comments"><a href="#comments">Comments</a></h3>
@@ -109,95 +109,47 @@
   <pre><code class="lang_html">&lt;!-- I am a comment! Yayaya --&gt;</code></pre>
   </div>
 
-  <h3 id="reserved_characters"><a href="#reserved_characters">Reserved characters</a></h3>
+  <h3 id="character_entities"><a href="#character_entities">Character entities</a></h3>
 
-  <p>Some characters are <em>reserved</em> in HTML; to display these characters as text, replace them with their corresponding character <em>entities</em>.</p>
-  <table>
-  <thead>
-    <tr>
-      <th>Character</th>
-      <th>Entity</th>
-      <th>Note</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>&amp;</td>
-      <td><code>&amp;amp;</code></td>
-      <td>Interpreted as the beginning of an entity or character reference.</td>
-    </tr>
-    <tr>
-      <td>&lt;;</td>
-      <td><code>&amp;lt;</code></td>
-      <td>Interpreted as the beginning of a <a href="#tags">tag</a></td>
-    </tr>
-    <tr>
-      <td>&gt;;</td>
-      <td><code>&amp;gt;</code></td>
-      <td>Interpreted as the ending of a <a href="#tags">tag</a></td>
-    </tr>
-    <tr>
-      <td>"</td>
-      <td><code>&amp;quot;</code></td>
-      <td>Interpreted as the beginning and end of an <a href="#attributes">attribute</a>'s value.</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td><code>&amp;nbsp;</code></td>
-      <td>Interpreted as the non breaking space.</td>
-    </tr>
-    <tr>
-      <td>–</td>
-      <td><code>&amp;ndash;</code></td>
-      <td>Interpreted as the en dash (half the width of an em unit).</td>
-    </tr>
-    <tr>
-      <td>—</td>
-      <td><code>&amp;mdash;</code></td>
-      <td>Interpreted as the em dash (equal to width of an "m" character).</td>
-    </tr>
-    <tr>
-      <td>©</td>
-      <td><code>&amp;copy;</code></td>
-      <td>Interpreted as the copyright sign.</td>
-    </tr>
-    <tr>
-      <td>®</td>
-      <td><code>&amp;reg;</code></td>
-      <td>Interpreted as the registered sign.</td>
-    </tr>
-    <tr>
-      <td>™</td>
-      <td><code>&amp;trade;</code></td>
-      <td>Interpreted as the trademark sign.</td>
-    </tr>
-    <tr>
-      <td>≈</td>
-      <td><code>&amp;asymp;</code></td>
-      <td>Interpreted as almost equal to sign.</td>
-    </tr>
-    <tr>
-      <td>≠</td>
-      <td><code>&amp;ne;</code></td>
-      <td>Interpreted as not equal to sign.</td>
-    </tr>
-    <tr>
-      <td>£</td>
-      <td><code>&amp;pound;</code></td>
-      <td>Interpreted as the pound symbol.</td>
-    </tr>
-    <tr>
-      <td>€</td>
-      <td><code>&amp;euro;</code></td>
-      <td>Interpreted as the euro symbol.</td>
-    </tr>
-    <tr>
-      <td>°</td>
-      <td><code>&amp;deg;</code></td>
-      <td>Interpreted as the degree symbol.</td>
-    </tr>
-  </tbody>
+  <p>Use <i>character entities</i> to display characters which would normally be <i>reserved</i>, treated specially or difficult to type on a keyword.</p>
+  <table class="p">
+    <caption>HTML reserved characters and corresponding entities</caption>
+    <thead>
+      <tr> <th>Character</th> <th>Entity</th> <th>Browser interpretation</th> </tr>
+    </thead>
+    <tbody>
+      <tr> <td>&amp;</td> <td><code>&amp;amp;</code></td> <td>The beginning of an entity or character reference.</td> </tr>
+      <tr> <td>&lt;</td> <td><code>&amp;lt;</code></td> <td>The beginning of a <a href="#tags">tag</a></td> </tr>
+      <tr> <td>&gt;</td> <td><code>&amp;gt;</code></td> <td>The ending of a <a href="#tags">tag</a></td> </tr>
+      <tr> <td>"</td> <td><code>&amp;quot;</code></td> <td>The beginning and end of an <a href="#attributes">attribute</a>'s value.</td> </tr>
+      <tr> <td>'</td> <td><code>&amp;apos;</code></td> <td>The beginning and end of an <a href="#attributes">attribute</a>'s value.</td> </tr>
+    </tbody>
   </table>
+
+  <div class="example">
+  <pre><code class="lang_html">&lt;p&gt;2 &amp;lt; 5&lt;/p&gt;</code></pre>
+  <p>2 &lt; 5</p>
+  </div>
+
+  <table class="p">
+    <caption>Other useful HTML entities</caption>
+    <thead>
+      <tr> <th>Character</th> <th>Entity</th> <th>Description</th> </tr>
+    </thead>
+    <tbody>
+      <tr> <td>–</td> <td><code>&amp;ndash;</code></td> <td>The <i>en dash</i> (half the width of an <i>em</i> unit).</td> </tr>
+      <tr> <td>—</td> <td><code>&amp;mdash;</code></td> <td>The <i>em dash</i> (equal to the width of an “m” character).</td> </tr>
+      <tr> <td>©</td> <td><code>&amp;copy;</code></td> <td>The copyright sign.</td> </tr>
+      <tr> <td>®</td> <td><code>&amp;reg;</code></td> <td>The registered sign.</td> </tr>
+      <tr> <td>™</td> <td><code>&amp;trade;</code></td> <td>The trademark sign.</td> </tr>
+      <tr> <td>≈</td> <td><code>&amp;asymp;</code></td> <td>The <i>almost equal to</i> sign.</td> </tr>
+      <tr> <td>≠</td> <td><code>&amp;ne;</code></td> <td>The <i>not equal to</i> sign.</td> </tr>
+      <tr> <td>£</td> <td><code>&amp;pound;</code></td> <td>The pound symbol.</td> </tr>
+      <tr> <td>€</td> <td><code>&amp;euro;</code></td> <td>Interpreted as the euro symbol.</td> </tr>
+      <tr> <td>°</td> <td><code>&amp;deg;</code></td> <td>The degree symbol.</td> </tr>
+    </tbody>
+  </table>
+  <p><a href="https://www.html.am/reference/html-special-characters.cfm">See all the character entities</a>.</p>
 
   <h3 id="elements"><a href="#elements">Elements</a></h3>
 
@@ -214,7 +166,7 @@
     <li><code class="lang_html">&lt;!DOCTYPE html /&gt;</code>: a historical artifact that needs to be included in every HTML page.</li>
     <li><code class="lang_html">&lt;html&gt;</code>: the <i>root</i> element, the one that contains all other elements.</li>
     <li><code class="lang_html">&lt;head&gt;</code>: a container for everything that <em>isn't</em> the content that displays on the page.</li>
-    <li><code class="lang_html">&lt;body&gt;</code>: a container for all the content that displays on the page, including text, images, videos, games, playable audio tracks, or whatever else.</li>
+    <li><code class="lang_html">&lt;body&gt;</code>: a container for all the content that displays on the page &ndash; text, images, videos, games, playable audio tracks, etc.</li>
   </ul>
 
   <!--
@@ -266,32 +218,38 @@
   ###########################
   -->
 
-  <h4 id="elements_text_formatting"><a href="#elements_text_formatting">Text formatting</a></h4>
+  <h4 id="elements_general_text_formatting"><a href="#elements_general_text_formatting">General text formatting</a></h4>
 
-  <p>Text-related elements are:</p>
+  <p>General text-related elements are:</p>
   <ul>
-    <li><code class="lang_html">&lt;p&gt;</code> (<strong>p</strong>aragraph): a paragraph of text.</li>
     <li><code class="lang_html">&lt;h1&gt;, &lt;h2&gt; ... &lt;h6&gt;</code> (<strong>h</strong>eading): headings 1 through 6.</li>
+    <li><code class="lang_html">&lt;p&gt;</code> (<strong>p</strong>aragraph): a paragraph of text.</li>
     <li><code class="lang_html">&lt;br /&gt;</code> (<strong>br</strong>eak): a newline, or line break.</li>
     <li><code class="lang_html">&lt;hr /&gt;</code> (<strong>h</strong>o<strong>r</strong>izontal): a horizontal like, signifying a thematic break.</li>
-    <li><code class="lang_html">&lt;em&gt;</code> (<strong>em</strong>phasized): content that has stress emphasis – typically rendered as <em>italic</em> text.</li>
-    <li><code class="lang_html">&lt;strong&gt;</code> (<strong>strong</strong>): content that has strong importance, seriousness, or urgency – typically rendered as <strong>bold</strong> text.</li>
+    <li><code class="lang_html">&lt;em&gt;</code> (<strong>em</strong>phasized): text that has stress emphasis – typically rendered as <em>italic</em> text.</li>
+    <li><code class="lang_html">&lt;strong&gt;</code> (<strong>strong</strong>): text that has strong importance, seriousness, or urgency – typically rendered as <strong>bold</strong> text.</li>
+    <li><code class="lang_html">&lt;i&gt;</code> (<strong>i</strong>diomatic): text that is set off from the normal text for some reason (idiomatic text, technical terms, taxonomical designations, etc).</li>
+    <li><code class="lang_html">&lt;s&gt;</code> (<strong>s</strong>triked): text that is no longer accurate – typically rendered as <s>striked</s> text. <strong>Do not use decoratively, instead use CSS</strong>.</li>
+    <li><code class="lang_html">&lt;u&gt;</code> (<strong>u</strong>nderline): text that has a non-textual annotation, like an <u>underline</u>. <strong>Do not use decoratively, instead use CSS</strong>.</li>
+    <li role="separator"></li>
+
     <li><code class="lang_html">&lt;blockquote&gt;</code> (<strong>blockquote</strong>): an extended quotation – typically rendered with indentation.</li>
     <li><code class="lang_html">&lt;q&gt;</code> (<strong>q</strong>uote): a short inline quotation – typically rendered as enclosed in quotation marks.</li>
     <li><code class="lang_html">&lt;cite&gt;</code> (<strong>cite</strong>): the title of a cited creative work.</li>
     <li><code class="lang_html">&lt;abbr&gt;</code> (<strong>abbr</strong>eviation): an abbreviation or acronym.</li>
     <li><code class="lang_html">&lt;address&gt;</code> (<strong>address</strong>): contact info.</li>
     <li><code class="lang_html">&lt;time&gt;</code> (<strong>time</strong>): either a time on a 24-hour clock, a date in the calendar or a time duration.</li>
-    <li><code class="lang_html">&lt;i&gt;</code> (<strong>i</strong>diomatic): range of text that is set off from the normal text for some reason (idiomatic text, technical terms, taxonomical designations, etc).</li>
     <li><code class="lang_html">&lt;small&gt;</code> (<strong>small</strong>): small print, copyright or legal text.</li>
-    <li><code class="lang_html">&lt;ins&gt;</code> (<strong>ins</strong>erted): range of text that has been <ins>inserted</ins>.</li>
-    <li><code class="lang_html">&lt;del&gt;</code> (<strong>del</strong>eted): range of text that has been <del>deleted</del>.</li>
-    <li><code class="lang_html">&lt;s&gt;</code> (<strong>s</strong>triked): text that is no longer accurate – typically rendered as <s>striked</s> text.</li>
+    <li role="separator"></li>
+
+    <li><code class="lang_html">&lt;ins&gt;</code> (<strong>ins</strong>erted): text that has been <ins>inserted</ins>.</li>
+    <li><code class="lang_html">&lt;del&gt;</code> (<strong>del</strong>eted): text that has been <del>deleted</del>.</li>
+    <li><code class="lang_html">&lt;mark&gt;</code> (<strong>mark</strong>ed): text that has been <mark>highlighted</mark>.</li>
   </ul>
 
   <h5>Line, word and thematic breaks</h5>
 
-  <p>Excess whitespace is ignored by the browser. Use the <code>&amp;nbsp;</code> entity as an extra whitespace and the <code class="lang_html">&lt;br /&gt;</code> element to force a line break.</p>
+  <p>Excess whitespace is ignored by the browser. Use the <code>&amp;nbsp;</code> (<strong>n</strong>on <strong>b</strong>reaking <strong>sp</strong>ace) entity as an extra whitespace and the <code class="lang_html">&lt;br /&gt;</code> element to force a line break.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;p&gt;This is a      paragraph &lt;br /&gt; spanning &amp;nbsp; multiple &amp;nbsp; lines.&lt;/p&gt;</code></pre>
   <p>This is a paragraph <br /> spanning &nbsp; multiple &nbsp; lines.</p>
@@ -311,7 +269,7 @@
   <p>This text talks about a certain topic.</p> <hr /> <p>This section's topic is completely different.</p>
   </div>
 
-  <h5>Other</h5>
+  <h5>Quotations and such</h5>
 
   <p>Use <code class="lang_html">&lt;blockquote&gt;</code> and <code class="lang_html">&lt;q&gt;</code> for block quotes and inline quotes respectively. Use <code class="lang_html">&lt;cite&gt;</code> to define the title of origin of the quote.</p>
   <div class="example">
@@ -336,7 +294,7 @@ This has made a lot of people very angry and been widely regarded as a bad move.
 
   <p>Abbreviations and acronyms can be marked as such using <code class="lang_html">&lt;abbr&gt;</code>. Put the mouse on the abbreviated word with the <code>title</code> attribute to see the full expansion.</p>
   <div class="example">
-  <pre><code class="lang_html">The language of the web is &lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;.</code></pre>
+  <pre><code class="lang_html">The language of the web is called &lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;.</code></pre>
   <p>The language of the web is called <abbr title="HyperText Markup Language">HTML</abbr>.</p>
   </div>
 
@@ -357,7 +315,7 @@ This has made a lot of people very angry and been widely regarded as a bad move.
   </div>
 
   <!--
-  <p>@Incomplete: "bdi" and "bdo" for text directionality. "data" for assigning ids to text. "hgroup" for grouping headings and text. "i" for idiomatic text; "mark" for highlights; "menu" for interactive lists; "meter" and "progress" for ranges; "ruby", "rt" and "rp" for pronounciation annotations; ; "details" and "summary" for toggleable text; "u" for text with non-textual annotations like underline.</p>
+  <p>@Incomplete: "bdi" and "bdo" for text directionality. "data" for assigning ids to text. "hgroup" for grouping headings and text. "meter" and "progress" for ranges; "ruby", "rt" and "rp" for pronounciation annotations; "details" and "summary" for toggleable text;</p>
 
   <p>@Incomplete: "noscript" for adding text if scripting is disabled.</p>
   -->
@@ -510,7 +468,7 @@ This has made a lot of people very angry and been widely regarded as a bad move.
 
   <h4 id="elements_videos_and_audio_clips"><a href="#elements_videos_and_audio_clips">Videos and audio clips</a></h4>
 
-  <p>To embed a video into a webpage, use the <code class="lang_html">&lt;video&gt;</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the video, and the <code>controls</code> boolean attribute to display <em>start</em>, <em>pause</em> and similar controls.</p>
+  <p>To embed a video into a webpage, use the <code class="lang_html">&lt;video&gt;</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the video, and the <code>controls</code> boolean attribute to display <i>start</i>, <i>pause</i> and similar controls.</p>
 
   <div class="example">
   <pre><code class="lang_html">&lt;video src="videos/pong.mp4" controls&gt;
@@ -943,7 +901,7 @@ is rational.&lt;/p&gt;</code></pre>
   </p>
   </div>
 
-  <p>With it you can <em>nest</em> expressions.</p>
+  <p>With it you can <i>nest</i> expressions.</p>
 
   <div class="example">
     <p class="mathy">
@@ -1012,7 +970,7 @@ is rational.&lt;/p&gt;</code></pre>
 
   <h5>Semantic math elements</h5>
 
-  <p>Every text in MathML formulas must be included inside these container elements, called <em>token</em> elements.</p>
+  <p>Every text in MathML formulas must be included inside these container elements, called <i>token</i> elements.</p>
   <ul>
     <li><code>mn</code>: Number literal (<math><mn>2</mn></math>, <math><mn>3.141</mn></math>, <math><mn>0x0045</mn></math>, ...)</li>
     <li><code>mo</code>: Operator or other punctuation sign (<math><mo>+</mo></math>, <math><mo>∑</mo></math>, <math><mo>[</mo></math>, ...)</li>
@@ -1042,7 +1000,7 @@ is rational.&lt;/p&gt;</code></pre>
 
   <hr />
 
-  <p>The browser will look up any operator enclosed in <code class="lang_html">&lt;mo&gt;</code> in a <em>operator dictionary</em> so that the necessary <em>spacing</em> or <em>stretching</em> between surrounding elements is respected.</p>
+  <p>The browser will look up any operator enclosed in <code class="lang_html">&lt;mo&gt;</code> in an <em>operator dictionary</em> so that the necessary <em>spacing</em> or <em>stretching</em> between surrounding elements is respected.</p>
 
   <div class="example">
   <p class="mathy">
@@ -1150,7 +1108,7 @@ is rational.&lt;/p&gt;</code></pre>
 
   <hr />
 
-  <p>Use <code class="lang_html">&lt;msub&gt;</code>, <code class="lang_html">&lt;msup&gt;</code> and <code class="lang_html">&lt;msubsup&gt;</code> to display <em>subscripts</em> and/or <em>superscripts</em>.</p>
+  <p>Use <code class="lang_html">&lt;msub&gt;</code>, <code class="lang_html">&lt;msup&gt;</code> and <code class="lang_html">&lt;msubsup&gt;</code> to display <i>subscripts</i> and/or <i>superscripts</i>.</p>
   <div class="example">
   <p class="mathy">
   <math display="block">
@@ -1175,7 +1133,7 @@ is rational.&lt;/p&gt;</code></pre>
   </p>
   </div>
 
-  <p>Use <code class="lang_html">&lt;munder&gt;</code>, <code class="lang_html">&lt;mover&gt;</code> and <code class="lang_html">&lt;munderover&gt;</code> to display <em>underscripts</em> and/or <em>overscripts</em>.</p>
+  <p>Use <code class="lang_html">&lt;munder&gt;</code>, <code class="lang_html">&lt;mover&gt;</code> and <code class="lang_html">&lt;munderover&gt;</code> to display <i>underscripts</i> and/or <i>overscripts</i>.</p>
   <div class="example">
   <p class="mathy">
   <math display="block">
@@ -1266,6 +1224,8 @@ is rational.&lt;/p&gt;</code></pre>
     <li><strong>Make the site usable as soon as possible</strong>: Load assets in a sensible order so that the user can start to actually use it really quickly.</li>
     <li><strong>Make it smooth and pleasurable</strong>: use CSS rather than JavaScript for animations, minimizing the number of repaints the UI requires due to changes in the DOM.</li>
   </ul>
+
+  <!-- https://pagespeed.web.dev/ -->
 
   <h2>HTML performance</h2>
 
