@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>My web guide</title>
+
+  <meta charset="utf-8" />
+  <meta name="author" content="Emanuele Rovini" />
+  <meta name="description" content="Single-page example-based guide for creating a website." />
+  <meta name="keywords" content="Web, HTML, CSS, JS, guide" />
+  <meta name="theme-color" content="white" />
+  <meta name="color-scheme" content="only light" />
+  <meta name="viewport" content="width=device-width">
+
+  <link
+   rel="stylesheet"
+   href="style.css" />
+
+  <!--
+  <link
+   rel="stylesheet"
+   href="https://fred-wang.github.io/MathFonts/LatinModern/mathfonts.css" />
+   -->
+  <!-- @Speed: Downloading and using this font is what makes the page flicker on reload. If we
+       render math with Cambria, the reload is instantaneous (but Cambria doesn't stretch operators
+       correctly) -->
+
+  
+  <!-- Google font connection -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Merriweather font -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Source Code Pro font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  
+  <!-- Script to warn the user the browser doesn't support MathML -->
+  <!-- <script src="https://fred-wang.github.io/mathml-warning.js/mpadded-min.js"></script> -->
+</head>
+
+<body>
+  <header>
+    <h1>My Web guide</h1>
+  </header>
+
+  <nav>
+  <ul>
+    <li><a href="index.html">Structure: HTML</a></li>
+    <li><a href="guide-css.html">Style: CSS</a></li>
+  </ul>
+  </nav>
+
+  <main>
+  <article>
+
+  <section>
+
+  <a href="#h2_js"><h2 id="h2_js">Behaviour: JS</h2></a>
+
+  <p>To add custom behaviour to a web page, you can use a JavaScript script.</p>
+
+  <div class="example">
+  <pre><code class="lang_html">&lt;button type="button"&gt;Player 1: Chris&lt;/button&gt;</code></pre>
+  <pre><code class="lang_js">const button = document.querySelector("button"); /* Select the first &lt;button&gt; element of the page */
+
+button.addEventListener("click", update_name);
+
+function update_name() {
+  const name = prompt("Enter a new name");
+  button.textContent = `Player 1: ${name}`;
+}</code></pre>
+
+  <button type="button" onclick="const name = prompt(`Enter a new name`); this.textContent = `Player 1: ${name}`;">Player 1: Chris</button>
+  </div>
+
+  <!--
+  ##############################
+  ##### JAVASCRIPT LINKING #####
+  ##############################
+  -->
+
+  <a href="#h2_js_linking"><h2 id="h2_js_linking">JavaScript linking</h2></a>
+
+  <p>There are three ways to link a script to a webpage.</p>
+
+  <a href="#h3_external_js"><h3 id="h3_external_js">External JavaScript</h3></a>
+
+  <p><strong>External</strong> JavaScript is written in a separate file with the <code>.js</code> extension, and then referenced in the HTML using <code class="lang_html">&lt;script&gt;</code> tags:</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;script src="script.js" defer&gt;&lt;/script&gt;</code></pre>
+  </div>
+
+  <p>The <code>defer</code> attribute tells the browser to parse the script but to <em>not run it immediately</em>, and instead to wait until the document tree has been generated.</p>
+
+  <a href="#h3_internal_js"><h3 id="h3_internal_js">Internal JavaScript</h3></a>
+
+  <p><strong>Internal</strong> JavaScript is written directly inside the HTML file, between two <code class="lang_html">&lt;script&gt;</code> tags:</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;script&gt;
+  // JavaScript goes here
+&lt;/script&gt;</code></pre>
+  </div>
+
+  <h3 id="h3_inline_js"><a href="#h3_inline_js">Inline JavaScript</a></h3>
+
+  <p><strong>Inline</strong> JavaScript is a snippet of code written as the value of an element's attribute:</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;button onclick="/* JavaScript goes here */"&gt;&lt;/button&gt;</code></pre>
+  </div>
+
+  <hr />
+
+  <p><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript">MDN</a> says <q>It is bad practice to pollute your HTML with JavaScript</q>.<br />
+  Instead of including JavaScript in your HTML, use a JS procedure to get a handle to the element(s) which should have the custom behaviour, then add one or more events to it/them.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;button&gt;Click me!&lt;/button&gt;
+&lt;button&gt;Click me!&lt;/button&gt;
+&lt;button&gt;Click me!&lt;/button&gt;</code></pre>
+
+  <pre><code class="lang_js">const buttons = document.querySelectorAll("button"); /* Get an array with all the buttons on the page */
+
+for (const button of buttons) {
+  button.addEventListener("click", alert_click); /* Add a procedure to be called when each button is clicked */
+}
+
+function alert_click() { alert("You clicked a button!"); }</code></pre>
+
+  <button class="alert_click">Click me!</button>
+  <button class="alert_click">Click me!</button>
+  <button class="alert_click">Click me!</button>
+  </div>
+
+  <!--
+  ###################
+  ##### DOM API #####
+  ###################
+  -->
+
+  <a href="#h2_basic_browser_api"><h2 id="h2_basic_browser_api">Basic browser API</h2></a>
+
+  <a href="#h3_document_search_methods"><h3 id="h3_document_search_methods"><code>document</code> search methods</h3></a>
+
+  <p>The <code>document</code> object offers some methods to search for elements.</p>
+
+  <div class="example">
+  <pre><code class="lang_js">/* Retrieves the element with the specified ID. The ID is case-sensitive string.
+   If two or more elements in a document have the same ID, this method returns the first element found. If no matches are found, it returns null. */
+document.getElementById(id: String) -> Element
+
+/* Retrieves all the elements with the specified class(es), as a *live* HTMLCollection.
+   If multiple classes are specified, only elements with *all* the classes are selected. Multiple class names are separated by whitespace. */
+document.getElementsByClassName(names: String) -> HTMLCollection
+
+/* Retrieves all the elements with a given name attribute, as a *live* NodeList. */
+document.getElementsByName(name: String) -> NodeList
+
+/* Retrieves all the elements with the given tag name, as a *live* HTMLCollection. The special string * represents all elements. */
+document.getElementsByTagName(name: String) -> HTMLCollection
+
+/* Retrieves the first Element within the document that matches the specified selector(s), or null if no matches are found.
+   The "selectors" string contains one or more selectors to match. Must be a valid CSS selector string. */
+document.querySelector(selectors: String) -> Element
+
+/* Retrieves A non-live NodeList containing one Element object for each element that matches at least one of the specified selectors, or an empty NodeList in case of no matches.
+   The "selectors" string contains one or more selectors to match. Must be a valid CSS selector string. Multiple selectors may be specified by separating them using commas. */
+document.querySelectorAll(selectors: String) -> NodeList</code></pre>
+  </div>
+
+  <!--
+  ##################
+  ##### EVENTS #####
+  ##################
+  -->
+
+  <a href="#h3_events"><h3 id="h3_events">Events</h3></a>
+
+  <p>Events are "things that happen" which the system tells you about so your code can react to them.<br />
+  There are many different types of events that can occur, for example:</p>
+
+  <ul>
+    <li>The user selects, clicks, or hovers the cursor over a certain element.</li>
+    <li>The user presses a key on the keyboard.</li>
+    <li>The user resizes or closes the browser window.</li>
+    <li>A web page finishes loading.</li>
+    <li>A form is submitted.</li>
+    <li>A video is played, paused, or ends.</li>
+    <li>An error occurs.</li>
+  </ul>
+
+  <p>To react to an event, you define a block of code that should run when the event fires - the <strong>event handler</strong> - and then<br />
+  you <strong>register</strong> it to the element that will fire the event.</p>
+  <div class="example">
+  <code class="lang_html">&lt;button type="button"&gt;Randomize background&lt;/button&gt;</code>
+  <pre><code class="lang_js">const button = document.querySelector("button"); /* Find the first button in the page */
+
+button.addEventListener("click", randomize_background()) /* Add a listener to the button's "click" event */
+
+function randomize_background() {
+  /* When the button is clicked, run the following code */
+  const color = `rgb(${random(192, 255)} ${random(192, 255)} ${random(192, 255)})`;
+  document.body.style.backgroundColor = color;
+});
+
+function random(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}</code></pre>
+
+  <button type="button" class="background_randomizer">Randomize background</button>
+  <button type="button" class="background_resetter">Reset</button>
+  </div>
+
+  <!--
+  ######################################
+  ##### ADDING AND REMOVING EVENTS #####
+  ######################################
+  -->
+
+  <h4>Adding and removing events</h4>
+
+  <p>There are two ways to add event handlers to elements:<br />
+  by calling the <code class="lang_js">element.addEventListener(event: String, action: (void) => void)</code> method.</p>
+  <code class="lang_js">button.addEventListener("click", do_stuff);</code>
+
+  <p> or by assigning to the <code class="lang_js">element.event_name</code> property:</p>
+  <code class="lang_js">button.onclick = do_stuff;</code>
+
+  <p>The name of the property is always the same as the event prefixed by "on".</p>
+  <ul>
+    <li><code>"click" => onclick</code></li>
+    <li><code>"dblclick" => ondblclick</code></li>
+    <li><code>"mouseover" => onmouseover</code></li>
+    <li>...</li>
+  </ul>
+
+  <hr />
+
+  <p>If you call <code>addEventListener</code> multiple times for the same event, multiple handlers will run when the event is fired:</p>
+  <div class="example">
+  <pre><code class="lang_js">button.addEventListener("click", do_thing_A);
+button.addEventListener("click", do_thing_B);</code></pre>
+  <button type="button" onclick="alert('This is the first alert'); alert('This is the second alert');">Do both</button>
+  </div>
+
+  <p>You can't obtain the same result if you instead add events by assigning to the element's properties, as <em>the new handler will overwrite the old one</em>:</p>
+  <div class="example">
+  <pre><code class="lang_js">button.onclick = do_thing_A;
+button.onclick = do_thing_B;</code></pre>
+  <button type="button" onclick="alert('This is the second alert');">Only do the second one</button>
+  </div>
+
+  <hr />
+
+  <p>If you've added an event handler using addEventListener(), you can remove it again using the removeEventListener() method.</p>
+  <div class="example">
+  <code class="lang_js">button.removeEventListener("click", randomize_background);</code>
+  </div>
+
+  <h4>Button events</h4>
+
+  <p>A button has many kinds of events it can fire, such as "click", "mouseover", and "keydown".</p>
+
+  <button type="button" onclick="randomize_background()">Click me</button>
+  <button type="button" ondblclick="randomize_background()">Double-click me</button>
+  <button type="button" onmouseover="randomize_background()">Put the mouse over me</button>
+  <button type="button" onmouseout="randomize_background()">Remove the mouse from me</button>
+  <button type="button" onclick="reset_background()">Reset</button>
+
+  <!--
+  ####################################
+  ##### OPTIONAL EVENT PARAMETER #####
+  ####################################
+  -->
+
+  <h4>The optional <code>event</code> parameter</h4>
+
+  <p>A procedure registered as an event handler can have one optional <code>Event</code> parameter which represents the event that occurred.<br />
+  The <code>target</code> field of this parameter refers to the HTML element that triggered the event (e.g. for a "click" event, <code>event.target</code> represents<br />
+  the element that was clicked).</p>
+  <div class="example">
+  <code class="lang_html">&lt;button type="button"&gt;Click to randomize, double-click to reset&lt;/button&gt;</code>
+  <pre><code class="lang_js">document.querySelector("button").addEventListener("click", randomize_self);
+
+function randomize_self(event) {
+  const color = `rgb(${random(192, 255)} ${random(192, 255)} ${random(192, 255)})`;
+  const element = event.target;
+  element.style.backgroundColor = color;
+}
+
+function random(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}</code></pre>
+  <p><button type="button" class="self_randomizer">Click to randomize, double-click to reset</button></p>
+  </div>
+
+  <!--
+  #########################
+  ##### IMAGE GALLERY #####
+  #########################
+  -->
+
+  <a href="#h2_image_gallery"><h2 id="h2_image_gallery">Image gallery</h2></a>
+
+<div class="example">
+<pre><code class="lang_html">&lt;div class="full-img"&gt;
+  &lt;img
+    class="displayed-img"
+    src="images/gallery/1.jpg"
+    width="256" height="256"
+    alt="1" /&gt;
+  &lt;div class="overlay"&gt;&lt;/div&gt;
+  &lt;button class="dark"&gt;Darken&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="thumb-bar"&gt;&lt;/div&gt;</code></pre>
+  <div class="image-gallery">
+    <div class="full-img">
+      <img class="displayed-img" src="images/gallery/1.png" alt="1" width="256" height="256" />
+      <div class="overlay"></div>
+      <button class="dark">Darken</button>
+    </div>
+    <div class="thumb-bar"></div>
+  </div>
+</div>
+
+  <!--
+  ##########################
+  ##### BOUNCING BALLS #####
+  ##########################
+  -->
+
+  <a href="#h2_bouncing_balls"><h2 id="h2_bouncing_balls">Bouncing balls demo</h2></a>
+
+  <span class="bouncing-balls"><canvas></canvas></span>
+
+  </section>
+
+  </article>
+  </main>
+
+  <script src="syntax-highlight.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+
+</html>
