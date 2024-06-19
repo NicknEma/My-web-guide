@@ -1,61 +1,11 @@
-/*.merriweather-light {
-	font-family: "Merriweather", serif;
-	font-weight: 300;
-	font-style: normal;
-}
-
-.merriweather-regular {
-	font-family: "Merriweather", serif;
-	font-weight: 400;
-	font-style: normal;
-}
-
-.merriweather-bold {
-	font-family: "Merriweather", serif;
-	font-weight: 700;
-	font-style: normal;
-}
-
-.merriweather-black {
-	font-family: "Merriweather", serif;
-	font-weight: 900;
-	font-style: normal;
-}
-
-.merriweather-light-italic {
-	font-family: "Merriweather", serif;
-	font-weight: 300;
-	font-style: italic;
-}
-
-.merriweather-regular-italic {
-	font-family: "Merriweather", serif;
-	font-weight: 400;
-	font-style: italic;
-}
-
-.merriweather-bold-italic {
-	font-family: "Merriweather", serif;
-	font-weight: 700;
-	font-style: italic;
-}
-
-.merriweather-black-italic {
-	font-family: "Merriweather", serif;
-	font-weight: 900;
-	font-style: italic;
-}
-*/
-html {
-	font-family: Merriweather, serif;
-}
-
 /* 
 Minify stylesheets with cssnano:
 https://cssnano.github.io/cssnano/
 */
 
 /* --- GENERAL --- */
+
+html { font-family: Merriweather, serif; }
 
 h1 { font-size: 2.2em; }
 h2 { font-size: 2.0em; }
@@ -72,11 +22,13 @@ a:visited { color: blue; }
 	padding: 3px;
 }
 
+strong { font-weight: 900; }
+
+pre { font-family: inherit; }
+
 /* --- CODE --- */
 
-pre { font-family: serif; }
-
-code {
+code, var, kbd, samp {
 	font-family: "Source Code Pro", monospace;
 	font-size: 0.85em;
 	
@@ -125,6 +77,7 @@ tbody tr:nth-child(even) { background-color: #e6e6e6; }
 	
 	/* Exclude example tables from the restyling */
 	.example table tr { background-color: #ffffff00; }
+		.example table td, .example table th { border: 0; }
 		.example table { border-collapse: separate; }
 		
 		/* --- FORMS --- */
@@ -151,7 +104,7 @@ tbody tr:nth-child(even) { background-color: #e6e6e6; }
 		label {
 			/* Uniform size & alignment */
 			display: inline-block;
-			min-width: 120px;
+			min-width: 140px;
 			text-align: right;
 		}
 		
@@ -201,7 +154,7 @@ tbody tr:nth-child(even) { background-color: #e6e6e6; }
 		}
 		
 		p.mathy > math {
-			font-family: "Latin Modern Math";
+			font-family: "Latin Modern Math", "Cambria Math", Cambria, serif;
 			font-size: 1.1em;
 		}
 		
@@ -216,14 +169,14 @@ tbody tr:nth-child(even) { background-color: #e6e6e6; }
 		
 		.overflow_container .box {
 			/*border: 1px solid black;*/
-			width: 250px;
-			height: 90px;
 			font-size: 1.0em;
+			width: 16em;
+			height: 7.5em;
 			margin: 10px;
 			padding: 0 2px 0 2px;
 		}
 		
-		.overflow_container .visible  { overflow:   visible; margin-bottom: 2.5em; }
+		.overflow_container .visible  { overflow:   visible; margin-bottom: 3.2em; }
 		.overflow_container .hidden   { overflow:   hidden; }
 		.overflow_container .scroll   { overflow:   scroll; }
 		.overflow_container .auto     { overflow:   auto;   }
