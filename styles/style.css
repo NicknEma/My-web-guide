@@ -20,6 +20,11 @@ ins {background-color:#bfb;}
 		
 		a:visited {color: blue;}
 		
+		main, nav, header, footer {
+			max-width:60em;
+			margin:0 auto;
+		}
+		
 		/* --- UTILITY CLASSES --- */
 		
 		.border {border: 1px solid #bbb;padding: 3px;}
