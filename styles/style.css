@@ -240,7 +240,7 @@ ins {background-color:#bfb;}
 					/* --- SECTION: MULTI-COLUMN LAYOUT --- */
 					
 					.column_count_container {column-count:2;color:#542}
-						.column_width_container {column-width:500px;color:#542}
+						.column_width_container {column-width:200px;color:#542}
 							.column_gap_and_rule_container {column-count:2;;color:#542;column-gap:50px;column-rule:4px dotted rgb(79 185 227)}
 								.column_interruption {
 									column-span:all;
