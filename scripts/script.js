@@ -60,7 +60,7 @@ const image_alt_texts = ["1", "2", "3", "4", "5"];
 const thumb_bar_div = document.getElementsByClassName("thumb-bar")[0];
 for (const i in image_names) {
 	const image = document.createElement("img");
-	image.src = `images/gallery/${image_names[i]}`;
+	image.src = `../images/gallery/${image_names[i]}`;
 	image.alt = image_alt_texts[i];
 	image.addEventListener("click", (event) => {
 							   const displayed_image = document.getElementsByClassName("displayed-img")[0];
