@@ -83,11 +83,11 @@
   <pre><code class="lang_html">&lt;p style="width: 400px;
           padding: 10px;
           background-color: pink;
-          color: blue;"&gt;This paragraph has properties of type 'color' and properties of type 'length'.&lt;/p&gt;</code></pre>
+          color: blue;"&gt;This paragraph has properties of type ‘color’ and properties of type ‘length’.&lt;/p&gt;</code></pre>
   <p style="width: 400px;
             padding: 10px;
             background-color: pink;
-            color: blue;">This paragraph has properties of type 'color' and properties of type 'length'.</p>
+            color: blue;">This paragraph has properties of type ‘color’ and properties of type ‘length’.</p>
   </div>
 
   <p>A property can have <em>fallback</em> values in case the first ones can't be applied.</p>
@@ -118,14 +118,7 @@
   <p style="color: blue;">This paragraph uses inline styles.</p>
   </div>
 
-  <p>To apply a style to multiple HTML elements at once, you can write a <em>rule</em>.</p>
-  <div class="example">
-  <pre><code class="lang_css">p { color: blue; }</code></pre>
-  <pre><code class="lang_html">&lt;p&gt;The rule targets all elements of type ‘p’.&lt;/p&gt;</code></pre>
-  <p style="color: blue;">The rule targets all elements of type ‘p’.</p>
-  </div>
-
-  <p>A set of rules forms a <em>stylesheet</em>. You can put rules between two <code class="lang_html">&lt;style&gt;</code> tags inside the <code class="lang_html">&lt;head&gt;</code> to define an <em>internal stylesheet</em>.</p>
+  <p>To apply a style to multiple HTML elements at once, you can write a <em>stylesheet</em> containing <em>rules</em>. You can write rules between two <code class="lang_html">&lt;style&gt;</code> tags inside the <code class="lang_html">&lt;head&gt;</code> to define an <em>internal stylesheet</em>.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;head&gt;
   &lt;style&gt;
@@ -140,7 +133,9 @@
 
   <p>You can also write rules in a separate file with the <code>.css</code> extension to define an <em>external stylesheet</em>. To reference it, put a <code class="lang_html">&lt;link&gt;</code> attribute in the <code class="lang_html">&lt;head&gt;</code> of the HTML document.</p>
   <div class="example">
-  <pre><code class="lang_html">&lt;link rel="stylesheet" href="styles.css" /&gt;</code></pre>
+  <pre><code class="lang_html">&lt;head&gt;
+  &lt;link rel="stylesheet" href="styles.css" /&gt;
+&lt;/head&gt;</code></pre>
   </div>
 
   <p><strong>Note</strong>: As I understand it, you should put the CSS in the <code class="lang_html">&lt;head&gt;</code> of the document so that the browser can parse it alongside the HTML and immediately generate the correct layout, rather than generating the wrong layout first and then changing it when styles are applied.</p>
@@ -182,44 +177,28 @@
   <p class="border" style="background-color: #fdd;">This paragraph is short, but the whole box has been colored.</p>
   </div>
 
-  <p>The default box type of an element can be changed using the <code>display</code> property.</p>
-  <div class="example">
-  <pre><code class="lang_html">&lt;p style="display: inline;"&gt;This is the first paragraph.&lt;/p&gt;
-&lt;p style="display: inline;"&gt;This is the second paragraph, and it is displayed on the same line as the previous one.&lt;/p&gt;</code></pre>
-  <p style="display: inline;">This is the first paragraph.</p>
-  <p style="display: inline;">This is the second paragraph, and it is displayed on the same line as the previous one.</p>
-  <hr />
-  <pre><code class="lang_html">&lt;p id="block_link"&gt;This paragraph contains a &lt;a style="display: block;" href="#block_link"&gt;link&lt;/a&gt; which is treated as a block.&lt;/p&gt;</code></pre>
-  <p id="block_link">This paragraph contains a <a style="display: block;" href="#block_link">link</a> which is treated as a block.</p>
-  </div>
-
-  <p>To change how an element interacts with the elements around it, set its <code>display</code> property to one of these values:</p>
+  <p>The box type of an element affects how it behaves in relationship with other elements.</p>
   <table>
     <thead>
       <tr>
-        <th>Block</th> <th>Inline</th> <th>Inline-block</th>
+        <th>Block</th> <th>Inline</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Inserts a newline before and after.</td>
         <td>Does not insert newlines.</td>
-        <td>Does not insert newlines.</td>
       </tr>
       <tr>
         <td><code>width</code> and <code>height</code> properties are respected. If the <code>width</code> isn't specified, it will stretch to fill its parent box.</td>
         <td><code>width</code> and <code>height</code> properties are ignored.</td>
-        <td><code>width</code> and <code>height</code> properties are respected.</td>
       </tr>
       <tr>
         <td>Padding, border and margin will push other elements away.</td>
         <td>Padding, border and margin will <em>not</em> push other elements away.</td>
-        <td>Padding, border and margin will push other elements away.</td>
       </tr>
     </tbody>
   </table>
-
-  <p>The <code>display</code> property also controls <em>how an element's childred are laid out</em>. More on this later.</p>
 
   <!--
   ##########################
@@ -249,7 +228,7 @@
   <p class="border" style="border: 1px solid black;">The border around this paragraph is now black.</p>
   </div>
 
-  <p>The <code>margin</code> property controls the space the <code>border</code>.</p>
+  <p>The <code>margin</code> property controls the space around the <code>border</code>.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;p style="margin: 20px;"&gt;There is some space around the border of this paragraph.&lt;/p&gt;</code></pre>
   <p class="border" style="margin: 20px;">There is some space around the border of this paragraph.</p>
@@ -1112,6 +1091,256 @@ span { background-color: rgb(255 255 255 / 50%); }</code></pre>
 
   <a href="#h3_css_debugging"><h3 id="h3_css_debugging">CSS debugging</h3></a>
   -->
+
+  </section>
+
+  <!--
+  ##################
+  ##### LAYOUT #####
+  ##################
+  -->
+
+  <section>
+
+  <h3 id="layout"><a href="#layout">CSS layout</a></h3>
+
+  <p>There are many ways to change how elements are laid out on a page. Many of them have to do with the <code>display</code> property, while others involve other properties.</p>
+
+  <h4>Normal flow</h4>
+
+  <p>By default, the HTML is displayed in the exact order in which it appears in the source code, with <code>block</code> elements stacked on top of one another and <code>inline</code> elements beside one another.</p>
+  <div class="example">
+  <p>I love my cat.</p>
+  <ul>
+    <li id="cat_food">Buy <a href="#cat_food">cat food</a>;</li>
+    <li>Exercise;</li>
+    <li>Cheer up friend;</li>
+  </ul>
+  <p>The end!</p>
+  </div>
+
+  <p>By default, block-level elements are laid out in the block flow direction, which is based on the parent's writing mode (initial: horizontal-tb). Each element will appear on a new line below the last one, with each one separated by whatever margin that's been specified. In English, for example, (or any other horizontal, top to bottom writing mode) block-level elements are laid out vertically.</p>
+
+  <p>Inline elements behave differently. They don't appear on new lines; instead, they all sit on the same line along with any adjacent (or wrapped) text content as long as there is space for them to do so inside the width of the parent block level element. If there isn't space, then the overflowing content will move down to a new line.</p>
+
+  <h5>Margin collapsing</h5>
+  <!-- @Todo: Move this part in the box model section -->
+
+  <p>If two vertically adjacent elements both have a margin set on them and their margins touch, the larger of the two margins remains and the smaller one disappears. This is only relevant in the vertical direction.</p>
+
+  <div class="example">
+  <pre><code class="lang_css">p {
+  margin: 10px;
+}</code></pre>
+  <p style="background: rgb(255 84 104 / 30%);border: 2px solid rgb(255 84 104);padding: 10px;margin: 10px;">These paragraphs are separated by the width of their margins.</p>
+  <p style="background: rgb(255 84 104 / 30%);border: 2px solid rgb(255 84 104);padding: 10px;margin: 10px;">Because of margin collapsing, they are separated by the width of one of their margins, not both.</p>
+  </div>
+
+  <h4>Custom flow</h4>
+
+  <p>The default box type of an element can be changed using the <code>display</code> property.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;p style="display: inline;"&gt;This is the first paragraph.&lt;/p&gt;
+&lt;p style="display: inline;"&gt;This is the second paragraph, and it is displayed on the same line as the previous one.&lt;/p&gt;</code></pre>
+  <p style="display: inline;">This is the first paragraph.</p>
+  <p style="display: inline;">This is the second paragraph, and it is displayed on the same line as the previous one.</p>
+  <hr />
+  <pre><code class="lang_html">&lt;p id="block_link"&gt;This paragraph contains a &lt;a style="display: block;" href="#block_link"&gt;link&lt;/a&gt; which is treated as a block.&lt;/p&gt;</code></pre>
+  <p id="block_link">This paragraph contains a <a style="display: block;" href="#block_link">link</a> which is treated as a block.</p>
+  </div>
+
+  <p>To change how an element interacts with the elements around it, set its <code>display</code> property to one of these values:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Block</th> <th>Inline</th> <th>Inline-block</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Inserts a newline before and after.</td>
+        <td>Does not insert newlines.</td>
+        <td>Does not insert newlines.</td>
+      </tr>
+      <tr>
+        <td><code>width</code> and <code>height</code> properties are respected. If the <code>width</code> isn't specified, it will stretch to fill its parent box.</td>
+        <td><code>width</code> and <code>height</code> properties are ignored.</td>
+        <td><code>width</code> and <code>height</code> properties are respected.</td>
+      </tr>
+      <tr>
+        <td>Padding, border and margin will push other elements away.</td>
+        <td>Padding, border and margin will <em>not</em> push other elements away.</td>
+        <td>Padding, border and margin will push other elements away.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>The <code>display</code> property also controls <em>how an element's childred are laid out</em>. More on this later.</p>
+
+  <p>The special display values <code>flex</code> and <code>grid</code> can be used to arrange elements more easily, either in one dimension (as a row or a column) or two dimensions (as a table) respectively.</p>
+
+  <!--
+  #############################
+  ##### TABLE-LIKE LAYOUT #####
+  #############################
+  -->
+
+  <h4 id="table_like_layout"><a href="#table_like_layout">Table-like layout</a></h4>
+
+  <p>To position non-table elements in a tabular manner, use again the <code>display</code> property.</p>
+  <div class="example">
+  <pre><code class="lang_css">form {
+  display: table; /* Treat forms as tables */
+  margin: 0 auto;
+}
+
+form div {
+  display: table-row; /* Treat 'div's as table rows */
+}
+
+form label,
+form input {
+  display: table-cell; /* Treat labels and inputs as table cells */
+  margin-bottom: 10px;
+}
+
+form label {
+  width: 200px;
+  padding-right: 5%;
+  text-align: right;
+}
+
+form input {
+  width: 300px;
+}
+
+form p {
+  display: table-caption; /* Treat paragraphs as table captions */
+  caption-side: bottom; /* The caption property applies, even though it's technically just a paragraph */
+  width: 300px;
+  color: #999;
+  font-style: italic;
+}</code></pre>
+  <iframe width="100%" height="160" src="tabular-form.html" title="A basic form"></iframe>
+  </div>
+
+  <!--
+  ##########################
+  ##### FLEXBOX LAYOUT #####
+  ##########################
+  -->
+
+  <h4>Flexible Box Layout (Flexbox)</h4>
+
+  <p>Set <code>display: flex</code> on any element and its children elements will be arranged in a row.</p>
+  <div class="example">
+    <pre><code>.flex_container {
+  display: flex;
+}</code></pre>
+    <div class="flexbox wrapper">
+      <p class="border">Element 1</p><p class="border">Element 2</p><p class="border">Element 3</p>
+    </div>
+  </div>
+
+  <p>Flex containers are seen as <code>block</code> elements from outside. To make them behave as <code>inline</code> elements, set their display to <code>display: inline flex</code>.</p>
+
+  <p>Use the <code>flex-direction</code> property on a flex container to change the direction along which its children are laid out.</p>
+  <div class="example">
+    <pre><code>.flex_container {
+  display: flex;
+  flex-direction: column;
+}</code></pre>
+    <div class="flexbox wrapper vertical">
+      <p class="border flex1">Element 1</p><p class="border flex1">Element 2</p><p class="border flex1">Element 3</p>
+    </div>
+  </div>
+
+  <p>Possible flex direction values are <code>row</code> (the default), <code>column</code>, <code>row-reverse</code> and <code>column-reverse</code>.
+
+  <!-- @Incomplete: flex-wrap property and the flexbox nomenclature. -->
+
+  <h5>The <code>flex</code> property</h5>
+
+  <p>You can also use the <code>flex</code> property on the children to control how they fill up the space of the container. For example, <code>flex: 1</code> makes them stretch horizontally to fill up the whole width.</p>
+  <div class="example">
+    <div class="flexbox wrapper">
+      <p class="border flex1">Element 1</p><p class="border flex1">Element 2</p><p class="border flex1">Element 3</p>
+    </div>
+  </div>
+
+  <!--
+  ###############################
+  ##### MULTI-COLUMN LAYOUT #####
+  ###############################
+  -->
+
+  <h4>Multi-column layout</h4>
+
+  <p>Use the <code>column-count</code> property on a <code>block</code> element to describe how many columns should its content be broken in.</p>
+  <div class="example">
+  <pre><code class="lang_css">.container {
+  column-count: 2;
+}</code></pre>
+    <div class="column_count_container book">
+      <p>Far out in the uncharted backwaters of the unfashionable end of the western spiral arm of the Galaxy
+lies a small unregarded yellow sun.</p>
+      <p>Orbiting this at a distance of roughly ninety-two million miles is an utterly insignificant little blue green
+planet whose ape-descended life forms are so amazingly primitive that they still think digital watches are a
+pretty neat idea.</p>
+      <p>This planet has - or rather had - a problem, which was this: most of the people on it were unhappy for
+pretty much of the time. Many solutions were suggested for this problem, but most of these were largely
+concerned with the movements of small green pieces of paper, which is odd because on the whole it wasn't
+the small green pieces of paper that were unhappy.</p>
+      <p>And so the problem remained; lots of the people were mean, and most of them were miserable, even the
+ones with digital watches.</p>
+      <p>Many were increasingly of the opinion that they'd all made a big mistake in coming down from the trees
+in the first place. And some said that even the trees had been a bad move, and that no one should ever have
+left the oceans.</p>
+      <p>And then, one Thursday, nearly two thousand years after one man had been nailed to a tree for saying
+how great it would be to be nice to people for a change, one girl sitting on her own in a small cafe in
+Rickmansworth suddenly realized what it was that had been going wrong all this time, and she finally knew
+how the world could be made a good and happy place. This time it was right, it would work, and no one
+would have to get nailed to anything.</p>
+      <p>Sadly, however, before she could get to a phone to tell anyone about it, a terribly stupid catastrophe
+occurred, and the idea was lost forever.</p>
+      <p>This is not her story.</p>
+      <p>&mdash; Douglas Adams, <cite>Hitchhiker's Guide to the Galaxy</cite></p>
+    </div>
+  </div>
+
+  <p>Use the <code>column-width</code> property on a <code>block</code> element to divide its content in as many columns as possible with the specified <code>width</code>. Whatever space is left between the columns will be shared.</p>
+  <div class="example">
+  <pre><code class="lang_css">.container {
+  column-width: 500px;
+}</code></pre>
+    <div class="column_width_container book">
+      <p>Far out in the uncharted backwaters of the unfashionable end of the western spiral arm of the Galaxy
+lies a small unregarded yellow sun.</p>
+      <p>Orbiting this at a distance of roughly ninety-two million miles is an utterly insignificant little blue green
+planet whose ape-descended life forms are so amazingly primitive that they still think digital watches are a
+pretty neat idea.</p>
+      <p>This planet has - or rather had - a problem, which was this: most of the people on it were unhappy for
+pretty much of the time. Many solutions were suggested for this problem, but most of these were largely
+concerned with the movements of small green pieces of paper, which is odd because on the whole it wasn't
+the small green pieces of paper that were unhappy.</p>
+      <p>And so the problem remained; lots of the people were mean, and most of them were miserable, even the
+ones with digital watches.</p>
+      <p>Many were increasingly of the opinion that they'd all made a big mistake in coming down from the trees
+in the first place. And some said that even the trees had been a bad move, and that no one should ever have
+left the oceans.</p>
+      <p>And then, one Thursday, nearly two thousand years after one man had been nailed to a tree for saying
+how great it would be to be nice to people for a change, one girl sitting on her own in a small cafe in
+Rickmansworth suddenly realized what it was that had been going wrong all this time, and she finally knew
+how the world could be made a good and happy place. This time it was right, it would work, and no one
+would have to get nailed to anything.</p>
+      <p>Sadly, however, before she could get to a phone to tell anyone about it, a terribly stupid catastrophe
+occurred, and the idea was lost forever.</p>
+      <p>This is not her story.</p>
+      <p>&mdash; Douglas Adams, <cite>Hitchhiker's Guide to the Galaxy</cite></p>
+    </div>
+  </div>
+
+
 
   </section>
 
