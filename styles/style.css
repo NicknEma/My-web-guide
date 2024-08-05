@@ -28,6 +28,26 @@ main, nav, header, footer {
 header {display: flex;}
 header.img {width: 10px;}
 
+/* --- BREADCRUMBS --- */
+
+.breadcrumb {
+  padding: 0 .5rem;
+}
+
+.breadcrumb ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb li:not(:last-child)::after {
+  display: inline-block;
+  margin: 0 .25rem;
+  content: "→";
+}
+
 /* --- UTILITY CLASSES --- */
 
 .border {border: 1px solid #bbb;padding: 3px;}
