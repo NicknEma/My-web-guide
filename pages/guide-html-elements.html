@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>HTML Basics - My web guide</title>
+
+  <!-- iPad Pro with high-resolution Retina display: -->
+  <link
+    rel="apple-touch-icon"
+    sizes="167x167"
+    href="../images/icon/apple-touch-icon-167x167.png" />
+  <!-- 3x resolution iPhone: -->
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="../images/icon/apple-touch-icon-180x180.png" />
+  <!-- non-Retina iPad, iPad mini, etc.: -->
+  <link
+    rel="apple-touch-icon"
+    sizes="152x152"
+    href="../images/icon/apple-touch-icon-152x152.png" />
+  <!-- 2x resolution iPhone and other devices: -->
+  <link
+    rel="apple-touch-icon"
+    href="../images/icon/apple-touch-icon-120x120.png" />
+  <!-- basic favicon -->
+  <link rel="icon" href="../images/icon/favicon-32x32.ico" type="image/x-icon" />
+
+  <meta charset="utf-8" />
+  <meta name="author" content="Emanuele Rovini" />
+  <meta name="description" content="Simple example-based guide for creating a website." />
+  <meta name="keywords" content="Web, HTML, CSS, JS, guide" />
+  <meta name="theme-color" content="white" />
+  <meta name="color-scheme" content="only light" />
+  <meta name="viewport" content="width=device-width" />
+
+  <link
+   rel="stylesheet"
+   href="../styles/style.css" />
+
+  <link
+   rel="stylesheet"
+   href="https://fred-wang.github.io/MathFonts/LatinModern/mathfonts.css" />
+  <!-- @Speed: Downloading and using this font is what makes the page flicker on reload. If we
+       render math with Cambria, the reload is instantaneous (but Cambria doesn't stretch operators
+       correctly) -->
+
+  <!-- Google font connection -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Merriweather font -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Source Code Pro font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1>My Web guide</h1>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Breadcrumb_Navigation -->
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><span aria-current="page">HTML Basics</span></li>
+    </ul>
+  </nav>
+
+  <main>
+  <article>
+
+  <h2 id="elements"><a href="#elements">HTML Elements</a></h2>
+
+  <!--
+  #################
+  ##### BASIC #####
+  #################
+  -->
+
+  <h4 id="elements_basic"><a href="#elements_basic">Basic</a></h4>
+
+  <p>The most important HTML elements are:</p>
+  <ul>
+    <li><code class="lang_html">&lt;!DOCTYPE html /&gt;</code>: a historical artifact that needs to be included in every HTML page.</li>
+    <li><code class="lang_html">&lt;html&gt;</code>: the <i>root</i> element, the one that contains all other elements.</li>
+    <li><code class="lang_html">&lt;head&gt;</code>: a container for everything that <em>isn't</em> the content that displays on the page.</li>
+    <li><code class="lang_html">&lt;body&gt;</code>: a container for all the content that displays on the page &ndash; text, images, videos, games, playable audio tracks, etc.</li>
+  </ul>
+
+  <!--
+  ################
+  ##### HEAD #####
+  ################
+  -->
+
+  <h4 id="elements_head"><a href="#elements_head">Head</a></h4>
+
+  <p>Common elements nested in the <code class="lang_html">&lt;head&gt;</code> are:</p>
+  <ul>
+    <li><code class="lang_html">&lt;title&gt;</code>: the title that appears in the page's browser tab and that is used to describe the page when it is bookmarked.</li>
+    <li><code class="lang_html">&lt;style&gt;</code>: an internal stylesheet for the page.</li>
+    <li><code class="lang_html">&lt;link /&gt;</code>: a link to an external resource (stylesheet, icon) for the page.</li>
+    <li><code class="lang_html">&lt;script&gt;</code>: a script (or a link to one) that will run in tandem with the page.</li>
+    <li><code class="lang_html">&lt;base /&gt;</code>: the base URL to use for all relative URLs in a document. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base">Learn more about <code>base</code></a>.</li>
+    <li><code class="lang_html">&lt;meta /&gt;</code>: description of metadata (data about the page) not captured by the previous elements. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">Learn more about <code>meta</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag">about the <code>meta viewport</code></a>.</li>
+  </ul>
+
+  <!--
+  #############################
+  ##### WEBSITE STRUCTURE #####
+  #############################
+  -->
+
+  <h4 id="elements_website_structure"><a href="#elements_website_structure">Website Structure</a></h4>
+
+  <p>Elements used to represent the website's structure are:</p>
+  <ul>
+    <li><code class="lang_html">&lt;header&gt;</code>: a group of introductory content. If it is a child of <code class="lang_html">&lt;body&gt;</code> it defines the global header of a webpage, but if it's a child of an <code class="lang_html">&lt;article&gt;</code> or <code class="lang_html">&lt;section&gt;</code> it defines a specific header for that section (try not to confuse this with titles and headings).
+
+    <li><code class="lang_html">&lt;nav&gt;</code>: the main navigation functionality for the page (home, posts, projects, contacts, search).
+
+    <li><code class="lang_html">&lt;main&gt;</code>: the main content unique to this page. Use <code class="lang_html">&lt;main&gt;</code> only once per page, and put it directly inside <code class="lang_html">&lt;body&gt;</code>. Do not nest within other elements.
+
+    <li><code class="lang_html">&lt;article&gt;</code>: a block of related content that makes sense on its own without the rest of the page (e.g., a single blog post).
+
+    <li><code class="lang_html">&lt;section&gt;</code>: similar to <code class="lang_html">&lt;article&gt;</code>, but it is more for grouping together a single part of the page that constitutes one single piece of functionality (e.g., a mini map, or a set of article headlines and summaries), or a theme. It's considered best practice to begin each section with a heading; also note that you can break <code class="lang_html">&lt;article&gt;</code>s up into different <code class="lang_html">&lt;section&gt;</code>s, or <code class="lang_html">&lt;section&gt;</code>s up into different <code class="lang_html">&lt;article&gt;</code>s, depending on the context.
+
+    <li><code class="lang_html">&lt;aside&gt;</code>: content that is not directly related to the main content but can provide additional information indirectly related to it (e.g., glossary entries, author biography, related links). Often placed inside <code class="lang_html">&lt;main&gt;</code>.
+
+    <li><code class="lang_html">&lt;footer&gt;</code>: a group of end content for a page.
+  </ul>
+
+  <!--
+  ###########################
+  ##### TEXT FORMATTING #####
+  ###########################
+  -->
+
+  <h4 id="elements_general_text_formatting"><a href="#elements_general_text_formatting">General text formatting</a></h4>
+
+  <p>General text-related elements are:</p>
+  <ul>
+    <li><code class="lang_html">&lt;h1&gt;, &lt;h2&gt; ... &lt;h6&gt;</code> (<strong>h</strong>eading): headings 1 through 6.</li>
+    <li><code class="lang_html">&lt;p&gt;</code> (<strong>p</strong>aragraph): a paragraph of text.</li>
+    <li><code class="lang_html">&lt;br /&gt;</code> (<strong>br</strong>eak): a newline, or line break.</li>
+    <li><code class="lang_html">&lt;hr /&gt;</code> (<strong>h</strong>o<strong>r</strong>izontal): a horizontal like, signifying a thematic break.</li>
+    <li><code class="lang_html">&lt;em&gt;</code> (<strong>em</strong>phasized): text that has stress emphasis – typically rendered as <em>italic</em> text.</li>
+    <li><code class="lang_html">&lt;strong&gt;</code> (<strong>strong</strong>): text that has strong importance, seriousness, or urgency – typically rendered as <strong>bold</strong> text.</li>
+    <li><code class="lang_html">&lt;i&gt;</code> (<strong>i</strong>diomatic): text that is set off from the normal text for some reason (idiomatic text, technical terms, taxonomical designations, etc).</li>
+    <li><code class="lang_html">&lt;s&gt;</code> (<strong>s</strong>triked): text that is no longer accurate – typically rendered as <s>striked</s> text. <strong>Do not use decoratively, instead use CSS</strong>.</li>
+    <li><code class="lang_html">&lt;u&gt;</code> (<strong>u</strong>nderline): text that has a non-textual annotation, like an <u>underline</u>. <strong>Do not use decoratively, instead use CSS</strong>.</li>
+    <li role="separator"></li>
+
+    <li><code class="lang_html">&lt;blockquote&gt;</code> (<strong>blockquote</strong>): an extended quotation – typically rendered with indentation.</li>
+    <li><code class="lang_html">&lt;q&gt;</code> (<strong>q</strong>uote): a short inline quotation – typically rendered as enclosed in quotation marks.</li>
+    <li><code class="lang_html">&lt;cite&gt;</code> (<strong>cite</strong>): the title of a cited creative work.</li>
+    <li><code class="lang_html">&lt;abbr&gt;</code> (<strong>abbr</strong>eviation): an abbreviation or acronym.</li>
+    <li><code class="lang_html">&lt;address&gt;</code> (<strong>address</strong>): contact info.</li>
+    <li><code class="lang_html">&lt;time&gt;</code> (<strong>time</strong>): either a time on a 24-hour clock, a date in the calendar or a time duration.</li>
+    <li><code class="lang_html">&lt;small&gt;</code> (<strong>small</strong>): small print, copyright or legal text.</li>
+    <li role="separator"></li>
+
+    <li><code class="lang_html">&lt;ins&gt;</code> (<strong>ins</strong>erted): text that has been <ins>inserted</ins>.</li>
+    <li><code class="lang_html">&lt;del&gt;</code> (<strong>del</strong>eted): text that has been <del>deleted</del>.</li>
+    <li><code class="lang_html">&lt;mark&gt;</code> (<strong>mark</strong>ed): text that has been <mark>highlighted</mark>.</li>
+  </ul>
+
+  <h5>Line, word and thematic breaks</h5>
+
+  <p>Excess whitespace is ignored by the browser. Use the <code>&amp;nbsp;</code> (<strong>n</strong>on <strong>b</strong>reaking <strong>sp</strong>ace) entity as an extra whitespace and the <code class="lang_html">&lt;br /&gt;</code> element to force a line break.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;p&gt;This is a      paragraph &lt;br /&gt; spanning &amp;nbsp; multiple &amp;nbsp; lines.&lt;/p&gt;</code></pre>
+  <p>This is a paragraph <br /> spanning &nbsp; multiple &nbsp; lines.</p>
+  </div>
+
+  <p>To represent a position within text where the browser may optionally break a line &ndash; but it is not forced to &ndash; either use the <code class="lang_html">&lt;wbr /&gt;</code> element or the <code>&amp;shy;</code> (<strong>s</strong>oft <strong>hy</strong>phen) entity.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;p&gt;http://this&lt;wbr /&gt;.is&lt;wbr /&gt;.a&lt;wbr /&gt;.really&lt;wbr /&gt;.long&lt;wbr /&gt;.example&lt;wbr /&gt;.url&lt;wbr /&gt;.that&lt;wbr /&gt;.does&lt;wbr /&gt;.not&lt;wbr /&gt;.actually&lt;wbr /&gt;.lead&lt;wbr /&gt;.anywhere&lt;wbr /&gt;.com&lt;/p&gt;</code></pre>
+  <p class="border" style="width: 250px;">http://this<wbr />.is<wbr />.a<wbr />.really<wbr />.long<wbr />.example<wbr />.url<wbr />.that<wbr />.does<wbr />.not<wbr />.actually<wbr />.lead<wbr />.anywhere<wbr />.com</p>
+  <pre><code class="lang_html">&lt;p"&gt;Fernstraßen&amp;shy;bau&amp;shy;privat&amp;shy;finanzierungs&amp;shy;gesetz&lt;/p&gt;</code></pre>
+  <p class="border" style="width: 250px;">Fernstraßen&shy;bau&shy;privat&shy;finanzierungs&shy;gesetz</p>
+  </div>
+
+  <p>For marking thematic breaks, use the <code class="lang_html">&lt;hr /&gt;</code> element.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;p&gt;This text talks about a certain topic.&lt;/p&gt; &lt;hr /&gt; &lt;p&gt;This section's topic is completely different.&lt;/p&gt;</code></pre>
+  <p>This text talks about a certain topic.</p> <hr /> <p>This section's topic is completely different.</p>
+  </div>
+
+  <h5>Quotations and such</h5>
+
+  <p>Use <code class="lang_html">&lt;blockquote&gt;</code> and <code class="lang_html">&lt;q&gt;</code> for block quotes and inline quotes respectively. Use <code class="lang_html">&lt;cite&gt;</code> to define the title of origin of the quote.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;p&gt;The following is a block quote:&lt;/p&gt;
+&lt;blockquote cite="index.html"&gt;
+  &lt;pre&gt;The story so far:
+In the beginning the Universe was created.
+This has made a lot of people very angry and been widely regarded as a bad move.&lt;/pre&gt;
+  &amp;mdash; Douglas Adams, &lt;cite&gt;The Restaurant at the End of the Universe&lt;/cite&gt;
+&lt;/blockquote&gt;</code></pre>
+  <p>The following is a block quote:</p>
+  <blockquote cite="index.html">
+    <pre>The story so far:
+In the beginning the Universe was created.
+This has made a lot of people very angry and been widely regarded as a bad move.</pre>
+    &mdash; Douglas Adams, <cite>The Restaurant at the End of the Universe</cite>
+  </blockquote>
+
+  <pre><code class="lang_html">&lt;p&gt;The following is an inline quote: &lt;q cite="index.html"&gt;Don't panic!&lt;/q&gt;&lt;/p&gt;</code></pre>
+  <p>The following is an inline quote: <q cite="index.html">Don't panic!</q></p>
+  </div>
+
+  <p>Abbreviations and acronyms can be marked as such using <code class="lang_html">&lt;abbr&gt;</code>. Put the mouse on the abbreviated word with the <code>title</code> attribute to see the full expansion.</p>
+  <div class="example">
+  <pre><code class="lang_html">The language of the web is called &lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;.</code></pre>
+  <p>The language of the web is called <abbr title="HyperText Markup Language">HTML</abbr>.</p>
+  </div>
+
+  <p>Use <code class="lang_html">&lt;address&gt;</code> to define contact information:</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;address&gt;Chris Mills, Manchester, The Grim North, UK&lt;/address&gt;</code></pre>
+  <address class="p block">Chris Mills, Manchester, The Grim North, UK</address>
+  </div>
+
+  <p>Use <code class="lang_html">&lt;time&gt;</code> to represents a specific period in time. Include the <code>datetime</code> attribute to translate dates into machine-readable format.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;p&gt;I was born on &lt;time datetime="1998-07-07"&gt;July 7&lt;/time&gt;.&lt;/p&gt;
+&lt;p&gt;The concert starts at &lt;time datetime="20:00"&gt;20:00&lt;/time&gt;.&lt;/p&gt;
+&lt;p&gt;I only slept for &lt;time datetime="PT6H30M"&gt;6h 30m&lt;/time&gt; last night.&lt;/p&gt;</code></pre>
+  <p>I was born on <time datetime="1998-07-07">July 7</time>.</p>
+  <p>The concert starts at <time datetime="20:00">20:00</time>.</p>
+  <p>I only slept for <time datetime="PT6H30M">6h 30m</time> last night.</p>
+  </div>
+
+  <!--
+  <p>@Incomplete: "bdi" and "bdo" for text directionality. "data" for assigning ids to text. "hgroup" for grouping headings and text. "meter" and "progress" for ranges; "ruby", "rt" and "rp" for pronounciation annotations; "details" and "summary" for toggleable text;</p>
+
+  <p>@Incomplete: "noscript" for adding text if scripting is disabled.</p>
+  -->
+
+  <!--
+  #################
+  ##### LISTS #####
+  #################
+  -->
+  <h4 id="elements_lists"><a href="#elements_lists">Lists</a></h4>
+
+  <p>Elements used to define lists are:</p>
+  <ul>
+    <li><code class="lang_html">&lt;ul&gt;</code> (<strong>u</strong>nordered <strong>l</strong>ist): an unordered list of items – typically rendered as a bulleted list.</li>
+    <li><code class="lang_html">&lt;ol&gt;</code> (<strong>o</strong>rdered <strong>l</strong>ist): an ordered list of items – typically rendered as a numbered list.</li>
+    <li><code class="lang_html">&lt;li&gt;</code> (<strong>l</strong>ist <strong>i</strong>tem): a list item.</li>
+    <li role="separator"></li>
+
+    <li><code class="lang_html">&lt;dl&gt;</code> (<strong>d</strong>escription <strong>l</strong>ist): a list of groups of terms and related descriptions.</li>
+    <li><code class="lang_html">&lt;dt&gt;</code> (<strong>d</strong>escription <strong>t</strong>erm): a term in a description list.</li>
+    <li><code class="lang_html">&lt;dd&gt;</code> (<strong>d</strong>escription <strong>d</strong>etails): the value for the preceding term in a description list.</li>
+    <li role="separator"></li>
+
+    <li><code class="lang_html">&lt;menu&gt;</code> (<strong>menu</strong>): same as <code>ul</code>, but it is used for <em>interactive</em> lists, like lists of buttons.</li>
+  </ul>
+
+  <p>To nest lists, place a list inside one of the parent's list items.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;ul&gt;
+  &lt;li&gt;A&lt;/li&gt;
+  &lt;li&gt;B
+    &lt;ul&gt;
+      &lt;li&gt;B.a&lt;/li&gt;
+      &lt;li&gt;B.b&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;C&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+  <ul>
+    <li>A</li>
+    <li>B
+      <ul>
+        <li>B.a</li>
+        <li>B.b</li>
+      </ul>
+    </li>
+    <li>C</li>
+  </ul>
+  </div>
+
+  <!--
+  ################
+  ##### CODE #####
+  ################
+  -->
+
+  <h4 id="elements_code"><a href="#elements_code">Code</a></h4>
+
+  <p>Some tags are dedicated to formatting code. They are usually rendered using a <i>monospace font</i>.</p>
+  <ul>
+    <li><code class="lang_html">&lt;code&gt;</code> (<strong>code</strong>): A generic piece of computer code, like <code>int main(void) { }</code>.</li>
+    <li><code class="lang_html">&lt;pre&gt;</code> (<strong>pre</strong>formatted): Paragraph that retains extra whitespace that the browser would generally ignore.</li>
+    <li><code class="lang_html">&lt;var&gt;</code> (<strong>var</strong>iable): A variable name, like <var>result</var>.</li>
+    <li><code class="lang_html">&lt;kbd&gt;</code> (<strong>k</strong>ey<strong>b</strong>oar<strong>d</strong>): Keyboard and other types of input entered into the computer, like <kbd>Ctrl+C</kbd>.</li>
+    <li><code class="lang_html">&lt;samp&gt;</code> (<strong>samp</strong>le): The output of a computer program, like <samp>Hello, World!</samp>.</li>
+  </ul>
+
+  <!--
+  #################
+  ##### LINKS #####
+  #################
+  -->
+
+  <h4 id="elements_links"><a href="#elements_links">Links</a></h4>
+
+  <p>Content (text, images, etc.) enclosed into <code class="lang_html">&lt;a&gt;</code> tags becomes a <i>hyperlink</i>. It can be a link to a different page:</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;a href="https://www.google.com" title="Google"&gt;Any questions?&lt;/a&gt;</code></pre>
+  <p><a href="https://www.google.com" title="Google">Any questions?</a></p>
+  </div>
+
+  <p>or a link to a section of a page:</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;a href="#example-section-1"&gt;Jump to next section.&lt;/a&gt;
+&lt;h4 id="example-section-1"&gt;Example section&lt;/h4&gt;</code></pre>
+  <p><a href="#example-section-1">Jump to next section.</a></p>
+  <h4 id="example-section-1">The next section</h4>
+  </div>
+
+  <!--
+  ##################
+  ##### IMAGES #####
+  ##################
+  -->
+
+  <h4 id="elements_images"><a href="#elements_images">Images</a></h4>
+
+  <p>To embed an image into a webpage, use the void <code class="lang_html">&lt;img&gt;</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the image. Give images descriptive filenames as they are counted towards <abbr title="Search Engine Optimizations">SEO</abbr>.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;img src="images/black-star-128.png" alt="A black star on a transparent background." width="128" height="128" title="It's a star!" /&gt;</code></pre>
+  <img src="../images/black-star-128.png" alt="A black star on a transparent background." width="128" height="128" title="It's a star!" />
+  </div>
+
+  <p>The <code>alt</code> attribute specifies text that will be displayed when the image can't be loaded, and/or will be read out loud by screen readers.</p>
+
+  <div class="example">
+  <pre><code class="lang_html">&lt;img src="images/black-star-127.png" alt="A black star on a transparent background." width="128" height="128" title="It's a star!" /&gt;</code></pre>
+  <img src="../images/black-star-127.png" alt="A black star on a transparent background." width="128" height="128" title="It's a star!" loading="lazy" />
+  </div>
+
+  <p>There are many reasons for adding alt text:</p>
+  <ul>
+    <li>The user is using a screen reader to read the web out to them.</li>
+    <li>The spelling of the file or path name might be wrong.</li>
+    <li>The browser doesn't support the image type.</li>
+    <li>Search engines can match alt text with search queries.</li>
+    <li>Users have turned off images to reduce data transfer volume and distractions.</li>
+  </ul>
+
+  <p>The content of the alt text depends the purpose of the image.</p>
+
+  <ul>
+    <li><strong>Decoration</strong>: you should use CSS <code>background-image</code>s for decorative images, but if you must use HTML, add a blank <code>alt=""</code> so that screen readers don't waste time reading it.</li>
+    <li><strong>Content</strong>: if your image provides significant information, provide the same information in a brief alt text – or leave it blank if the image is described adequately by the main text body. Don't write redundant alt text.</li>
+    <li><strong>Link</strong>: if you put an image inside <code class="lang_html">&lt;a&gt;</code> tags you still must provide accessible link text. In such cases you may, either, write it inside the same <code class="lang_html">&lt;a&gt;</code> element, or inside the image's alt attribute – whichever works best in your case.</li>
+    <li><strong>Text</strong>: you should not put your text into images. However, If you really can't avoid doing it, supply the text inside the <code>alt</code> attribute too.</li>
+  </ul>
+
+  <p>For more information, see <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#text_alternatives">Text Alternatives</a> on MDN.</p>
+
+  <hr />
+
+  <p>The <code>width</code> and <code>height</code> attributes represent the image's width and height in pixels.</p>
+
+  <p>You should specify the actual size of your source images, not the size you want them to appear on the website. If you do need to alter an image's size, either change the actual size of the source image or use CSS. <br />
+  The HTML for your page and the image are separate resources, fetched by the browser as separate HTTP(S) requests. As soon as the browser has received the HTML, it will start to display it to the user. If the images haven't yet been received (and this will often be the case, as image file sizes are often much larger than HTML files), then the browser will render only the HTML, and will update the page with the image as soon as it is received (causing the rest of the content to move). <br />
+  By specifying the width and height of the image in advance, the browser will reserve an appropriate amount of space for them and won't cause the rest of the content to be pushed away.</p>
+
+  <hr />
+
+  <p>The <code>title</code> attribute displays a tooltip on mouse hover. It has a number of accessibility problems, and it is better to include supporting information in the main article text.</p>
+
+  <!--<p>@Incomplete: "map" and "area" elements, "picture" for alternative versions of the same image.</p>-->
+
+  <!--
+  ##################################
+  ##### VIDEOS AND AUDIO CLIPS #####
+  ##################################
+  -->
+
+  <h4 id="elements_videos_and_audio_clips"><a href="#elements_videos_and_audio_clips">Videos and audio clips</a></h4>
+
+  <p>To embed a video into a webpage, use the <code class="lang_html">&lt;video&gt;</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the video, and the <code>controls</code> boolean attribute to display <i>start</i>, <i>pause</i> and similar controls.</p>
+
+  <div class="example">
+  <pre><code class="lang_html">&lt;video src="videos/pong.mp4" controls&gt;
+  &lt;p&gt;
+    Your browser doesn't support HTML video. Here is a
+    &lt;a href="videos/pong.mp4"&gt;link to the video&lt;/a&gt; instead.
+  &lt;/p&gt;
+&lt;/video&gt;</code></pre>
+
+  <video src="../videos/pong.mp4" controls width="800" height="600">
+    <p>
+      Your browser doesn't support HTML video. Here is a
+      <a href="../videos/pong.mp4">link to the video</a> instead.
+    </p>
+  </video>
+  </div>
+
+  <p>The following are all the attributes of the <code class="lang_html">&lt;video&gt;</code> element:</p>
+
+  <ul>
+    <li><code>src</code>: Absolute or relative URL of the video.
+    <li><code>controls</code>: Include the browser's default control interface (boolean).
+    <li><code>width</code>, <code>height</code>: Width and height of the source video.
+    <li><code>autoplay</code>: makes the video start as soon as it is loaded (boolean). <strong>Do not use</strong>, it's very annoying.
+    <li><code>loop</code>: makes the video start again when it finishes (boolean).
+    <li><code>muted</code>: turns off the audio by default (boolean).
+    <li><code>preload</code>: Used for buffering large files; it can take one of three values:
+    <ul>
+      <li><code>"none"</code>: does not buffer the file
+      <li><code>"auto"</code>: buffers the media file
+      <li><code>"metadata"</code>: buffers only the metadata for the file
+    </ul>
+    <li><code>poster</code>: The URL of an image which will be displayed before the video is played.
+  </ul>
+
+  <p>If you don't add the <code>controls</code> attribute, build a custom interface using the appropriate JavaScript API. At a minimum, the interface must include a way to start and stop the media, and to adjust the volume.</p>
+
+  <hr />
+
+  <p>The <code class="lang_html">&lt;audio&gt;</code> element is exactly like the <code class="lang_html">&lt;video&gt;</code> element, except that it doesn't have the <code>width</code>, <code>height</code> and <code>poster</code> attributes.
+
+  <!--<p>@Incomplete: "track" for captions.</p>-->
+
+  <!--
+  ########################
+  ##### OTHER EMBEDS #####
+  ########################
+  -->
+
+  <h4 id="elements_other_embeds"><a href="#elements_other_embeds">Other embeds</a></h4>
+
+  <p>Use the <code class="lang_html">&lt;iframe&gt;</code> element to embed other web pages into the current one.</p>
+
+  <!-- @Todo: Consider re-enabling this, but use a facade as suggested on https://pagespeed.web.dev/ -->
+  <!--
+  <p>To embed a YouTube video, click on "share" and then copy the code snipped that is provided.</p>
+
+  <div class="example">
+  <pre><code class="lang_html">&lt;iframe src="https://www.youtube.com/embed/xuCn8ux2gbs?si=Qf20w2baVv7CHCWT"
+  title="YouTube video player"
+  width="560" height="315"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen&gt;
+&lt;/iframe&gt;</code></pre>
+  <iframe src="https://www.youtube.com/embed/xuCn8ux2gbs?si=Qf20w2baVv7CHCWT"
+    title="YouTube video player"
+    width="560" height="315"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+  </div>
+  -->
+
+  <!--
+  ####################
+  ##### CAPTIONS #####
+  ####################
+  -->
+
+  <h4 id="elements_captions"><a href="#elements_captions">Captions</a></h4>
+
+  <p>Add captions to any independent unit of content (an image, a gallery of images, a code snippet, audio, video, equations, a table, etc.) by using the <code class="lang_html">&lt;figure&gt;</code> and <code class="lang_html">&lt;figcaption&gt;</code> elements.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;figure&gt;
+  &lt;img src="images/black-star-128.png" alt="A black star on a transparent background." width="128" height="128" /&gt;
+  &lt;figcaption&gt;It's a star!&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+  <figure><img src="../images/black-star-128.png" alt="A black star on a transparent background." width="128" height="128" />
+    <figcaption>It's a star!</figcaption>
+  </figure>
+  </div>
+
+  <!--
+  ##################
+  ##### TABLES #####
+  ##################
+  -->
+
+  <h4 id="elements_tables"><a href="#elements_tables">Tables</a></h4>
+
+  <p>Use a <code class="lang_html">&lt;table&gt;</code> element to describe a table. <strong>Do not use HTML tables as a layout tool</strong>, but only to display tabular data.</p>
+
+  <p>To add a single cell to a table, use the <code class="lang_html">&lt;td&gt;</code> (<strong>t</strong>able-<strong>d</strong>ata) element. Put the table's data inside the <code class="lang_html">&lt;tbody&gt;</code> (<strong>t</strong>able-<strong>body</strong>) element.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;Hi, I'm your first cell.&lt;/td&gt;&lt;/tr&gt;
+  &lt;tbody&gt;
+&lt;/table&gt;</code></pre>
+  <table><tbody>
+    <tr><td>Hi, I'm your first cell.</td></tr>
+  </tbody></table>
+  </div>
+
+  <p>Multiple <code class="lang_html">&lt;td&gt;</code> elements are automatically arranged in a row.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Hi, I'm your first cell.&lt;/td&gt;
+      &lt;td&gt;I'm your second cell.&lt;/td&gt;
+      &lt;td&gt;I'm your third cell.&lt;/td&gt;
+      &lt;td&gt;I'm your fourth cell.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+  <table><tbody>
+    <tr>
+      <td>Hi, I'm your first cell.</td>
+      <td>I'm your second cell.</td>
+      <td>I'm your third cell.</td>
+      <td>I'm your fourth cell.</td>
+    </tr>
+  </tbody></table>
+  </div>
+
+  <p>To create multiple rows, wrap each row in a separate <code class="lang_html">&lt;tr&gt;</code> (<strong>t</strong>able-<strong>r</strong>ow) element.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;First row, first cell.&lt;/td&gt;
+      &lt;td&gt;First row, second cell.&lt;/td&gt;
+      &lt;td&gt;First row, third cell.&lt;/td&gt;
+      &lt;td&gt;First row, fourth cell.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Second row, first cell.&lt;/td&gt;
+      &lt;td&gt;Second row, second cell.&lt;/td&gt;
+      &lt;td&gt;Second row, third cell.&lt;/td&gt;
+      &lt;td&gt;Second row, fourth cell.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+  <table><tbody>
+    <tr>
+      <td>First row, first cell.</td>
+      <td>First row, second cell.</td>
+      <td>First row, third cell.</td>
+      <td>First row, fourth cell.</td>
+    </tr>
+    <tr>
+      <td>Second row, first cell.</td>
+      <td>Second row, second cell.</td>
+      <td>Second row, third cell.</td>
+      <td>Second row, fourth cell.</td>
+    </tr>
+  </tbody></table>
+  </div>
+
+  <p>The <code class="lang_html">&lt;th&gt;</code> (<strong>t</strong>able-<strong>h</strong>eader) element is similar to the <code class="lang_html">&lt;td&gt;</code> element, but it is used to denote table headers.</p>
+
+  <div class="example">
+  <table>
+    <tr>
+      <th>&nbsp;</th>
+      <th>Knocky</th>
+      <th>Flor</th>
+      <th>Ella</th>
+      <th>Juan</th>
+    </tr>
+    <tr>
+      <th>Breed</th>
+      <td>Jack Russell</td>
+      <td>Poodle</td>
+      <td>Streetdog</td>
+      <td>Cocker Spaniel</td>
+    </tr>
+    <tr>
+      <th>Age</th>
+      <td>16</td>
+      <td>9</td>
+      <td>10</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>Owner</th>
+      <td>Mother-in-law</td>
+      <td>Me</td>
+      <td>Me</td>
+      <td>Sister-in-law</td>
+    </tr>
+    <tr>
+      <th>Eating Habits</th>
+      <td>Eats everyone's leftovers</td>
+      <td>Nibbles at food</td>
+      <td>Hearty eater</td>
+      <td>Will eat till he explodes</td>
+    </tr>
+  </table>
+  </div>
+
+  <p>Table headers make the table easier to read for screen readers, and can be styled to look different than regular table cells.</p>
+
+  <!--
+  <p>@Incomplete: cells spanning multiple rows/columns, styling with the &lt;col&gt; element; captions/summaries and grouping your rows into table head, body and footer sections; accessibility of tables for visually impaired users.</p>
+  -->
+
+  <!--
+  #################
+  ##### FORMS #####
+  #################
+  -->
+
+  <h4 id="elements_forms"><a href="#elements_forms">Forms</a></h4>
+
+  <p>The <code class="lang_html">&lt;form&gt;</code> element is a container element that defines a form and its configuration.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;form action="/my-handling-form-page" method="post"&gt;
+  &lt;!-- Form elements --&gt;
+&lt;/form&gt;</code></pre>
+  </div>
+
+  <p>A form can contain a lot of different input elements, as well as <code class="lang_html">&lt;label&gt;</code>s for accessibility purposes:</p>
+
+  <form>
+  <ul>
+    <li>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="user_name" value="Default value" autocomplete="name" />
+    </li>
+    <li>
+      <label for="mail">Email:</label>
+      <input type="email" id="mail" name="user_email" />
+    </li>
+    <li>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="user_password" />
+    </li>
+    <li>
+      <label for="tel">Telephone:</label>
+      <input type="tel" id="tel" name="user_tel" autocomplete="tel" />
+    </li>
+    <li>
+      <label for="personal_website">Website:</label>
+      <input type="url" id="personal_website" name="user_personal_website" />
+    </li>
+
+    <li>
+      <label for="age">I am 18 or older:</label>
+      <input type="checkbox" id="age" name="user_age" />
+    </li>
+    <li>
+      <label for="date">Favourite date:</label>
+      <input type="date" id="date" name="user_favourite_date" />
+    </li>
+    <li>
+      <label for="zone">Favourite zone:</label>
+      <input type="datetime-local" id="zone" name="user_favourite_zone" />
+    </li>
+    <li>
+      <label for="month">Favourite month:</label>
+      <input type="month" id="month" name="user_favourite_month" />
+    </li>
+    <li>
+      <label for="time">Favourite time:</label>
+      <input type="time" id="time" name="user_favourite_time" />
+    </li>
+    <li>
+      <label for="week">Favourite week:</label>
+      <input type="week" id="week" name="user_favourite_week" />
+    </li>
+
+    <li><fieldset name="day_of_week">
+      <legend>Favourite day of the week:</legend>
+      <ul>
+        <li>
+          <label for="monday">Monday</label>
+          <input type="radio" id="monday" name="day_of_week"/>
+        </li>
+        <li>
+          <label for="tuesday">Tuesday</label>
+          <input type="radio" id="tuesday" name="day_of_week"/>
+        </li>
+        <li>
+          <label for="wednesday">Wednesday</label>
+          <input type="radio" id="wednesday" name="day_of_week"/>
+        </li>
+        <li>
+          <label for="thursday">Thursday</label>
+          <input type="radio" id="thursday" name="day_of_week"/>
+        </li>
+        <li>
+          <label for="friday">Friday</label>
+          <input type="radio" id="friday" name="day_of_week"/>
+        </li>
+        <li>
+          <label for="saturday">Saturday</label>
+          <input type="radio" id="saturday" name="day_of_week"/>
+        </li>
+        <li>
+          <label for="sunday">Sunday</label>
+          <input type="radio" id="sunday" name="day_of_week"/>
+        </li>
+      </ul>
+    </fieldset></li>
+
+    <li>
+      <label for="color">Favourite color:</label>
+      <input type="color" id="color" name="user_favourite_color" />
+    </li>
+    <li>
+      <label for="lucky_number">Lucky number:</label>
+      <input type="number" id="lucky_number" name="user_lucky_number" />
+    </li>
+    <li>
+      <label for="volume">Volume:</label>
+      <input type="range" id="volume" name="user_volume" min="0" max="100"/>
+    </li>
+    <li>
+      <label for="pfp">Picture:</label>
+      <input type="file" id="pfp" name="user_pfp" accept=".jpg, .png, .jpeg, .bmp, .ppm" />
+    </li>
+    <li>
+      <label for="msg">Message:</label>
+      <textarea id="msg" name="user_message">Default value for a text area.</textarea>
+    </li>
+
+    <li class="button">
+      <button type="reset" id="reset" name="reset">Reset</button>
+    </li>
+    <li class="button">
+      <button type="submit" id="submit" name="submit">Submit</button>
+    </li>
+  </ul>
+  </form>
+
+  <!--
+  <p>@Incomplete: "datalist" and "option" for dropdown menus, "optgroup" for grouping options.</p>
+  -->
+
+  <!--
+  ################
+  ##### MATH #####
+  ################
+  -->
+
+  <h4 id="math_formulas"><a href="#math_formulas">Math formulas</a></h4>
+
+  <p>Display a mathematical formula with the <code class="lang_html">&lt;math&gt;</code> element.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;p&gt;The number
+  &lt;math&gt;
+    &lt;mfrac&gt;
+      &lt;mn&gt;1&lt;/mn&gt; &lt;mn&gt;3&lt;/mn&gt;
+    &lt;/mfrac&gt;
+  &lt;/math&gt;
+is rational.&lt;/p&gt;</code></pre>
+  <p>The number
+    <math>
+      <mfrac>
+        <mn>1</mn> <mn>3</mn>
+      </mfrac>
+    </math>
+  is rational.</p>
+  </div>
+
+  <hr />
+
+  <p>Set the <code>display</code> attribute to <code>block</code> to make a formula its own line.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;p&gt;The number
+  &lt;math display="block"&gt;
+    &lt;mfrac&gt;
+      &lt;mn&gt;1&lt;/mn&gt; &lt;mn&gt;3&lt;/mn&gt;
+    &lt;/mfrac&gt;
+  &lt;/math&gt;
+is rational.&lt;/p&gt;</code></pre>
+  <p class="mathy">The number
+    <math display="block">
+      <mfrac>
+        <mn>1</mn> <mn>3</mn>
+      </mfrac>
+    </math>
+  is rational.</p>
+  </div>
+
+  <hr />
+
+  <!--
+  ################
+  ##### MROW #####
+  ################
+  -->
+
+  <p>The <code class="lang_html">&lt;mrow&gt;</code> elements groups other elements in a row.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;math display="block"&gt;
+  &lt;mfrac&gt;
+    &lt;mrow&gt;
+      &lt;mn&gt;1&lt;/mn&gt; &lt;mo&gt;+&lt;/mo&gt; &lt;mn&gt;2&lt;/mn&gt;
+    &lt;/mrow&gt;
+    &lt;mn&gt;3&lt;/mn&gt;
+  &lt;/mfrac&gt;
+&lt;/math&gt;</code></pre>
+  <p class="mathy">
+    <math display="block">
+      <mfrac>
+        <mrow>
+          <mn>1</mn>
+          <mo>+</mo>
+          <mn>2</mn>
+        </mrow>
+        <mn>3</mn>
+      </mfrac>
+    </math>
+  </p>
+  </div>
+
+  <p>With it you can <i>nest</i> expressions.</p>
+
+  <div class="example">
+    <p class="mathy">
+    <math display="block">
+      <mfrac>
+        <mn>1</mn><mn>2</mn>
+      </mfrac>
+      <mo>+</mo>
+      <mfrac>
+        <mn>2</mn><mn>3</mn>
+      </mfrac>
+    </math>
+    </p>
+
+    <p class="mathy">
+    <math display="block">
+      <mfrac>
+        <mrow>
+          <mn>1</mn> <mo>+</mo> <mn>2</mn> <mo>+</mo> <mn>3</mn>
+        </mrow>
+        <mrow>
+          <mn>4</mn> <mo>+</mo> <mn>5</mn>
+        </mrow>
+      </mfrac>
+    </math>
+    </p>
+
+    <p class="mathy">
+    <math display="block">
+      <mfrac>
+        <mrow>
+          <mfrac>
+            <mn>1</mn> <mn>4</mn>
+          </mfrac>
+        </mrow>
+        <mrow>
+          <mn>2</mn> <mo>+</mo> <mn>3</mn>
+        </mrow>
+      </mfrac>
+    </math>
+    </p>
+  </div>
+
+  <hr />
+
+  <p>Most of the math characters are not part of <i>Basic Latin Unicode</i> block; it is recommended to specify your document's character encoding and serve it with appropriate web fonts.</p>
+
+  <div class="example">
+  <pre><code class="lang_html">&lt;!doctype html&gt;
+&lt;html lang="en-US"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;title&gt;My page with math characters&lt;/title&gt;
+    &lt;link
+      rel="stylesheet"
+      href="https://fred-wang.github.io/MathFonts/LatinModern/mathfonts.css" /&gt;
+  &lt;/head&gt;
+&lt;/html&gt;</code></pre>
+  </div>
+
+  <!--
+  ##################################
+  ##### SEMANTIC MATH ELEMENTS #####
+  ##################################
+  -->
+
+  <h5>Semantic math elements</h5>
+
+  <p>Every text in MathML formulas must be included inside these container elements, called <i>token</i> elements.</p>
+  <ul>
+    <li><code>mn</code>: Number literal (<math><mn>2</mn></math>, <math><mn>3.141</mn></math>, <math><mn>0x0045</mn></math>, ...)</li>
+    <li><code>mo</code>: Operator or other punctuation sign (<math><mo>+</mo></math>, <math><mo>∑</mo></math>, <math><mo>[</mo></math>, ...)</li>
+    <li><code>mi</code>: Identifier (<math><mi>x</mi></math>, <math><mi>cos</mi></math>, <math><mi>π</mi></math>, ...)</li>
+    <li><code>mtext</code>: Other text (<math><mtext>if</mtext></math>, <math><mtext>such as</mtext></math>, <math><mtext>not</mtext></math>, ...)</li>
+  </ul>
+
+  <hr />
+
+  <p>Single-character <code class="lang_html">&lt;mi&gt;</code> elements are automatically italicized. To prevent this, use the <code>mathvariant</code> attribute.</p>
+  <div class="example">
+<pre><code class="lang_html">&lt;mi&gt;sin&lt;/mi&gt;                      &lt;!-- Multi-character identifier, not italicized --&gt;
+&lt;mtext&gt;&amp;nbsp;&lt;/mtext&gt;
+&lt;mi&gt;x&lt;/mi&gt;                        &lt;!-- Single-character identifier, italicized --&gt;
+&lt;mtext&gt;&amp;nbsp&lt;/mtext&gt;
+&lt;mi mathvariant="normal"&gt;x&lt;/mi&gt;   &lt;!-- Single-character identifier, explicitly not italicized --&gt;</code></pre>
+  <p class="mathy">
+  <math display="block">
+    <mi>sin</mi>
+    <mtext>&nbsp;</mtext>
+    <mi>x</mi>
+    <mtext>&nbsp;</mtext>
+    <mi mathvariant="normal">x</mi>
+  </math>
+  </p>
+  </div>
+
+  <hr />
+
+  <p>The browser will look up any operator enclosed in <code class="lang_html">&lt;mo&gt;</code> in an <em>operator dictionary</em> so that the necessary <em>spacing</em> or <em>stretching</em> between surrounding elements is respected.</p>
+
+  <div class="example">
+  <p class="mathy">
+  <math display="block">
+    <mrow>
+    <mo>|</mo>
+      <mfrac>
+        <mi>1</mi>
+        <mi>x</mi>
+      </mfrac>
+    <mo>|</mo>
+    </mrow>
+
+    <mtext>&nbsp;,&nbsp;</mtext>
+
+    <mover>
+    <mrow>
+      <mi>u</mi> <mo>+</mo> <mi>w</mi>
+    </mrow>
+    <mo>→</mo>
+    </mover>
+  </math>
+  </p>
+  </div>
+
+  <!--
+  ####################################
+  ##### STRUCTURAL MATH ELEMENTS #####
+  ####################################
+  -->
+
+  <h5>Structural math elements</h5>
+
+  <p>Use <code class="lang_html">&lt;mfrac&gt;</code> to display a fraction.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;mfrac&gt;
+  &lt;mi&gt;a&lt;/mi&gt;
+  &lt;mi&gt;b&lt;/mi&gt;
+&lt;/mfrac&gt;</code></pre>
+  <p class="mathy">
+  <math display="block">
+    <mfrac>
+      <mi>a</mi>
+      <mi>b</mi>
+    </mfrac>
+  </math>
+  </p>
+  </div>
+
+  <p>Set the <code>linethickness</code> attribute to <code>0</code> to display a fraction without a horizontal bar.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;mo&gt;(&lt;/mo&gt;
+  &lt;mfrac linethickness="0"&gt;
+    &lt;mi&gt;a&lt;/mi&gt;
+    &lt;mi&gt;b&lt;/mi&gt;
+  &lt;/mfrac&gt;
+&lt;mo&gt;)&lt;/mo&gt;</code></pre>
+  <p class="mathy">
+  <math display="block">
+    <mo>(</mo>
+    <mfrac linethickness="0">
+      <mi>a</mi>
+      <mi>b</mi>
+    </mfrac>
+    <mo>)</mo>
+  </math>
+  </p>
+  </div>
+
+  <p>You should not set <code>linethickness</code> to anything except <code>0</code>. To make the line thinner or thicker, use CSS.</p>
+
+  <hr />
+
+  <p>Use <code class="lang_html">&lt;msqrt&gt;</code> to display a square root.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;msqrt&gt;
+  &lt;mn&gt;5&lt;/mn&gt;
+&lt;/msqrt&gt;</code></pre>
+  <p class="mathy">
+  <math display="block">
+    <msqrt>
+      <mn>5</mn>
+    </msqrt>
+  </math>
+  </p>
+  </div>
+
+  <hr />
+
+  <p>Use <code class="lang_html">&lt;mroot&gt;</code> to display an nth root. <strong>The first element is covered by the radical symbol while the second element is used as the degree of the root</strong>.</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;mroot&gt;
+  &lt;mn&gt;2&lt;/mn&gt;
+  &lt;mi&gt;n&lt;/mi&gt;
+&lt;/mroot&gt;</code></pre>
+  <p class="mathy">
+  <math display="block">
+    <mroot>
+      <mn>2</mn>
+      <mi>n</mi>
+    </mroot>
+  </math>
+  </p>
+  </div>
+
+  <hr />
+
+  <p>Use <code class="lang_html">&lt;msub&gt;</code>, <code class="lang_html">&lt;msup&gt;</code> and <code class="lang_html">&lt;msubsup&gt;</code> to display <i>subscripts</i> and/or <i>superscripts</i>.</p>
+  <div class="example">
+  <p class="mathy">
+  <math display="block">
+    <msub>
+      <mi>x</mi> <mn>0</mn>
+    </msub>
+
+    <mtext>&nbsp;,&nbsp;</mtext>
+
+    <msup>
+      <mi>e</mi> <mrow> <mi>i</mi><mi>π</mi> </mrow>
+    </msup>
+
+    <mtext>&nbsp;,&nbsp;</mtext>
+
+    <msubsup>
+      <mi>A</mi>
+        <mi>B</mi>
+        <mrow> <mo>-</mo> <mn>1</mn> </mrow>
+    </msubsup>
+  </math>
+  </p>
+  </div>
+
+  <p>Use <code class="lang_html">&lt;munder&gt;</code>, <code class="lang_html">&lt;mover&gt;</code> and <code class="lang_html">&lt;munderover&gt;</code> to display <i>underscripts</i> and/or <i>overscripts</i>.</p>
+  <div class="example">
+  <p class="mathy">
+  <math display="block">
+    <munder>
+      <mtext>lim</mtext>
+      <mrow>
+        <mi>x</mi> <mo>→</mo> <mn>0</mn>
+      </mrow>
+    </munder>
+
+    <mtext>&nbsp;,&nbsp;</mtext>
+
+    <mover>
+      <mi>v</mi> <mo>→</mo>
+    </mover>
+
+    <mtext>&nbsp;,&nbsp;</mtext>
+
+    <munderover>
+      <mo>∑</mo>
+        <mrow> <mi>i</mi> <mo>=</mo> <mn>1</mn> </mrow>
+        <mn>n</mn>
+    </munderover>
+  </math>
+  </p>
+  </div>
+
+  <hr />
+
+  <p>To create tables in MathML, use the <code class="lang_html">&lt;mtable&gt;</code>, <code class="lang_html">&lt;mtr&gt;</code> and <code class="lang_html">&lt;mtd&gt;</code> elements.</p>
+  <div class="example">
+  <p class="mathy">
+  <math display="block">
+    <mo>[</mo>
+    <mtable>
+      <mtr>
+        <mtd> <mn>1</mn> </mtd>
+        <mtd> <mn>0</mn> </mtd>
+      </mtr>
+      <mtr>
+        <mtd> <mi>u</mi> </mtd>
+        <mtd> <mn>1</mn> </mtd>
+      </mtr>
+    </mtable>
+    <mo>]</mo>
+  </math>
+  </p>
+  </div>
+
+  <p>Use the <code>rowspan</code> and <code>columnspan</code> attributes to make cells span multiple rows and columns. Read about <a href="#h3_elements_tables">HTML tables</a> for reference.</p>
+
+  </article>
+  </main>
+
+  <!--
+  ##################
+  ##### SCRIPT #####
+  ##################
+  -->
+
+  <!-- @Note: The script needs to be at the bottom of the body, otherwise it will be executed before the rest of the elements
+       are loaded. See this SO answer:
+       https://stackoverflow.com/questions/30211605/javascript-html-collection-showing-as-0-length -->
+
+  <script src="../scripts/syntax-highlight.js" defer></script>
+
+  <!-- Script to warn the user the browser doesn't support MathML -->
+  <script src="https://fred-wang.github.io/mathml-warning.js/mpadded-min.js" defer></script>
+</body>
+
+</html>

@@ -2,8 +2,31 @@
 <html lang="en-US">
 
 <head>
-  <title>My web guide</title>
+  <title>JS Basics - My web guide</title>
 
+  <!-- iPad Pro with high-resolution Retina display: -->
+  <link
+    rel="apple-touch-icon"
+    sizes="167x167"
+    href="../images/icon/apple-touch-icon-167x167.png" />
+  <!-- 3x resolution iPhone: -->
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="../images/icon/apple-touch-icon-180x180.png" />
+  <!-- non-Retina iPad, iPad mini, etc.: -->
+  <link
+    rel="apple-touch-icon"
+    sizes="152x152"
+    href="../images/icon/apple-touch-icon-152x152.png" />
+  <!-- 2x resolution iPhone and other devices: -->
+  <link
+    rel="apple-touch-icon"
+    href="../images/icon/apple-touch-icon-120x120.png" />
+  <!-- basic favicon -->
+  <link rel="icon" href="../images/icon/favicon-32x32.ico" type="image/x-icon" />
+
+  <!-- Metadata -->
   <meta charset="utf-8" />
   <meta name="author" content="Emanuele Rovini" />
   <meta name="description" content="Simple example-based guide for creating a website." />
@@ -12,6 +35,7 @@
   <meta name="color-scheme" content="only light" />
   <meta name="viewport" content="width=device-width">
 
+  <!-- Stylesheets -->
   <link
    rel="stylesheet"
    href="../styles/style.css" />
@@ -25,7 +49,6 @@
        render math with Cambria, the reload is instantaneous (but Cambria doesn't stretch operators
        correctly) -->
 
-  
   <!-- Google font connection -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,11 +68,13 @@
     <h1>My Web guide</h1>
   </header>
 
-  <nav>
-  <ul>
-    <li><a href="../index.html">Structure: HTML</a></li>
-    <li><a href="guide-css.html">Style: CSS</a></li>
-  </ul>
+  <!-- Breadcrumbs -->
+  <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Breadcrumb_Navigation -->
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><span aria-current="page">JS Basics</span></li>
+    </ul>
   </nav>
 
   <main>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>HTML Basics - My web guide</title>
+
+  <!-- iPad Pro with high-resolution Retina display: -->
+  <link
+    rel="apple-touch-icon"
+    sizes="167x167"
+    href="../images/icon/apple-touch-icon-167x167.png" />
+  <!-- 3x resolution iPhone: -->
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="../images/icon/apple-touch-icon-180x180.png" />
+  <!-- non-Retina iPad, iPad mini, etc.: -->
+  <link
+    rel="apple-touch-icon"
+    sizes="152x152"
+    href="../images/icon/apple-touch-icon-152x152.png" />
+  <!-- 2x resolution iPhone and other devices: -->
+  <link
+    rel="apple-touch-icon"
+    href="../images/icon/apple-touch-icon-120x120.png" />
+  <!-- basic favicon -->
+  <link rel="icon" href="../images/icon/favicon-32x32.ico" type="image/x-icon" />
+
+  <!-- Metadata -->
+  <meta charset="utf-8" />
+  <meta name="author" content="Emanuele Rovini" />
+  <meta name="description" content="Simple example-based guide for creating a website." />
+  <meta name="keywords" content="Web, HTML, CSS, JS, guide" />
+  <meta name="theme-color" content="white" />
+  <meta name="color-scheme" content="only light" />
+  <meta name="viewport" content="width=device-width" />
+
+  <!-- Stylesheets -->
+  <link
+   rel="stylesheet"
+   href="../styles/style.css" />
+
+  <link
+   rel="stylesheet"
+   href="https://fred-wang.github.io/MathFonts/LatinModern/mathfonts.css" />
+  <!-- @Speed: Downloading and using this font is what makes the page flicker on reload. If we
+       render math with Cambria, the reload is instantaneous (but Cambria doesn't stretch operators
+       correctly) -->
+
+  <!-- Google font connection -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Merriweather font -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Source Code Pro font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1>My Web guide</h1>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Breadcrumb_Navigation -->
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><span aria-current="page">HTML Basics</span></li>
+    </ul>
+  </nav>
+
+  <main>
+  <article>
+
+  <h2 id="html"><a href="#html">HTML Basics</a></h2>
+
+  <p>An HTML document is composed of a series of <i>elements</i>.</p>
+
+  <section>
+
+  <h3 id="tags"><a href="#tags">Tags</a></h3>
+
+  <p>HTML elements are enclosed within <i>tags</i>.</p>
+  <div class="example">
+  <code class="p block lang_html">&lt;p&gt;My cat is very grumpy.&lt;/p&gt;</code>
+  <p>My cat is very grumpy.</p>
+  </div>
+
+  <p>Tag names are <i>case-insensitive</i>.</p>
+  <div class="example">
+  <code class="p block lang_html">&lt;p&gt;My cat is very grumpy.&lt;/P&gt;</code>
+  <p>My cat is very grumpy.</p>
+  </div>
+
+  <p>Tags can be <i>nested</i>.</p>
+  <div class="example">
+  <code class="p block lang_html">&lt;p&gt;My cat is &lt;em&gt;very&lt;/em&gt; grumpy.&lt;/p&gt;</code>
+  <p>My cat is <em>very</em> grumpy.</p>
+  </div>
+
+  <p>Some tags are <i>void</i> and don't enclose anything. They stand on their own and don't need a corresponding closing tag.</p>
+  <div class="example">
+  <code class="p block lang_html">&lt;p&gt;My cat&lt;br /&gt;is very grumpy.&lt;/p&gt;</code>
+  <p>My cat <br />is very grumpy.</p>
+  </div>
+
+  </section>
+  <section>
+
+  <h3 id="attributes"><a href="#attributes">Attributes</a></h3>
+
+  <p>Elements can also have <i>attributes</i>.</p>
+  <div class="example">
+  <code class="p block lang_html">&lt;p style="color: darkred"&gt;My cat is very grumpy.&lt;/p&gt;</code>
+  <p style="color:darkred">My cat is very grumpy.</p>
+  </div>
+
+  <p>Attributes with only one value don't require the value to be specified. They are called <i>boolean attributes</i> (either they exist or they don't).</p>
+  <div class="example">
+  <pre><code class="lang_html">&lt;input type="text" disabled="disabled"/&gt;
+&lt;input type="text" disabled/&gt;
+&lt;input type="text"/&gt;</code></pre>
+  <p><input id="disabled_1" type="text" disabled="disabled"/><label for="disabled_1" class="inline"></label></p>
+  <p><input id="disabled_2" type="text" disabled/><label for="disabled_2" class="inline"></label></p>
+  <p><input id="disabled_3" type="text"/><label for="disabled_3" class="inline"></label></p>
+  </div>
+
+  </section>
+  <section>
+
+  <h3 id="comments"><a href="#comments">Comments</a></h3>
+
+  <p>Content enclosed within <code>&lt;!--</code> and <code>--&gt;</code> is ignored by the browser.
+  <div class="example">
+  <code class="p block lang_html">&lt;!-- I am a comment! Yayaya --&gt;</code>
+  </div>
+
+  </section>
+  <section>
+
+  <h3 id="character_entities"><a href="#character_entities">Character entities</a></h3>
+
+  <p>Use <i>character entities</i> to display characters which would normally be <i>reserved</i>, treated specially or difficult to type on a keyword. Entities start with a <code>&amp;</code> and end with a <code>;</code>.</p>
+
+  <div class="example">
+  <code class="p block lang_html">&lt;p&gt;2 &amp;lt; 5&lt;/p&gt;</code>
+  <p>2 &lt; 5</p>
+  </div>
+
+  <table class="p">
+    <caption>HTML reserved characters and corresponding entities</caption>
+    <thead>
+      <tr> <th>Character</th> <th>Entity</th> <th>Browser interpretation</th> </tr>
+    </thead>
+    <tbody>
+      <tr> <td>&amp;</td> <td><code>&amp;amp;</code></td> <td>The beginning of an entity or character reference.</td> </tr>
+      <tr> <td>&lt;</td> <td><code>&amp;lt;</code></td> <td>The beginning of a <a href="#tags">tag</a></td> </tr>
+      <tr> <td>&gt;</td> <td><code>&amp;gt;</code></td> <td>The ending of a <a href="#tags">tag</a></td> </tr>
+      <tr> <td>"</td> <td><code>&amp;quot;</code></td> <td>The beginning and end of an <a href="#attributes">attribute</a>'s value.</td> </tr>
+      <tr> <td>'</td> <td><code>&amp;apos;</code></td> <td>The beginning and end of an <a href="#attributes">attribute</a>'s value.</td> </tr>
+    </tbody>
+  </table>
+
+  <table class="p">
+    <caption>Other useful HTML entities</caption>
+    <thead>
+      <tr> <th>Character</th> <th>Entity</th> <th>Description</th> </tr>
+    </thead>
+    <tbody>
+      <tr> <td>–</td> <td><code>&amp;ndash;</code></td> <td>The <i>en dash</i> (half the width of an <i>em</i> unit).</td> </tr>
+      <tr> <td>—</td> <td><code>&amp;mdash;</code></td> <td>The <i>em dash</i> (equal to the width of an “m” character).</td> </tr>
+      <tr> <td>©</td> <td><code>&amp;copy;</code></td> <td>The copyright sign.</td> </tr>
+      <tr> <td>®</td> <td><code>&amp;reg;</code></td> <td>The registered sign.</td> </tr>
+      <tr> <td>™</td> <td><code>&amp;trade;</code></td> <td>The trademark sign.</td> </tr>
+      <tr> <td>≈</td> <td><code>&amp;asymp;</code></td> <td>The <i>almost equal to</i> sign.</td> </tr>
+      <tr> <td>≠</td> <td><code>&amp;ne;</code></td> <td>The <i>not equal to</i> sign.</td> </tr>
+      <tr> <td>£</td> <td><code>&amp;pound;</code></td> <td>The pound symbol.</td> </tr>
+      <tr> <td>€</td> <td><code>&amp;euro;</code></td> <td>Interpreted as the euro symbol.</td> </tr>
+      <tr> <td>°</td> <td><code>&amp;deg;</code></td> <td>The degree symbol.</td> </tr>
+    </tbody>
+  </table>
+  <p><a href="https://www.html.am/reference/html-special-characters.cfm">See all the character entities</a>.</p>
+
+  </section>
+
+  <!--
+  ###########################
+  ##### ORGANIZING HTML #####
+  ###########################
+  -->
+
+  <section>
+
+  <h3 id="organizing_html"><a href="#organizing_html">Organizing HTML</a></h3>
+  <p>Each <code>.html</code> file corresponds to a different HTML page.</p>
+
+  </section>
+
+  <!--
+  ##########################
+  ##### HTML DEBUGGING #####
+  ##########################
+  -->
+
+  <section>
+
+  <h3 id="html_debugging"><a href="#html_debugging">HTML debugging</a></h3>
+
+  <p>Go to the <a href="https://validator.w3.org/">Markup Validation Service</a> website to see syntax and semantic errors in HTML text.</p>
+
+  <p>Common errors include:</p>
+  <ul>
+    <li>Forgetting to close an open tag</li>
+    <li>Forgetting to close the quotes on an attribute</li>
+    <li>Forgetting to quote an attribute value containing spaces</li>
+  </ul>
+
+  <!--
+  <p>@Incomplete: canvas, datalist, search, output, progress </p>
+  -->
+  <!-- https://pagespeed.web.dev/ -->
+
+  </section>
+
+  <!--
+  ############################
+  ##### HTML PERFORMANCE #####
+  ############################
+  -->
+
+  <section>
+
+  <h3>HTML performance</h3>
+
+  <ul>
+    <li>Prefer <code>.svg</code> to other image formats when possible. Use jpg for photos and png for screenshots and logos.</li>
+    <li>Use <i>responsive images</i> with the "secret" and "size" attributes.</li>
+    <li>Use Lazy Loading. Use attribute loading="lazy"</li>
+    <li>Prefer smaller files across all categories - images, fonts, videos, etc. &nbsp; Page size should be under 1.5-2MB.</li>
+    <li>Reduce the number of HTTP requests. There are several techniques by which we can minimize the number of requests like combining the files, merging a multiple number of scripts to one, using CSS sprites and image maps, etc.</li>
+    <li>Reduce the number of nodes in the DOM - ideally under 1400 total nodes, better if under 800 total nodes.</li>
+    <li>Minify HTML files - that is, remove all comments and unnecessary spaces so that they load faster.</li>
+    <li>Clean up your media library by deleting unnecessary images and other media files for faster average page load times.</li>
+  </ul>
+  </section>
+
+  <!-- Use Expires Headers: https://terakeet.com/blog/page-load-time/ -->
+
+  <!-- https://bigsea.co/ideas/how-to-improve-website-page-speed/ -->
+
+  </article>
+  </main>
+
+  <!--
+  ##################
+  ##### SCRIPT #####
+  ##################
+  -->
+
+  <!-- @Note: The script needs to be at the bottom of the body, otherwise it will be executed before the rest of the elements
+       are loaded. See this SO answer:
+       https://stackoverflow.com/questions/30211605/javascript-html-collection-showing-as-0-length -->
+
+  <script src="../scripts/syntax-highlight.js" defer></script>
+
+  <!-- Script to warn the user the browser doesn't support MathML -->
+  <script src="https://fred-wang.github.io/mathml-warning.js/mpadded-min.js" defer></script>
+</body>
+
+</html>
