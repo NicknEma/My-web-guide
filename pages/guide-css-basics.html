@@ -72,7 +72,7 @@
        width="120" height="120"
        alt="The website logo, also serving as a link to the home page" title="My Web Guide" />
     </a>
-    <h1>My Web guide</h1>
+    <span>My Web guide</span>
   </header>
 
   <!-- Breadcrumbs -->
@@ -89,9 +89,9 @@
 
   <section>
 
-  <h2 id="css"><a href="#css">Style: CSS</a></h2>
+  <h1 id="css"><a href="pages/guide-css-basics.html#css">Style: CSS</a></h1>
 
-  <h3 id="styles_properties_and_values"><a href="#styles_properties_and_values">Styles, properties and values</a></h3>
+  <h2 id="styles_properties_and_values"><a href="pages/guide-css-basics.html#styles_properties_and_values">Styles, properties and values</a></h2>
 
   <p>You change the look of an element by applying a <em>style</em> to it.</p>
   <div class="example">
@@ -141,7 +141,7 @@
   #################################
   -->
 
-  <h3 id="rules_and_stylesheets"><a href="#rules_and_stylesheets">Rules and stylesheets</a></h3>
+  <h2 id="rules_and_stylesheets"><a href="pages/guide-css-basics.html#rules_and_stylesheets">Rules and stylesheets</a></h2>
 
   <p>To apply a style to a single HTML element, modify its <code>style</code> attribute.</p>
   <div class="example">
@@ -171,7 +171,7 @@
 
   <p><strong>Note</strong>: As I understand it, you should put the CSS in the <code class="lang_html">&lt;head&gt;</code> of the document so that the browser can parse it alongside the HTML and immediately generate the correct layout, rather than generating the wrong layout first and then changing it when styles are applied.</p>
 
-  <h4>Stylesheet comments</h4>
+  <h3>Stylesheet comments</h3>
 
   <p>Text enclosed within <code>/*</code> and <code>*/</code> is treated as a <em>comment</em> and will not change the behaviour of a stylesheet.</p>
   <div class="example">
@@ -184,7 +184,7 @@
   #########################
   -->
 
-  <h3 id="the_box_model"><a href="#the_box_model">The box model</a></h3>
+  <h2 id="the_box_model"><a href="pages/guide-css-basics.html#the_box_model">The box model</a></h2>
 
   <p>Every HTML element is contained in a <em>box</em>.</p>
   <div class="example">
@@ -237,7 +237,7 @@
   ##########################
   -->
 
-  <h4 id="parts_of_a_box"><a href="#parts_of_a_box">Parts of a box</a></h4>
+  <h3 id="parts_of_a_box"><a href="pages/guide-css-basics.html#parts_of_a_box">Parts of a box</a></h3>
 
   <p>A <code>block</code> box is made of (from inside to outside):</p>
   <ul>
@@ -271,7 +271,7 @@
   #############################################
   -->
 
-  <h4 id="standard_and_alternate_box_models"><a href="#standard_and_alternate_box_models">Standard and alternate box models</a></h4>
+  <h3 id="standard_and_alternate_box_models"><a href="pages/guide-css-basics.html#standard_and_alternate_box_models">Standard and alternate box models</a></h3>
 
   <p>In the <em>standard box model</em>, properties like <code>width</code>, <code>height</code>, <code>inline-size</code> and <code>block-size</code> describe the size of the <em>content box</em>. In the <em>alternate box model</em>, they describe the total size of <em>content, padding and border</em>.</p>
   <div class="example">
@@ -295,7 +295,7 @@
   #######################################
   -->
 
-  <h4 id="inline_and_block_directions"><a href="#inline_and_block_directions">Inline and block directions</a></h4>
+  <h3 id="inline_and_block_directions"><a href="pages/guide-css-basics.html#inline_and_block_directions">Inline and block directions</a></h3>
 
   <p><em>Inline direction</em> refers to the direction the text is flowing in. By default, the <code>inline-size</code> property means the same as <code>width</code>.</p>
   <div class="example">
@@ -324,7 +324,7 @@
   ###############################
   -->
 
-  <h4 id="overflowing_content"><a href="#overflowing_content">Overflowing content</a></h4>
+  <h3 id="overflowing_content"><a href="pages/guide-css-basics.html#overflowing_content">Overflowing content</a></h3>
 
   <p>The <code>overflow</code> property controls what happens when content is too big to fit its box.</p>
   <div class="example">
@@ -374,7 +374,7 @@
   #####################
   -->
 
-  <h3 id="selectors_and_combinators"><a href="#selectors_and_combinators">Selectors and combinators</a></h3>
+  <h2 id="selectors_and_combinators"><a href="pages/guide-css-basics.html#selectors_and_combinators">Selectors and combinators</a></h2>
 
   <p>A CSS rule starts with one or more <em>selectors</em>.</p>
   <div class="example">
@@ -387,7 +387,7 @@
   ##########################
   -->
 
-  <h4 id="type_selectors"><a href="#type_selectors">Type selectors</a></h4>
+  <h3 id="type_selectors"><a href="pages/guide-css-basics.html#type_selectors">Type selectors</a></h3>
 
   <p><em>Type selectors</em> directly match an HTML element type. They are also called <em>tag name selectors</em> or <em>element</em> selectors. Just like HTML tags, they are not case-sensitive.</p>
   <div class="example">
@@ -406,7 +406,7 @@
   ###########################
   -->
 
-  <h4 id="class_selectors"><a href="#class_selectors">Class selectors</a></h4>
+  <h3 id="class_selectors"><a href="pages/guide-css-basics.html#class_selectors">Class selectors</a></h3>
 
   <p>To select a subset of the elements, use a <em>class selector</em>.</p>
   <div class="example">
@@ -448,7 +448,7 @@
   <p>Paragraph.</p>
   </div>
 
-  <p><strong>Do not put a space between the type and the class</strong>. If you do, it becomes a <a href="#descendant_combinators">descendant combinator</a>.</p>
+  <p><strong>Do not put a space between the type and the class</strong>. If you do, it becomes a <a href="pages/guide-css-basics.html#descendant_combinators">descendant combinator</a>.</p>
 
   <!--
   ########################
@@ -456,7 +456,7 @@
   ########################
   -->
 
-  <h4 id="id_selectors"><a href="#id_selectors">Id selectors</a></h4>
+  <h3 id="id_selectors"><a href="pages/guide-css-basics.html#id_selectors">Id selectors</a></h3>
 
   <p>To target exactly 1 element, use an <em>ID selector</em>.</p>
   <div class="example">
@@ -490,7 +490,7 @@
   ###############################
   -->
 
-  <h4 id="attribute_selectors"><a href="#attribute_selectors">Attribute selectors</a></h4>
+  <h3 id="attribute_selectors"><a href="pages/guide-css-basics.html#attribute_selectors">Attribute selectors</a></h3>
 
   <p>You can select elements based on the presence of a certain attribute on an element using an <em>attribute selector</em>.</p>
   <div class="example">
@@ -546,7 +546,7 @@
   ##################################
   -->
 
-  <h4 id="pseudo_class_selectors"><a href="#pseudo_class_selectors">Pseudo-class selectors</a></h4>
+  <h3 id="pseudo_class_selectors"><a href="pages/guide-css-basics.html#pseudo_class_selectors">Pseudo-class selectors</a></h3>
 
   <p><strong>Pseudo-class selectors</strong> (or <em>state selectors</em>) select style certain <em>states</em> of an element. For example, they are the first element of their type (<code>:first-child</code>), or they are being hovered over by the mouse pointer (<code>:hover</code>).</p>
   <div class="example">
@@ -588,7 +588,7 @@
   ####################################
   -->
 
-  <h4 id="pseudo_element_selectors"><a href="#pseudo_element_selectors">Pseudo-element selectors</a></h4>
+  <h3 id="pseudo_element_selectors"><a href="pages/guide-css-basics.html#pseudo_element_selectors">Pseudo-element selectors</a></h3>
 
   <p><em>Pseudo-element selectors</em> select a certain <em>part</em> of an element rather than the element itself.</p>
   <div class="example">
@@ -605,7 +605,7 @@
   ##################################
   -->
 
-  <h4 id="descendant_combinators"><a href="#descendant_combinators">Descendant combinators</a></h4>
+  <h3 id="descendant_combinators"><a href="pages/guide-css-basics.html#descendant_combinators">Descendant combinators</a></h3>
 
   <p>To restrict the selection to the subtree of an element, put a space between two selectors to create a <em>descendant combinator</em>.</p>
   <div class="example">
@@ -620,7 +620,7 @@
   #############################
   -->
 
-  <h4 id="child_combinators"><a href="#child_combinators">Child combinators</a></h4>
+  <h3 id="child_combinators"><a href="pages/guide-css-basics.html#child_combinators">Child combinators</a></h3>
 
   <p>To restrict the selection to the <em>direct children</em> of an element, put a <code>&gt;</code> between two selectors to create a <em>child combinator</em>.</p>
   <div class="example">
@@ -635,7 +635,7 @@
   ####################################
   -->
 
-  <h4 id="next_sibling_combinators"><a href="#next_sibling_combinators">Next-sibling combinators</a></h4>
+  <h3 id="next_sibling_combinators"><a href="pages/guide-css-basics.html#next_sibling_combinators">Next-sibling combinators</a></h3>
 
   <p>To restrict the selection to the first element <em>on the same level</em> of another, put a <code>+</code> between two selectors to create a <em>next-sibling combinator</em>.</p>
   <div class="example">
@@ -654,7 +654,7 @@
   ##########################
   -->
 
-  <h3 id="css_data_types"><a href="#css_data_types">CSS data types</a></h3>
+  <h2 id="data_types"><a href="pages/guide-css-basics.html#data_types">CSS data types</a></h2>
 
   <!--
   ##############################
@@ -662,7 +662,7 @@
   ##############################
   -->
 
-  <h4>Numeric data types</h4>
+  <h3>Numeric data types</h3>
 
   <table>
     <thead>
@@ -711,9 +711,9 @@
   </div>
 
   <!--
-  <h4>Colors</h4>
-  <h4>Images</h4>
-  <h4>Special types</h4>
+  <h3>Colors</h3>
+  <h3>Images</h3>
+  <h3>Special types</h3>
   -->
 
   <!--
@@ -722,7 +722,7 @@
   ########################
   -->
 
-  <h3 id="styling_text"><a href="#styling_text">Styling text</a></h3>
+  <h2 id="styling_text"><a href="pages/guide-css-basics.html#styling_text">Styling text</a></h2>
 
   <!-- @Todo: summarize this part, with links to the concepts of "start" and "end" -->
   <p>Text inside an element is laid out inside the element's content box. It starts at the top left of the content area (or the top right, in the case of RTL language content), and flows towards the end of the line.<br />
@@ -730,7 +730,7 @@
   <p>The text inside an element is all affected as one single entity. You can't select and style subsections of text unless you wrap them in an appropriate element (such as a &lt;span&gt; or &lt;strong&gt;), or use a text-specific<br />
   pseudo-element like ::first-letter (selects the first letter of an element's text), ::first-line (selects the first line of an element's text), or ::selection (selects the text currently highlighted by the cursor).</p>
 
-  <h4>Color</h4>
+  <h3>Color</h3>
 
   <p>The <code>color</code> property sets the color of the foreground content of the selected elements, which is usually the text, but can also include a couple of other things, such as an underline or overline placed on text using the text-decoration property. Color can accept any CSS color unit.</p>
   <div class="example">
@@ -739,7 +739,7 @@
   <p style="color:darkred">Tommy the cat had many a story to tell.</p>
   </div>
 
-  <h4>Font</h4>
+  <h3>Font</h3>
 
   <p>The <code>font-family</code> property allows you to specify a font (or list of fonts) to apply to the selected elements.</p>
   <div class="example">
@@ -754,7 +754,7 @@
   #########################
   -->
 
-  <h5>Default fonts</h5>
+  <h4>Default fonts</h4>
 
   <p>CSS defines five default <em>names</em> for fonts - the exact font face used from these generic names can vary between each browser and each operating system. It represents a worst case scenario where the browser will try its best to provide a font that looks appropriate.</p>
 
@@ -779,7 +779,7 @@
   ########################
   -->
 
-  <h5>System fonts</h5>
+  <h4>System fonts</h4>
 
   <p>Fonts provided by the operating system are generally available across all platforms and are therefore called <i>web-safe fonts</i>. The list of actual web safe fonts will change as operating systems evolve, but it's reasonable to consider the following fonts <i>web safe</i>, at least for now.</p>
 
@@ -827,7 +827,7 @@
   #####################
   -->
 
-  <h5>Web fonts</h5>
+  <h4>Web fonts</h4>
 
   <p>Font files can be downloaded along with your website as it's accessed. <strong>Fonts generally aren't free to use</strong>. You have to pay for them and/or follow other license conditions, such as crediting the font creator in your code or on your site.</p>
 
@@ -878,7 +878,7 @@ html { font-family: "spongebob-squarepants", serif; }</code></pre>
   #######################
   -->
 
-  <h5>Font stacks</h5>
+  <h4>Font stacks</h4>
   <p>Since you can't guarantee the availability of the fonts you want to use on your webpages (even a web font could fail for some reason), you can supply a font stack so that the browser has multiple fonts it can choose from.</p>
   <div class="example">
   <pre><code class="lang_css">body { font-family: "Trebuchet MS", Verdana, sans-serif; }</code></pre>
@@ -892,11 +892,11 @@ html { font-family: "spongebob-squarepants", serif; }</code></pre>
   ##########################
   -->
 
-  <h3 id="styling_tables"><a href="#styling_tables">Styling tables</a></h3>
+  <h2 id="styling_tables"><a href="pages/guide-css-basics.html#styling_tables">Styling tables</a></h2>
 
   <p>The following table uses default browser styles:</p>
   <div class="example">
-  <iframe width="100%" height="260" src="punk-bands-unstyled.html" title="Punk bands table, unstyled"></iframe>
+  <iframe width="100%" height="260" src="pages/punk-bands-unstyled.html" title="Punk bands table, unstyled"></iframe>
   </div>
 
   <p>To customize the widths of each column, set the <code>table-layout</code> property to <code>fixed</code>:</p>
@@ -906,7 +906,7 @@ thead th:nth-child(1) { width: 30%; }
 thead th:nth-child(2) { width: 20%; }
 thead th:nth-child(3) { width: 15%; }
 thead th:nth-child(4) { width: 35%; }</code></pre>
-  <iframe width="100%" height="260" src="punk-bands-styled-1.html"></iframe>
+  <iframe width="100%" height="260" src="pages/punk-bands-styled-1.html"></iframe>
   </div>
 
   <p>To make the data more readable, align the content to the headings and place the footer closer to its data point. Give the items some spacing too.</p>
@@ -915,7 +915,7 @@ thead th:nth-child(4) { width: 35%; }</code></pre>
 tfoot th { text-align: right; }
 
 th, td { padding: 5px; }</code></pre>
-  <iframe width="100%" height="340" src="punk-bands-styled-2.html" title="Punk bands table, with alignment"></iframe>
+  <iframe width="100%" height="340" src="pages/punk-bands-styled-2.html" title="Punk bands table, with alignment"></iframe>
   </div>
 
   <p>To add <em>zebra striping</em>, use the <code>odd</code> and <code>even</code> formulae as arguments for the <code>nth-child</code> selector. Set the table's color as a fallback for older browsers.</p>
@@ -923,13 +923,13 @@ th, td { padding: 5px; }</code></pre>
   <pre><code class="lang_css">tbody tr:nth-child(odd)  { background-color: #ddd; }
 tbody tr:nth-child(even) { background-color: #fff; }
 table { background-color: white; }</code></pre>
-  <iframe width="100%" height="340" src="punk-bands-styled-3.html" title="Punk bands table, with colors"></iframe>
+  <iframe width="100%" height="340" src="pages/punk-bands-styled-3.html" title="Punk bands table, with colors"></iframe>
   </div>
 
   <p>To hide the automatic border that is drawn around each cell, set the <code>border-collapse</code> property to <code>collapse</code>.</p>
   <div class="example">
   <pre><code class="lang_css">table { border-collapse: collapse; }</code></pre>
-  <iframe width="100%" height="320" src="punk-bands-styled-4.html" title="Punk bands table, without border"></iframe>
+  <iframe width="100%" height="320" src="pages/punk-bands-styled-4.html" title="Punk bands table, without border"></iframe>
   </div>
 
   <p>To position the table's caption, use the <code>caption-size</code> property.</p>
@@ -940,7 +940,7 @@ table { background-color: white; }</code></pre>
   caption-side: bottom;
   text-align: right;
 }</code></pre>
-  <iframe width="100%" height="340" src="punk-bands-styled-5.html" title="Punk bands table, with the caption at the bottom"></iframe>
+  <iframe width="100%" height="340" src="pages/punk-bands-styled-5.html" title="Punk bands table, with the caption at the bottom"></iframe>
   </div>
 
   <!--
@@ -949,7 +949,7 @@ table { background-color: white; }</code></pre>
   #########################
   -->
 
-  <h3 id="styling_forms"><a href="#styling_forms">Styling forms</a></h3>
+  <h2 id="styling_forms"><a href="pages/guide-css-basics.html#styling_forms">Styling forms</a></h2>
 
   <p>Simple form controls, like <code>text</code>, can be selected and styled by using attribute selectors.</p>
   <div class="example">
@@ -1002,7 +1002,7 @@ textarea {
   -->
 
   <!--
-  <h3>Color</h3>
+  <h2>Color</h2>
 
 <pre><code class="lang_css">/* Named colors */
 rebeccapurple
@@ -1066,7 +1066,7 @@ light-dark(rgb(255 255 255), rgb(0 0 0))</code></pre>
   ##########################
   -->
 <!--
-  <a href="#h2_css_properties"><h2 id="h2_css_properties">CSS properties</h2></a>
+  <a href="pages/guide-css-basics.html#css_properties"><h2 id="css_properties">CSS properties</h2></a>
 -->
   <!--
   #################################
@@ -1074,7 +1074,7 @@ light-dark(rgb(255 255 255), rgb(0 0 0))</code></pre>
   #################################
   -->
 <!--
-  <a href="#h3_background_properties"><h3 id="h3_background_properties">Background properties</h3></a>
+  <a href="pages/guide-css-basics.html#background_properties"><h2 id="background_properties">Background properties</h2></a>
 
   <p>The background-color property defines the background color on any element in CSS. This isn't the background of the web page - each HTML element has its own background.</p>
 
@@ -1120,7 +1120,7 @@ span { background-color: rgb(255 255 255 / 50%); }</code></pre>
     <li>round — repeat in both directions, stretching the images if there is extra space available.</li>
   </ul>
 
-  <a href="#h3_css_debugging"><h3 id="h3_css_debugging">CSS debugging</h3></a>
+  <a href="pages/guide-css-basics.html#css_debugging"><h2 id="css_debugging">CSS debugging</h2></a>
   -->
 
   </section>
@@ -1133,17 +1133,17 @@ span { background-color: rgb(255 255 255 / 50%); }</code></pre>
 
   <section>
 
-  <h3 id="layout"><a href="#layout">CSS layout</a></h3>
+  <h2 id="layout"><a href="pages/guide-css-basics.html#layout">CSS layout</a></h2>
 
   <p>There are many ways to change how elements are laid out on a page. Many of them have to do with the <code>display</code> property, while others involve other properties.</p>
 
-  <h4>Normal flow</h4>
+  <h3>Normal flow</h3>
 
   <p>By default, the HTML is displayed in the exact order in which it appears in the source code, with <code>block</code> elements stacked on top of one another and <code>inline</code> elements beside one another.</p>
   <div class="example">
   <p>I love my cat.</p>
   <ul>
-    <li id="cat_food">Buy <a href="#cat_food">cat food</a>;</li>
+    <li id="cat_food">Buy <a href="pages/guide-css-basics.html#cat_food">cat food</a>;</li>
     <li>Exercise;</li>
     <li>Cheer up friend;</li>
   </ul>
@@ -1154,7 +1154,7 @@ span { background-color: rgb(255 255 255 / 50%); }</code></pre>
 
   <p>Inline elements behave differently. They don't appear on new lines; instead, they all sit on the same line along with any adjacent (or wrapped) text content as long as there is space for them to do so inside the width of the parent block level element. If there isn't space, then the overflowing content will move down to a new line.</p>
 
-  <h5>Margin collapsing</h5>
+  <h4>Margin collapsing</h4>
   <!-- @Todo: Move this part in the box model section -->
 
   <p>If two vertically adjacent elements both have a margin set on them and their margins touch, the larger of the two margins remains and the smaller one disappears. This is only relevant in the vertical direction.</p>
@@ -1167,7 +1167,7 @@ span { background-color: rgb(255 255 255 / 50%); }</code></pre>
   <p style="background: rgb(255 84 104 / 30%);border: 2px solid rgb(255 84 104);padding: 10px;margin: 10px;">Because of margin collapsing, they are separated by the width of one of their margins, not both.</p>
   </div>
 
-  <h4>Custom flow</h4>
+  <h3>Custom flow</h3>
 
   <p>The default box type of an element can be changed using the <code>display</code> property.</p>
   <div class="example">
@@ -1177,7 +1177,7 @@ span { background-color: rgb(255 255 255 / 50%); }</code></pre>
   <p style="display: inline;">This is the second paragraph, and it is displayed on the same line as the previous one.</p>
   <hr />
   <pre><code class="lang_html">&lt;p id="block_link"&gt;This paragraph contains a &lt;a style="display: block;" href="#block_link"&gt;link&lt;/a&gt; which is treated as a block.&lt;/p&gt;</code></pre>
-  <p id="block_link">This paragraph contains a <a style="display: block;" href="#block_link">link</a> which is treated as a block.</p>
+  <p id="block_link">This paragraph contains a <a style="display: block;" href="pages/guide-css-basics.html#block_link">link</a> which is treated as a block.</p>
   </div>
 
   <p>To change how an element interacts with the elements around it, set its <code>display</code> property to one of these values:</p>
@@ -1216,7 +1216,7 @@ span { background-color: rgb(255 255 255 / 50%); }</code></pre>
   #############################
   -->
 
-  <h4 id="table_like_layout"><a href="#table_like_layout">Table-like layout</a></h4>
+  <h3 id="table_like_layout"><a href="pages/guide-css-basics.html#table_like_layout">Table-like layout</a></h3>
 
   <p>To position non-table elements in a tabular manner, use again the <code>display</code> property.</p>
   <div class="example">
@@ -1261,7 +1261,7 @@ form p {
   ##########################
   -->
 
-  <h4>Flexible Box Layout (Flexbox)</h4>
+  <h3>Flexible Box Layout (Flexbox)</h3>
 
   <p>Set <code>display: flex</code> on any element and its children elements will be arranged in a row.</p>
   <div class="example">
@@ -1290,7 +1290,7 @@ form p {
 
   <!-- @Incomplete: flex-wrap property and the flexbox nomenclature. -->
 
-  <h5>The <code>flex</code> property</h5>
+  <h4>The <code>flex</code> property</h4>
 
   <p>You can also use the <code>flex</code> property on the children to control how they fill up the space of the container. For example, <code>flex: 1</code> makes them stretch horizontally to fill up the whole width.</p>
   <div class="example">
@@ -1305,7 +1305,7 @@ form p {
   ###############################
   -->
 
-  <h4>Multi-column layout</h4>
+  <h3>Multi-column layout</h3>
 
   <p>Use the <code>column-count</code> property on a <code>block</code> element to describe how many columns should its content be broken in.</p>
   <div class="example">
@@ -1371,7 +1371,7 @@ occurred, and the idea was lost forever.</p>
     </div>
   </div>
 
-  <h5>Styling columns</h5>
+  <h4>Styling columns</h4>
 
   <p>Use the <code>column-gap</code> property to control how much space there is between columns, and the <code>column-rule</code> shorthand property to style the border between columns.</p>
   <div class="example">
@@ -1399,7 +1399,7 @@ left the oceans.</p>
     </div>
   </div>
 
-  <h5>Spanning columns</h5>
+  <h4>Spanning columns</h4>
 
   <p>Use the <code>column-gap</code> property to control how much space there is between columns, and the <code>column-rule</code> shorthand property to style the border between columns.</p>
   <div class="example">
@@ -1435,7 +1435,7 @@ left the oceans.</p>
   <!-- https://pagespeed.web.dev/ -->
 
   <section>
-  <h3>CSS performance</h3>
+  <h2>CSS performance</h2>
 
   <ul>
     <li>Reduce the number of HTTP requests. There are several techniques by which we can minimize the number of requests like combining the files, merging a multiple number of scripts to one, using CSS sprites and image maps, etc.</li>

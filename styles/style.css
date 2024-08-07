@@ -5,10 +5,12 @@
 html {font-family:Merriweather,Georgiaserif;}
 
 h1 { font-size: 2.2em; }
-h4 { font-size: 1.4em; }
-h4 { font-size: 1.2em; }
-h5 { font-size: 1.1em; margin: 1.67em 0em 0.83em 0em; }
-h6 { font-size: 1.05em; }
+h2 { font-size: 1.4em; }
+h3 { font-size: 1.2em; }
+h4 { font-size: 1.1em; }
+h4 { font-size: 1.08em; }
+h5 { font-size: 1.05em; margin: 1.67em 0em 0.83em 0em; }
+h6 { font-size: 1.02em; }
 
 strong {font-weight: 900;}
 pre {font-family: inherit;}
@@ -24,7 +26,12 @@ main, nav, header, footer {
 }
 
 header {display: flex; align-items: center;}
+header span {font-size: 2.4em; font-weight: bold;}
 header img {padding-right: 10px;}
+
+.anchor-button {display:inline-block; padding: 4px; border-radius: 0.2em}
+.anchor-button:hover  {background-color: #eee;}
+.anchor-button:active {background-color: #ddd;}
 
 /* --- BREADCRUMBS --- */
 

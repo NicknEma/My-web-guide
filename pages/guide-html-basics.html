@@ -66,7 +66,7 @@
        width="120" height="120"
        alt="The website logo, also serving as a link to the home page" title="My Web Guide" />
     </a>
-    <h1>My Web guide</h1>
+    <span>My Web guide</span>
   </header>
 
   <!-- Breadcrumbs -->
@@ -81,13 +81,13 @@
   <main>
   <article>
 
-  <h2 id="html"><a href="#html">HTML Basics</a></h2>
+  <h1 id="html"><a href="pages/guide-html-basics.html#html">HTML Basics</a></h1>
 
   <p>An HTML document is composed of a series of <i>elements</i>.</p>
 
   <section>
 
-  <h3 id="tags"><a href="#tags">Tags</a></h3>
+  <h2 id="tags"><a href="pages/guide-html-basics.html#tags">Tags</a></h2>
 
   <p>HTML elements are enclosed within <i>tags</i>.</p>
   <div class="example">
@@ -116,7 +116,7 @@
   </section>
   <section>
 
-  <h3 id="attributes"><a href="#attributes">Attributes</a></h3>
+  <h2 id="attributes"><a href="pages/guide-html-basics.html#attributes">Attributes</a></h2>
 
   <p>Elements can also have <i>attributes</i>.</p>
   <div class="example">
@@ -126,18 +126,18 @@
 
   <p>Attributes with only one value don't require the value to be specified. They are called <i>boolean attributes</i> (either they exist or they don't).</p>
   <div class="example">
-  <pre><code class="lang_html">&lt;input type="text" disabled="disabled"/&gt;
-&lt;input type="text" disabled/&gt;
-&lt;input type="text"/&gt;</code></pre>
-  <p><input id="disabled_1" type="text" disabled="disabled"/><label for="disabled_1" class="inline"></label></p>
-  <p><input id="disabled_2" type="text" disabled/><label for="disabled_2" class="inline"></label></p>
-  <p><input id="disabled_3" type="text"/><label for="disabled_3" class="inline"></label></p>
+  <pre><code class="lang_html">&lt;input type="text" disabled="disabled" /&gt;
+&lt;input type="text" disabled /&gt;
+&lt;input type="text" /&gt;</code></pre>
+  <p><input id="disabled_1" type="text" disabled="disabled" /><label for="disabled_1" class="inline"></label></p>
+  <p><input id="disabled_2" type="text" disabled /><label for="disabled_2" class="inline"></label></p>
+  <p><input id="disabled_3" type="text" /><label for="disabled_3" class="inline"></label></p>
   </div>
 
   </section>
   <section>
 
-  <h3 id="comments"><a href="#comments">Comments</a></h3>
+  <h2 id="comments"><a href="pages/guide-html-basics.html#comments">Comments</a></h2>
 
   <p>Content enclosed within <code>&lt;!--</code> and <code>--&gt;</code> is ignored by the browser.
   <div class="example">
@@ -147,7 +147,7 @@
   </section>
   <section>
 
-  <h3 id="character_entities"><a href="#character_entities">Character entities</a></h3>
+  <h2 id="character_entities"><a href="pages/guide-html-basics.html#character_entities">Character entities</a></h2>
 
   <p>Use <i>character entities</i> to display characters which would normally be <i>reserved</i>, treated specially or difficult to type on a keyword. Entities start with a <code>&amp;</code> and end with a <code>;</code>.</p>
 
@@ -163,10 +163,10 @@
     </thead>
     <tbody>
       <tr> <td>&amp;</td> <td><code>&amp;amp;</code></td> <td>The beginning of an entity or character reference.</td> </tr>
-      <tr> <td>&lt;</td> <td><code>&amp;lt;</code></td> <td>The beginning of a <a href="#tags">tag</a></td> </tr>
-      <tr> <td>&gt;</td> <td><code>&amp;gt;</code></td> <td>The ending of a <a href="#tags">tag</a></td> </tr>
-      <tr> <td>"</td> <td><code>&amp;quot;</code></td> <td>The beginning and end of an <a href="#attributes">attribute</a>'s value.</td> </tr>
-      <tr> <td>'</td> <td><code>&amp;apos;</code></td> <td>The beginning and end of an <a href="#attributes">attribute</a>'s value.</td> </tr>
+      <tr> <td>&lt;</td> <td><code>&amp;lt;</code></td> <td>The beginning of a <a href="pages/guide-html-basics.html#tags">tag</a>.</td> </tr>
+      <tr> <td>&gt;</td> <td><code>&amp;gt;</code></td> <td>The end of a <a href="pages/guide-html-basics.html#tags">tag</a>.</td> </tr>
+      <tr> <td>"</td> <td><code>&amp;quot;</code></td> <td>The beginning and end of an <a href="pages/guide-html-basics.html#attributes">attribute</a>'s value.</td> </tr>
+      <tr> <td>'</td> <td><code>&amp;apos;</code></td> <td>The beginning and end of an <a href="pages/guide-html-basics.html#attributes">attribute</a>'s value.</td> </tr>
     </tbody>
   </table>
 
@@ -199,7 +199,7 @@
   ###########################
   -->
 
-  <h3 id="organizing_html"><a href="#organizing_html">Organizing HTML</a></h3>
+  <h2 id="organizing_html"><a href="pages/guide-html-basics.html#organizing_html">Organizing HTML</a></h2>
   <p>Each <code>.html</code> file corresponds to a different HTML page. It is not possible, using the default HTML features, to compose multiple <code>.html</code> files into a single HTML page, or split a single <code>.html</code> file into multiple HTML pages.</p>
   <p>The only way to get this result is to use offline programs to concatenate or split text files.</p>
 
@@ -212,7 +212,7 @@
   ##########################
   -->
 
-  <h3 id="html_debugging"><a href="#html_debugging">HTML debugging</a></h3>
+  <h2 id="html_debugging"><a href="pages/guide-html-basics.html#html_debugging">HTML debugging</a></h2>
 
   <p>Go to the <a href="https://validator.w3.org/">Markup Validation Service</a> website to see syntax and semantic errors in HTML text.</p>
 
@@ -238,7 +238,7 @@
 
   <section>
 
-  <h3>HTML performance</h3>
+  <h2 id="html_performance"><a href="pages/guide-html-basics.html#html_performance">HTML performance</a></h2>
 
   <p>Writing efficient HTML, as far as I understand, essentially comes down to making the browser load and parse as little data as possible, as quickly as possible.</p>
 
