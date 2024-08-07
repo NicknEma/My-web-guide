@@ -874,6 +874,44 @@ html { font-family: "spongebob-squarepants", serif; }</code></pre>
 
   <p>Steps for using a web font from a font provider: 1) download the TTF/OTF file. 2) Use a converter to generate WOFF/WOFF2 files + the corresponding stylesheet containint the @font-face rule.</p>
 
+<!--  <h4>Web fonts optimization</h4> -->
+
+  <!--
+https://web.dev/articles/font-best-practices?hl=en
+https://www.speedkit.com/blog/reducing-layout-shift-with-custom-fallback-fonts
+https://www.smashingmagazine.com/2021/06/how-to-fix-cumulative-layout-shift-issues/
+https://developers.google.com/publisher-tag/guides/minimize-layout-shift?hl=it
+https://web.dev/articles/optimize-cls?hl=en
+https://web.dev/articles/cls?hl=en
+-->
+
+<!--
+  <p>Un equivoco comune è che venga richiesto un carattere quando viene rilevata una dichiarazione <code>@font-face</code>. Questo non è vero. La dichiarazione <code>@font-face</code> da sola non attiva il download dei caratteri. Un carattere viene invece scaricato soltanto se vi fa riferimento lo stile utilizzato nella pagina. Ad esempio, come segue:</p>
+  <div class="example">
+  <pre><code class="lang_css">@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/OpenSans-Regular-webfont.woff2") format("woff2");
+}
+
+h1 {
+  font-family: "Open Sans"
+}</code></pre>
+  </div>
+  <p>In altre parole, nell'esempio precedente, Open Sans verrà scaricato solo se la pagina contiene un elemento <code>&lt;h1&gt;</code>.</p>
+
+  <h5>Character subsets</h5>
+
+<p>I file dei caratteri in genere includono un numero elevato di glifi per tutti i vari caratteri supportati. Tuttavia, potresti non aver bisogno di tutti i caratteri della pagina e puoi ridurre le dimensioni dei file dei caratteri creando un sottoinsieme di caratteri.
+
+Il descrittore unicode-range nella dichiarazione @font-face indica al browser i caratteri per i quali è possibile utilizzare un carattere.</p>
+
+<pre>@font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/OpenSans-Regular-webfont.woff2") format("woff2");
+    unicode-range: U+0025-00FF;
+}</pre>
+-->
+
   <!--
   #######################
   ##### FONT STACKS #####
