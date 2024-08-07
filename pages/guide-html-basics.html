@@ -200,7 +200,7 @@
   -->
 
   <h2 id="organizing_html"><a href="pages/guide-html-basics.html#organizing_html">Organizing HTML</a></h2>
-  <p>Each <code>.html</code> file corresponds to a different HTML page. It is not possible, using the default HTML features, to compose multiple <code>.html</code> files into a single HTML page, or split a single <code>.html</code> file into multiple HTML pages.</p>
+  <p>Each <code>.html</code> file corresponds to a different HTML page. It is not possible, using the default HTML features, to compose multiple <code>.html</code> files into a single HTML page, or to split a single <code>.html</code> file into multiple HTML pages.</p>
   <p>The only way to get this result is to use offline programs to concatenate or split text files.</p>
 
   </section>
@@ -208,19 +208,31 @@
 
   <!--
   ##########################
-  ##### HTML DEBUGGING #####
+  ##### DEBUGGING HTML #####
   ##########################
   -->
 
-  <h2 id="html_debugging"><a href="pages/guide-html-basics.html#html_debugging">HTML debugging</a></h2>
+  <h2 id="debugging"><a href="pages/guide-html-basics.html#debugging">Debugging HTML</a></h2>
 
   <p>Go to the <a href="https://validator.w3.org/">Markup Validation Service</a> website to see syntax and semantic errors in HTML text.</p>
 
   <p>Common errors include:</p>
   <ul>
-    <li>Forgetting to close an open tag</li>
-    <li>Forgetting to close the quotes on an attribute</li>
-    <li>Forgetting to quote an attribute value containing spaces</li>
+    <li>Forgetting to close an open tag:
+      <div class="example">
+      <code class="p block lang_html">This is the &lt;strong&gt;first example of common HTML mistakes.</code>
+      <p>This is the <strong>first example of common HTML mistakes.</strong></p>
+      </div></li>
+    <li>Forgetting to close the quotes on an attribute:
+      <div class="example">
+      <code class="p block lang_html">This is the &lt;a href="#&gt;second&lt;/a&gt; example of common HTML mistakes.</code>
+      <p>This is the</p>
+      </div></li>
+    <li>Forgetting to quote an attribute value containing spaces:
+      <div class="example">
+      <code class="p block lang_html">This is the &lt;span style=color: red&gt;third&lt;/span&gt; example of common HTML mistakes.</code>
+      <p>This is the third example of common HTML mistakes.</p>
+      </div></li>
   </ul>
 
   <!--
@@ -229,6 +241,20 @@
   <!-- https://pagespeed.web.dev/ -->
 
   </section>
+  <section>
+
+  <!--
+  ##############################
+  ##### HTML ACCESSIBILITY #####
+  ##############################
+  -->
+
+  <h2 id="accessibility"><a href="pages/guide-html-basics.html#accessibility">Making HTML accessible</a></h2>
+
+  <p>Don't use HTML elements to style a webpage &ndash; only use them to convey meaning. To customize the page visually, use CSS.</p>
+
+  </section>
+  <section>
 
   <!--
   ############################
@@ -236,28 +262,59 @@
   ############################
   -->
 
-  <section>
-
   <h2 id="html_performance"><a href="pages/guide-html-basics.html#html_performance">HTML performance</a></h2>
 
-  <p>Writing efficient HTML, as far as I understand, essentially comes down to making the browser load and parse as little data as possible, as quickly as possible.</p>
+  <p>Use <a href="https://pagespeed.web.dev/">Page Speed Insights</a> to measure different aspects of your website performance.</p>
+
+  <p>As far as I understand, HTML optimization is all about structuring the page so that it needs to receive and store as little data as possible.</p>
 
   <ul>
-    <li>Prefer <code>.svg</code> to other image formats when possible. Use jpg for photos and png for screenshots and logos.</li>
-    <li>Use <i>responsive images</i> with the "secret" and "size" attributes.</li>
-    <li>Use Lazy Loading. Use attribute loading="lazy"</li>
-    <li>Prefer smaller files across all categories - images, fonts, videos, etc. &nbsp; Page size should be under 1.5-2MB.</li>
-    <li>Reduce the number of HTTP requests. There are several techniques by which we can minimize the number of requests like combining the files, merging a multiple number of scripts to one, using CSS sprites and image maps, etc.</li>
-    <li>Reduce the number of nodes in the DOM - ideally under 1400 total nodes, better if under 800 total nodes.</li>
-    <li>Minify HTML files - that is, remove all comments and unnecessary spaces so that they load faster.</li>
-    <li>Clean up your media library by deleting unnecessary images and other media files for faster average page load times.</li>
-    <li>Add width and height attributes to images, iframes and other embeds to avoid Cumulative Layout Shift.</li>
-  </ul>
-  </section>
+    <li>Reduce the number of nodes in the DOM - <a href="https://developer.chrome.com/docs/lighthouse/performance/dom-size?hl=en" title="DOM Size">ideally under 1400 total nodes, better if under 800 total nodes.</a></li>
 
-  <!-- Use Expires Headers: https://terakeet.com/blog/page-load-time/ -->
+    <li>Minify HTML files - that is, remove all comments and unnecessary spaces so that they load faster:
+    <div class="example">
+    <pre><code class="lang_html">&lt;!-- Non-minified version (169 bytes): --&gt;
+&lt;img src    = "images/black-star-128.png"
+     alt    = "A black star on a transparent background"
+     title  = "Black star"
+     width  = "128"
+     height = "128" /&gt;
+
+&lt;!-- Minified version (131 bytes): --&gt;
+&lt;img src="images/black-star-128.png"alt="A black star on a transparent background"title="Black star"width="128"height="128"&gt;
+</code></pre>
+    <p><em>Note that, as you can see, the difference in size is very small</em>.</p>
+    </div></li>
+
+    <li>Clean up your media library by deleting unnecessary images and other media files for faster average page load times.</li>
+    <!-- @Todo: Really? Why does this matter? -->
+
+    <li>Keep files small: prefer <code>.svg</code> to other image formats when possible. Use <code>.jpg</code> for photos and <code>.png</code> for screenshots and logos. Make sure the source images are of the appropriate size for the page: don't waste time loading large images only to shrink them later.<!-- Page size should be under 1.5-2MB. --></li>
+    <!-- @Todo: Where do these numbers come from? -->
+
+    <li>Add <code>width</code> and <code>height</code> attributes to images and all other embeds. Specify the <em>actual source dimensions</em> so the browser can reserve space for them. This helps avoiding Cumulative Layout Shift.</li>
+
+<!--
+    <li>Use <i>responsive images</i> with the "secret" and "size" attributes.</li>
+-->
+    <!-- @Todo: Explain what they are and how to use them -->
+
+<!--
+    <li>Use Lazy Loading. Use attribute loading="lazy"</li>
+-->
+    <!-- @Todo: When? Always? On which element? -->
+
+<!--
+    <li>Reduce the number of HTTP requests &ndash; combine multiple files into one, use CSS sprites and image maps, etc.</li>
+-->
+    <!-- @Todo: Elaborate. -->
+  </ul>
+
+  <!-- Research Expires Headers: https://terakeet.com/blog/page-load-time/ -->
 
   <!-- https://bigsea.co/ideas/how-to-improve-website-page-speed/ -->
+
+  </section>
 
   </article>
   </main>
@@ -268,9 +325,8 @@
   ##################
   -->
 
-  <!-- @Note: The script needs to be at the bottom of the body, otherwise it will be executed before the rest of the elements
-       are loaded. See this SO answer:
-       https://stackoverflow.com/questions/30211605/javascript-html-collection-showing-as-0-length -->
+  <!-- @Note: The script needs to be at the bottom of the body, otherwise it will be executed before the rest of the elements are loaded. See this SO answer:
+https://stackoverflow.com/questions/30211605/javascript-html-collection-showing-as-0-length -->
 
   <script src="scripts/syntax-highlight.js" defer></script>
 
