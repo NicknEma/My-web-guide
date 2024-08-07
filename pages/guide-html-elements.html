@@ -3,28 +3,29 @@
 
 <head>
   <title>HTML Basics - My web guide</title>
+  <base href=".." />
 
   <!-- iPad Pro with high-resolution Retina display: -->
   <link
     rel="apple-touch-icon"
     sizes="167x167"
-    href="../images/icon/apple-touch-icon-167x167.png" />
+    href="images/icon/apple-touch-icon-167x167.png" />
   <!-- 3x resolution iPhone: -->
   <link
     rel="apple-touch-icon"
     sizes="180x180"
-    href="../images/icon/apple-touch-icon-180x180.png" />
+    href="images/icon/apple-touch-icon-180x180.png" />
   <!-- non-Retina iPad, iPad mini, etc.: -->
   <link
     rel="apple-touch-icon"
     sizes="152x152"
-    href="../images/icon/apple-touch-icon-152x152.png" />
+    href="images/icon/apple-touch-icon-152x152.png" />
   <!-- 2x resolution iPhone and other devices: -->
   <link
     rel="apple-touch-icon"
-    href="../images/icon/apple-touch-icon-120x120.png" />
+    href="images/icon/apple-touch-icon-120x120.png" />
   <!-- basic favicon -->
-  <link rel="icon" href="../images/icon/favicon-32x32.ico" type="image/x-icon" />
+  <link rel="icon" href="images/icon/favicon-32x32.ico" type="image/x-icon" />
 
   <meta charset="utf-8" />
   <meta name="author" content="Emanuele Rovini" />
@@ -36,7 +37,7 @@
 
   <link
    rel="stylesheet"
-   href="../styles/style.css" />
+   href="styles/style.css" />
 
   <link
    rel="stylesheet"
@@ -58,6 +59,11 @@
 
 <body>
   <header>
+    <a href="index.html">
+      <img id="favicon" src="images/icon/apple-touch-icon-120x120.png"
+       width="120" height="120"
+       alt="The website logo, also serving as a link to the home page" title="My Web Guide" />
+    </a>
     <h1>My Web guide</h1>
   </header>
 
@@ -65,7 +71,7 @@
   <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Breadcrumb_Navigation -->
   <nav aria-label="Breadcrumb" class="breadcrumb">
     <ul>
-      <li><a href="../index.html">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><span aria-current="page">HTML Basics</span></li>
     </ul>
   </nav>
@@ -338,14 +344,14 @@ This has made a lot of people very angry and been widely regarded as a bad move.
   <p>To embed an image into a webpage, use the void <code class="lang_html">&lt;img&gt;</code> tag. Use the <code>src</code> attribute to specify the absolute or relative URL of the image. Give images descriptive filenames as they are counted towards <abbr title="Search Engine Optimizations">SEO</abbr>.</p>
   <div class="example">
   <pre><code class="lang_html">&lt;img src="images/black-star-128.png" alt="A black star on a transparent background." width="128" height="128" title="It's a star!" /&gt;</code></pre>
-  <img src="../images/black-star-128.png" alt="A black star on a transparent background." width="128" height="128" title="It's a star!" />
+  <img src="images/black-star-128.png" alt="A black star on a transparent background." width="128" height="128" title="It's a star!" />
   </div>
 
   <p>The <code>alt</code> attribute specifies text that will be displayed when the image can't be loaded, and/or will be read out loud by screen readers.</p>
 
   <div class="example">
   <pre><code class="lang_html">&lt;img src="images/black-star-127.png" alt="A black star on a transparent background." width="128" height="128" title="It's a star!" /&gt;</code></pre>
-  <img src="../images/black-star-127.png" alt="A black star on a transparent background." width="128" height="128" title="It's a star!" loading="lazy" />
+  <img src="images/black-star-127.png" alt="A black star on a transparent background." width="128" height="128" title="It's a star!" loading="lazy" />
   </div>
 
   <p>There are many reasons for adding alt text:</p>
@@ -400,10 +406,10 @@ This has made a lot of people very angry and been widely regarded as a bad move.
   &lt;/p&gt;
 &lt;/video&gt;</code></pre>
 
-  <video src="../videos/pong.mp4" controls width="800" height="600">
+  <video src="videos/pong.mp4" controls width="800" height="600">
     <p>
       Your browser doesn't support HTML video. Here is a
-      <a href="../videos/pong.mp4">link to the video</a> instead.
+      <a href="videos/pong.mp4">link to the video</a> instead.
     </p>
   </video>
   </div>
@@ -481,7 +487,7 @@ This has made a lot of people very angry and been widely regarded as a bad move.
   &lt;img src="images/black-star-128.png" alt="A black star on a transparent background." width="128" height="128" /&gt;
   &lt;figcaption&gt;It's a star!&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre>
-  <figure><img src="../images/black-star-128.png" alt="A black star on a transparent background." width="128" height="128" />
+  <figure><img src="images/black-star-128.png" alt="A black star on a transparent background." width="128" height="128" />
     <figcaption>It's a star!</figcaption>
   </figure>
   </div>
@@ -1120,7 +1126,7 @@ is rational.&lt;/p&gt;</code></pre>
        are loaded. See this SO answer:
        https://stackoverflow.com/questions/30211605/javascript-html-collection-showing-as-0-length -->
 
-  <script src="../scripts/syntax-highlight.js" defer></script>
+  <script src="scripts/syntax-highlight.js" defer></script>
 
   <!-- Script to warn the user the browser doesn't support MathML -->
   <script src="https://fred-wang.github.io/mathml-warning.js/mpadded-min.js" defer></script>

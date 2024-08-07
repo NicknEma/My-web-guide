@@ -3,28 +3,29 @@
 
 <head>
   <title>CSS Basics - My web guide</title>
+  <base href=".." />
 
   <!-- iPad Pro with high-resolution Retina display: -->
   <link
     rel="apple-touch-icon"
     sizes="167x167"
-    href="../images/icon/apple-touch-icon-167x167.png" />
+    href="images/icon/apple-touch-icon-167x167.png" />
   <!-- 3x resolution iPhone: -->
   <link
     rel="apple-touch-icon"
     sizes="180x180"
-    href="../images/icon/apple-touch-icon-180x180.png" />
+    href="images/icon/apple-touch-icon-180x180.png" />
   <!-- non-Retina iPad, iPad mini, etc.: -->
   <link
     rel="apple-touch-icon"
     sizes="152x152"
-    href="../images/icon/apple-touch-icon-152x152.png" />
+    href="images/icon/apple-touch-icon-152x152.png" />
   <!-- 2x resolution iPhone and other devices: -->
   <link
     rel="apple-touch-icon"
-    href="../images/icon/apple-touch-icon-120x120.png" />
+    href="images/icon/apple-touch-icon-120x120.png" />
   <!-- basic favicon -->
-  <link rel="icon" href="../images/icon/favicon-32x32.ico" type="image/x-icon" />
+  <link rel="icon" href="images/icon/favicon-32x32.ico" type="image/x-icon" />
 
   <!-- Metadata -->
   <meta charset="utf-8" />
@@ -38,7 +39,7 @@
   <!-- Stylesheets -->
   <link
    rel="stylesheet"
-   href="../styles/style.css" />
+   href="styles/style.css" />
 
   <!--
   <link
@@ -66,6 +67,11 @@
 
 <body>
   <header>
+    <a href="index.html">
+      <img id="favicon" src="images/icon/apple-touch-icon-120x120.png"
+       width="120" height="120"
+       alt="The website logo, also serving as a link to the home page" title="My Web Guide" />
+    </a>
     <h1>My Web guide</h1>
   </header>
 
@@ -73,7 +79,7 @@
   <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Breadcrumb_Navigation -->
   <nav aria-label="Breadcrumb" class="breadcrumb">
     <ul>
-      <li><a href="../index.html">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><span aria-current="page">CSS Basics</span></li>
     </ul>
   </nav>
@@ -1446,7 +1452,7 @@ left the oceans.</p>
   </article>
   </main>
 
-  <script src="../scripts/syntax-highlight.js" defer></script>
+  <script src="scripts/syntax-highlight.js" defer></script>
 </body>
 
 </html>
