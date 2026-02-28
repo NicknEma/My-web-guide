@@ -187,6 +187,22 @@ Note: the current WASM standard only supports 1 return value, but this limit is 
   <figcaption>A node defining a function that takes an <code>i32</code> argument, returns a <code>i32</code> value and has a local <code>i64</code> variable</figcaption>
   </figure>
 
+  <!--
+  ###########################################
+  ##### ACCESSING LOCALS AND PARAMETERS #####
+  ###########################################
+  -->
+
+  <a href="pages/guide-wasm.html#h3_accessing_locals_and_parameters"><h3 id="h3_accessing_locals_and_parameters">Accessing locals and parameters</h3></a>
+
+  <p>Parameters and variables are accessed by default by their <em>index</em>. Consider the following signature:</p>
+
+  <div class="example">
+  <pre><code class="lang_wasm">(func (param i32) (param f32) (local f64)</code></pre>
+  </div>
+
+  <p>The two parameters and the variable will be accessed by default by the indices <em>0, 1 and 2</em>.</p>
+
   </section>
 
   </article>
