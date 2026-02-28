@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+
+  <body>
+	<script>
+		WebAssembly.instantiateStreaming(fetch("../../wasm/built_from_wat.wasm")).then(
+			(fetchResult) => {
+				console.log(fetchResult.instance.exports.addTwo(1, 2)); // "3"
+			}
+		);
+	</script>
+  </body>
+</html>

@@ -223,6 +223,58 @@ Note: the current WASM standard only supports 1 return value, but this limit is 
 
   <p>The two parameters and the variable will be accessed by default by the indices <em>0, 1 and 2</em>.</p>
 
+  <!--
+  ####################
+  ##### RUN WASM #####
+  ####################
+  -->
+
+  <a href="pages/guide-wasm.html#h2_run_wasm"><h2 id="h2_run_wasm">Run WASM</h2></a>
+
+  <p>See MDN on this topic: <a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Loading_and_running">https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Loading_and_running</a></p>
+
+  <a href="pages/guide-wasm.html#h3_run_wasm_with_script_tag"><h3 id="h3_run_wasm_with_script_tag">Run WASM with script tag</h3></a>
+
+  <a href="pages/guide-wasm.html#h3_run_wasm_with_fetch"><h3 id="h3_run_wasm_with_fetch">Run WASM with fetch()</h3></a>
+
+  <p>A WebAssembly module can be fetched with <a>fetch()</a> and then used by the <a>WebAssembly</a> object.</p>
+
+  <p>The most efficient way to fetch a WASM module is to use the <a href="https://developer.mozilla.org/en-US/docs/WebAssembly/Reference/JavaScript_interface/instantiateStreaming_static"><code class="lang_js">WebAssembly.instantiateStreaming()</code></a> method. It will handle fetching, compiling, and instantiating the module in one step, accessing the raw byte code as it streams from the server:</p>
+
+  <div class="example">
+  <pre><code class="lang_js">WebAssembly.instantiateStreaming(source) // Signature</code></pre>
+  <pre><code class="lang_js">/* Usage example */
+WebAssembly.instantiateStreaming(fetch("my_wasm.wasm")).then(
+	(fetchResult) => { /* ... */ }
+);</code></pre>
+  </div>
+
+  <p>For example:</p>
+
+  <div class="example">
+  <pre><code class="lang_js">/* Usage example */
+WebAssembly.instantiateStreaming(fetch("add.wasm")).then(
+	(fetchResult) => {
+		console.log(fetchResult.instance.exports.add(1, 2)); // "3"
+	}
+);</code></pre>
+  </div>
+
+  <p>"Access to fetch at 'file.wasm' from origin 'null' has been blocked by CORS policy"</p>
+
+  <p>It happens if you load the html in the browser directly. Run a server and it works.</p> <!-- TODO(ema): Actually explai what's going on here -->
+
+  <p><a href="pages/wasm-demos/hello-from-wat.html">See the demo.</a></p>
+
+  <a href="pages/guide-wasm.html#h3_build_from_c_cpp"><h3 id="h3_build_from_c_cpp">Build from C/C++</h3></a>
+
+  <p><a href="pages/wasm-demos/hello-from-c.html">See the demo.</a></p>
+
+  <a href="pages/guide-wasm.html#h3_build_from_odin"><h3 id="h3_build_from_odin">Build from Odin</h3></a>
+
+  <p><a href="pages/wasm-demos/hello-from-odin-js.html">See the demo.</a></p>
+  <p><a href="pages/wasm-demos/hello-from-odin-freestanding.html">See the demo.</a></p>
+
   </section>
 
   </article>
@@ -231,5 +283,9 @@ Note: the current WASM standard only supports 1 return value, but this limit is 
   <footer>
   <a class="anchor-button" href="pages/guide-wasm.html#top">Back to top</a>
   </footer>
+
+  <script src="scripts/syntax-highlight.js" defer></script>
+  <script src="scripts/script.js" defer></script>
+</body>
 
 </html>
