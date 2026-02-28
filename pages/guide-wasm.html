@@ -178,6 +178,15 @@ Note: the current WASM standard only supports 1 return value, but this limit is 
   <figcaption>A node defining a local variable of type <i>32-bit integer</i></figcaption>
   </figure>
 
+  <p>To put it all together, a complete function signature can look like this:</p>
+
+  <figure>
+  <div class="example">
+  <pre><code class="lang_wasm">(func (param i32) (return i32) (local i64))</code></pre>
+  </div>
+  <figcaption>A node defining a function that takes an <code>i32</code> argument, returns a <code>i32</code> value and has a local <code>i64</code> variable</figcaption>
+  </figure>
+
   </section>
 
   </article>
