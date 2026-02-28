@@ -270,9 +270,65 @@ WebAssembly.instantiateStreaming(fetch("add.wasm")).then(
 
   <p><a href="pages/wasm-demos/hello-from-c.html">See the demo.</a></p>
 
+  <!--
+  ################################
+  ##### BUILD WASM FROM ODIN #####
+  ################################
+  -->
+
   <a href="pages/guide-wasm.html#h3_build_from_odin"><h3 id="h3_build_from_odin">Build from Odin</h3></a>
 
-  <p><a href="pages/wasm-demos/hello-from-odin-js.html">See the demo.</a></p>
+  <p>The <a>Odin compiler</a> offers direct support for building to WebAssembly. If we run <code>odin build . -targets:?</code> on the command line, we get a list of all the supported targets. The list includes the following Wasm-related targets:</p>
+
+  <pre><samp>freestanding_wasm32
+        wasi_wasm32
+          js_wasm32
+        orca_wasm32
+freestanding_wasm64p32
+          js_wasm64p32
+        wasi_wasm64p32
+</samp></pre>
+
+  <p>Each target name is made of 2 parts: the "operating system"/language runtime, and the architecture. The "operating system" part refers to what implementation to use for the Odin language runtime, such as the initialization of the <code class="lang_odin">context</code> structure and memory allocation.<br />
+"Freestanding" means no os, and "js" means the JS wrapper included by default in the Odin compiler.</p>
+
+  <!-- https://forum.odin-lang.org/t/so-many-different-wasm-build-targets/790 -->
+
+  <p>When you write your Odin code, all the functions marked with the <code>@export</code> attribute will be exported into the WASM module. Remember to declare them as having the <code>&quot;c&quot;</code> calling convention.</p>
+
+  <div class="example">
+  <pre><code class="lang_odin">package my_wasm_package
+
+@(export)
+add :: proc &quot;c&quot; (a, b: i32) -> i32 {
+	return a + b
+}</code></pre>
+  </div>
+
+  <!--
+  ###################################
+  ##### BUILD WASM FROM ODIN JS #####
+  ###################################
+  -->
+
+  <h4>Build from Odin with target:js</h4>
+
+  <p>The simplest way to build an Odin package to WASM is to use the <code>js_wasm32</code> target. Use the following command to build an Odin package to a WASM module:</p>
+
+  <pre><code>odin build . -target:js_wasm32 -no-entry-point</code></pre>
+ 
+  <p>You can <a href="pages/wasm-demos/hello-from-odin-js.html">look at a demo page that calls this code</a> or see the source on GitHub: <a></a>.</p>
+
+  <!--
+  #############################################
+  ##### BUILD WASM FROM ODIN FREESTANDING #####
+  #############################################
+  -->
+
+  <h4>Build from Odin with target:freestanding</h4>
+
+  <p>Another way is to build to the <code>freestanding_wasm32</code> target.</p>
+
   <p><a href="pages/wasm-demos/hello-from-odin-freestanding.html">See the demo.</a></p>
 
   </section>
