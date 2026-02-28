@@ -163,6 +163,21 @@
   <p>Note: the absence of a return node in a function signatures denotes that the function does not return any value.<br />
 Note: the current WASM standard only supports 1 return value, but this limit is planned to be removed.</p>
 
+  <p>Local variables are the same too, and they use the <code>local</code> node:</p>
+
+  <div class="example">
+  <pre><code class="lang_wasm">(local &lt;type&gt;)</code></pre>
+  </div>
+
+  <p>For example:</p>
+
+  <figure>
+  <div class="example">
+  <pre><code class="lang_wasm">(local i32)</code></pre>
+  </div>
+  <figcaption>A node defining a local variable of type <i>32-bit integer</i></figcaption>
+  </figure>
+
   </section>
 
   </article>
