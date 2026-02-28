@@ -1,15 +1,15 @@
-package wasm_example
-
-// import "core:sys/wasm"
+package hello_from_odin_js
 
 @export
-odin_add :: proc "c" (a, b: i32) -> i32 {
+addTwo :: proc "c" (a, b: i32) -> i32 {
 	return a + b
 }
 
-main :: proc() {
-	
-}
+// import "core:sys/wasm"
+
+// main :: proc() {
+// 
+// }
 
 /*
 Getting functions from the wasm runtime environment is similar.
@@ -23,8 +23,8 @@ colons, spaces, brackets, anything goes. Might depend on what your wasm runtime
 supports though?
 */
 
-foreign import js "js"
+// foreign import js "js"
 
-foreign js {
-	js_receive :: proc "c" (i32) -> i32 ---
-}
+// foreign js {
+// js_receive :: proc "c" (i32) -> i32 ---
+// }

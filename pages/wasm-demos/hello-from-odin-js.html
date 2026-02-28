@@ -6,7 +6,7 @@
 
   <body>
 	<script>
-		WebAssembly.instantiateStreaming(fetch("../../wasm/hello_from_odin_js.wasm")).then(
+		WebAssembly.instantiateStreaming(fetch("build/hello_from_odin_js.wasm")).then(
 			(fetchResult) => {
 				console.log(fetchResult.instance.exports.addTwo(1, 2)); // "3"
 			}
