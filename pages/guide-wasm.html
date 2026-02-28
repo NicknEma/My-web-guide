@@ -90,9 +90,23 @@
 
   <section>
 
+  <!--
+  ################
+  ##### WASM #####
+  ################
+  -->
+
   <a href="pages/guide-wasm.html#wasm"><h1 id="wasm">Behaviour: WASM</h1></a>
 
-  <p>A modern companion to JavaScript, meant to be used alongside it, is WASM.</p>
+  <!-- TODO(ema): Explain better what it is, not just how to build it -->
+
+  <p>A modern companion to JavaScript, meant to be used alongside it, is WebAssembly.
+The main difference between JS and WASM is that the latter <em>cannot</em> be stored and downloaded as <i>source code</i>.
+It has to be compiled <em>ahead of time</em> and distributed as a <i>binary</i>.</p>
+
+  <p>WebAssembly can be compiled from high-level languages (examples are C, C++, Rust, <a href="https://odin-lang.org/">Odin</a>), or from its 1:1 textual representation.
+You can build WebAssembly written in its textual form using the <b>The WebAssembly Binary Toolkit</b>:
+<a href="https://github.com/webassembly/wabt" class="external">https://github.com/webassembly/wabt</a>.</p> <!-- target="_blank" -->
 
   <!--
   ############################
@@ -117,6 +131,12 @@
   <div class="example">
   <pre><code class="lang_wasm">(module)</code></pre>
   </div>
+
+  <!--
+  #############################
+  ##### THE FUNCTION NODE #####
+  #############################
+  -->
 
   <a href="pages/guide-wasm.html#h3_the_function_node"><h3 id="h3_the_function_node">The function node</h3></a>
 
