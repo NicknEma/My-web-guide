@@ -2,7 +2,8 @@
 <html lang="en-US">
 
 <head>
-  <title>My web guide</title>
+  <title>WASM Basics - My web guide</title>
+  <base href=".." />
 
   <!-- iPad Pro with high-resolution Retina display: -->
   <link
@@ -30,7 +31,7 @@
   <meta charset="utf-8" />
   <meta name="author" content="Emanuele Rovini" />
   <meta name="description" content="Simple example-based guide for creating a website." />
-  <meta name="keywords" content="Web, HTML, CSS, JS, guide" />
+  <meta name="keywords" content="Web, HTML, CSS, JS, WASM, guide" />
   <meta name="theme-color" content="white" />
   <meta name="color-scheme" content="only light" />
   <meta name="viewport" content="width=device-width">
@@ -40,9 +41,11 @@
    rel="stylesheet"
    href="styles/style.css" />
 
+  <!--
   <link
    rel="stylesheet"
    href="https://fred-wang.github.io/MathFonts/LatinModern/mathfonts.css" />
+   -->
   <!-- @Speed: Downloading and using this font is what makes the page flicker on reload. If we
        render math with Cambria, the reload is instantaneous (but Cambria doesn't stretch operators
        correctly) -->
@@ -56,9 +59,14 @@
 
   <!-- Source Code Pro font -->
   <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  
+  <!-- Script to warn the user the browser doesn't support MathML -->
+  <!-- <script src="https://fred-wang.github.io/mathml-warning.js/mpadded-min.js"></script> -->
 </head>
 
 <body>
+  <a id="top"></a>
+
   <header>
     <a href="index.html">
       <img id="favicon" src="images/icon/apple-touch-icon-120x120.png"
@@ -68,41 +76,31 @@
     <span>My Web guide</span>
   </header>
 
+  <!-- Breadcrumbs -->
+  <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Breadcrumb_Navigation -->
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><span aria-current="page">WASM Basics</span></li>
+    </ul>
+  </nav>
+
   <main>
   <article>
 
-  <h1>Home</h1>
-  <p>Simple example-based guide for creating a website.</p>
-  <p>The web is complicated. Browsers are too. <a href="https://developer.mozilla.org/en-US/docs/Learn" title="Mozilla Developer Network">MDN</a> is a good place to learn, and this website is not a substitute for that. This guide can be used as a refresher or as an overview of general topics. For the details, consult more specialized sources.</p>
+  <section>
 
-  <h2>HTML</h2>
-  <ul>
-    <li><a class="anchor-button" href="pages/guide-html-basics.html">HTML Basics</a></li>
-    <li><a class="anchor-button" href="pages/guide-html-elements.html">HTML Elements</a></li>
-  </ul>
-  <h2>CSS</h2>
-  <ul>
-    <li><a class="anchor-button" href="pages/guide-css-basics.html">CSS Basics</a></li>
-  </ul>
-  <h2>JS</h2>
-  <ul>
-    <li><a class="anchor-button" href="pages/guide-js.html">JS Basics</a></li>
-  </ul>
-  <h2>WASM</h2>
-  <ul>
-    <li><a class="anchor-button" href="pages/guide-wasm.html">WASM Basics</a></li>
-  </ul>
+  <a href="pages/guide-wasm.html#wasm"><h1 id="wasm">Behaviour: WASM</h1></a>
+
+  <p>A modern companion to JavaScript, meant to be used alongside it, is WASM.</p>
+
+  </section>
 
   </article>
   </main>
 
-  <!-- @Note: The script needs to be at the bottom of the body, otherwise it will be executed before the rest of the elements are loaded. See this SO answer:
-  https://stackoverflow.com/questions/30211605/javascript-html-collection-showing-as-0-length -->
-
-  <script src="scripts/syntax-highlight.js" defer></script>
-
-  <!-- Script to warn the user the browser doesn't support MathML -->
-  <script src="https://fred-wang.github.io/mathml-warning.js/mpadded-min.js" defer></script>
-</body>
+  <footer>
+  <a class="anchor-button" href="pages/guide-wasm.html#top">Back to top</a>
+  </footer>
 
 </html>
