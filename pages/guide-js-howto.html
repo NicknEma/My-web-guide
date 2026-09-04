@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>JS Basics - My web guide</title>
+  <base href=".." />
+
+  <!-- iPad Pro with high-resolution Retina display: -->
+  <link
+    rel="apple-touch-icon"
+    sizes="167x167"
+    href="images/icon/apple-touch-icon-167x167.png" />
+  <!-- 3x resolution iPhone: -->
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="images/icon/apple-touch-icon-180x180.png" />
+  <!-- non-Retina iPad, iPad mini, etc.: -->
+  <link
+    rel="apple-touch-icon"
+    sizes="152x152"
+    href="images/icon/apple-touch-icon-152x152.png" />
+  <!-- 2x resolution iPhone and other devices: -->
+  <link
+    rel="apple-touch-icon"
+    href="images/icon/apple-touch-icon-120x120.png" />
+  <!-- basic favicon -->
+  <link rel="icon" href="images/icon/favicon-32x32.ico" type="image/x-icon" />
+
+  <!-- Metadata -->
+  <meta charset="utf-8"/>
+  <meta name="author" content="Emanuele Rovini"/>
+  <meta name="description" content="Simple example-based guide for creating a website."/>
+  <meta name="keywords" content="Web, HTML, CSS, JS, WASM, guide"/>
+  <meta name="theme-color" content="white"/>
+  <meta name="color-scheme" content="only light"/>
+  <meta name="viewport" content="width=device-width"/>
+  <meta name="robots" content="noai, noimageai"/>
+
+  <!-- Stylesheets -->
+  <link
+   rel="stylesheet"
+   href="styles/style.css" />
+  <!-- Google font connection -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+
+  <!-- Merriweather font -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"/>
+
+  <!-- Source Code Pro font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet"/>
+  
+  <!-- Script to warn the user the browser doesn't support MathML -->
+  <!-- <script src="https://fred-wang.github.io/mathml-warning.js/mpadded-min.js"></script> -->
+</head>
+<body>
+  <a id="top"></a>
+
+  <header>
+    <a href="index.html">
+      <img id="favicon" src="images/icon/apple-touch-icon-120x120.png"
+       width="120" height="120"
+       alt="The website logo, also serving as a link to the home page" title="My Web Guide" />
+    </a>
+    <span>My Web guide</span>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Breadcrumb_Navigation -->
+  <nav aria-label="Breadcrumb" class="breadcrumb">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><span aria-current="page">JS How-to</span></li>
+    </ul>
+  </nav>
+
+  <main>
+  <article>
+  <section>
+
+  <a href="pages/guide-js.html#js"><h1 id="js">JS How-to</h1></a>
+	
+	<h2>Table of contents</h2>
+	
+	<ul>
+		<li>
+		User input
+		<ul>
+			<li>Listen to mouse movement</li>
+			<li>Listen to mouse button presses</li>
+			<li>Listen to mouse button releases</li>
+			<li>Listen to mouse clicks</li>
+			<li>Listen to mouse double-clicks</li>
+		</ul>
+		</li>
+	</ul>
+	
+	<h2>User input</h2>
+
+	<h3>Listen to mouse movement</h3>
+  <p>To listen to mouse movement events, add an event handler to the event &quot;mousemove&quot;.</p>
+	<div class="example">
+	<pre><code class="lang_js">/* Do this: */
+document.onmousemove = (event) => { /* Process event */ }
+/* or this: */
+document.addEventListener("mousemove", (e) => { /* Process event */ });</code></pre>
+	</div>
+	<p>The <code>mousemove</code> event is a kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code>.
+	This means it has properties like <code>screenX/Y</code>, <code>clientX/Y</code>, <code>pageX/Y</code> and <code>movementX/Y</code>.
+	See <code>MouseEvent</code> for a full list.</p>
+
+	<h3>Listen to mouse button presses</h3>
+	<p>To listen to mouse button press events, add an event handler to the event &quot;mousedown&quot;.</p>
+	<div class="example">
+	<pre><code class="lang_js">/* Do this: */
+document.onmousedown = (event) => { /* Process event */ }
+/* or this: */
+document.addEventListener("mousedown", (e) => { /* Process event */ });</code></pre>
+	</div>
+	<p>The <code>mousedown</code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code> (see &quot;Listen to mouse movement&quot;).
+
+	<h3>Listen to mouse button releases</h3>
+	<p>To listen to mouse button release events, add an event handler to the event &quot;mouseup&quot;.</p>
+	<div class="example">
+	<pre><code class="lang_js">/* Do this: */
+document.onmouseup = (event) => { /* Process event */ }
+/* or this: */
+document.addEventListener("mouseup", (e) => { /* Process event */ });</code></pre>
+	</div>
+	<p>The <code>mouseup</code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code> (see &quot;Listen to mouse movement&quot;).
+
+	<h3>Listen to mouse clicks</h3>
+	<p>To listen to mouse click events, add an event handler to the event &quot;click&quot;.</p>
+	<div class="example">
+	<pre><code class="lang_js">/* Do this: */
+document.onclick = (event) => { /* Process event */ }
+/* or this: */
+document.addEventListener("click", (e) => { /* Process event */ });</code></pre>
+	</div>
+	<p>The <code>click</code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code> (see &quot;Listen to mouse movement&quot;).
+	
+	<h3>Listen to mouse double-clicks</h3>
+	<p>To listen to mouse double-click events, add an event handler to the event &quot;dblclick&quot;.</p>
+	<div class="example">
+	<pre><code class="lang_js">/* Do this: */
+document.ondblclick = (event) => { /* Process event */ }
+/* or this: */
+document.addEventListener("dblclick", (e) => { /* Process event */ });</code></pre>
+	</div>
+	<p>The <code>dblclick</code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code> (see &quot;Listen to mouse movement&quot;).
+
+	</section>
+  </article>
+  </main>
+
+  <footer>
+  <a class="anchor-button" href="pages/guide-js.html#top">Back to top</a>
+  </footer>
+
+  <script src="scripts/syntax-highlight.js" defer></script>
+  <script src="scripts/script.js" defer></script>
+</body>
+
+</html>
