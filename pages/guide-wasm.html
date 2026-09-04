@@ -265,11 +265,11 @@ WebAssembly.instantiateStreaming(fetch("add.wasm")).then(
 
   <p>It happens if you load the html in the browser directly. Run a server and it works.</p> <!-- TODO(ema): Actually explai what's going on here -->
 
-  <p><a href="pages/wasm-demos/hello-from-wat.html">See the demo.</a></p>
+  <p><a href="pages/guide-wasm/demos/001_hello_from_wat/hello-from-wat.html">See the demo.</a></p>
 
   <a href="pages/guide-wasm.html#h3_build_from_c_cpp"><h3 id="h3_build_from_c_cpp">Build from C/C++</h3></a>
 
-  <p><a href="pages/wasm-demos/hello-from-c.html">See the demo.</a></p>
+  <p><a href="pages/guide-wasm/demos/002_hello_from_c/hello-from-c.html">See the demo.</a></p>
 
   <!--
   ################################
@@ -320,7 +320,7 @@ add :: proc &quot;c&quot; (a, b: i32) -> i32 {
 
   <pre><code>odin build . -target:js_wasm32 -no-entry-point</code></pre>
  
-  <p>You can <a href="pages/wasm-demos/hello-from-odin-js.html">look at a demo page that calls this code</a> or see the source on <a href="https://github.com/NicknEma/My-web-guide/tree/main/pages/wasm-demos">GitHub</a>.</p>
+  <p>You can <a href="pages/guide-wasm/demos/003_hello_from_odin/hello-from-odin-js.html">look at a demo page that calls this code</a> or see the source on <a href="https://github.com/NicknEma/My-web-guide/tree/main/pages/wasm-demos">GitHub</a>.</p>
 
   <!--
   #############################################
@@ -332,7 +332,7 @@ add :: proc &quot;c&quot; (a, b: i32) -> i32 {
 
   <p>Another way is to build to the <code>freestanding_wasm32</code> target.</p>
 
-  <p>You can <a href="pages/wasm-demos/hello-from-odin-freestanding.html">look at a demo page that calls this code</a> or see the source on <a href="https://github.com/NicknEma/My-web-guide/tree/main/pages/wasm-demos">GitHub</a>.</p>
+  <p>You can <a href="pages/guide-wasm/demos/003_hello_from_odin/hello-from-odin-freestanding.html">look at a demo page that calls this code</a> or see the source on <a href="https://github.com/NicknEma/My-web-guide/tree/main/pages/wasm-demos">GitHub</a>.</p>
 
   </section>
 

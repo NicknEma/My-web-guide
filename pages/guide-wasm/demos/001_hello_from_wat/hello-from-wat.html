@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+
+	<body>
+		<p>Open the dev tools and look at the console output and examine the source.</p>
+		<script>
+			WebAssembly.instantiateStreaming(fetch("out/hello_from_wat.wasm")).then(
+				(fetchResult) => {
+					console.log(fetchResult.instance.exports.addTwo(1, 2)); // "3"
+				}
+			);
+		</script>
+	</body>
+</html>
