@@ -1,0 +1,5 @@
+# Copied from https://baccyflap.com/res/robots/
+
+User-Agent: *
+Disallow: /
+Disallow: *
