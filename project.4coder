@@ -1,0 +1,30 @@
+version(2);
+project_name = "My web guide";
+
+patterns = {
+	"*.html",
+	"*.css",
+	"*.js",
+	"*.ts",
+	"*.c",
+	"*.h",
+	"*.odin",
+	"*.bat",
+	"*.sh",
+	"*.4coder",
+	"*.txt",
+};
+
+blacklist_patterns = {
+	".*",
+};
+
+load_paths_base = {
+	{ {"."}, .recursive = true, .relative = true },
+};
+
+load_paths = {
+	.win   = load_paths_base,
+	.linux = load_paths_base,
+	.mac   = load_paths_base,
+};
