@@ -322,6 +322,9 @@ add :: proc &quot;c&quot; (a, b: i32) -> i32 {
  
   <p>You can <a href="pages/guide-wasm/demos/003_hello_from_odin/hello-from-odin-js.html">look at a demo page that calls this code</a> or see the source on <a href="https://github.com/NicknEma/My-web-guide/tree/main/pages/wasm-demos">GitHub</a>.</p>
 
+	<p>If you ever see the error &quot;Uncaught (in promise) TypeError: WebAssembly.instantiate(): Imports argument must be present and must be an object&quot;, it means the odin package is calling or referencing something external.
+	This reference should be passed as an argument to the <code>instantiate</code> or <code>instantiateStreaming</code> methods. For example, if your package uses arrays, it will call <code>bounds_check</code>, which has to be imported.</p>
+
   <!--
   #############################################
   ##### BUILD WASM FROM ODIN FREESTANDING #####
@@ -333,6 +336,16 @@ add :: proc &quot;c&quot; (a, b: i32) -> i32 {
   <p>Another way is to build to the <code>freestanding_wasm32</code> target.</p>
 
   <p>You can <a href="pages/guide-wasm/demos/003_hello_from_odin/hello-from-odin-freestanding.html">look at a demo page that calls this code</a> or see the source on <a href="https://github.com/NicknEma/My-web-guide/tree/main/pages/wasm-demos">GitHub</a>.</p>
+
+	<!--
+  ##############################
+  ##### GRAPHICS WITH ODIN #####
+  ##############################
+  -->
+	
+	<h3>Graphics with Odin</h3>
+	
+	<p><a href="pages/guide-wasm/demos/010_checkers_from_odin/checkers-from-odin-js.html">See the demo.</a></p>
 
   </section>
 

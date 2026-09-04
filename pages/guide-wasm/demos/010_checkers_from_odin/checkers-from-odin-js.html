@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+
+	<body>
+		<canvas width="20" height="20" style="image-rendering:pixelated;image-rendering:crisp-edges;width:30%"></canvas>
+		<script>
+			const p = fetch("out/checkers_from_odin_js.wasm")
+			WebAssembly.instantiateStreaming(p).then(
+				(fetchResult) => {
+					const exports = fetchResult.instance.exports;
+					const memory = exports.memory;
+					const byteMemoryArray = new Uint8Array(memory.buffer);
+					const graphicsBufferPointer = exports.getGraphicsBufferPointer();
+					const graphicsBufferSize = exports.getGraphicsBufferSize();
+					const canvasElement = document.querySelector("canvas");
+					const canvasContext = canvasElement.getContext("2d");
+					const canvasImageData = canvasContext.createImageData(canvasElement.width, canvasElement.height);
+					canvasContext.clearRect(0, 0, canvasElement.width, canvasElement.height);
+					
+					const getDarkValue = () => { return Math.floor(Math.random() * 100); };
+					const getLightValue = () => { return Math.floor(Math.random() * 127) + 127; };
+					
+					const drawCheckerBoard = () => {
+						const checkerBoardSize = 20;
+						
+						// Generate a new checkboard in wasm
+						exports.generateCheckerBoard(
+						  getDarkValue(),
+						  getDarkValue(),
+						  getDarkValue(),
+						  getLightValue(),
+						  getLightValue(),
+						  getLightValue()
+						);
+						
+						// Pull out the RGBA values from Wasm memory, the we wrote to in wasm,
+						// starting at the checkerboard pointer (memory array index)
+						const imageDataArray = byteMemoryArray.slice(
+						  graphicsBufferPointer,
+						  graphicsBufferPointer + graphicsBufferSize
+						);
+						
+						// Set the values to the canvas image data
+						canvasImageData.data.set(imageDataArray);
+						
+						// Clear the canvas
+						canvasContext.clearRect(0, 0, canvasElement.width, canvasElement.height);
+						
+						// Place the new generated checkerboard onto the canvas
+						canvasContext.putImageData(canvasImageData, 0, 0);
+					};
+					
+					drawCheckerBoard();
+					setInterval(() => {
+					  drawCheckerBoard();
+					}, 1000);
+				}
+			);
+		</script>
+		<!--
+		<script src="wasm_exec.js"></script>
+		<script type="module" src="index.js"></script>
+		-->
+	</body>
+</html>
