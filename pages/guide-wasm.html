@@ -338,6 +338,42 @@ add :: proc &quot;c&quot; (a, b: i32) -> i32 {
   <p>You can <a href="pages/guide-wasm/demos/003_hello_from_odin/hello-from-odin-freestanding.html">look at a demo page that calls this code</a> or see the source on <a href="https://github.com/NicknEma/My-web-guide/tree/main/pages/wasm-demos">GitHub</a>.</p>
 
 	<!--
+  ####################
+  ##### RUN WASM #####
+  ####################
+  -->
+
+	<h2>Graphics with WASM</h2>
+	
+	<p>It is possible to provide to a <code>CanvasRenderingContext2D</code> the bytes of the image that it should be rendering.</p>
+	
+	<p>Methods to note here are: <code>createImageData</code> and <code>putImageData</code>.</p>
+
+	<!-- https://wasmbyexample.dev/examples/reading-and-writing-graphics/reading-and-writing-graphics.go.en-us -->
+	<div class="example">
+  <pre><code class="lang_js">const canvasElement = document.querySelector("canvas"); /* Get a reference to the canvas element */
+const canvasContext = canvasElement.getContext("2d");   /* Get the rendering context */
+
+const canvasImageData = canvasContext.createImageData(canvasElement.width, canvasElement.height); /* Create an image with the same size as the canvas */
+
+/* Call the WASM routine here */
+
+// Pull out the RGBA values from Wasm memory, that we wrote to in wasm,
+// starting at the checkerboard pointer (memory array index)
+const imageDataArray = wasmByteMemoryArray.slice(
+	graphicsBufferPointer,
+	graphicsBufferPointer + graphicsBufferSize
+);
+
+// Set the values to the canvas image data
+canvasImageData.data.set(imageDataArray);
+
+canvasContext.clearRect(0, 0, canvasElement.width, canvasElement.height); /* Clear the canvas */
+canvasContext.putImageData(canvasImageData, 0, 0); /* Place the new generated checkerboard onto the canvas */
+</code></pre>
+  </div>
+
+	<!--
   ##############################
   ##### GRAPHICS WITH ODIN #####
   ##############################
