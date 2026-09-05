@@ -569,70 +569,157 @@ arc(x, y, radius, startAngle, endAngle, counterclockwise)</code></pre>
 	<p>To draw at a fixed framerate, define a drawing function and pass it to the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval">setInterval()</a></code> function.</p>
 	
 	<div class="example">
-	<pre><code class="lang_js">const canvas = document.querySelector(&quot;canvas&quot;);
-const ctx = canvas.getContext(&quot;2d&quot;);
-/* Rest of initialization code... */
-
-function draw_and_update() {
-	ctx.clearRect(/* ... */);
-	/* Rest of the drawing/update code... */
-}
-
-const delay_milliseconds = 10;
-setInterval(draw_and_update, delay_milliseconds);</code></pre>
-	<canvas id="fixed_framerate_example_canvas" width="500" height="320">Canvas containing a DVD logo. The logo can be made to move and bounce around by clicking some buttons.</canvas>
-	<button id="fixed_framerate_example_button_start" onclick="ffe_start()">Start</button>
-	<button id="fixed_framerate_example_button_stop" onclick="ffe_stop()" disabled="true">Stop</button>
-	<button onclick="ffe_reset()">Reset</button>
+	<canvas width="500" height="320">Canvas containing a DVD logo. The logo can be made to move and bounce around by clicking some buttons.</canvas>
+	<div class="canvas-controls">
+		<button class="guide-js-howto-draw-at-a-fixed-framerate-start">Start</button>
+		<button class="guide-js-howto-draw-at-a-fixed-framerate-stop" disabled="true">Stop</button>
+		<button class="guide-js-howto-draw-at-a-fixed-framerate-reset">Reset</button>
+	</div>
 	<script>
-		const ffe_canvas = document.querySelector("canvas#fixed_framerate_example_canvas");
-		const ffe_ctx = ffe_canvas.getContext("2d");
-		const w = 50;
-		const h = 30;
-		let x = 0;
-		let y = 0;
-		let dx = 1;
-		let dy = 1;
-		function ffe_draw_and_update() {
-			ffe_ctx.clearRect(0, 0, ffe_canvas.width, ffe_canvas.height);
-			ffe_ctx.fillStyle = "blue";
-			ffe_ctx.fillRect(x, y, w, h)
-			ffe_ctx.fillStyle = "yellow";
-			ffe_ctx.font = "bold 18px sans-serif";
-			ffe_ctx.fillText("DVD", x + 6, y + 21)
-			if (y + dy + h > ffe_canvas.height || y + dy < 0) {
-				dy = -dy;
+		( () => {
+			const parent = document.currentScript.parentElement;
+			const canvas = parent.querySelector("canvas");
+			const ctx = canvas.getContext("2d");
+			const w = 50;
+			const h = 30;
+			let x  = 0;
+			let y  = 0;
+			let dx = 1;
+			let dy = 1;
+			
+			function update() {
+				if (y + dy + h > canvas.height || y + dy < 0) {
+					dy = -dy;
+				}
+				if (x + dx + w > canvas.width || x + dx < 0) {
+					dx = -dx;
+				}
+				x += dx;
+				y += dy;
 			}
-			if (x + dx + w > ffe_canvas.width || x + dx < 0) {
-				dx = -dx;
+			
+			function draw() {
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				ctx.fillStyle = "blue";
+				ctx.fillRect(x, y, w, h)
+				ctx.fillStyle = "yellow";
+				ctx.font = "bold 18px sans-serif";
+				ctx.fillText("DVD", x + 6, y + 21);
 			}
-			x += dx
-			y += dy
-		}
-		function ffe_reset() {
-			x = 0;
-			y = 0;
-			dx = 1;
-			dy = 1;
-			ffe_draw_and_update();
-			x = 0;
-			y = 0;
-			dx = 1;
-			dy = 1;
-		}
-		ffe_draw_and_update();
-		let ffe_interval;
-		function ffe_start() {
-			ffe_interval = setInterval(ffe_draw_and_update, 10);
-			document.querySelector("#fixed_framerate_example_button_start").disabled = true
-			document.querySelector("#fixed_framerate_example_button_stop").disabled = false
-		}
-		function ffe_stop() {
-			clearInterval(ffe_interval);
-			document.querySelector("#fixed_framerate_example_button_start").disabled = false
-			document.querySelector("#fixed_framerate_example_button_stop").disabled = true
-		}
+			
+			function update_and_draw() {
+				update();
+				draw();
+			}
+			
+			let interval;
+			const buttons = {
+				"start": parent.querySelector("button.guide-js-howto-draw-at-a-fixed-framerate-start"),
+				"stop":  parent.querySelector("button.guide-js-howto-draw-at-a-fixed-framerate-stop"),
+				"reset": parent.querySelector("button.guide-js-howto-draw-at-a-fixed-framerate-reset"),
+			};
+			
+			buttons["start"].addEventListener("click", on_start);
+			buttons["stop"] .addEventListener("click", on_stop);
+			buttons["reset"].addEventListener("click", on_reset);
+			
+			function on_start(e) {
+				interval = setInterval(update_and_draw, 10);
+				buttons["start"].disabled = true;
+				buttons["stop"] .disabled = false;
+			}
+			
+			function on_stop(e) {
+				clearInterval(interval);
+				buttons["start"].disabled = false;
+				buttons["stop"] .disabled = true;
+			}
+			
+			function on_reset(e) {
+				x  = 0;
+				y  = 0;
+				dx = 1;
+				dy = 1;
+				draw();
+			}
+			
+			draw();
+		} )();
 	</script>
+	<details><summary>Code for this canvas</summary>
+	<pre><code class="lang_js">( () => {
+	/* Code to draw on the canvas */
+	const parent = document.currentScript.parentElement;
+	const canvas = parent.querySelector("canvas");
+	const ctx = canvas.getContext("2d");
+	const w = 50;
+	const h = 30;
+	let x  = 0;
+	let y  = 0;
+	let dx = 1;
+	let dy = 1;
+	
+	function update() {
+		if (y + dy + h > canvas.height || y + dy < 0) {
+			dy = -dy;
+		}
+		if (x + dx + w > canvas.width || x + dx < 0) {
+			dx = -dx;
+		}
+		x += dx;
+		y += dy;
+	}
+	
+	function draw() {
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		ctx.fillStyle = "blue";
+		ctx.fillRect(x, y, w, h)
+		ctx.fillStyle = "yellow";
+		ctx.font = "bold 18px sans-serif";
+		ctx.fillText("DVD", x + 6, y + 21);
+	}
+	
+	function update_and_draw() {
+		update();
+		draw();
+	}
+	
+	/* Code to make the buttons work */
+	let interval;
+	const buttons = {
+		"start": parent.querySelector("button.start"),
+		"stop":  parent.querySelector("button.stop"),
+		"reset": parent.querySelector("button.reset"),
+	};
+	
+	buttons["start"].addEventListener("click", on_start);
+	buttons["stop"] .addEventListener("click", on_stop);
+	buttons["reset"].addEventListener("click", on_reset);
+	
+	function on_start(e) {
+		interval = setInterval(update_and_draw, 10);
+		buttons["start"].disabled = true;
+		buttons["stop"] .disabled = false;
+	}
+	
+	function on_stop(e) {
+		clearInterval(interval);
+		buttons["start"].disabled = false;
+		buttons["stop"] .disabled = true;
+	}
+	
+	function on_reset(e) {
+		x  = 0;
+		y  = 0;
+		dx = 1;
+		dy = 1;
+		draw();
+	}
+	
+	/* Draw a frame now, even before the user presses the buttons */
+	draw();
+} )();</code></pre>
+	</details>
 	</div>
 	
 	<p>This is the syntax of the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval">setInterval()</a></code> function:</p>
