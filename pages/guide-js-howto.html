@@ -99,6 +99,14 @@
 		<li>
 		<a href="pages/guide-js-howto.html#h2_clipboard">Clipboard</a>
 		<ul>
+			<li>Listen to clipboard copies</li>
+		</ul>
+		<li>
+		<a href="pages/guide-js-howto.html#h2_graphics">Graphics</a>
+		<ul>
+			<li>Draw a rectangle</li>
+		</ul>
+		</li>
 	</ul>
 	
 	<h2 id="h2_user_input"><a href="pages/guide-js-howto.html#h2_user_input">User input</a></h2>
@@ -207,6 +215,8 @@ document.addEventListener("dblclick", (e) => { /* Process event */ });</code></p
 	</div>
 	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/keyup_event">keyup</a></code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent">KeyboardEvent</a></code> (see &quot;Listen to key down events&quot;).
 	
+	<!-- ##### CLIPBOARD ##### -->
+	
 	<h2 id="h2_clipboard"><a href="pages/guide-js-howto.html#h2_clipboard">Clipboard</a></h2>
 	
 	<h3>Listen to clipboard copies</h3>
@@ -220,6 +230,66 @@ document.addEventListener("copy", (e) => { /* Process event */ });</code></pre>
 	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/copy_event">copy</a></code> event is a kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/ClipboardEvent">ClipboardEvent</a></code>.
 	This means it has the <code>clipboardData</code> property.</p>
 	<p>Note: there are also events for cutting and pasting.</p>
+	
+		<!-- ##### GRAPHICS ##### -->
+	
+	<h2 id="h2_graphics"><a href="pages/guide-js-howto.html#h2_graphics">Graphics</a></h2>
+	
+	<h3>Draw a rectangle</h3>
+	<p>To draw a rectangle, place a <code>canvas</code> element and use the canvas API.</p>
+	
+	<p>After you've acquired a 2d canvas context, follow these steps:
+	<ol>
+		<li>Begin a new path by calling <code>beginPath</code>.</li>
+		<li>Define a rectangular path with <code>rect</code>.</li>
+		<li>(Optional) Set either the <code>fillStyle</code> or the <code>strokeStyle</code> of the context, depending on wether you plan to call <code>fill</code> or <code>stroke</code>.
+		If you skip this step, the previously set style will be used (the default if none was set).</li>
+		<li>If you want a filled rectangle, call <code>fill</code>; if you want the outline, call <code>stroke</code>.</li>
+		<li>(Optional) Close the path to bring the pen position to where it was when the path started.
+		In the case of drawing a single rectangle, the path will already be closed after the call to <code>rect</code>.</li>
+	</ol>
+	</p>
+	
+	<div class="example">
+	<pre><code class="lang_html">&lt;canvas width=&quot;500&quot; height=&quot;100&quot;&gt;</code></pre>
+	<pre><code class="lang_js">const canvas = document.querySelector(&quot;canvas&quot;);
+const ctx = canvas.getContext(&quot;2d&quot;);
+
+/* Example 1: filled red square */
+ctx.beginPath();
+ctx.rect(80, 20, 50, 50);
+ctx.fillStyle = &quot;red&quot;;       /* &larr; Setting fillStyle, in preparation for fill() */
+ctx.fill();
+ctx.closePath();             /* &larr; Explicitly closing the path */
+
+/* Example 2: purple rectangle outline */
+ctx.beginPath();
+ctx.rect(180, 20, 70, 50);
+ctx.strokeStyle = &quot;#3a28d2&quot;; /* &larr; Setting strokeStyle, in preparation for stroke() */
+ctx.stroke();
+                             /* &larr; Not closing the path */
+
+/* Example 2: rectangle using previous color */
+ctx.beginPath();
+ctx.rect(300, 30, 60, 30);
+ctx.fill();                  /* &larr; Not setting fillStyle nor strokeStyle, using the previous one */</code></pre>
+	<canvas id="rectangle_example_canvas" width="500" height="100">
+	<script>
+		const canvas = document.querySelector("#rectangle_example_canvas");
+		const ctx = canvas.getContext("2d");
+		ctx.beginPath();
+		ctx.rect(80, 20, 50, 50);
+		ctx.fillStyle = "red";
+		ctx.fill();
+		ctx.closePath();
+		ctx.beginPath();
+		ctx.rect(180, 20, 70, 50);
+		ctx.strokeStyle = "#3a28d2";
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.rect(300, 30, 60, 30);
+		ctx.fill();
+	</script>
 	
 	</section>
   </article>
