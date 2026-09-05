@@ -92,6 +92,8 @@
 			<li>Listen to mouse button releases</li>
 			<li>Listen to mouse clicks</li>
 			<li>Listen to mouse double-clicks</li>
+			<li><a href="pages/guide-js-howto.html#h3_key_presses">Listen to key presses</a></li>
+			<li><a href="pages/guide-js-howto.html#h3_key_up_events">Listen to key releases</a></li>
 		</ul>
 		</li>
 	</ul>
@@ -111,45 +113,97 @@ document.addEventListener("mousemove", (e) => { /* Process event */ });</code></
 	See <code>MouseEvent</code> for a full list.</p>
 
 	<h3>Listen to mouse button presses</h3>
-	<p>To listen to mouse button press events, add an event handler to the event &quot;mousedown&quot;.</p>
+	<p>To listen to mouse button press events, add an event handler to the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event">mousedown</a></code> event.</p>
 	<div class="example">
 	<pre><code class="lang_js">/* Do this: */
 document.onmousedown = (event) => { /* Process event */ }
 /* or this: */
 document.addEventListener("mousedown", (e) => { /* Process event */ });</code></pre>
 	</div>
-	<p>The <code>mousedown</code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code> (see &quot;Listen to mouse movement&quot;).
+	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event">mousedown</a></code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code> (see &quot;Listen to mouse movement&quot;).
 
 	<h3>Listen to mouse button releases</h3>
-	<p>To listen to mouse button release events, add an event handler to the event &quot;mouseup&quot;.</p>
+	<p>To listen to mouse button release events, add an event handler to the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event">mouseup</a></code> event.</p>
 	<div class="example">
 	<pre><code class="lang_js">/* Do this: */
 document.onmouseup = (event) => { /* Process event */ }
 /* or this: */
 document.addEventListener("mouseup", (e) => { /* Process event */ });</code></pre>
 	</div>
-	<p>The <code>mouseup</code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code> (see &quot;Listen to mouse movement&quot;).
+	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event">mouseup</a></code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code> (see &quot;Listen to mouse movement&quot;).
 
 	<h3>Listen to mouse clicks</h3>
-	<p>To listen to mouse click events, add an event handler to the event &quot;click&quot;.</p>
+	<p>To listen to mouse click events, add an event handler to the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event">click</a></code> event.</p>
 	<div class="example">
 	<pre><code class="lang_js">/* Do this: */
 document.onclick = (event) => { /* Process event */ }
 /* or this: */
 document.addEventListener("click", (e) => { /* Process event */ });</code></pre>
 	</div>
-	<p>The <code>click</code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code> (see &quot;Listen to mouse movement&quot;).
+	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event">click</a></code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code> (see &quot;Listen to mouse movement&quot;).
 	
 	<h3>Listen to mouse double-clicks</h3>
-	<p>To listen to mouse double-click events, add an event handler to the event &quot;dblclick&quot;.</p>
+	<p>To listen to mouse double-click events, add an event handler to the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event">dblclick</a></code> event.</p>
 	<div class="example">
 	<pre><code class="lang_js">/* Do this: */
 document.ondblclick = (event) => { /* Process event */ }
 /* or this: */
 document.addEventListener("dblclick", (e) => { /* Process event */ });</code></pre>
 	</div>
-	<p>The <code>dblclick</code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code> (see &quot;Listen to mouse movement&quot;).
+	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event">dblclick</a></code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code> (see &quot;Listen to mouse movement&quot;).
 
+	<h3 id="h3_key_presses"><a href="pages/guide-js-howto.html#h3_key_presses">Listen to key presses</a></h3>
+  <p>To listen to key press events, add an event handler to the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event">keydown</a></code> event.</p>
+	<div class="example">
+	<pre><code class="lang_js">/* Do this: */
+document.onmousemove = (event) => { /* Process event */ }
+/* or this: */
+document.addEventListener("mousemove", (e) => { /* Process event */ });</code></pre>
+	</div>
+	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event">keydown</a></code> event is a kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent">KeyboardEvent</a></code>.
+	This means it has properties like <code>key</code>, <code>ctrlKey</code>, <code>shiftKey</code> and <code>repeat</code>.
+	See <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent">KeyboardEvent</a></code> for a full list.</p>
+	<p>The event target of a key event is the currently focused element which is processing the keyboard activity.
+	The event <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling">bubbles</a>.
+	In the following example, both the <code>div</code> and <code>input</code> elements receive the event.</p>
+	<div class="example">
+	<pre><code class="lang_html">&lt;div id=&quot;container&quot;&gt;
+	&lt;input id=&quot;input&quot;/&gt;
+&lt;/div&gt;
+&lt;pre id=&quot;output&quot;&gt;&lt;/pre&gt;</code></pre>
+	<pre><code class="lang_js">const output = document.querySelector(&quot;#output&quot;);
+function handle_keypress(e) {
+	output.textContent += `${e.currentTarget.tagName}: ${e.key}\n`;
+}
+
+document.querySelector(&quot;#container&quot;).addEventListener("keydown", handle_keypress); /* Add handler to the &lt;div&gt; element */
+document.querySelector(&quot;#input&quot;).addEventListener("keydown", handle_keypress);     /* Add handler to the &lt;input&gt; */</code></pre>
+	<div id="keydown_example_container">
+		<input id="keydown_example_input"/>
+	</div>
+	<pre id="keydown_example_output"></pre>
+	<script>
+		const keydown_example_output = document.querySelector("#keydown_example_output");
+		function handle_keypress(e) {
+			keydown_example_output.textContent += `${e.currentTarget.tagName}: ${e.key}\n`;
+		}
+		const keydown_example_container = document.querySelector("#keydown_example_container");
+		keydown_example_container.addEventListener("keydown", handle_keypress);
+		const keydown_example_input = document.querySelector("#keydown_example_input");
+		keydown_example_input.addEventListener("keydown", handle_keypress);
+	</script>
+	</div>
+	
+	<h3 id="h3_key_up_events"><a href="pages/guide-js-howto.html#h3_key_up_events">Listen to key releases</a></h3>
+	<p>To listen to key release events, add an event handler to the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/keyup_event">keyup</a></code> event.</p>
+	<div class="example">
+	<pre><code class="lang_js">/* Do this: */
+document.ondblclick = (event) => { /* Process event */ }
+/* or this: */
+document.addEventListener("dblclick", (e) => { /* Process event */ });</code></pre>
+	</div>
+	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/keyup_event">keyup</a></code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent">KeyboardEvent</a></code> (see &quot;Listen to key down events&quot;).
+	
 	</section>
   </article>
   </main>
