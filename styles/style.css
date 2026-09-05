@@ -12,7 +12,7 @@ h4 { font-size: 1.08em; }
 h5 { font-size: 1.05em; margin: 1.67em 0em 0.83em 0em; }
 h6 { font-size: 1.02em; }
 
-body {color:#444;background-color:#fafafa; text-align: justify;}
+body {color:#444;background-color:#fafafa;}
 
 strong {font-weight: 900;}
 pre {font-family: inherit;}
@@ -27,7 +27,7 @@ main, nav, header, footer {
 	margin:0 auto;
 }
 
-p, li {line-height:1.5}
+p, li {line-height:1.5; text-align: justify;}
 
 header {display: flex; align-items: center;}
 header span {font-size: 2.4em; font-weight: bold;}
