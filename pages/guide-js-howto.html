@@ -104,7 +104,8 @@
 		<li>
 		<a href="pages/guide-js-howto.html#h2_graphics">Graphics</a>
 		<ul>
-			<li>Draw a rectangle</li>
+			<li><a href="pages/guide-js-howto.html#h3_draw_a_rectangle">Draw a rectangle</a></li>
+			<li><a href="pages/guide-js-howto.html#h3_draw_a_circle">Draw a circle</a></li>
 		</ul>
 		</li>
 	</ul>
@@ -235,23 +236,23 @@ document.addEventListener("copy", (e) => { /* Process event */ });</code></pre>
 	
 	<h2 id="h2_graphics"><a href="pages/guide-js-howto.html#h2_graphics">Graphics</a></h2>
 	
-	<h3>Draw a rectangle</h3>
+	<h3 id="h3_draw_a_rectangle"><a href="pages/guide-js-howto.html#h3_draw_a_rectangle">Draw a rectangle</a></h3>
 	<p>To draw a rectangle, place a <code>canvas</code> element and use the canvas API.</p>
 	
 	<p>After you've acquired a 2d canvas context, follow these steps:
 	<ol>
 		<li>Begin a new path by calling <code>beginPath</code>.</li>
-		<li>Define a rectangular path with <code>rect</code>.</li>
-		<li>(Optional) Set either the <code>fillStyle</code> or the <code>strokeStyle</code> of the context, depending on wether you plan to call <code>fill</code> or <code>stroke</code>.
+		<li>Define a rectangular path with <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rect">rect</a></code>.</li>
+		<li>(Optional) Set either the <code>fillStyle</code> or the <code>strokeStyle</code> of the context, depending on wether you plan to call <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fill">fill</a></code> or <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/stroke">stroke</a></code>.
 		If you skip this step, the previously set style will be used (the default if none was set).</li>
-		<li>If you want a filled rectangle, call <code>fill</code>; if you want the outline, call <code>stroke</code>.</li>
+		<li>If you want a filled rectangle, call <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fill">fill</a></code>; if you want the outline, call <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/stroke">stroke</a></code>.</li>
 		<li>(Optional) Close the path to bring the pen position to where it was when the path started.
 		In the case of drawing a single rectangle, the path will already be closed after the call to <code>rect</code>.</li>
 	</ol>
 	</p>
 	
 	<div class="example">
-	<pre><code class="lang_html">&lt;canvas width=&quot;500&quot; height=&quot;100&quot;&gt;</code></pre>
+	<pre><code class="lang_html">&lt;canvas width=&quot;500&quot; height=&quot;100&quot;/&gt;</code></pre>
 	<pre><code class="lang_js">const canvas = document.querySelector(&quot;canvas&quot;);
 const ctx = canvas.getContext(&quot;2d&quot;);
 
@@ -273,10 +274,10 @@ ctx.stroke();
 ctx.beginPath();
 ctx.rect(300, 30, 60, 30);
 ctx.fill();                  /* &larr; Not setting fillStyle nor strokeStyle, using the previous one */</code></pre>
-	<canvas id="rectangle_example_canvas" width="500" height="100">
+	<canvas id="rectangle_example_canvas" width="500" height="100"/>
 	<script>
-		const canvas = document.querySelector("#rectangle_example_canvas");
-		const ctx = canvas.getContext("2d");
+		let canvas = document.querySelector("#rectangle_example_canvas");
+		let ctx = canvas.getContext("2d");
 		ctx.beginPath();
 		ctx.rect(80, 20, 50, 50);
 		ctx.fillStyle = "red";
@@ -290,6 +291,42 @@ ctx.fill();                  /* &larr; Not setting fillStyle nor strokeStyle, us
 		ctx.rect(300, 30, 60, 30);
 		ctx.fill();
 	</script>
+	</div>
+	
+	<h3 id="h3_draw_a_circle"><a href="pages/guide-js-howto.html#h3_draw_a_circle">Draw a circle</a></h3>
+	
+	<p>To draw a circle, place a <code>canvas</code> element and use the canvas API.</p>
+	
+	<p>The steps required to draw a circle are the same required to draw a rectangle;
+	you only need to change the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rect">rect</a></code> call with a <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc">arc</a></code> call.</p>
+	
+	<div class="example">
+	<pre><code class="lang_html">&lt;canvas width=&quot;500&quot; height=&quot;100&quot;/&gt;</code></pre>
+	<pre><code class="lang_js">const canvas = document.querySelector(&quot;canvas&quot;);
+const ctx = canvas.getContext(&quot;2d&quot;);
+
+ctx.beginPath();
+ctx.arc(100, 50, 30, 0, Math.PI * 2, false);
+ctx.fillStyle = "#ee8410";
+ctx.fill();
+ctx.closePath();</code></pre>
+	<canvas id="circle_example_canvas" width="500" height="100"/>
+	<script>
+		canvas = document.querySelector("#circle_example_canvas");
+		ctx = canvas.getContext("2d");
+		ctx.beginPath();
+		ctx.arc(100, 50, 30, 0, Math.PI * 2, false);
+		ctx.fillStyle = "#ee8410";
+		ctx.fill();
+		ctx.closePath();
+	</script>
+	</div>
+	
+	<p>This is the syntax of the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc">arc</a></code> method:</p>
+	<div class="example">
+	<pre><code class="lang_js">arc(x, y, radius, startAngle, endAngle);
+arc(x, y, radius, startAngle, endAngle, counterclockwise);</code></pre>
+	</div>
 	
 	</section>
   </article>
