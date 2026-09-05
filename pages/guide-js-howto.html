@@ -108,6 +108,46 @@
 		</li>
 	</ul>
 	
+	<!-- ################### -->
+	<!-- ##### GENERAL ##### -->
+	<!-- ################### -->
+	
+	<h2>General</h2>
+	
+	<h3>Reduce name collisions (in your scripts)</h3>
+	<p>All the scripts in a page share the same global namespace.
+	If a page loads many scripts, and each script declares global names, it's possible that you'll have name collisions.</p>
+	
+	<div class="example">
+	<pre><code class="lang_html">&lt;script&gt;
+	const h = document.querySelector(&quot;header&quot;);
+	/* ... */
+&lt;/script&gt;
+&lt;script&gt;
+	const h = document.querySelector(&quot;h1&quot;);
+	/* ... */
+&lt;/script&gt;</code></pre>
+	<!-- <script>const h = 0;</script><script>const h = "Hello";</script> -->
+	<pre><samp>Uncaught SyntaxError: Identifier 'h' has already been declared</samp></pre>
+	</div>
+	
+	<p>A common practice is to wrap the entire script into an anonymous function, and call it immediately.</p>
+	
+	<div class="example">
+	<pre><code class="lang_html">&lt;script&gt;
+	( () =&gt; {
+		const h = document.querySelector(&quot;header&quot;);
+		/* ... */
+	} )(); /* &larr; Note the parentheses: we aren't just defining it, we're also calling it */
+&lt;/script&gt;
+&lt;script&gt;
+	( () =&gt; {
+		const h = document.querySelector(&quot;h1&quot;);
+		/* ... */
+	} )(); /* &larr; Same here */
+&lt;/script&gt;</code></pre>
+	</div>
+	
 	<!-- ############################ -->
 	<!-- ##### DOM MANIPULATION ##### -->
 	<!-- ############################ -->

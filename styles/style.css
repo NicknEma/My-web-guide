@@ -81,7 +81,7 @@ code, var, kbd, samp {
 	padding: 0.1em;
 }
 
-pre > code {display:block;text-align:left;}
+pre > code {display:block;text-align:left;tab-size:4;}
 
 /* --- EXAMPLES --- */
 
