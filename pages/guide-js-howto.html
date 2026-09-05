@@ -647,7 +647,7 @@ arc(x, y, radius, startAngle, endAngle, counterclockwise)</code></pre>
 		} )();
 	</script>
 	<details><summary>Code for this canvas</summary>
-	<pre><code class="lang_js">( () => {
+	<pre><code class="lang_js">( () =&gt; {
 	/* Code to draw on the canvas */
 	const parent = document.currentScript.parentElement;
 	const canvas = parent.querySelector("canvas");
@@ -660,10 +660,10 @@ arc(x, y, radius, startAngle, endAngle, counterclockwise)</code></pre>
 	let dy = 1;
 	
 	function update() {
-		if (y + dy + h > canvas.height || y + dy < 0) {
+		if (y + dy + h &gt; canvas.height || y + dy &lt; 0) {
 			dy = -dy;
 		}
-		if (x + dx + w > canvas.width || x + dx < 0) {
+		if (x + dx + w &gt; canvas.width || x + dx &lt; 0) {
 			dx = -dx;
 		}
 		x += dx;
