@@ -107,6 +107,7 @@
 			<li><a href="pages/guide-js-howto.html#h3_clear_the_canvas">Clear the canvas</a></li>
 			<li><a href="pages/guide-js-howto.html#h3_draw_a_rectangle">Draw a rectangle</a></li>
 			<li><a href="pages/guide-js-howto.html#h3_draw_a_circle">Draw a circle</a></li>
+			<li><a href="pages/guide-js-howto.html#h3_draw_at_a_fixed_framerate">Draw at a fixed framerate</a></li>
 		</ul>
 		</li>
 	</ul>
@@ -355,6 +356,100 @@ ctx.closePath();</code></pre>
 	<pre><code class="lang_js">arc(x, y, radius, startAngle, endAngle)
 arc(x, y, radius, startAngle, endAngle, counterclockwise)</code></pre>
 	</div>
+	
+	<h3 id="h3_draw_at_a_fixed_framerate"><a href="pages/guide-js-howto.html#h3_draw_at_a_fixed_framerate">Draw at a fixed framerate</a></h3>
+	<p>To draw at a fixed framerate, define a drawing function and pass it to the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval">setInterval</a></code> function.</p>
+	
+	<div class="example">
+	<pre><code class="lang_js">const canvas = document.querySelector(&quot;canvas&quot;);
+const ctx = canvas.getContext(&quot;2d&quot;);
+
+let x = /* ... */;
+let y = /* ... */;
+/* Rest of initialization code... */
+
+function draw_and_update() {
+	ctx.clearRect();
+	ctx.fillRect(x, y, w, h);
+	/* Rest of the drawing/update code... */
+}
+
+const delay_milliseconds = 10;
+setInterval(draw_and_update, delay_milliseconds);</code></pre>
+	<canvas id="fixed_framerate_example_canvas" width="500" height="320" style="border:1px dashed orangered;display:block;margin:0 auto"></canvas>
+	<button id="fixed_framerate_example_button_start" onclick="ffe_start()">Start</button>
+	<button id="fixed_framerate_example_button_stop" onclick="ffe_stop()" disabled="true">Stop</button>
+	<button onclick="ffe_reset()">Reset</button>
+	<script>
+		const ffe_canvas = document.querySelector("canvas#fixed_framerate_example_canvas");
+		const ffe_ctx = ffe_canvas.getContext("2d");
+		const w = 50;
+		const h = 30;
+		let x = 0;
+		let y = 0;
+		let dx = 1;
+		let dy = 1;
+		function ffe_draw_and_update() {
+			ffe_ctx.clearRect(0, 0, ffe_canvas.width, ffe_canvas.height);
+			ffe_ctx.fillStyle = "blue";
+			ffe_ctx.fillRect(x, y, w, h)
+			ffe_ctx.fillStyle = "yellow";
+			ffe_ctx.font = "bold 18px sans-serif";
+			ffe_ctx.fillText("DVD", x + 6, y + 21)
+			if (y + dy + h > ffe_canvas.height || y + dy < 0) {
+				dy = -dy;
+			}
+			if (x + dx + w > ffe_canvas.width || x + dx < 0) {
+				dx = -dx;
+			}
+			x += dx
+			y += dy
+		}
+		function ffe_reset() {
+			x = 0;
+			y = 0;
+			dx = 1;
+			dy = 1;
+			ffe_draw_and_update();
+			x = 0;
+			y = 0;
+			dx = 1;
+			dy = 1;
+		}
+		ffe_draw_and_update();
+		let ffe_interval;
+		function ffe_start() {
+			ffe_interval = setInterval(ffe_draw_and_update, 10);
+			document.querySelector("#fixed_framerate_example_button_start").disabled = true
+			document.querySelector("#fixed_framerate_example_button_stop").disabled = false
+		}
+		function ffe_stop() {
+			clearInterval(ffe_interval);
+			document.querySelector("#fixed_framerate_example_button_start").disabled = false
+			document.querySelector("#fixed_framerate_example_button_stop").disabled = true
+		}
+	</script>
+	</div>
+	
+	<p>This is the syntax of the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval">setInterval</a></code> function:</p>
+	<div class="example">
+	<pre><code class="lang_js">setInterval(func) -> Number
+setInterval(func, delay) -> Number
+setInterval(func, delay, param1) -> Number
+setInterval(func, delay, param1, param2) -> Number
+setInterval(func, delay, param1, param2, /* …, */ paramN) -> Number</code></pre>
+	</div>
+	
+	<p>The function returns a number which uniquely identifies the timer created by the call.
+	This identifier can be passed to <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/clearInterval">clearInterval</a></code> to stop the repetition.</p>
+	
+	<p>This is the syntax of the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/clearInterval">clearInterval</a></code> function:</p>
+	<div class="example">
+	<pre><code class="lang_js">clearInterval(intervalID)</code></pre>
+	</div>
+	
+	<p>Note: <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval">setInterval</a></code> has nothing to do with the <code>canvas</code> specifically, and can be used to repeatedly call any piece of code.
+	Also see <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout">setTimeout</a>.</p>
 	
 	</section>
   </article>
