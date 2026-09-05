@@ -203,6 +203,7 @@ document.addEventListener("click", (e) =&gt; { /* Process event */ });</code></p
 	
 	<h3>Listen to mouse double-clicks</h3>
 	<p>To listen to mouse double-click events, add an event handler to the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event">dblclick</a></code> event.</p>
+	
 	<div class="example">
 	<pre><code class="lang_js">/* Do this: */
 document.ondblclick = (event) =&gt; { /* Process event */ }
@@ -210,21 +211,25 @@ document.ondblclick = (event) =&gt; { /* Process event */ }
 document.addEventListener("dblclick", (e) =&gt; { /* Process event */ });</code></pre>
 	</div>
 	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event">dblclick</a></code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code> (see &quot;Listen to mouse movement&quot;).</p>
-
+	
 	<h3 id="h3_key_presses"><a href="pages/guide-js-howto.html#h3_key_presses">Listen to key presses</a></h3>
-  <p>To listen to key press events, add an event handler to the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event">keydown</a></code> event.</p>
+	<p>To listen to key press events, add an event handler to the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event">keydown</a></code> event.</p>
+	
 	<div class="example">
 	<pre><code class="lang_js">/* Do this: */
 document.onmousemove = (event) =&gt; { /* Process event */ }
 /* or this: */
 document.addEventListener("mousemove", (e) =&gt; { /* Process event */ });</code></pre>
 	</div>
+	
 	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event">keydown</a></code> event is a kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent">KeyboardEvent</a></code>.
 	This means it has properties like <code>key</code>, <code>ctrlKey</code>, <code>shiftKey</code> and <code>repeat</code>.
 	See <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent">KeyboardEvent</a></code> for a full list.</p>
+	
 	<p>The event target of a key event is the currently focused element which is processing the keyboard activity.
 	The event <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling">bubbles</a>.
 	In the following example, both the <code>div</code> and <code>input</code> elements receive the event.</p>
+	
 	<div class="example">
 	<pre><code class="lang_html">&lt;div id=&quot;container&quot;&gt;
 	&lt;input id=&quot;input&quot;/&gt;
@@ -242,14 +247,16 @@ document.querySelector(&quot;#input&quot;).addEventListener("keydown", handle_ke
 	</div>
 	<pre id="keydown_example_output"></pre>
 	<script>
-		const keydown_example_output = document.querySelector("#keydown_example_output");
-		function handle_keypress(e) {
-			keydown_example_output.textContent += `${e.currentTarget.tagName}: ${e.key}\n`;
-		}
-		const keydown_example_container = document.querySelector("#keydown_example_container");
-		keydown_example_container.addEventListener("keydown", handle_keypress);
-		const keydown_example_input = document.querySelector("#keydown_example_input");
-		keydown_example_input.addEventListener("keydown", handle_keypress);
+		( () => {
+			const output = document.querySelector("#keydown_example_output");
+			function handle_keypress(e) {
+				output.textContent += `${e.currentTarget.tagName}: ${e.key}\n`;
+			}
+			const container = document.querySelector("#keydown_example_container");
+			const input = document.querySelector("#keydown_example_input");
+			container.addEventListener("keydown", handle_keypress);
+			input.addEventListener("keydown", handle_keypress);
+		} )();
 	</script>
 	</div>
 	
@@ -292,11 +299,14 @@ document.addEventListener("copy", (e) =&gt; { /* Process event */ });</code></pr
 const ctx = canvas.getContext(&quot;2d&quot;);
 
 ctx.clearRect(0, 0, canvas.width, canvas.height)</code></pre>
-	<canvas id="clear_example_canvas" width="500" height="100"/>
+	<canvas width="500" height="100"></canvas>
 	<script>
-		let canvas = document.querySelector("#clear_example_canvas");
-		let ctx = canvas.getContext("2d");
-		ctx.clearRect(0, 0, canvas.width, canvas.height)
+		( () => {
+			const parent = document.currentScript.parentElement;
+			const canvas = parent.querySelector("canvas");
+			const ctx = canvas.getContext("2d");
+			ctx.clearRect(0, 0, canvas.width, canvas.height)
+		} )();
 	</script>
 	</div>
 	
@@ -334,31 +344,34 @@ ctx.closePath();             /* &larr; Explicitly closing the path */
 
 /* Example 2: purple rectangle outline */
 ctx.beginPath();
-ctx.rect(180, 20, 70, 50);
+ctx.rect(210, 20, 70, 50);
 ctx.strokeStyle = &quot;#3a28d2&quot;; /* &larr; Setting strokeStyle, in preparation for stroke() */
 ctx.stroke();
                              /* &larr; Not closing the path */
 
 /* Example 2: rectangle using previous color */
 ctx.beginPath();
-ctx.rect(300, 30, 60, 30);
+ctx.rect(360, 30, 60, 30);
 ctx.fill();                  /* &larr; Not setting fillStyle nor strokeStyle, using the previous one */</code></pre>
-	<canvas id="rectangle_example_canvas" width="500" height="90"/>
+	<canvas width="500" height="90"></canvas>
 	<script>
-		canvas = document.querySelector("#rectangle_example_canvas");
-		ctx = canvas.getContext("2d");
-		ctx.beginPath();
-		ctx.rect(80, 20, 50, 50);
-		ctx.fillStyle = "red";
-		ctx.fill();
-		ctx.closePath();
-		ctx.beginPath();
-		ctx.rect(180, 20, 70, 50);
-		ctx.strokeStyle = "#3a28d2";
-		ctx.stroke();
-		ctx.beginPath();
-		ctx.rect(300, 30, 60, 30);
-		ctx.fill();
+		( () => {
+			const parent = document.currentScript.parentElement;
+			const canvas = parent.querySelector("canvas");
+			ctx = canvas.getContext("2d");
+			ctx.beginPath();
+			ctx.rect(80, 20, 50, 50);
+			ctx.fillStyle = "red";
+			ctx.fill();
+			ctx.closePath();
+			ctx.beginPath();
+			ctx.rect(210, 20, 70, 50);
+			ctx.strokeStyle = "#3a28d2";
+			ctx.stroke();
+			ctx.beginPath();
+			ctx.rect(360, 30, 60, 30);
+			ctx.fill();
+		} )();
 	</script>
 	</div>
 	
@@ -375,24 +388,27 @@ ctx.fill();                  /* &larr; Not setting fillStyle nor strokeStyle, us
 	you only need to change the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rect">rect</a></code> call with a <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc">arc</a></code> call.</p>
 	
 	<div class="example">
-	<pre><code class="lang_html">&lt;canvas width=&quot;500&quot; height=&quot;100&quot;/&gt;</code></pre>
+	<pre><code class="lang_html">&lt;canvas width=&quot;500&quot; height=&quot;100&quot;&gt;&lt;/canvas&gt;</code></pre>
 	<pre><code class="lang_js">const canvas = document.querySelector(&quot;canvas&quot;);
 const ctx = canvas.getContext(&quot;2d&quot;);
 
 ctx.beginPath();
-ctx.arc(100, 50, 30, 0, Math.PI * 2, false);
+ctx.arc(100, 50, 30, 0, Math.PI * 2);
 ctx.fillStyle = "#ee8410";
 ctx.fill();
 ctx.closePath();</code></pre>
-	<canvas id="circle_example_canvas" width="500" height="100"/>
+	<canvas width="500" height="100"></canvas>
 	<script>
-		canvas = document.querySelector("#circle_example_canvas");
-		ctx = canvas.getContext("2d");
-		ctx.beginPath();
-		ctx.arc(100, 50, 30, 0, Math.PI * 2, false);
-		ctx.fillStyle = "#ee8410";
-		ctx.fill();
-		ctx.closePath();
+		( () => {
+			const parent = document.currentScript.parentElement;
+			const canvas = parent.querySelector("canvas");
+			const ctx = canvas.getContext("2d");
+			ctx.beginPath();
+			ctx.arc(100, 50, 30, 0, Math.PI * 2);
+			ctx.fillStyle = "#ee8410";
+			ctx.fill();
+			ctx.closePath();
+		} )();
 	</script>
 	</div>
 	
