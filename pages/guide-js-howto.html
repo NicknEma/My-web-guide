@@ -85,7 +85,7 @@
 	
 	<ul>
 		<li>
-		User input
+		<a href="pages/guide-js-howto.html#h2_user_input">User input</a>
 		<ul>
 			<li>Listen to mouse movement</li>
 			<li>Listen to mouse button presses</li>
@@ -96,9 +96,12 @@
 			<li><a href="pages/guide-js-howto.html#h3_key_up_events">Listen to key releases</a></li>
 		</ul>
 		</li>
+		<li>
+		<a href="pages/guide-js-howto.html#h2_clipboard">Clipboard</a>
+		<ul>
 	</ul>
 	
-	<h2>User input</h2>
+	<h2 id="h2_user_input"><a href="pages/guide-js-howto.html#h2_user_input">User input</a></h2>
 
 	<h3>Listen to mouse movement</h3>
   <p>To listen to mouse movement events, add an event handler to the event &quot;mousemove&quot;.</p>
@@ -203,6 +206,20 @@ document.ondblclick = (event) => { /* Process event */ }
 document.addEventListener("dblclick", (e) => { /* Process event */ });</code></pre>
 	</div>
 	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/keyup_event">keyup</a></code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent">KeyboardEvent</a></code> (see &quot;Listen to key down events&quot;).
+	
+	<h2 id="h2_clipboard"><a href="pages/guide-js-howto.html#h2_clipboard">Clipboard</a></h2>
+	
+	<h3>Listen to clipboard copies</h3>
+	<p>To do something when the user copies data to the clipboard, add an event handler to the <code>copy</code> event.</p>
+	<div class="example">
+	<pre><code class="lang_js">/* Do this: */
+document.oncopy = (event) => { /* Process event */ }
+/* or this: */
+document.addEventListener("copy", (e) => { /* Process event */ });</code></pre>
+	</div>
+	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/copy_event">copy</a></code> event is a kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/ClipboardEvent">ClipboardEvent</a></code>.
+	This means it has the <code>clipboardData</code> property.</p>
+	<p>Note: there are also events for cutting and pasting.</p>
 	
 	</section>
   </article>
