@@ -62,7 +62,7 @@
 	<article>
 	<section>
 
-	<h1 id="js"><a href="pages/guide-js.html#js">JS How-to</a></h1>
+	<h1 id="js"><a href="pages/guide-js-howto.html#js">JS How-to</a></h1>
 	
 	<!-- ##### TABLE OF CONTENTS ##### -->
 	
@@ -70,7 +70,12 @@
 	
 	<ul>
 		<li>
-		<a href="pages/guide-js-howto.html#h2_dom_manipulation">DOM manipulation</a>
+			<a href="pages/guide-js-howto.html#h2_dom_manipulation">DOM manipulation</a>
+			<ul>
+				<li><a href="pages/guide-js-howto.html#h3_get_an_element_with_an_id">Get an element with an Id</a></li>
+				<li><a href="pages/guide-js-howto.html#h3_get_an_elements_parent">Get an element's parent</a></li>
+				<li><a href="pages/guide-js-howto.html#h3_get_an_elements_closest_ancestor_matching_a_selector">Get an element's closest ancestor matching a selector</a></li>
+			</ul>
 		</li>
 		<li>
 		<a href="pages/guide-js-howto.html#h2_user_input">User input</a>
@@ -109,7 +114,7 @@
 	
 	<!-- ##### GET AN ELEMENT WITH AN ID ##### -->
 	
-	<h3>Get an element with an Id</h3>
+	<h3 id="h3_get_an_element_with_an_id"><a href="pages/guide-js-howto.html#h3_get_an_element_with_an_id">Get an element with an Id</a></h3>
 	<p>To get a reference to an element knowing its Id, use the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById">getElementById</a></code> method of <code>document</code>.</p>
 	
 	<div class="example">
@@ -121,7 +126,7 @@
 	
 	<!-- ##### GET AN ELEMENT'S PARENT ##### -->
 	
-	<h3 id="get_an_elements_parent"><a href="pages/guide-js-howto.html#get_an_element_parent">Get an element's parent</a></h3>
+	<h3 id="h3_get_an_elements_parent"><a href="pages/guide-js-howto.html#h3_get_an_elements_parent">Get an element's parent</a></h3>
 	<p>To get the parent <em>element</em> of an element, use its <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/parentElement">parentElement</a></code> property.
 	To get the parent <em>node</em> of an element (which may or may not be an <em>element</em>), use its <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/parentNode"></a></code> property.
 	An <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></code> inherits both properties from <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node">Node</a></code>.</p>
@@ -135,7 +140,7 @@ const parent_node = element.parentNode;</code></pre>
 	
 	<!-- ##### GET AN ELEMENT'S CLOSEST ANCESTOR MATCHING A SELECTOR ##### -->
 	
-	<h3 id="get_an_elements_closest_ancestor_matching_a_selector"><a href="pages/guide-js-howto.html#get_an_elements_closest_ancestor_matching_a_selector">Get an element's closest ancestor matching a selector</a></h3>
+	<h3 id="h3_get_an_elements_closest_ancestor_matching_a_selector"><a href="pages/guide-js-howto.html#h3_get_an_elements_closest_ancestor_matching_a_selector">Get an element's closest ancestor matching a selector</a></h3>
 	<p>To get an element's closest ancestor matching a selector, use its <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/closest">closest</a></code> method.</p>
 	
 	<div class="example">
