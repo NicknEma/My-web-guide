@@ -104,6 +104,7 @@
 		<li>
 		<a href="pages/guide-js-howto.html#h2_graphics">Graphics</a>
 		<ul>
+			<li><a href="pages/guide-js-howto.html#h3_clear_the_canvas">Clear the canvas</a></li>
 			<li><a href="pages/guide-js-howto.html#h3_draw_a_rectangle">Draw a rectangle</a></li>
 			<li><a href="pages/guide-js-howto.html#h3_draw_a_circle">Draw a circle</a></li>
 		</ul>
@@ -236,6 +237,28 @@ document.addEventListener("copy", (e) => { /* Process event */ });</code></pre>
 	
 	<h2 id="h2_graphics"><a href="pages/guide-js-howto.html#h2_graphics">Graphics</a></h2>
 	
+	<h3 id="h3_draw_a_rectangle"><a href="pages/guide-js-howto.html#h3_clear_the_canvas">Clear the canvas</a></h3>
+	<p>To clear the canvas or a portion of it, call the <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect">clearRect</a> method on the context.</p>
+	
+	<div class="example">
+	<pre><code class="lang_html">&lt;canvas width=&quot;500&quot; height=&quot;100&quot;/&gt;</code></pre>
+	<pre><code class="lang_js">const canvas = document.querySelector(&quot;canvas&quot;);
+const ctx = canvas.getContext(&quot;2d&quot;);
+
+ctx.clearRect(0, 0, canvas.width, canvas.height)</code></pre>
+	<canvas id="clear_example_canvas" width="500" height="100"/>
+	<script>
+		let canvas = document.querySelector("#clear_example_canvas");
+		let ctx = canvas.getContext("2d");
+		ctx.clearRect(0, 0, canvas.width, canvas.height)
+	</script>
+	</div>
+	
+	<p>This is the syntax of the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect">clearRect</a></code> method:</p>
+	<div class="example">
+	<pre><code class="lang_js">clearRect(x, y, width, height)</code></pre>
+	</div>
+	
 	<h3 id="h3_draw_a_rectangle"><a href="pages/guide-js-howto.html#h3_draw_a_rectangle">Draw a rectangle</a></h3>
 	<p>To draw a rectangle, place a <code>canvas</code> element and use the canvas API.</p>
 	
@@ -276,8 +299,8 @@ ctx.rect(300, 30, 60, 30);
 ctx.fill();                  /* &larr; Not setting fillStyle nor strokeStyle, using the previous one */</code></pre>
 	<canvas id="rectangle_example_canvas" width="500" height="100"/>
 	<script>
-		let canvas = document.querySelector("#rectangle_example_canvas");
-		let ctx = canvas.getContext("2d");
+		canvas = document.querySelector("#rectangle_example_canvas");
+		ctx = canvas.getContext("2d");
 		ctx.beginPath();
 		ctx.rect(80, 20, 50, 50);
 		ctx.fillStyle = "red";
