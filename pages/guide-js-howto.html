@@ -2,88 +2,76 @@
 <html lang="en-US">
 
 <head>
-  <title>JS Basics - My web guide</title>
-  <base href=".." />
-
-  <!-- iPad Pro with high-resolution Retina display: -->
-  <link
-    rel="apple-touch-icon"
-    sizes="167x167"
-    href="images/icon/apple-touch-icon-167x167.png" />
-  <!-- 3x resolution iPhone: -->
-  <link
-    rel="apple-touch-icon"
-    sizes="180x180"
-    href="images/icon/apple-touch-icon-180x180.png" />
-  <!-- non-Retina iPad, iPad mini, etc.: -->
-  <link
-    rel="apple-touch-icon"
-    sizes="152x152"
-    href="images/icon/apple-touch-icon-152x152.png" />
-  <!-- 2x resolution iPhone and other devices: -->
-  <link
-    rel="apple-touch-icon"
-    href="images/icon/apple-touch-icon-120x120.png" />
-  <!-- basic favicon -->
-  <link rel="icon" href="images/icon/favicon-32x32.ico" type="image/x-icon" />
-
-  <!-- Metadata -->
-  <meta charset="utf-8"/>
-  <meta name="author" content="Emanuele Rovini"/>
-  <meta name="description" content="Simple example-based guide for creating a website."/>
-  <meta name="keywords" content="Web, HTML, CSS, JS, WASM, guide"/>
-  <meta name="theme-color" content="white"/>
-  <meta name="color-scheme" content="only light"/>
-  <meta name="viewport" content="width=device-width"/>
-  <meta name="robots" content="noai, noimageai"/>
-
-  <!-- Stylesheets -->
-  <link
-   rel="stylesheet"
-   href="styles/style.css" />
-  <!-- Google font connection -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-
-  <!-- Merriweather font -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"/>
-
-  <!-- Source Code Pro font -->
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet"/>
-  
-  <!-- Script to warn the user the browser doesn't support MathML -->
-  <!-- <script src="https://fred-wang.github.io/mathml-warning.js/mpadded-min.js"></script> -->
+	<title>JS Basics - My web guide</title>
+	<base href=".." />
+	
+	<!-- iPad Pro with high-resolution Retina display: -->
+	<link rel="apple-touch-icon" sizes="167x167" href="images/icon/apple-touch-icon-167x167.png"/>
+	<!-- 3x resolution iPhone: -->
+	<link rel="apple-touch-icon" sizes="180x180" href="images/icon/apple-touch-icon-180x180.png"/>
+	<!-- non-Retina iPad, iPad mini, etc.: -->
+	<link rel="apple-touch-icon" sizes="152x152" href="images/icon/apple-touch-icon-152x152.png"/>
+	<!-- 2x resolution iPhone and other devices: -->
+	<link rel="apple-touch-icon" href="images/icon/apple-touch-icon-120x120.png"/>
+	<!-- basic favicon -->
+	<link rel="icon" href="images/icon/favicon-32x32.ico" type="image/x-icon" />
+	
+	<!-- Metadata -->
+	<meta charset="utf-8"/>
+	<meta name="author" content="Emanuele Rovini"/>
+	<meta name="description" content="Simple example-based guide for creating a website."/>
+	<meta name="keywords" content="Web, HTML, CSS, JS, WASM, Canvas, guide"/>
+	<meta name="theme-color" content="white"/>
+	<meta name="color-scheme" content="only light"/>
+	<meta name="viewport" content="width=device-width"/>
+	<meta name="robots" content="noai, noimageai"/>
+	
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="styles/style.css"/>
+	<!-- Google font connection -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"/>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+	<!-- Merriweather font -->
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"/>
+	<!-- Source Code Pro font -->
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet"/>
+	<!-- Script to warn the user the browser doesn't support MathML -->
+	<!-- <script src="https://fred-wang.github.io/mathml-warning.js/mpadded-min.js"></script> -->
 </head>
+
 <body>
-  <a id="top"></a>
+	<a id="top"></a>
 
-  <header>
-    <a href="index.html">
-      <img id="favicon" src="images/icon/apple-touch-icon-120x120.png"
-       width="120" height="120"
-       alt="The website logo, also serving as a link to the home page" title="My Web Guide" />
-    </a>
-    <span>My Web guide</span>
-  </header>
+	<header>
+		<a href="index.html">
+			<img id="favicon" src="images/icon/apple-touch-icon-120x120.png" width="120" height="120" alt="The website logo, also serving as a link to the home page" title="My Web Guide"/>
+		</a>
+		<span>My Web guide</span>
+	</header>
 
-  <!-- Breadcrumbs -->
-  <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Breadcrumb_Navigation -->
-  <nav aria-label="Breadcrumb" class="breadcrumb">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><span aria-current="page">JS How-to</span></li>
-    </ul>
-  </nav>
+	<!-- Breadcrumbs -->
+	<!-- https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Breadcrumb_Navigation -->
+	<nav aria-label="Breadcrumb" class="breadcrumb">
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><span aria-current="page">JS How-to</span></li>
+		</ul>
+	</nav>
 
-  <main>
-  <article>
-  <section>
+	<main>
+	<article>
+	<section>
 
-  <a href="pages/guide-js.html#js"><h1 id="js">JS How-to</h1></a>
+	<h1 id="js"><a href="pages/guide-js.html#js">JS How-to</a></h1>
+	
+	<!-- ##### TABLE OF CONTENTS ##### -->
 	
 	<h2>Table of contents</h2>
 	
 	<ul>
+		<li>
+		<a href="pages/guide-js-howto.html#h2_dom_manipulation">DOM manipulation</a>
+		</li>
 		<li>
 		<a href="pages/guide-js-howto.html#h2_user_input">User input</a>
 		<ul>
@@ -101,6 +89,7 @@
 		<ul>
 			<li>Listen to clipboard copies</li>
 		</ul>
+		</li>
 		<li>
 		<a href="pages/guide-js-howto.html#h2_graphics">Graphics</a>
 		<ul>
@@ -112,15 +101,66 @@
 		</li>
 	</ul>
 	
-	<h2 id="h2_user_input"><a href="pages/guide-js-howto.html#h2_user_input">User input</a></h2>
+	<!-- ############################ -->
+	<!-- ##### DOM MANIPULATION ##### -->
+	<!-- ############################ -->
+	
+	<h2 id="h2_dom_manipulation"><a href="pages/guide-js-howto.html#h2_dom_manipulation">DOM manipulation</a></h2>
+	
+	<!-- ##### GET AN ELEMENT WITH AN ID ##### -->
+	
+	<h3>Get an element with an Id</h3>
+	<p>To get a reference to an element knowing its Id, use the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById">getElementById</a></code> method of <code>document</code>.</p>
+	
+	<div class="example">
+	<pre><code class="lang_html">&lt;div id=&quot;my_div&quot;&gt; &lt;div id=&quot;my_other_div&quot;&gt;</code></pre>
+	<pre><code class="lang_js">const my_div = docoment.getElementById(&quot;my_div&quot;);</code></pre>
+	</div>
+	
+	<p>Another way is to use <code>querySelector</code> (see below).</p>
+	
+	<!-- ##### GET AN ELEMENT'S PARENT ##### -->
+	
+	<h3 id="get_an_elements_parent"><a href="pages/guide-js-howto.html#get_an_element_parent">Get an element's parent</a></h3>
+	<p>To get the parent <em>element</em> of an element, use its <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/parentElement">parentElement</a></code> property.
+	To get the parent <em>node</em> of an element (which may or may not be an <em>element</em>), use its <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/parentNode"></a></code> property.
+	An <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></code> inherits both properties from <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node">Node</a></code>.</p>
+	
+	<div class="example">
+	<pre><code class="lang_js">const element = /* ... */;
 
+const parent_element = element.parentElement;
+const parent_node = element.parentNode;</code></pre>
+	</div>
+	
+	<!-- ##### GET AN ELEMENT'S CLOSEST ANCESTOR MATCHING A SELECTOR ##### -->
+	
+	<h3 id="get_an_elements_closest_ancestor_matching_a_selector"><a href="pages/guide-js-howto.html#get_an_elements_closest_ancestor_matching_a_selector">Get an element's closest ancestor matching a selector</a></h3>
+	<p>To get an element's closest ancestor matching a selector, use its <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/closest">closest</a></code> method.</p>
+	
+	<div class="example">
+	<pre><code class="lang_html">&lt;body&gt;
+	&lt;section class=&quot;container&quot;&gt;
+		&lt;p&gt;This is a
+			&lt;span id=&quot;my_span&quot;&gt;paragraph&lt;/span&gt;
+		with text.&lt;/p&gt;
+	&lt;/section&gt;
+&lt;body&gt;</code></pre>
+	<pre><code class="lang_js">const my_span = document.getElementById(&quot;my_span&quot;);
+const element_of_class_container = my_span.closest(&quot;.container&quot;);</code></pre>
+	</div>
+	
+	<!-- ##### USER INPUT ##### -->
+	
+	<h2 id="h2_user_input"><a href="pages/guide-js-howto.html#h2_user_input">User input</a></h2>
+	
 	<h3>Listen to mouse movement</h3>
   <p>To listen to mouse movement events, add an event handler to the event &quot;mousemove&quot;.</p>
 	<div class="example">
 	<pre><code class="lang_js">/* Do this: */
-document.onmousemove = (event) => { /* Process event */ }
+document.onmousemove = (event) =&gt; { /* Process event */ }
 /* or this: */
-document.addEventListener("mousemove", (e) => { /* Process event */ });</code></pre>
+document.addEventListener("mousemove", (e) =&gt; { /* Process event */ });</code></pre>
 	</div>
 	<p>The <code>mousemove</code> event is a kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code>.
 	This means it has properties like <code>screenX/Y</code>, <code>clientX/Y</code>, <code>pageX/Y</code> and <code>movementX/Y</code>.
@@ -130,49 +170,49 @@ document.addEventListener("mousemove", (e) => { /* Process event */ });</code></
 	<p>To listen to mouse button press events, add an event handler to the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event">mousedown</a></code> event.</p>
 	<div class="example">
 	<pre><code class="lang_js">/* Do this: */
-document.onmousedown = (event) => { /* Process event */ }
+document.onmousedown = (event) =&gt; { /* Process event */ }
 /* or this: */
-document.addEventListener("mousedown", (e) => { /* Process event */ });</code></pre>
+document.addEventListener("mousedown", (e) =&gt; { /* Process event */ });</code></pre>
 	</div>
-	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event">mousedown</a></code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code> (see &quot;Listen to mouse movement&quot;).
+	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event">mousedown</a></code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code> (see &quot;Listen to mouse movement&quot;).</p>
 
 	<h3>Listen to mouse button releases</h3>
 	<p>To listen to mouse button release events, add an event handler to the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event">mouseup</a></code> event.</p>
 	<div class="example">
 	<pre><code class="lang_js">/* Do this: */
-document.onmouseup = (event) => { /* Process event */ }
+document.onmouseup = (event) =&gt; { /* Process event */ }
 /* or this: */
-document.addEventListener("mouseup", (e) => { /* Process event */ });</code></pre>
+document.addEventListener("mouseup", (e) =&gt; { /* Process event */ });</code></pre>
 	</div>
-	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event">mouseup</a></code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code> (see &quot;Listen to mouse movement&quot;).
+	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event">mouseup</a></code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code> (see &quot;Listen to mouse movement&quot;).</p>
 
 	<h3>Listen to mouse clicks</h3>
 	<p>To listen to mouse click events, add an event handler to the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event">click</a></code> event.</p>
 	<div class="example">
 	<pre><code class="lang_js">/* Do this: */
-document.onclick = (event) => { /* Process event */ }
+document.onclick = (event) =&gt; { /* Process event */ }
 /* or this: */
-document.addEventListener("click", (e) => { /* Process event */ });</code></pre>
+document.addEventListener("click", (e) =&gt; { /* Process event */ });</code></pre>
 	</div>
-	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event">click</a></code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code> (see &quot;Listen to mouse movement&quot;).
+	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event">click</a></code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code> (see &quot;Listen to mouse movement&quot;).</p>
 	
 	<h3>Listen to mouse double-clicks</h3>
 	<p>To listen to mouse double-click events, add an event handler to the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event">dblclick</a></code> event.</p>
 	<div class="example">
 	<pre><code class="lang_js">/* Do this: */
-document.ondblclick = (event) => { /* Process event */ }
+document.ondblclick = (event) =&gt; { /* Process event */ }
 /* or this: */
-document.addEventListener("dblclick", (e) => { /* Process event */ });</code></pre>
+document.addEventListener("dblclick", (e) =&gt; { /* Process event */ });</code></pre>
 	</div>
-	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event">dblclick</a></code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code> (see &quot;Listen to mouse movement&quot;).
+	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event">dblclick</a></code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent">MouseEvent</a></code> (see &quot;Listen to mouse movement&quot;).</p>
 
 	<h3 id="h3_key_presses"><a href="pages/guide-js-howto.html#h3_key_presses">Listen to key presses</a></h3>
   <p>To listen to key press events, add an event handler to the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event">keydown</a></code> event.</p>
 	<div class="example">
 	<pre><code class="lang_js">/* Do this: */
-document.onmousemove = (event) => { /* Process event */ }
+document.onmousemove = (event) =&gt; { /* Process event */ }
 /* or this: */
-document.addEventListener("mousemove", (e) => { /* Process event */ });</code></pre>
+document.addEventListener("mousemove", (e) =&gt; { /* Process event */ });</code></pre>
 	</div>
 	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event">keydown</a></code> event is a kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent">KeyboardEvent</a></code>.
 	This means it has properties like <code>key</code>, <code>ctrlKey</code>, <code>shiftKey</code> and <code>repeat</code>.
@@ -212,11 +252,11 @@ document.querySelector(&quot;#input&quot;).addEventListener("keydown", handle_ke
 	<p>To listen to key release events, add an event handler to the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/keyup_event">keyup</a></code> event.</p>
 	<div class="example">
 	<pre><code class="lang_js">/* Do this: */
-document.ondblclick = (event) => { /* Process event */ }
+document.ondblclick = (event) =&gt; { /* Process event */ }
 /* or this: */
-document.addEventListener("dblclick", (e) => { /* Process event */ });</code></pre>
+document.addEventListener("dblclick", (e) =&gt; { /* Process event */ });</code></pre>
 	</div>
-	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/keyup_event">keyup</a></code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent">KeyboardEvent</a></code> (see &quot;Listen to key down events&quot;).
+	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/keyup_event">keyup</a></code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent">KeyboardEvent</a></code> (see &quot;Listen to key down events&quot;).</p>
 	
 	<!-- ##### CLIPBOARD ##### -->
 	
@@ -226,9 +266,9 @@ document.addEventListener("dblclick", (e) => { /* Process event */ });</code></p
 	<p>To do something when the user copies data to the clipboard, add an event handler to the <code>copy</code> event.</p>
 	<div class="example">
 	<pre><code class="lang_js">/* Do this: */
-document.oncopy = (event) => { /* Process event */ }
+document.oncopy = (event) =&gt; { /* Process event */ }
 /* or this: */
-document.addEventListener("copy", (e) => { /* Process event */ });</code></pre>
+document.addEventListener("copy", (e) =&gt; { /* Process event */ });</code></pre>
 	</div>
 	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/copy_event">copy</a></code> event is a kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/ClipboardEvent">ClipboardEvent</a></code>.
 	This means it has the <code>clipboardData</code> property.</p>
@@ -238,7 +278,7 @@ document.addEventListener("copy", (e) => { /* Process event */ });</code></pre>
 	
 	<h2 id="h2_graphics"><a href="pages/guide-js-howto.html#h2_graphics">Graphics</a></h2>
 	
-	<h3 id="h3_draw_a_rectangle"><a href="pages/guide-js-howto.html#h3_clear_the_canvas">Clear the canvas</a></h3>
+	<h3 id="h3_clear_the_canvas"><a href="pages/guide-js-howto.html#h3_clear_the_canvas">Clear the canvas</a></h3>
 	<p>To clear the canvas or a portion of it, call the <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect">clearRect</a> method on the context.</p>
 	
 	<div class="example">
@@ -363,14 +403,10 @@ arc(x, y, radius, startAngle, endAngle, counterclockwise)</code></pre>
 	<div class="example">
 	<pre><code class="lang_js">const canvas = document.querySelector(&quot;canvas&quot;);
 const ctx = canvas.getContext(&quot;2d&quot;);
-
-let x = /* ... */;
-let y = /* ... */;
 /* Rest of initialization code... */
 
 function draw_and_update() {
-	ctx.clearRect();
-	ctx.fillRect(x, y, w, h);
+	ctx.clearRect(/* ... */);
 	/* Rest of the drawing/update code... */
 }
 
@@ -433,11 +469,11 @@ setInterval(draw_and_update, delay_milliseconds);</code></pre>
 	
 	<p>This is the syntax of the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval">setInterval</a></code> function:</p>
 	<div class="example">
-	<pre><code class="lang_js">setInterval(func) -> Number
-setInterval(func, delay) -> Number
-setInterval(func, delay, param1) -> Number
-setInterval(func, delay, param1, param2) -> Number
-setInterval(func, delay, param1, param2, /* …, */ paramN) -> Number</code></pre>
+	<pre><code class="lang_js">setInterval(func) -&gt; Number
+setInterval(func, delay) -&gt; Number
+setInterval(func, delay, param1) -&gt; Number
+setInterval(func, delay, param1, param2) -&gt; Number
+setInterval(func, delay, param1, param2, /* …, */ paramN) -&gt; Number</code></pre>
 	</div>
 	
 	<p>The function returns a number which uniquely identifies the timer created by the call.
