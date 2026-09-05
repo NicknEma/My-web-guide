@@ -154,6 +154,11 @@
 &lt;/script&gt;</code></pre>
 	</div>
 	
+	<p>For example, this very page contains many scripts all manipulating a different <code>canvas</code> element.
+	To avoid having to find a unique name for every <code>canvas</code> constant, each script is wrapped in an anonymous function.</p>
+	
+	<p>(I found out about this trick by reading <a href="https://www.dofactory.com/html/canvas/style">this example</a>.)</p>
+	
 	<!-- ############################ -->
 	<!-- ##### DOM MANIPULATION ##### -->
 	<!-- ############################ -->
@@ -163,7 +168,7 @@
 	<!-- ##### GET AN ELEMENT WITH AN ID ##### -->
 	
 	<h3 id="h3_get_an_element_with_an_id"><a href="pages/guide-js-howto.html#h3_get_an_element_with_an_id">Get an element with an Id</a></h3>
-	<p>To get a reference to an element knowing its Id, use the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById">getElementById</a></code> method of <code>document</code>.</p>
+	<p>To get a reference to an element knowing its Id, use the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById">getElementById()</a></code> method of <code>document</code>.</p>
 	
 	<div class="example">
 	<pre><code class="lang_html">&lt;div id=&quot;my_div&quot;&gt; &lt;div id=&quot;my_other_div&quot;&gt;</code></pre>
@@ -176,20 +181,20 @@
 	
 	<h3 id="h3_get_an_elements_parent"><a href="pages/guide-js-howto.html#h3_get_an_elements_parent">Get an element's parent</a></h3>
 	<p>To get the parent <em>element</em> of an element, use its <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/parentElement">parentElement</a></code> property.
-	To get the parent <em>node</em> of an element (which may or may not be an <em>element</em>), use its <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/parentNode"></a></code> property.
+	To get the parent <em>node</em> of an element (which may or may not be an <em>element</em>), use its <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/parentNode">parentNode</a></code> property.
 	An <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Element</a></code> inherits both properties from <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node">Node</a></code>.</p>
 	
 	<div class="example">
 	<pre><code class="lang_js">const element = /* ... */;
 
 const parent_element = element.parentElement;
-const parent_node = element.parentNode;</code></pre>
+const parent_node    = element.parentNode;</code></pre>
 	</div>
 	
 	<!-- ##### GET AN ELEMENT'S CLOSEST ANCESTOR MATCHING A SELECTOR ##### -->
 	
 	<h3 id="h3_get_an_elements_closest_ancestor_matching_a_selector"><a href="pages/guide-js-howto.html#h3_get_an_elements_closest_ancestor_matching_a_selector">Get an element's closest ancestor matching a selector</a></h3>
-	<p>To get an element's closest ancestor matching a selector, use its <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/closest">closest</a></code> method.</p>
+	<p>To get an element's closest ancestor matching a selector, use its <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/closest">closest()</a></code> method.</p>
 	
 	<div class="example">
 	<pre><code class="lang_html">&lt;body&gt;
@@ -211,7 +216,7 @@ const element_of_class_container = my_span.closest(&quot;.container&quot;);</cod
 	<!-- ##### CHECK IF AN ELEMENT MATCHES A SELECTOR ##### -->
 	
 	<h3 id="h3_check_if_an_element_matches_a_selector"><a href="pages/guide-js-howto.html#h3_check_if_an_element_matches_a_selector">Check if an element matches a selector</a></h3>
-	<p>To check if an element would be selected by a selector, call its <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/matches">matches</a></code> method.</p>
+	<p>To check if an element would be selected by a selector, call its <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/matches">matches()</a></code> method.</p>
 	
 	<div class="example">
 	<pre><code class="lang_js">const selector = &quot;div.example&quot;; /* &larr; Could be any valid selector */
@@ -234,7 +239,7 @@ console.log(element.matches(selector)); /* true */</code></pre>
 	<h2 id="h2_user_input"><a href="pages/guide-js-howto.html#h2_user_input">User input</a></h2>
 	
 	<h3>Listen to mouse movement</h3>
-  <p>To listen to mouse movement events, add an event handler to the event &quot;mousemove&quot;.</p>
+  <p>To listen to mouse movement events, add an event handler to the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event">mousemove</a></code> event.</p>
 	<div class="example">
 	<pre><code class="lang_js">/* Do this: */
 document.onmousemove = (event) =&gt; { /* Process event */ }
@@ -371,7 +376,7 @@ document.addEventListener("copy", (e) =&gt; { /* Process event */ });</code></pr
 	<!-- ##### CLEAR THE CANVAS ##### -->
 	
 	<h3 id="h3_clear_the_canvas"><a href="pages/guide-js-howto.html#h3_clear_the_canvas">Clear the canvas</a></h3>
-	<p>To clear the canvas or a portion of it, call the <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect">clearRect</a> method on the context.</p>
+	<p>To clear the canvas or a portion of it, call the <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect">clearRect()</a> method on the context.</p>
 	
 	<div class="example">
 	<pre><code class="lang_html">&lt;canvas width=&quot;500&quot; height=&quot;100&quot;/&gt;</code></pre>
@@ -379,7 +384,7 @@ document.addEventListener("copy", (e) =&gt; { /* Process event */ });</code></pr
 const ctx = canvas.getContext(&quot;2d&quot;);
 
 ctx.clearRect(0, 0, canvas.width, canvas.height)</code></pre>
-	<canvas width="500" height="100"></canvas>
+	<canvas width="500" height="100">Empty canvas.</canvas>
 	<script>
 		( () => {
 			const parent = document.currentScript.parentElement;
@@ -390,7 +395,7 @@ ctx.clearRect(0, 0, canvas.width, canvas.height)</code></pre>
 	</script>
 	</div>
 	
-	<p>This is the syntax of the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect">clearRect</a></code> method:</p>
+	<p>This is the syntax of the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect">clearRect()</a></code> method:</p>
 	<div class="example">
 	<pre><code class="lang_js">clearRect(x, y, width, height)</code></pre>
 	</div>
@@ -402,13 +407,14 @@ ctx.clearRect(0, 0, canvas.width, canvas.height)</code></pre>
 	
 	<p>After you've acquired a 2d canvas context, follow these steps:
 	<ol>
-		<li>Begin a new path by calling <code>beginPath</code>.</li>
-		<li>Define a rectangular path with <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rect">rect</a></code>.</li>
+		<li>Begin a new path by calling <code>beginPath()</code>.</li>
+		<li>Define a rectangular path with <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rect">rect()</a></code>.</li>
 		<li>(Optional) Set either the <code>fillStyle</code> or the <code>strokeStyle</code> of the context, depending on wether you plan to call <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fill">fill</a></code> or <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/stroke">stroke</a></code>.
 		If you skip this step, the previously set style will be used (the default if none was set).</li>
-		<li>If you want a filled rectangle, call <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fill">fill</a></code>; if you want the outline, call <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/stroke">stroke</a></code>.</li>
-		<li>(Optional) Close the path to bring the pen position to where it was when the path started.
-		In the case of drawing a single rectangle, the path will already be closed after the call to <code>rect</code>.</li>
+		<li>If you want a filled rectangle, call <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fill">fill()</a></code>;
+		if you want the outline, call <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/stroke">stroke()</a></code>.</li>
+		<li>(Optional) Close the path to bring the pen position to where it was when the path started by calling <code>closePath()</code>.
+		In the case of drawing a single rectangle, the path will already be closed after the call to <code>rect()</code>.</li>
 	</ol>
 	</p>
 	
@@ -434,8 +440,9 @@ ctx.stroke();
 /* Example 2: rectangle using previous color */
 ctx.beginPath();
 ctx.rect(360, 30, 60, 30);
-ctx.fill();                  /* &larr; Not setting fillStyle nor strokeStyle, using the previous one */</code></pre>
-	<canvas width="500" height="90"></canvas>
+ctx.fill();                  /* &larr; Not setting fillStyle nor strokeStyle,
+                                  using the previous one */</code></pre>
+	<canvas width="500" height="90">Canvas containing three rectangles of different sizes and colors.</canvas>
 	<script>
 		( () => {
 			const parent = document.currentScript.parentElement;
@@ -457,7 +464,7 @@ ctx.fill();                  /* &larr; Not setting fillStyle nor strokeStyle, us
 	</script>
 	</div>
 	
-	<p>This is the syntax of the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rect">rect</a></code> method:</p>
+	<p>This is the syntax of the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rect">rect()</a></code> method:</p>
 	<div class="example">
 	<pre><code class="lang_js">rect(x, y, width, height)</code></pre>
 	</div>
@@ -469,7 +476,7 @@ ctx.fill();                  /* &larr; Not setting fillStyle nor strokeStyle, us
 	<p>To draw a circle, place a <code>canvas</code> element and use the canvas API.</p>
 	
 	<p>The steps required to draw a circle are the same required to draw a rectangle;
-	you only need to change the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rect">rect</a></code> call with a <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc">arc</a></code> call.</p>
+	you only need to change the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/rect">rect()</a></code> call with a <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc">arc()</a></code> call.</p>
 	
 	<div class="example">
 	<pre><code class="lang_html">&lt;canvas width=&quot;500&quot; height=&quot;100&quot;&gt;&lt;/canvas&gt;</code></pre>
@@ -481,7 +488,7 @@ ctx.arc(100, 50, 30, 0, Math.PI * 2);
 ctx.fillStyle = "#ee8410";
 ctx.fill();
 ctx.closePath();</code></pre>
-	<canvas width="500" height="100"></canvas>
+	<canvas width="500" height="100">Canvas containing a single orange circle.</canvas>
 	<script>
 		( () => {
 			const parent = document.currentScript.parentElement;
@@ -496,7 +503,7 @@ ctx.closePath();</code></pre>
 	</script>
 	</div>
 	
-	<p>This is the syntax of the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc">arc</a></code> method:</p>
+	<p>This is the syntax of the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc">arc()</a></code> method:</p>
 	<div class="example">
 	<pre><code class="lang_js">arc(x, y, radius, startAngle, endAngle)
 arc(x, y, radius, startAngle, endAngle, counterclockwise)</code></pre>
@@ -505,7 +512,7 @@ arc(x, y, radius, startAngle, endAngle, counterclockwise)</code></pre>
 	<!-- ##### DRAW AT A FIXED FRAMERATE ##### -->
 	
 	<h3 id="h3_draw_at_a_fixed_framerate"><a href="pages/guide-js-howto.html#h3_draw_at_a_fixed_framerate">Draw at a fixed framerate</a></h3>
-	<p>To draw at a fixed framerate, define a drawing function and pass it to the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval">setInterval</a></code> function.</p>
+	<p>To draw at a fixed framerate, define a drawing function and pass it to the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval">setInterval()</a></code> function.</p>
 	
 	<div class="example">
 	<pre><code class="lang_js">const canvas = document.querySelector(&quot;canvas&quot;);
@@ -519,7 +526,7 @@ function draw_and_update() {
 
 const delay_milliseconds = 10;
 setInterval(draw_and_update, delay_milliseconds);</code></pre>
-	<canvas id="fixed_framerate_example_canvas" width="500" height="320"></canvas>
+	<canvas id="fixed_framerate_example_canvas" width="500" height="320">Canvas containing a DVD logo. The logo can be made to move and bounce around by clicking some buttons.</canvas>
 	<button id="fixed_framerate_example_button_start" onclick="ffe_start()">Start</button>
 	<button id="fixed_framerate_example_button_stop" onclick="ffe_stop()" disabled="true">Stop</button>
 	<button onclick="ffe_reset()">Reset</button>
@@ -574,7 +581,7 @@ setInterval(draw_and_update, delay_milliseconds);</code></pre>
 	</script>
 	</div>
 	
-	<p>This is the syntax of the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval">setInterval</a></code> function:</p>
+	<p>This is the syntax of the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval">setInterval()</a></code> function:</p>
 	<div class="example">
 	<pre><code class="lang_js">setInterval(func) -&gt; Number
 setInterval(func, delay) -&gt; Number
@@ -584,15 +591,15 @@ setInterval(func, delay, param1, param2, /* …, */ paramN) -&gt; Number</code><
 	</div>
 	
 	<p>The function returns a number which uniquely identifies the timer created by the call.
-	This identifier can be passed to <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/clearInterval">clearInterval</a></code> to stop the repetition.</p>
+	This identifier can be passed to <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/clearInterval">clearInterval()</a></code> to stop the repetition.</p>
 	
-	<p>This is the syntax of the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/clearInterval">clearInterval</a></code> function:</p>
+	<p>This is the syntax of the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/clearInterval">clearInterval()</a></code> function:</p>
 	<div class="example">
 	<pre><code class="lang_js">clearInterval(intervalID)</code></pre>
 	</div>
 	
-	<p>Note: <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval">setInterval</a></code> has nothing to do with the <code>canvas</code> specifically, and can be used to repeatedly call any piece of code.
-	Also see <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout">setTimeout</a>.</p>
+	<p>Note: <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval">setInterval()</a></code> has nothing to do with the <code>canvas</code> specifically, and can be used to repeatedly call any piece of code.
+	Also see <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout">setTimeout()</a></code>.</p>
 	
 	<!-- ##### -->
 	
