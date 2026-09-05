@@ -876,6 +876,124 @@ setInterval(func, delay, param1, param2, /* …, */ paramN) -&gt; Number</code><
 	</details>
 	</div>
 	
+	<!-- ##### USE THE MODERN WEB AUDIO API ##### -->
+	
+	<h3>Use the modern Web Audio API</h3>
+	
+	<div class="example">
+	<audio src="audio/clap.mp3">Audio clip of a clap</audio>
+	<button class="canvas-controls">Play</button>
+	<script>
+		"use strict";
+		( () => {
+			const parent = document.currentScript.parentElement;
+			
+			const audioContext = new AudioContext();
+			const audioElement = parent.querySelector("audio");
+			
+			const track = audioContext.createMediaElementSource(audioElement);
+			track.connect(audioContext.destination);
+			
+			const playButton = parent.querySelector("button");
+			
+			playButton.addEventListener("click", () => {
+				if (audioContext.state === "suspended") {
+					audioContext.resume();
+				}
+				
+				audioElement.play();
+			});
+			
+			audioElement.addEventListener("ended", () => {
+				//playButton.dataset.playing = "false";
+			});
+		} )();
+	</script>
+	</div>
+	
+	<div class="example">
+	<audio src="audio/clap.mp3"><p>Audio not supported</p></audio>
+	<button data-playing="false" role="switch" aria-checked="false">
+		<span>Play/Pause</span>
+	</button>
+	<script>
+		"use strict";
+		( () => {
+			const parent = document.currentScript.parentElement;
+			
+			const audioContext = new AudioContext();
+			const audioElement = parent.querySelector("audio");
+			
+			const track = audioContext.createMediaElementSource(audioElement);
+			track.connect(audioContext.destination);
+			
+			const playButton = parent.querySelector("button");
+			
+			playButton.addEventListener("click", () => {
+				if (audioContext.state === "suspended") {
+					audioContext.resume();
+				}
+				
+				if (playButton.dataset.playing === "false") {
+					audioElement.play();
+					playButton.dataset.playing = "true";
+				} else if (playButton.dataset.playing === "true") {
+					audioElement.pause();
+					playButton.dataset.playing = "false";
+				}
+			});
+			
+			audioElement.addEventListener("ended", () => {
+				//playButton.dataset.playing = "false";
+			});
+		} )();
+	</script>
+	</div>
+	
+	<!-- ##### PLAY A SINE WAVE USING WEBAUDIO ##### -->
+	
+	<h3>Play a sine wave using WebAudio</h3>
+	<p>To play a sine wave using the modern WebAudio API, use an OscillatorNode.</p>
+	
+	<!-- https://stackoverflow.com/questions/34708980/generate-sine-wave-and-play-it-in-the-browser -->
+	<!-- https://stackoverflow.com/questions/32161832/web-audio-api-oscillator-node-error-cannot-call-start-more-than-once -->
+	<div class="example">
+		<div class="canvas-controls">
+			<button class="guide-js-howto-play-a-sine-wave-using-webaudio-start">Start</button>
+			<button class="guide-js-howto-play-a-sine-wave-using-webaudio-stop" disabled="true">Stop</button>
+		</div>
+		<script>
+			( () => {
+				const parent = document.currentScript.parentElement;
+				
+				const audioContext = new AudioContext();
+				const oscillator = audioContext.createOscillator();
+				
+				oscillator.connect(audioContext.destination);
+				
+				const button_start = parent.querySelector("button.guide-js-howto-play-a-sine-wave-using-webaudio-start");
+				const button_stop  = parent.querySelector("button.guide-js-howto-play-a-sine-wave-using-webaudio-stop");
+				
+				button_start.addEventListener("click", (e) => {
+					if (audioContext.state === "suspended") {
+						audioContext.resume();
+					}
+					
+					// oscillator.connect(audioContext.destination);
+					oscillator.start();
+					button_start.disabled = true;
+					button_stop .disabled = false;
+				});
+				
+				button_stop.addEventListener("click", (e) => {
+					oscillator.stop();
+					button_start.disabled = false;
+					button_stop .disabled = true;
+				});
+			} )();
+		</script>
+	</div>
+	
 	<!-- ##### -->
 	
 	</section>
