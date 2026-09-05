@@ -71,15 +71,15 @@
 
   <main>
   <article>
-
-  <h1>Home</h1>
-  <p>Simple example-based guide for creating a website.</p>
-  <p>The web is complicated.
-  Browsers are too.
-  <a href="https://developer.mozilla.org/en-US/docs/Learn" title="Mozilla Developer Network">MDN</a> is a good place to learn, and this website is not a substitute for that.
-  This guide can be used as a refresher or as an overview of general topics.
-  For the details, consult more specialized sources.</p>
-
+	
+	<h1>Home</h1>
+	
+	<p>This website is a collection of all the information I found useful,
+	written in a way that's easy for me to find again,
+	summarized so it gets to the point quickly.
+	It wouldn't have been possible to make without the <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development">documentation pages and tutorials of MDN</a>,
+	as much of the information in this guide is directly copied from there.</p>
+	
   <h2>HTML</h2>
   <ul>
     <li><a class="anchor-button" href="pages/guide-html-basics.html">HTML Basics</a></li>
@@ -99,6 +99,57 @@
     <li><a class="anchor-button" href="pages/guide-wasm.html">WASM Basics</a></li>
   </ul>
 
+	<h2>(Possible?) FAQ</h2>
+	
+	<h3 id="h3_why_did_i_make_this"><a href="index.html#h3_why_did_i_make_this">Why did I make this?</a></h3>
+	
+	<p>There is already plenty of documentation and learning materials for Web technologies,
+	with varying levels of quality.
+	Many are pretty good, better than what I could ever make, and always up-to-date.</p>
+	
+	<p>Sometimes though, even though a page tells you everything <em>there is to know</em> about a particular concept,
+	it doesn't tell you <em>what you wanted to know</em>.</p>
+	
+	<p>As an example, take the MDN documentation for the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/AudioScheduledSourceNode/start">start()</a></code> method of the <code>AudioScheduledSourceNode</code> interface.
+	The page says what it does, explains the parameters and the possible errors, and gives an example.<p>
+	<p>At the time of writing this, the page contains the following text (verbatim):<p>
+	
+	<blockquote>
+		<h3>Exceptions</h3>
+		<dl>
+			<dt><code>InvalidStateNode</code> <code>DOMException</code></dt>
+			<dd>
+				<p>Thrown if the node has already been started.
+				This error occurs even if the node is no longer running because of a prior call to stop().</p>
+			</dd>
+		</dl>
+	</blockquote>
+	
+	<p>It says you can only call this method once or an exception is thrown.</p>
+	<p>It aknowledges the fact that a programmer might incorrectly assume that the node can be <em>resumed</em> after being stopped,
+	and might try to call this method again after calling <code>stop()</code>.</p>
+	<p>It doesn't tell you, however, that it can't be resumed.</p>
+	<p>It doesn't tell you that it <em>can be</em>, either.</p>
+	<p>It doesn't tell you how to achieve the <em>effect</em> of pausing and resuming,
+	even if the implementation would involve different methods.</p>
+	<p>Instead, it leaves you to search for it on your own, with the possibility of wasting your time, or worse,
+	to lose your faith in humanity in case you land on an old StackOverflow thread where everybody's telling you why
+	your way of doing it is wrong.</p>
+	<p>It <em>knows</em> you want to do it.
+	It just wants to see you suffer.</p>
+	
+	<br/> <!-- TODO(ema): Find the correct way of doing a page break, this ain't it -->
+	
+	<p>I'm not picking on MDN in particular.
+	Every documentation for every technology I've ever seen does this, to one degree or another.
+	Actually, MDN is one of the best in this regard.
+	Yet, it still happens more often than I'd like.</p>
+	
+	<p>Sometimes you want to learn something new.
+	Other times, however, you just want to know how to do something.</p>
+	
+	<p>So anyway, this is why I'm making this website.</p>
+	
   </article>
   </main>
 
