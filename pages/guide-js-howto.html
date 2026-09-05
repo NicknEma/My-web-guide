@@ -81,6 +81,7 @@
 				<li><a href="pages/guide-js-howto.html#h3_get_an_element_with_an_id">Get an element with an Id</a></li>
 				<li><a href="pages/guide-js-howto.html#h3_get_an_elements_parent">Get an element's parent</a></li>
 				<li><a href="pages/guide-js-howto.html#h3_get_an_elements_closest_ancestor_matching_a_selector">Get an element's closest ancestor matching a selector</a></li>
+				<li><a href="pages/guide-js-howto.html#h3_get_an_eements_children_and_grandchildren">Get an element's children and grandchildren</a></li>
 				<li><a href="pages/guide-js-howto.html#h3_get_the_current_script_element">Get the current script element</a></li>
 				<li><a href="pages/guide-js-howto.html#h3_check_if_an_element_matches_a_selector">Check if an element matches a selector</a></li>
 			</ul>
@@ -208,6 +209,30 @@ const parent_node    = element.parentNode;</code></pre>
 const element_of_class_container = my_span.closest(&quot;.container&quot;);</code></pre>
 	</div>
 	
+	<!-- ##### GET AN ELEMENT'S CHILDREN AND GRANDCHILDREN ##### -->
+	
+	<h3 id="h3_get_an_eements_children_and_grandchildren"><a href="pages/guide-js-howto.html#h3_get_an_eements_children_and_grandchildren">Get an element's children and grandchildren</a></h3>
+	<p>To get a list of an element's children and grandchildren (and so on, recursively), use the getElementsByTagName() method.</p>
+	
+	<div class="example">
+	<pre><code class="lang_js">/* Get all the children and grandchildren of my_elem, as a live collection */
+const children = my_elem.getElementsByTagName("*")</code></pre>
+	</div>
+	
+	<p>This is the syntax of the getElementsByTagName() method.</p>
+	<div class="example">
+	<pre>getElementsByTagName(tagName)</pre>
+	</div>
+	
+	<p>To get a <em>static</em> (not live) list, use the querySelectorAll() method with the same argument.</p>
+	
+	<div class="example">
+	<pre><code class="lang_js">/* Get all the children and grandchildren of my_elem, as a static collection */
+const children = my_elem.querySelectorAll("*")</code></pre>
+	</div>
+	
+	<p>Note: It is probabily faster to use getElementsByTagName() than querySelectorAll(), so use the former if it makes no difference.</p>
+	
 	<!-- ##### GET THE CURRENT SCRIPT ELEMENT ##### -->
 	
 	<h3 id="h3_get_the_current_script_element"><a href="pages/guide-js-howto.html#h3_get_the_current_script_element">Get the current script element</a></h3>
@@ -229,6 +254,35 @@ console.log(element.matches(selector)); /* true */</code></pre>
 		const element  = document.querySelector(selector);
 		console.log(element.matches(selector));
 	} )();
+	</script>
+	</div>
+	
+	<p>This can be used to check wether an element has a particular child or a particular sibling.</p>
+	
+	<div class="example">
+	<pre><code class="lang_html">&lt;div&gt;
+	&lt;canvas width=&quot;500&quot; height=&quot;100&quot;&gt;An empty canvas.&lt;/canvas&gt;
+	&lt;script&gt;
+	( () =&gt; {
+		const parent = document.currentScript.parentElement;
+		for (const child of parent.children) {
+			if (child.matches("canvas")) {
+				console.log(`This script has a canvas sibling: ${child.tagName}\n`);
+			}
+		}
+	} )();
+	&lt;/script&gt;
+&lt;/div&gt;</code></pre>
+	<canvas width="500" height="100">An empty canvas.</canvas>
+	<script>
+		( () => {
+			const parent = document.currentScript.parentElement;
+			for (const child of parent.children) {
+				if (child.matches("canvas")) {
+					console.log(`This script has a canvas sibling: ${child.tagName}\n`);
+				}
+			}
+		} )();
 	</script>
 	</div>
 	
