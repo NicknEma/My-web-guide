@@ -75,6 +75,8 @@
 				<li><a href="pages/guide-js-howto.html#h3_get_an_element_with_an_id">Get an element with an Id</a></li>
 				<li><a href="pages/guide-js-howto.html#h3_get_an_elements_parent">Get an element's parent</a></li>
 				<li><a href="pages/guide-js-howto.html#h3_get_an_elements_closest_ancestor_matching_a_selector">Get an element's closest ancestor matching a selector</a></li>
+				<li><a href="pages/guide-js-howto.html#h3_get_the_current_script_element">Get the current script element</a></li>
+				<li><a href="pages/guide-js-howto.html#h3_check_if_an_element_matches_a_selector">Check if an element matches a selector</a></li>
 			</ul>
 		</li>
 		<li>
@@ -153,6 +155,30 @@ const parent_node = element.parentNode;</code></pre>
 &lt;body&gt;</code></pre>
 	<pre><code class="lang_js">const my_span = document.getElementById(&quot;my_span&quot;);
 const element_of_class_container = my_span.closest(&quot;.container&quot;);</code></pre>
+	</div>
+	
+	<!-- ##### GET THE CURRENT SCRIPT ELEMENT ##### -->
+	
+	<h3 id="h3_get_the_current_script_element"><a href="pages/guide-js-howto.html#h3_get_the_current_script_element">Get the current script element</a></h3>
+	<p>To get the <code>script</code> element of the script that is currently being processed, use the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/currentScript">currentScript</a></code> property of <code>document</code>.</p>
+	
+	<!-- ##### CHECK IF AN ELEMENT MATCHES A SELECTOR ##### -->
+	
+	<h3 id="h3_check_if_an_element_matches_a_selector"><a href="pages/guide-js-howto.html#h3_check_if_an_element_matches_a_selector">Check if an element matches a selector</a></h3>
+	<p>To check if an element would be selected by a selector, call its <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/matches">matches</a></code> method.</p>
+	
+	<div class="example">
+	<pre><code class="lang_js">const selector = &quot;div.example&quot;; /* &larr; Could be any valid selector */
+const element  = document.querySelector(selector);
+
+console.log(element.matches(selector)); /* true */</code></pre>
+	<script>
+	( () => {
+		const selector = "code.lang_js";
+		const element  = document.querySelector(selector);
+		console.log(element.matches(selector));
+	} )();
+	</script>
 	</div>
 	
 	<!-- ###################### -->
