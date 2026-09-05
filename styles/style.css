@@ -37,8 +37,9 @@ header img {padding-right: 10px;max-width: 100px; height: auto;}
 .anchor-button:hover  {background-color: #eee;}
 .anchor-button:active {background-color: #ddd;}
 
-.example canvas { border:1px dashed orangered;display:block;margin:10px auto }
-.example .canvas-controls { display:flex;justify-content:center;margin:10px auto }
+.example canvas { border:1px dashed orangered;display:block;margin:10px auto; }
+.example .canvas-controls { display:flex;justify-content:center;margin:10px auto; }
+.example audio { margin: 10px auto; display: block; }
 
 /* --- BREADCRUMBS --- */
 

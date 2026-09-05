@@ -3,7 +3,7 @@
 
 <head>
 	<title>JS Basics - My web guide</title>
-	<base href=".." />
+	<base href=".."/>
 	
 	<!-- iPad Pro with high-resolution Retina display: -->
 	<link rel="apple-touch-icon" sizes="167x167" href="images/icon/apple-touch-icon-167x167.png"/>
@@ -741,6 +741,140 @@ setInterval(func, delay, param1, param2, /* …, */ paramN) -&gt; Number</code><
 	
 	<p>Note: <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval">setInterval()</a></code> has nothing to do with the <code>canvas</code> specifically, and can be used to repeatedly call any piece of code.
 	Also see <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout">setTimeout()</a></code>.</p>
+	
+	<!-- ################# -->
+	<!-- ##### AUDIO ##### -->
+	<!-- ################# -->
+	
+	<h2>Audio</h2>
+	
+	<!-- ##### DISPLAY A WORKING AUDIO PLAYER ##### -->
+	
+	<h3>Display a working audio player</h3>
+	<p>To display a working audio player you don't need JS.
+	It can be done in plain HTML with the <code><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/audio">audio</a></code> element.</p>
+	
+	<div class="example">
+		<pre><code class="lang_html">&lt;audio src=&quot;audio/clap.mp3&quot; controls&gt;Audio clip of a clap&lt;/audio&gt;</code></pre>
+		<div class="audio-container">
+			<audio src="audio/clap.mp3" controls>Audio clip of a clap</audio>
+		</div>
+	</div>
+	
+	<p>Note: If you're using Brave as a browser, there's a chance the audio clip won't play and the length will be displayed at being 0 seconds.
+	To fix this, disable &quot;Hardware acceleration&quot; in the browser settings.</p>
+	
+	<!-- ##### KNOW WHEN AN AUDIO SOURCE IS LOADED ##### -->
+	
+	<h3>Know when an audio source is loaded</h3>
+	<p>To know when an audio source is loaded, listen for events like <code>loadeddata</code>, <code>canplay</code> and <code>canplaythrough</code> from the <code>audio</code> element.
+	All three events are inherited from <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement">HTMLMediaElement</a></code>.</p>
+	
+	<div class="example">
+		<audio src="audio/clap.mp3">Audio clip of a clap</audio>
+		<script>
+			"use strict";
+			( () => {
+				const parent = document.currentScript.parentElement;
+				const audioElement = parent.querySelector("audio");
+				
+				audioElement.addEventListener("loadeddata", (e) => {
+					console.log("Source audio/clap.mp3 is loaded");
+				});
+				audioElement.addEventListener("canplay", (e) => {
+					console.log("Source audio/clap.mp3 is ready to be played");
+				});
+			} )();
+		</script>
+		<pre><code class="lang_js">( () =&gt; {
+	const parent = document.currentScript.parentElement;
+	const audioElement = parent.querySelector("audio");
+	
+	audioElement.addEventListener("loadeddata", (e) =&gt; {
+		console.log("Source audio/clap.mp3 is loaded");
+	});
+	audioElement.addEventListener("canplay", (e) =&gt; {
+		console.log("Source audio/clap.mp3 is ready to be played");
+	});
+} )();</code></pre>
+	</div>
+	
+	<!-- ##### PLAY AUDIO PROGRAMMATICALLY ##### -->
+	
+	<h3>Play audio programmatically</h3>
+	<p>To play audio programmatically you can call the <code>play()</code> method of an <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement">HTMLAudioElement</a></code>.</p>
+	
+	<p>You can get a reference to an <code>audio</code> element in you HTML, or dynamically create one with the <code>Audio()</code> constructor.</p>
+	
+	<div class="example">
+	<button class="canvas-controls">Play</button>
+	<script>
+		"use strict";
+		( () => {
+			const parent = document.currentScript.parentElement;
+			const playButton = parent.querySelector("button");
+			
+			const audioElement = new Audio("audio/clap.mp3");
+			
+			playButton.addEventListener("click", () => {
+				audioElement.play();
+			});
+		} )();
+	</script>
+	<details>
+	<summary>Code for this button</summary>
+	<pre><code class="lang_js">( () =&gt; {
+	const parent = document.currentScript.parentElement;
+	const playButton = parent.querySelector(&quot;button&quot;);
+	
+	const audioElement = new Audio(&quot;audio/clap.mp3&quot;);
+	
+	playButton.addEventListener(&quot;click&quot;, () =&gt; {
+		audioElement.play();
+	});
+} )();</code></pre>
+	</details>
+	</div>
+	
+	<p>Note: modern browsers can prevent audio from playing automatically on page load.
+	In the previous example, the audio is played as a response to an event.</p>
+	
+	<p>Multiple calls to play() will not restart the audio, but will continue playing from where it is.
+	To restart an audio track (or change its playback time to an arbitrary point) use the currentTime property.</p>
+	
+	<p>The following example is identical to the previous one, with the addition of one line.</p>
+	
+	<div class="example">
+	<button class="canvas-controls">Play</button>
+	<script>
+		"use strict";
+		( () => {
+			const parent = document.currentScript.parentElement;
+			const playButton = parent.querySelector("button");
+			
+			const audioElement = new Audio("audio/clap.mp3");
+			
+			playButton.addEventListener("click", () => {
+				audioElement.currentTime = 0;
+				audioElement.play();
+			});
+		} )();
+	</script>
+	<details>
+	<summary>Code for this button</summary>
+	<pre><code class="lang_js">( () =&gt; {
+	const parent = document.currentScript.parentElement;
+	const playButton = parent.querySelector(&quot;button&quot;);
+	
+	const audioElement = new Audio(&quot;audio/clap.mp3&quot;);
+	
+	playButton.addEventListener(&quot;click&quot;, () =&gt; {
+		<ins>audioElement.currentTime = 0;</ins>
+		audioElement.play();
+	});
+} )();</code></pre>
+	</details>
+	</div>
 	
 	<!-- ##### -->
 	
