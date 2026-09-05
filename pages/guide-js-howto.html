@@ -66,7 +66,7 @@
 	
 	<!-- ##### TABLE OF CONTENTS ##### -->
 	
-	<h2>Table of contents</h2>
+	<h2 id="h2_table_of_contents"><a href="pages/guide-js-howto.html#h2_table_of_contents">Table of contents</a></h2>
 	
 	<ul>
 		<li>
@@ -321,7 +321,7 @@ ctx.clearRect(0, 0, canvas.width, canvas.height)</code></pre>
 	</p>
 	
 	<div class="example">
-	<pre><code class="lang_html">&lt;canvas width=&quot;500&quot; height=&quot;100&quot;/&gt;</code></pre>
+	<pre><code class="lang_html">&lt;canvas width=&quot;500&quot; height=&quot;90&quot;/&gt;</code></pre>
 	<pre><code class="lang_js">const canvas = document.querySelector(&quot;canvas&quot;);
 const ctx = canvas.getContext(&quot;2d&quot;);
 
@@ -343,7 +343,7 @@ ctx.stroke();
 ctx.beginPath();
 ctx.rect(300, 30, 60, 30);
 ctx.fill();                  /* &larr; Not setting fillStyle nor strokeStyle, using the previous one */</code></pre>
-	<canvas id="rectangle_example_canvas" width="500" height="100"/>
+	<canvas id="rectangle_example_canvas" width="500" height="90"/>
 	<script>
 		canvas = document.querySelector("#rectangle_example_canvas");
 		ctx = canvas.getContext("2d");
@@ -417,7 +417,7 @@ function draw_and_update() {
 
 const delay_milliseconds = 10;
 setInterval(draw_and_update, delay_milliseconds);</code></pre>
-	<canvas id="fixed_framerate_example_canvas" width="500" height="320" style="border:1px dashed orangered;display:block;margin:0 auto"></canvas>
+	<canvas id="fixed_framerate_example_canvas" width="500" height="320"></canvas>
 	<button id="fixed_framerate_example_button_start" onclick="ffe_start()">Start</button>
 	<button id="fixed_framerate_example_button_stop" onclick="ffe_stop()" disabled="true">Stop</button>
 	<button onclick="ffe_reset()">Reset</button>

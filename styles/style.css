@@ -21,9 +21,11 @@ del {background-color:#fbb;}
 a:visited {color: blue;}
 
 main, nav, header, footer {
-	max-width:60em;
+	max-width:45em;
 	margin:0 auto;
 }
+
+p, li {line-height:1.5}
 
 header {display: flex; align-items: center;}
 header span {font-size: 2.4em; font-weight: bold;}
@@ -32,6 +34,8 @@ header img {padding-right: 10px;max-width: 100px; height: auto;}
 .anchor-button {display:inline-block; padding: 4px; border-radius: 0.2em}
 .anchor-button:hover  {background-color: #eee;}
 .anchor-button:active {background-color: #ddd;}
+
+.example canvas { border:1px dashed orangered;display:block;margin:0 auto }
 
 /* --- BREADCRUMBS --- */
 
