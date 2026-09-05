@@ -155,7 +155,9 @@ const parent_node = element.parentNode;</code></pre>
 const element_of_class_container = my_span.closest(&quot;.container&quot;);</code></pre>
 	</div>
 	
+	<!-- ###################### -->
 	<!-- ##### USER INPUT ##### -->
+	<!-- ###################### -->
 	
 	<h2 id="h2_user_input"><a href="pages/guide-js-howto.html#h2_user_input">User input</a></h2>
 	
@@ -270,7 +272,9 @@ document.addEventListener("dblclick", (e) =&gt; { /* Process event */ });</code>
 	</div>
 	<p>The <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/keyup_event">keyup</a></code> event is another kind of <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent">KeyboardEvent</a></code> (see &quot;Listen to key down events&quot;).</p>
 	
+	<!-- ##################### -->
 	<!-- ##### CLIPBOARD ##### -->
+	<!-- ##################### -->
 	
 	<h2 id="h2_clipboard"><a href="pages/guide-js-howto.html#h2_clipboard">Clipboard</a></h2>
 	
@@ -286,9 +290,13 @@ document.addEventListener("copy", (e) =&gt; { /* Process event */ });</code></pr
 	This means it has the <code>clipboardData</code> property.</p>
 	<p>Note: there are also events for cutting and pasting.</p>
 	
-		<!-- ##### GRAPHICS ##### -->
+	<!-- #################### -->
+	<!-- ##### GRAPHICS ##### -->
+	<!-- #################### -->
 	
 	<h2 id="h2_graphics"><a href="pages/guide-js-howto.html#h2_graphics">Graphics</a></h2>
+	
+	<!-- ##### CLEAR THE CANVAS ##### -->
 	
 	<h3 id="h3_clear_the_canvas"><a href="pages/guide-js-howto.html#h3_clear_the_canvas">Clear the canvas</a></h3>
 	<p>To clear the canvas or a portion of it, call the <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect">clearRect</a> method on the context.</p>
@@ -314,6 +322,8 @@ ctx.clearRect(0, 0, canvas.width, canvas.height)</code></pre>
 	<div class="example">
 	<pre><code class="lang_js">clearRect(x, y, width, height)</code></pre>
 	</div>
+	
+	<!-- ##### DRAW A RECTANGLE ##### -->
 	
 	<h3 id="h3_draw_a_rectangle"><a href="pages/guide-js-howto.html#h3_draw_a_rectangle">Draw a rectangle</a></h3>
 	<p>To draw a rectangle, place a <code>canvas</code> element and use the canvas API.</p>
@@ -380,6 +390,8 @@ ctx.fill();                  /* &larr; Not setting fillStyle nor strokeStyle, us
 	<pre><code class="lang_js">rect(x, y, width, height)</code></pre>
 	</div>
 	
+	<!-- ##### DRAW A CIRCLE ##### -->
+	
 	<h3 id="h3_draw_a_circle"><a href="pages/guide-js-howto.html#h3_draw_a_circle">Draw a circle</a></h3>
 	
 	<p>To draw a circle, place a <code>canvas</code> element and use the canvas API.</p>
@@ -417,6 +429,8 @@ ctx.closePath();</code></pre>
 	<pre><code class="lang_js">arc(x, y, radius, startAngle, endAngle)
 arc(x, y, radius, startAngle, endAngle, counterclockwise)</code></pre>
 	</div>
+	
+	<!-- ##### DRAW AT A FIXED FRAMERATE ##### -->
 	
 	<h3 id="h3_draw_at_a_fixed_framerate"><a href="pages/guide-js-howto.html#h3_draw_at_a_fixed_framerate">Draw at a fixed framerate</a></h3>
 	<p>To draw at a fixed framerate, define a drawing function and pass it to the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval">setInterval</a></code> function.</p>
@@ -508,16 +522,18 @@ setInterval(func, delay, param1, param2, /* …, */ paramN) -&gt; Number</code><
 	<p>Note: <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval">setInterval</a></code> has nothing to do with the <code>canvas</code> specifically, and can be used to repeatedly call any piece of code.
 	Also see <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout">setTimeout</a>.</p>
 	
+	<!-- ##### -->
+	
 	</section>
-  </article>
-  </main>
-
-  <footer>
-  <a class="anchor-button" href="pages/guide-js.html#top">Back to top</a>
-  </footer>
-
-  <script src="scripts/syntax-highlight.js" defer></script>
-  <script src="scripts/script.js" defer></script>
+	</article>
+	</main>
+	
+	<footer>
+		<a class="anchor-button" href="pages/guide-js.html#top">Back to top</a>
+	</footer>
+	
+	<script src="scripts/syntax-highlight.js" defer></script>
+	<script src="scripts/script.js" defer></script>
 </body>
 
 </html>
