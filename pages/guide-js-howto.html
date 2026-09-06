@@ -767,7 +767,7 @@ setInterval(func, delay, param1, param2, /* …, */ paramN) -&gt; Number</code><
 	<!-- ##### KNOW WHEN AN AUDIO SOURCE IS LOADED ##### -->
 	
 	<h3>Know when an audio source is loaded</h3>
-	<p>To know when an audio source is loaded, listen for events like <code>loadeddata</code>, <code>canplay</code> and <code>canplaythrough</code> from the <code>audio</code> element.
+	<p>To know when an audio source is loaded, listen for the <code>loadeddata</code>, <code>canplay</code> and <code>canplaythrough</code> events from the <code>audio</code> element.
 	All three events are inherited from <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement">HTMLMediaElement</a></code>.</p>
 	
 	<div class="example">
@@ -779,10 +779,10 @@ setInterval(func, delay, param1, param2, /* …, */ paramN) -&gt; Number</code><
 				const audioElement = parent.querySelector("audio");
 				
 				audioElement.addEventListener("loadeddata", (e) => {
-					console.log("Source audio/clap.mp3 is loaded");
+					console.log(`Source ${e.target.src} is loaded`);
 				});
 				audioElement.addEventListener("canplay", (e) => {
-					console.log("Source audio/clap.mp3 is ready to be played");
+					console.log(`Source ${e.target.src} is ready to be played`);
 				});
 			} )();
 		</script>
@@ -876,6 +876,18 @@ setInterval(func, delay, param1, param2, /* …, */ paramN) -&gt; Number</code><
 	</details>
 	</div>
 	
+	<!-- ##### DEBUG AUDIO PROBLEMS ##### -->
+	
+	<!--
+	<h3>Debug audio problems</h3>
+	
+	<p>The <code>audio</code> is <em>not</em> a void element: it requires both an open and a close tag.</p>
+	- put text inside to see if the browser doesn't support audio
+	- check if the source is loaded
+	- brave bug
+	- audio context may be paused
+	-->
+	
 	<!-- ##### USE THE MODERN WEB AUDIO API ##### -->
 	
 	<h3>Use the modern Web Audio API</h3>
@@ -955,9 +967,12 @@ setInterval(func, delay, param1, param2, /* …, */ paramN) -&gt; Number</code><
 	<h3>Play a sine wave using WebAudio</h3>
 	<p>To play a sine wave using the modern WebAudio API, use an OscillatorNode.</p>
 	
+	<p>Note: this section is based on <a href="https://stackoverflow.com/questions/32161832/web-audio-api-oscillator-node-error-cannot-call-start-more-than-once">this StackOverflow thread</a>.</p>
+	
 	<!-- https://stackoverflow.com/questions/34708980/generate-sine-wave-and-play-it-in-the-browser -->
 	<!-- https://stackoverflow.com/questions/32161832/web-audio-api-oscillator-node-error-cannot-call-start-more-than-once -->
 	<div class="example">
+		<p>Warning: This demo plays a sound!</p>
 		<div class="canvas-controls">
 			<button class="guide-js-howto-play-a-sine-wave-using-webaudio-start">Start</button>
 			<button class="guide-js-howto-play-a-sine-wave-using-webaudio-stop" disabled="true">Stop</button>
@@ -966,29 +981,41 @@ setInterval(func, delay, param1, param2, /* …, */ paramN) -&gt; Number</code><
 			( () => {
 				const parent = document.currentScript.parentElement;
 				
+				/* Create the audio output */
 				const audioContext = new AudioContext();
+				
+				/* Create the volume control */
+				const gainNode = audioContext.createGain();
+				gainNode.connect(audioContext.destination);
+				gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+				
+				/* Create the signal generator */
 				const oscillator = audioContext.createOscillator();
+				oscillator.connect(gainNode);
+				oscillator.start();
 				
-				oscillator.connect(audioContext.destination);
+				const smoothingInterval = 0.02;
+				const volume = 0.5;
 				
-				const button_start = parent.querySelector("button.guide-js-howto-play-a-sine-wave-using-webaudio-start");
-				const button_stop  = parent.querySelector("button.guide-js-howto-play-a-sine-wave-using-webaudio-stop");
+				const buttonStart = parent.querySelector("button.guide-js-howto-play-a-sine-wave-using-webaudio-start");
+				const buttonStop  = parent.querySelector("button.guide-js-howto-play-a-sine-wave-using-webaudio-stop");
 				
-				button_start.addEventListener("click", (e) => {
+				buttonStart.addEventListener("click", (e) => {
 					if (audioContext.state === "suspended") {
 						audioContext.resume();
 					}
 					
-					// oscillator.connect(audioContext.destination);
-					oscillator.start();
-					button_start.disabled = true;
-					button_stop .disabled = false;
+					gainNode.gain.setTargetAtTime(volume, audioContext.currentTime, smoothingInterval);
+					
+					buttonStart.disabled = true;
+					buttonStop.disabled = false;
 				});
 				
-				button_stop.addEventListener("click", (e) => {
-					oscillator.stop();
-					button_start.disabled = false;
-					button_stop .disabled = true;
+				buttonStop.addEventListener("click", (e) => {
+					gainNode.gain.setTargetAtTime(0, audioContext.currentTime, smoothingInterval);
+					
+					buttonStart.disabled = false;
+					buttonStop.disabled = true;
 				});
 			} )();
 		</script>
