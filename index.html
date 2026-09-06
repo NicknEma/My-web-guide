@@ -2,103 +2,84 @@
 <html lang="en-US">
 
 <head>
-  <title>My web guide</title>
-
-  <!-- iPad Pro with high-resolution Retina display: -->
-  <link
-    rel="apple-touch-icon"
-    sizes="167x167"
-    href="images/icon/apple-touch-icon-167x167.png" />
-  <!-- 3x resolution iPhone: -->
-  <link
-    rel="apple-touch-icon"
-    sizes="180x180"
-    href="images/icon/apple-touch-icon-180x180.png" />
-  <!-- non-Retina iPad, iPad mini, etc.: -->
-  <link
-    rel="apple-touch-icon"
-    sizes="152x152"
-    href="images/icon/apple-touch-icon-152x152.png" />
-  <!-- 2x resolution iPhone and other devices: -->
-  <link
-    rel="apple-touch-icon"
-    href="images/icon/apple-touch-icon-120x120.png" />
-  <!-- basic favicon -->
-  <link rel="icon" href="images/icon/favicon-32x32.ico" type="image/x-icon" />
-
-  <!-- Metadata -->
-  <meta charset="utf-8" />
-  <meta name="author" content="Emanuele Rovini" />
-  <meta name="description" content="Simple example-based guide for creating a website." />
-  <meta name="keywords" content="Web, HTML, CSS, JS, guide" />
-  <meta name="theme-color" content="white" />
-  <meta name="color-scheme" content="only light" />
-  <meta name="viewport" content="width=device-width">
-  <meta name="robots" content="noai, noimageai"> <!-- Copied from https://baccyflap.com/res/robots/ -->
-
-  <!-- Stylesheets -->
-  <link
-   rel="stylesheet"
-   href="styles/style.css" />
-
-  <link
-   rel="stylesheet"
-   href="https://fred-wang.github.io/MathFonts/LatinModern/mathfonts.css" />
-  <!-- @Speed: Downloading and using this font is what makes the page flicker on reload. If we
-       render math with Cambria, the reload is instantaneous (but Cambria doesn't stretch operators
-       correctly) -->
-
-  <!-- Google font connection -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Merriweather font -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-
-  <!-- Source Code Pro font -->
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+	 <title>My web guide</title>
+	
+	<!-- iPad Pro with high-resolution Retina display: -->
+	<link rel="apple-touch-icon" sizes="167x167" href="images/icon/apple-touch-icon-167x167.png"/>
+	<!-- 3x resolution iPhone: -->
+	<link rel="apple-touch-icon" sizes="180x180" href="images/icon/apple-touch-icon-180x180.png"/>
+	<!-- non-Retina iPad, iPad mini, etc.: -->
+	<link rel="apple-touch-icon" sizes="152x152" href="images/icon/apple-touch-icon-152x152.png"/>
+	<!-- 2x resolution iPhone and other devices: -->
+	<link rel="apple-touch-icon" href="images/icon/apple-touch-icon-120x120.png"/>
+	<!-- basic favicon -->
+	<link rel="icon" href="images/icon/favicon-32x32.ico" type="image/x-icon"/>
+	
+	<!-- Metadata -->
+	<meta charset="utf-8"/>
+	<meta name="author" content="Emanuele Rovini"/>
+	<meta name="description" content="Simple example-based guide for creating a website."/>
+	<meta name="keywords" content="Web, HTML, CSS, JS, guide"/>
+	<meta name="theme-color" content="white"/>
+	<meta name="color-scheme" content="only light"/>
+	<meta name="viewport" content="width=device-width"/>
+	<meta name="robots" content="noai, noimageai"/> <!-- Copied from https://baccyflap.com/res/robots/ -->
+	
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="styles/style.css"/>
+	<!-- Math font -->
+	<link rel="stylesheet" href="https://fred-wang.github.io/MathFonts/LatinModern/mathfonts.css"/>
+	<!-- @Speed: Downloading and using this font is what makes the page flicker on reload. If we
+	     render math with Cambria, the reload is instantaneous (but Cambria doesn't stretch operators
+	     correctly) -->
+	<!-- Google font connection -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"/>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+	<!-- Merriweather font -->
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"/>
+	<!-- Source Code Pro font -->
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet"/>
 </head>
 
 <body>
-  <header>
-    <a href="index.html">
-      <img id="favicon" src="images/icon/apple-touch-icon-120x120.png"
-       width="120" height="120"
-       alt="The website logo, also serving as a link to the home page" title="My Web Guide" />
-    </a>
-    <span>My Web guide</span>
-  </header>
-
-  <main>
-  <article>
+	
+	<header>
+		<a href="index.html">
+			<img id="favicon" src="images/icon/apple-touch-icon-120x120.png" width="120" height="120" alt="The website logo, also serving as a link to the home page" title="My Web Guide"/>
+		</a>
+		<span>My Web guide</span>
+	</header>
+	
+	<main>
+	<article>
 	
 	<h1>Home</h1>
 	
 	<p>This website is a collection of all the information I found useful,
 	written in a way that's easy for me to find again,
-	summarized so it gets to the point quickly.
-	It wouldn't have been possible to make without the <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development">documentation pages and tutorials of MDN</a>,
+	summarized so it gets to the point quickly.</p>
+	<p>It wouldn't have been possible to make without the <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development">documentation pages and tutorials of MDN</a>,
 	as much of the information in this guide is directly copied from there.</p>
 	
-  <h2>HTML</h2>
-  <ul>
-    <li><a class="anchor-button" href="pages/guide-html-basics.html">HTML Basics</a></li>
-    <li><a class="anchor-button" href="pages/guide-html-elements.html">HTML Elements</a></li>
-  </ul>
-  <h2>CSS</h2>
-  <ul>
-    <li><a class="anchor-button" href="pages/guide-css-basics.html">CSS Basics</a></li>
-  </ul>
-  <h2>JS</h2>
-  <ul>
-    <li><a class="anchor-button" href="pages/guide-js.html">JS Basics</a></li>
+	<h2>HTML</h2>
+	<ul>
+		<li><a class="anchor-button" href="pages/guide-html-basics.html">HTML Basics</a></li>
+		<li><a class="anchor-button" href="pages/guide-html-elements.html">HTML Elements</a></li>
+	</ul>
+	<h2>CSS</h2>
+	<ul>
+		<li><a class="anchor-button" href="pages/guide-css-basics.html">CSS Basics</a></li>
+	</ul>
+	<h2>JS</h2>
+	<ul>
+		<li><a class="anchor-button" href="pages/guide-js.html">JS Basics</a></li>
 		<li><a class="anchor-button" href="pages/guide-js-howto.html">JS How-to</a></li>
-  </ul>
-  <h2>WASM</h2>
-  <ul>
-    <li><a class="anchor-button" href="pages/guide-wasm.html">WASM Basics</a></li>
-  </ul>
-
+	</ul>
+	<h2>WASM</h2>
+	<ul>
+		<li><a class="anchor-button" href="pages/guide-wasm.html">WASM Basics</a></li>
+	</ul>
+	
 	<h2>(Possible?) FAQ</h2>
 	
 	<!-- WHY DID I MAKE THIS? -->
@@ -177,16 +158,43 @@
 	Even the syntax coloring script I use has bugs.
 	At least for now, manual editing is what I'll continue to do.</p>
 	
-  </article>
-  </main>
-
-  <!-- @Note: The script needs to be at the bottom of the body, otherwise it will be executed before the rest of the elements are loaded. See this SO answer:
-  https://stackoverflow.com/questions/30211605/javascript-html-collection-showing-as-0-length -->
-
-  <script src="scripts/syntax-highlight.js" defer></script>
-
-  <!-- Script to warn the user the browser doesn't support MathML -->
-  <script src="https://fred-wang.github.io/mathml-warning.js/mpadded-min.js" defer></script>
+	<!-- WHY DO I CALL IT "SYNTAX _COLORING_"? -->
+	
+	<h3 id="h3_why_do_i_call_it_syntax_coloring"><a href="index.html#h3_why_do_i_call_it_syntax_coloring">Why do you call it &ldquo;syntax <em>coloring</em>&rdquo;?</a></h3>
+	<p>Last time I checked, &ldquo;highlighting&rdquo; is when you change the color of the <em>background</em> of text.
+	That's what physical highlighters do.</p>
+	
+	<p>Plus, if the word &ldquo;highlighting&rdquo; is already taken and it means <em>coloring</em>,
+	what would I say if I ever wanted to talk about <em>actually highlighting the text</em>?</p>
+	
+	<p>Programmers will say naming things is the hardest problem,
+	yet the hardest problems are the ones we create ourselves.</p>
+	
+	<!-- WHAT EDITOR DO I USE? -->
+	
+	<h3 id="h3_what_editor_do_i_use"><a href="index.html#h3_what_editor_do_i_use">What editor do I use?</a></h3>
+	<p>Either <a href="https://fred-dev.tech/">fred</a> or <a href="https://4coder.net/">4coder</a>.
+	Or Notepad.</p>
+	
+	<!-- HOW CAN YOU TALK TO ME? -->
+	
+	<h3 id="h3_how_can_you_talk_to_me"><a href="index.html#h3_how_can_you_talk_to_me">How can you talk to me?</a></h3>
+	<p>I don't know why you would, but okay.</p>
+	
+	<p>If you have an account on <a href="https://neocities.org/">Neocities</a> (and you should!),
+	you can leave a comment on <a href="https://neocities.org/site/changemymind">my profile there</a>.</p>
+	<p>Alternatively, you can send me a pigeon.</p>
+	
+	</article>
+	</main>
+	
+	<!-- @Note: The script needs to be at the bottom of the body, otherwise it will be executed before the rest of the elements are loaded. See this SO answer:
+	https://stackoverflow.com/questions/30211605/javascript-html-collection-showing-as-0-length -->
+	
+	<script src="scripts/syntax-highlight.js" defer></script>
+	
+	<!-- Script to warn the user the browser doesn't support MathML -->
+	<script src="https://fred-wang.github.io/mathml-warning.js/mpadded-min.js" defer></script>
 </body>
 
 </html>
