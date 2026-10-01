@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<base href=".."/>
+	
+	<meta charset="utf-8"/> <!-- Let this be before any text that is displayed to the user -->
+	<title>What is a website? — My web guide</title>
+	
+	<!-- iPad Pro with high-resolution Retina display: -->
+	<link rel="apple-touch-icon" sizes="167x167" href="images/icon/apple-touch-icon-167x167.png"/>
+	<!-- 3x resolution iPhone: -->
+	<link rel="apple-touch-icon" sizes="180x180" href="images/icon/apple-touch-icon-180x180.png"/>
+	<!-- non-Retina iPad, iPad mini, etc.: -->
+	<link rel="apple-touch-icon" sizes="152x152" href="images/icon/apple-touch-icon-152x152.png"/>
+	<!-- 2x resolution iPhone and other devices: -->
+	<link rel="apple-touch-icon" href="images/icon/apple-touch-icon-120x120.png"/>
+	<!-- basic favicon -->
+	<link rel="icon" href="images/icon/favicon-32x32.ico" type="image/x-icon"/>
+	
+	<!-- Metadata -->
+	<meta name="author" content="Emanuele Rovini"/>
+	<meta name="description" content="Simple example-based guide for creating a website."/>
+	<meta name="keywords" content="Web, HTML, CSS, JS, guide"/>
+	<meta name="theme-color" content="white"/>
+	<meta name="color-scheme" content="only light"/>
+	<meta name="viewport" content="width=device-width"/>
+	<meta name="robots" content="noai, noimageai"/> <!-- Copied from https://baccyflap.com/res/robots/ -->
+	
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="styles/style.css"/>
+	<!-- Math font -->
+	<link rel="stylesheet" href="https://fred-wang.github.io/MathFonts/LatinModern/mathfonts.css"/>
+	<!-- @Speed: Downloading and using this font is what makes the page flicker on reload. If we
+	     render math with Cambria, the reload is instantaneous (but Cambria doesn't stretch operators
+	     correctly) -->
+	<!-- Google font connection -->
+	<link rel="preconnect" href="https://fonts.googleapis.com"/>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+	<!-- Merriweather font -->
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"/>
+	<!-- Source Code Pro font -->
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet"/>
+</head>
+
+<body>
+	
+	<header>
+		<a href="index.html">
+			<img id="favicon" src="images/icon/apple-touch-icon-120x120.png" width="120" height="120" alt="The website logo, also serving as a link to the home page" title="My Web Guide"/>
+		</a>
+		<span>My Web guide</span>
+	</header>
+	
+	<!-- Breadcrumbs -->
+	<!-- https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Breadcrumb_Navigation -->
+	<nav aria-label="Breadcrumb" class="breadcrumb">
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><span aria-current="page">What is a website?</span></li>
+		</ul>
+	</nav>
+	
+	<main>
+	<article>
+	
+	<h1>What is a website?</h1>
+	
+	<aside><p>If you find information that is factually incorrect, you can help me by creating an issue on GitHub.</p></aside>
+	<aside><p>The <em>presentation</em> of this information can be improved, I know. That will come with time, hopefully.</p></aside>
+	
+	<h2>Documents and programs</h2>
+	
+	<p>If you've used a computer before, you should be familiar with the concept of a <i>document</i>.</p>
+	
+	<p>A file with the <samp>.doc</samp> or <samp>.docx</samp> extension is a <i>Word document</i>:
+	opening one with the <i>Microsoft Word</i> program will allow the user to <em>view</em> said document.
+	A file with the <samp>.odt</samp> extension is an <i>Open document</i>, and the primary program to open and <em>view</em> the contents of one is <i>LibreOffice Writer</i>.
+	It is also possible to open <i>Word documents</i> with <i>Writer</i> and <i>Open documents</i> with <i>Word</i>, courtesy of the developers for our convenience.</p>
+	
+	<aside><p>Note for developers: yes, I know, the file <em>extension</em> has nothing to do with the file format.
+	It doesn't matter in this explanation.
+	If you are learning something from this explanation, your files' extensions will probabily match their formats.
+	We'll get to the difference later.</p></aside>
+	
+	<p>This pattern repeats all over computers: an image (typically a file with the <samp>.jpg</samp> or <samp>.png</samp> extension) can be viewed with any <i>image viewer</i>.
+	There should be one that comes with your operating system.
+	A video (for example, a file with the <samp>.mp4</samp> extension) can be viewed with a video player, and so on.</p>
+	
+	<p>Here comes the <i>browser</i>: <i>Google Chrome</i>, <i>Firefox</i>, <i>Microsoft Edge</i>, <i>Dia</i> (God forbid), <i>Ladybird</i> and a dozen others that people made over the years.
+	They are amongst the most complicated programs that exist, and they all have the same job: to allow you to <em>view</em> a special kind of document, the <i>HTML document</i>.</p>
+	
+	<p>What follows is a short Q&amp;A, for my and everyone else's mom.</p>
+	
+	<dl>
+		<dt style="font-weight:bold">Isn't <i>Google Chrome</i> internet?</dt>
+		<dd>No, <i>Google Chrome</i> is a program on your computer. More specifically, a <i>browser</i>.</dd>
+		
+		<dt style="font-weight:bold">Isn't a browser internet?</dt>
+		<dd>No, a <i>browser</i> is a kind of program on your computer.</dd>
+		
+		<dt style="font-weight:bold">Don't I need a browser to use the internet?</dt>
+		<dd>Almost definitely. A browser is still just a program.</dd>
+		
+		<dt style="font-weight:bold">Isn't a browser the same as a search engine?</dt>
+		<dd>No. I hope the difference will be clear in a bit.</dd>
+		
+		<dt style="font-weight:bold">Are you sure a browser only displays <em>documents</em>? Some websites play videos, and have buttons that I can click.</dt>
+		<dd><i>HTML documents</i> are much more complicated than printed documents.
+		All those features (videos, buttons, etc.) are still considered part of a document.
+		That's why browsers are complicated programs.</dd>
+	</dl>
+	
+	<p>For all your other burning questions, I hope you'll find the answer going forward.</p>
+	
+	<h2>Where do <del>babies</del> <i>HTML documents</i> come from?</h2>
+	
+	<p>Ok, I lied. Browsers are a little more special than other document viewers, because they allow you to view documents that are stored on your computer <em>or that are stored on someone else's computer</em>.
+	That explains how you are able to view <em>this</em> document, on your PC or your smartphone, despite you not having downloaded it on the device.</p>
+	
+	<aside><p>Note for developers: yes, this is another simplification.
+	HTML documents don't have to come from files.</p></aside>
+	
+	<p>So, you are currently viewing this document on your computer, but you don't have it stored.
+	How's it possible? How does it work?
+	Of course, you can't just read <em>any</em> file on <em>anyone</em>'s computer, and thank goodness.
+	That would be terrible.
+	No, I have to setup my computer to make everything work.</p>
+	
+	<p>First of all, both our computers need to have special hardware that allows them to talk to each other.
+	Without it, any exchange would be impossible.
+	Thankfully all modern computers come with that hardware, so it's not a concern.</p>
+	
+	<p>Second, they need to be connected to a network.
+	This is also almost always true for today's computers.</p>
+	
+	<p>Third, they need to start exchanging messages.
+	Your computer needs to ask mine: <q>Can I get <em>that</em> <i>HTML document</i>?</q>, and mine needs to say: <q>Sure, here it is.</q> (along with a copy of the entire document).
+	Your computer now has a copy of the document, and it can display it.</p>
+	
+	<p>To use the correct terminology, the computer that asks for the document is called a <i>client</i>.
+	The computer that sends the document back is called a <i>server</i>.
+	Just to be confusing, the <em>program</em> that is responsible for sending the document, that runs on the server computer, is also called a server.</p>
+	
+	<p>When people say that they made a website, they don't <em>usually</em> mean that they also made the server program.
+	What they usually do is use a third–party service, either paid or free with limitations.
+	While it's not particularly difficult to make a basic server program, it's extremely difficult to make a <em>secure</em> one.
+	One that resists against potential attackers that might try to hijack the conversation between the client computer and the server computer.</p>
+	
+	<p>If you are not a programmer, using a third–party service is what I recommend.</p>
+	
+	</article>
+	</main>
+	
+	<script src="scripts/syntax-highlight.js" defer></script>
+</body>
+
+</html>

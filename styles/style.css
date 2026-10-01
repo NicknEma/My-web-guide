@@ -1,89 +1,147 @@
 /* Minify stylesheets with cssnano: https://cssnano.github.io/cssnano/ */
 
-/* --- GENERAL --- */
+/*
+** GENERAL
+*/
 
-html {font-family:Merriweather,Georgiaserif;}
-
-h1 { font-size: 2.2em; }
-h2 { font-size: 1.8em; }
-h3 { font-size: 1.4em; }
-h4 { font-size: 1.1em; }
-h4 { font-size: 1.08em; }
-h5 { font-size: 1.05em; margin: 1.67em 0em 0.83em 0em; }
-h6 { font-size: 1.02em; }
-
-body {color:#444;background-color:#fafafa;}
-
-strong {font-weight: 900;}
-pre {font-family: inherit;}
-
-ins {background-color:#bfb;}
-del {background-color:#fbb;}
-
-a:visited {color: blue;}
-
-main, nav, header, footer {
-	max-width:45em;
-	margin:0 auto;
+html {
+	text-rendering: optimizeLegibility; /* TODO: OpenType KERNING feature */
+	font-kerning: normal;
+	background-color: #fafafa;
+	color: #444;
+	text-align: justify; /* hyphens: auto; that's really ugly though */
+	font-family: Merriweather, Georgia, serif;
+	font-size: 18px;
+	line-height: 1.5
 }
 
-p, li {line-height:1.5; text-align: justify;}
+/*
+** LINKS
+*/
+
+a:visited {
+	color: blue
+}
+
+/* All anchors that have an href attribute whose value starts with "http" and don't contain an image: */
+/* https://mouseling.net/posts/2025-08-09-outlinks */
+a[href^="http"]:not(:has(img))::after {
+	content: "↗"
+}
+
+/*
+** HEADINGS
+*/
 
 header {display: flex; align-items: center;}
 header span {font-size: 2.4em; font-weight: bold;}
 header img {padding-right: 10px;max-width: 100px; height: auto;}
 
-.anchor-button {display:inline-block; padding: 4px; border-radius: 0.2em}
-.anchor-button:hover  {background-color: #eee;}
-.anchor-button:active {background-color: #ddd;}
+h1 { font-size: 2.2em }
+h2 { font-size: 1.8em }
+h3 { font-size: 1.4em }
+h4 { font-size: 1.1em }
+h4 { font-size: 1.08em }
+h5 { font-size: 1.05em; margin: 1.67em 0em 0.83em 0em }
+h6 { font-size: 1.02em }
+
+/*
+** BODY TEXT
+*/
+
+strong { font-weight: 900 }
+pre {
+	white-space: pre-wrap;
+	font-family: inherit;
+	word-wrap: break-word
+}
+
+main, nav, header, footer {
+	max-width: 65ch;
+	margin: 0 auto
+}
+
+aside {
+	font-style: italic
+}
+aside em, aside i {
+	font-style: normal
+}
 
 .example canvas { border:1px dashed orangered;display:block;margin:10px auto; }
 .example .canvas-controls { display:flex;justify-content:center;margin:10px auto; }
 .example audio { margin: 10px auto; display: block; }
 
-/* --- BREADCRUMBS --- */
+/*
+** BREADCRUMBS
+*/
 
 .breadcrumb {
-  padding: 0 .5rem;
+	padding: 0 .5rem;
 }
 
 .breadcrumb ul {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	padding: 0;
+	margin: 0
 }
 
 .breadcrumb li:not(:last-child)::after {
-  display: inline-block;
-  margin: 0 .25rem;
-  content: "→";
+	display: inline-block;
+	margin: 0 .25rem;
+	content: "→"
 }
-
 .breadcrumb li {
-  font-style: italic;
+	font-style: italic
 }
 
-/* --- UTILITY CLASSES --- */
+/*
+** UTILITY CLASSES
+*/
+
+/* Change the background color on hover, making something look like a button */
+.anchor-button { display: inline-block; padding: 4px; border-radius: 0.2em }
+.anchor-button:hover  { background-color: #eee }
+.anchor-button:active { background-color: #ddd }
 
 .border {border: 1px solid #bbb;padding: 3px;}
 .block {display:block;}
 .inline {display:inline}
 .p {margin:16px 0 16px 0;}
 
-/* --- CODE --- */
+/*
+** CODE
+*/
 
 code, var, kbd, samp {
 	font-family: "Source Code Pro", monospace;
 	font-size: 0.85em;
-
+	text-align: left;
+	
 	border-radius: 0.3em;
 	background: #eee;
 	padding: 0.1em;
 }
 
-pre > code {display:block;text-align:left;tab-size:4;}
+pre code, pre var, pre kbd, pre samp {
+	display: block; /* So that "text-align: left" works */
+	tab-size: 4
+}
+
+code ins { background-color: #bfb }
+code del { background-color: #fbb }
+
+/*
+** QUOTES
+*/
+
+/* blockquote:before { content: open-quote } */
+/* blockquote:after { content: close-quote } */
+blockquote div {
+	/* display: inline */ /* Prevent paragraphs from leaving “ and ” on their own lines */
+}
 
 /* --- EXAMPLES --- */
 

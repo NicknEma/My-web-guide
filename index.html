@@ -2,7 +2,8 @@
 <html lang="en-US">
 
 <head>
-	 <title>My web guide</title>
+	<meta charset="utf-8"/>
+	<title>My web guide</title>
 	
 	<!-- iPad Pro with high-resolution Retina display: -->
 	<link rel="apple-touch-icon" sizes="167x167" href="images/icon/apple-touch-icon-167x167.png"/>
@@ -16,7 +17,6 @@
 	<link rel="icon" href="images/icon/favicon-32x32.ico" type="image/x-icon"/>
 	
 	<!-- Metadata -->
-	<meta charset="utf-8"/>
 	<meta name="author" content="Emanuele Rovini"/>
 	<meta name="description" content="Simple example-based guide for creating a website."/>
 	<meta name="keywords" content="Web, HTML, CSS, JS, guide"/>
@@ -56,11 +56,15 @@
 	<h1>Home</h1>
 	
 	<p>This website is a collection of all the information I found useful,
-	written in a way that's easy for me to find again,
+	written in a way that’s easy for me to find again,
 	summarized so it gets to the point quickly.</p>
-	<p>It wouldn't have been possible to make without the <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development">documentation pages and tutorials of MDN</a>,
+	<p>It wouldn’t have been possible to make without the <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development">documentation pages and tutorials of MDN</a>,
 	as much of the information in this guide is directly copied from there.</p>
 	
+	<h2>General</h2>
+	<ul>
+		<li><a class="anchor-button" href="pages/what-is-a-website.html">What is a website?</a></li>
+	</ul>
 	<h2>HTML</h2>
 	<ul>
 		<li><a class="anchor-button" href="pages/guide-html-basics.html">HTML Basics</a></li>
@@ -91,19 +95,19 @@
 	Many are pretty good, better than what I could ever make, and always up-to-date.</p>
 	
 	<p>Sometimes though, even though a page tells you everything <em>there is to know</em> about a particular concept,
-	it doesn't tell you <em>what you wanted to know</em>.</p>
+	it doesn’t tell you <em>what you wanted to know</em>.</p>
 	
 	<p>As an example, take the MDN documentation for the <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/AudioScheduledSourceNode/start">start()</a></code> method of the <code>AudioScheduledSourceNode</code> interface.
 	The page says what it does, explains the parameters and the possible errors, and gives an example.</p>
 	<p>At the time of writing this, the page contains the following text (verbatim):</p>
 	
 	<blockquote>
-		<h3>&ldquo;Exceptions</h3>
+		<h3>“Exceptions</h3>
 		<dl>
 			<dt><code>InvalidStateNode</code> <code>DOMException</code></dt>
 			<dd>
 				<p>Thrown if the node has already been started.
-				This error occurs even if the node is no longer running because of a prior call to stop().&rdquo;</p>
+				This error occurs even if the node is no longer running because of a prior call to stop().”</p>
 			</dd>
 		</dl>
 	</blockquote>
@@ -111,37 +115,37 @@
 	<p>It says you can only call this method once or an exception is thrown.</p>
 	<p>It aknowledges the fact that a programmer might incorrectly assume that the node can be <em>resumed</em> after being stopped,
 	and might try to call this method again after calling <code>stop()</code>.</p>
-	<p>It doesn't tell you, however, that it can't be resumed.</p>
-	<p>It doesn't tell you that it <em>can be</em>, either.</p>
-	<p>It doesn't tell you how to achieve the <em>effect</em> of pausing and resuming,
+	<p>It doesn’t tell you, however, that it can’t be resumed.</p>
+	<p>It doesn’t tell you that it <em>can be</em>, either.</p>
+	<p>It doesn’t tell you how to achieve the <em>effect</em> of pausing and resuming,
 	even if the implementation would involve different methods.</p>
 	<p>Instead, it leaves you to search for it on your own, with the possibility of wasting your time, or worse,
-	to lose your faith in humanity in case you land on an old StackOverflow thread where everybody's telling you why
+	to lose your faith in humanity in case you land on an old StackOverflow thread where everybody’s telling you why
 	your way of doing it is wrong.</p>
 	<p>It <em>knows</em> you want to do it.
 	It just wants to see you suffer.</p>
 	
 	<br/> <!-- TODO(ema): Find the correct way of doing a page break, this ain't it -->
 	
-	<p>I'm not picking on MDN in particular.
-	Every documentation for every technology I've ever seen does this, to one degree or another.
+	<p>I’m not picking on MDN in particular.
+	Every documentation for every technology I’ve ever seen does this, to one degree or another.
 	Actually, MDN is one of the best in this regard.
-	Yet, it still happens more often than I'd like.</p>
+	Yet, it still happens more often than I’d like.</p>
 	
 	<p>Sometimes you want to learn something new.
 	Other times, however, you just want to know how to do something.</p>
 	
-	<p>So anyway, this is why I'm making this website.</p>
+	<p>So anyway, this is why I’m making this website.</p>
 	
-	<p>P.S.: In order to find how to correctly add &ldquo;smart quotes&rdquo; to the above citation (without resorting to the Windows character map),
-	I looked up &ldquo;html quote entity&rdquo; and &ldquo;html smart quote entity&rdquo; on Ecosia.
+	<p>P.S.: In order to find how to correctly add “smart quotes” to the above citation (without resorting to the Windows character map),
+	I looked up “html quote entity” and “html smart quote entity” on Ecosia.
 	The first five results for each query contained information about <code>&amp;quot;</code>,
 	<em>mentioned the existence of other quote entities</em>,
 	yet <em>did not say what they are nor gave links to other pages</em>.
-	One of the pages was called &ldquo;Common HTML entities used for typography&rdquo;, and it only talked about ASCII entities.</p>
-	<p>I then looked up the exact same search query (&ldquo;html smart quote entity&rdquo;) on Google,
+	One of the pages was called “Common HTML entities used for typography”, and it only talked about ASCII entities.</p>
+	<p>I then looked up the exact same search query (“html smart quote entity”) on Google,
 	and the AI widget that they force you to use contained <code>&amp;ldquo;</code> and <code>&amp;rdquo;</code> in the first four lines of its answer.
-	I didn't even need to click on it.</p>
+	I didn’t even need to click on it.</p>
 	<p>One tries to avoid it, but sometimes it feels like we deserve what we got.</p>
 	
 	<!-- HOW DID I MAKE THIS? -->
@@ -154,17 +158,17 @@
 	I try not to use LLMs in general, but when it comes to computers, sometimes I see no other way.</p>
 	<p>Yes, it takes a long time.
 	And yes, sometimes I would like some parts of it to be automated.
-	But today, in 2026, I don't think we have tools to do it without significantly losing the amount of control that we have on the output.
+	But today, in 2026, I don’t think we have tools to do it without significantly losing the amount of control that we have on the output.
 	Even the syntax coloring script I use has bugs.
-	At least for now, manual editing is what I'll continue to do.</p>
+	At least for now, manual editing is what I’ll continue to do.</p>
 	
 	<!-- WHY DO I CALL IT "SYNTAX _COLORING_"? -->
 	
-	<h3 id="h3_why_do_i_call_it_syntax_coloring"><a href="index.html#h3_why_do_i_call_it_syntax_coloring">Why do you call it &ldquo;syntax <em>coloring</em>&rdquo;?</a></h3>
-	<p>Last time I checked, &ldquo;highlighting&rdquo; is when you change the color of the <em>background</em> of text.
-	That's what physical highlighters do.</p>
+	<h3 id="h3_why_do_i_call_it_syntax_coloring"><a href="index.html#h3_why_do_i_call_it_syntax_coloring">Why do you call it “syntax <em>coloring</em>”?</a></h3>
+	<p>Last time I checked, “highlighting” is when you change the color of the <em>background</em> of text.
+	That’s what physical highlighters do.</p>
 	
-	<p>Plus, if the word &ldquo;highlighting&rdquo; is already taken and it means <em>coloring</em>,
+	<p>Plus, if the word “highlighting” is already taken and it means <em>coloring</em>,
 	what would I say if I ever wanted to talk about <em>actually highlighting the text</em>?</p>
 	
 	<p>Programmers will say naming things is the hardest problem,
@@ -173,16 +177,16 @@
 	<!-- WHAT EDITOR DO I USE? -->
 	
 	<h3 id="h3_what_editor_do_i_use"><a href="index.html#h3_what_editor_do_i_use">What editor do I use?</a></h3>
-	<p>Either <a href="https://fred-dev.tech/">fred</a> or <a href="https://4coder.net/">4coder</a>.
+	<p>Either <a target="_blank" href="https://fred-dev.tech" title="fred-dev.tech (opens in new tab)">fred</a> or <a target="_blank" href="https://4coder.net" title="4coder.net (opens in new tab)">4coder</a>.
 	Or Notepad.</p>
 	
 	<!-- HOW CAN YOU TALK TO ME? -->
 	
 	<h3 id="h3_how_can_you_talk_to_me"><a href="index.html#h3_how_can_you_talk_to_me">How can you talk to me?</a></h3>
-	<p>I don't know why you would, but okay.</p>
+	<p>I don’t know why you would, but okay.</p>
 	
-	<p>If you have an account on <a href="https://neocities.org/">Neocities</a> (and you should!),
-	you can leave a comment on <a href="https://neocities.org/site/changemymind">my profile there</a>.</p>
+	<p>If you have an account on <a target="_blank" href="https://neocities.org" title="neocities.org (opens in new tab)">Neocities</a> (and you should!),
+	you can leave a comment on <a target="_blank" href="https://neocities.org/site/changemymind" title="neocities.org/site/changemymind (opens in new tab)">my profile there</a>.</p>
 	<p>Alternatively, you can send me a pigeon.</p>
 	
 	</article>

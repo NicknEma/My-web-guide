@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg viewBox="0 0 962 552" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<!-- The screenshot -->
+		<image href="google-chrome-google-com.png" width="962" height="552"/>
+		<!-- The marker -->
+		<defs>
+			<marker id="marker-end" viewBox="0 0 5 5"
+				refX="2.5"
+				refY="2.5"
+				markerWidth="5"
+				markerHeight="5"
+				orient="auto"
+			>
+				<polygon points="0,5 1.67,2.5 0,0 5,2.5" fill="purple"></polygon>
+			</marker>
+		</defs>
+		<!-- The top text -->
+		<text
+			font-family="Merriweather,Georgia,serif"
+			font-size="40"
+			text-anchor="middle"
+			dominant-baseline="middle"
+			x="481"
+			y="196"
+			transform-origin="400 400"
+			fill="purple"
+			stroke="purple">This one</text>
+		<polyline points="392,196 200,196 200,110" fill="none" stroke="purple" stroke-width="5" marker-end="url(#marker-end)"/>
+		<!-- The bottom text -->
+		<text
+			font-family="Merriweather,Georgia,serif"
+			font-size="40"
+			text-anchor="middle"
+			dominant-baseline="middle"
+			x="481"
+			y="256"
+			transform-origin="400 400"
+			fill="purple"
+			stroke="purple">NOT this one</text>
+		<polyline points="348,256 200,256 200,425" fill="none" stroke="purple" stroke-width="5" marker-end="url(#marker-end)"/>
+	</svg>
